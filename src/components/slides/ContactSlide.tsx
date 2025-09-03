@@ -107,7 +107,7 @@ export const ContactSlide = () => {
 
             <div className="flex gap-4 justify-center">
               <motion.a
-                href={`https://linkedin.com/company/${contactInfo.social.linkedin}`}
+                href="https://www.linkedin.com/company/celplan/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 360 }}
@@ -159,6 +159,18 @@ export const ContactSlide = () => {
               {whatsappNumber}
             </p>
           </div>
+        </motion.div>
+
+        {/* Exit Fullscreen Notice */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="mt-8"
+        >
+          <p className="text-xs text-neutral-400 text-center">
+            Pressione <kbd className="px-2 py-1 bg-white/10 rounded text-accent-500 font-bold">F11</kbd> para sair da tela cheia
+          </p>
         </motion.div>
       </div>
     </Slide>

@@ -192,8 +192,8 @@ export const contactInfo = {
   phone: "+55 19 98376-0039",
   corporatePhone: "+55 61 3039-9500",
   address: {
-    brazil: "Brasília - DF, Brasil",
-    usa: "Reston - VA, EUA"
+    brazil: "Campinas - SP, Brasil",
+    usa: "1920 Association Dr, Reston, VA 20191, USA"
   },
   social: {
     linkedin: "celplan-international",

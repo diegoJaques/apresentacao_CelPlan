@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Navigation } from './components/Navigation';
 import { PresentationTimer } from './components/PresentationTimer';
 import { PresenterNotes } from './components/PresenterNotes';
+import { FullscreenNotice } from './components/FullscreenNotice';
 import { IntroSlide } from './components/slides/IntroSlide';
 import { AboutSlide } from './components/slides/AboutSlide';
 import { MarketsSlide } from './components/slides/MarketsSlide';
@@ -96,6 +97,9 @@ function App() {
 
       {showTimer && <PresentationTimer />}
       {showNotes && <PresenterNotes slideNotes={slideNotes} currentSlide={currentSlide} />}
+      
+      {/* Fullscreen notice for first slide */}
+      {currentSlide === 0 && <FullscreenNotice />}
 
       {/* Background Animation */}
       <div className="fixed inset-0 pointer-events-none">
