@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand: #7c3aed;
+    --color-primary: #3b82f6;
+    --color-accent: #f97316;
+    --color-neutral: #64748b;
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-text: #ffffff;
+    --color-text-secondary: #94a3b8;
+  }
+
+  body {
+    @apply bg-gray-900 text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, #7c3aed 0%, #6b21d6 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/5 border border-white/10;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg 
+           hover:bg-brand-500 transition-all duration-300 
+           hover:shadow-lg hover:shadow-brand-500/25
+           active:scale-95;
+  }
+
+  .button-accent {
+    @apply px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg 
+           hover:bg-accent-400 transition-all duration-300 
+           hover:shadow-lg hover:shadow-accent-500/25
+           active:scale-95;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  .glow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  }
+
+  .logo-enhanced {
+    filter: brightness(1.1) contrast(1.25) saturate(1.1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
