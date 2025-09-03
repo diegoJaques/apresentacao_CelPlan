@@ -91,8 +91,6 @@ function App() {
         currentSlide={currentSlide}
         totalSlides={slides.length}
         onNavigate={handleNavigate}
-        onPrevious={handlePrevious}
-        onNext={handleNext}
         slideNames={slides.map(s => s.name)}
       />
 
