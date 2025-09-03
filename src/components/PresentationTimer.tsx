@@ -7,7 +7,7 @@ export const PresentationTimer = () => {
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
     if (isRunning) {
       interval = setInterval(() => {
         setSeconds(s => s + 1);

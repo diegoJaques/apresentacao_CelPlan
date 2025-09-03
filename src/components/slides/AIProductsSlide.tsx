@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Slide } from '../Slide';
 import { products } from '../../data/content';
-import { ChevronDown, Database, Mic, Eye, Users } from 'lucide-react';
+import { ChevronDown, Database, Eye, Users } from 'lucide-react';
 
 export const AIProductsSlide = () => {
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);

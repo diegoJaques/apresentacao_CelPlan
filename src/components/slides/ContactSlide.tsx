@@ -22,7 +22,7 @@ export const ContactSlide = () => {
           light: '#ffffff',
         },
         errorCorrectionLevel: 'H'
-      }, (error) => {
+      }, (error: Error | null | undefined) => {
         if (error) console.error('Erro ao gerar QR Code:', error);
       });
     }

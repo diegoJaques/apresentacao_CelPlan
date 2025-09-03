@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface NavigationProps {
   currentSlide: number;
   totalSlides: number;
   onNavigate: (index: number) => void;
-  onPrevious: () => void;
-  onNext: () => void;
   slideNames: string[];
 }
 
@@ -15,8 +13,6 @@ export const Navigation = ({
   currentSlide,
   totalSlides,
   onNavigate,
-  onPrevious,
-  onNext,
   slideNames
 }: NavigationProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
