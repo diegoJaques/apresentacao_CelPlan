@@ -189,12 +189,12 @@ export const OportunidadesSlide = () => {
           <div className="grid grid-cols-4 gap-3">
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/oportunidades/Tela de Leads.png"
+                src="/cases-sucesso/oportunidades/Tela de Leads.png"
                 alt="Dashboard de Leads"
                 title="Dashboard"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/oportunidades/Tela de Leads.png",
+                  "/cases-sucesso/oportunidades/Tela de Leads.png",
                   "Dashboard executivo com visão geral das oportunidades e KPIs em tempo real",
                   "Dashboard de Leads e Oportunidades"
                 )}
@@ -202,12 +202,12 @@ export const OportunidadesSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/oportunidades/configuração do agente .png"
+                src="/cases-sucesso/oportunidades/configuração do agente .png"
                 alt="Configuração de Agentes"
                 title="Config. Agentes"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/oportunidades/configuração do agente .png",
+                  "/cases-sucesso/oportunidades/configuração do agente .png",
                   "Interface de configuração dos agentes de IA para análise personalizada",
                   "Configuração de Agentes Inteligentes"
                 )}
@@ -215,12 +215,12 @@ export const OportunidadesSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/oportunidades/informações extraidas peloa agente de IA.png"
+                src="/cases-sucesso/oportunidades/informações extraidas peloa agente de IA.png"
                 alt="Extração de Dados"
                 title="Extração IA"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/oportunidades/informações extraidas peloa agente de IA.png",
+                  "/cases-sucesso/oportunidades/informações extraidas peloa agente de IA.png",
                   "Dados estruturados extraídos automaticamente dos editais pela IA",
                   "Extração Inteligente de Dados"
                 )}
@@ -228,12 +228,12 @@ export const OportunidadesSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/oportunidades/interação inteligencia com o edita, chat bot.png"
+                src="/cases-sucesso/oportunidades/interação inteligencia com o edita, chat bot.png"
                 alt="Chat Contextual"
                 title="Chat Context"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/oportunidades/interação inteligencia com o edita, chat bot.png",
+                  "/cases-sucesso/oportunidades/interação inteligencia com o edita, chat bot.png",
                   "Chat contextual para análise detalhada e perguntas específicas sobre editais",
                   "Chat Inteligente com Editais"
                 )}

@@ -184,12 +184,12 @@ export const SerbomSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/Serbon/teste em campo cobertura .png"
+                  src="/cases-sucesso/Serbon/teste em campo cobertura .png"
                   alt="Teste de Cobertura em Campo"
                   title="Cobertura"
                   className="w-full h-20 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/Serbon/teste em campo cobertura .png",
+                    "/cases-sucesso/Serbon/teste em campo cobertura .png",
                     "Teste de cobertura em campo - Validação da rede pLTE SERBOM",
                     "Teste de Cobertura em Campo"
                   )}
@@ -202,12 +202,12 @@ export const SerbomSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/Serbon/teste em campo Kps.png"
+                  src="/cases-sucesso/Serbon/teste em campo Kps.png"
                   alt="KPIs de Performance"
                   title="KPIs"
                   className="w-full h-20 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/Serbon/teste em campo Kps.png",
+                    "/cases-sucesso/Serbon/teste em campo Kps.png",
                     "Indicadores de performance (KPIs) da rede pLTE SERBOM",
                     "KPIs de Performance"
                   )}
@@ -220,12 +220,12 @@ export const SerbomSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/Serbon/prediçao-plano diretor cobertura.png"
+                  src="/cases-sucesso/Serbon/prediçao-plano diretor cobertura.png"
                   alt="Predição de Cobertura"
                   title="Predição"
                   className="w-full h-20 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/Serbon/prediçao-plano diretor cobertura.png",
+                    "/cases-sucesso/Serbon/prediçao-plano diretor cobertura.png",
                     "Predição de cobertura conforme plano diretor SERBOM",
                     "Predição de Cobertura - Plano Diretor"
                   )}
@@ -238,12 +238,12 @@ export const SerbomSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/Serbon/RRU.jpg"
+                  src="/cases-sucesso/Serbon/RRU.jpg"
                   alt="Equipamento RRU"
                   title="RRU"
                   className="w-full h-20 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/Serbon/RRU.jpg",
+                    "/cases-sucesso/Serbon/RRU.jpg",
                     "Equipamento RRU (Remote Radio Unit) instalado no projeto SERBOM",
                     "Equipamento RRU"
                   )}

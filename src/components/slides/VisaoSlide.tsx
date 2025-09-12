@@ -191,12 +191,12 @@ export const VisaoSlide = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/Visao/Imagem1.png"
+                src="/cases-sucesso/Visao/Imagem1.png"
                 alt="Interface de Detecção"
                 title="Detecção em Tempo Real"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/Visao/Imagem1.png",
+                  "/cases-sucesso/Visao/Imagem1.png",
                   "Interface do sistema VISÃO mostrando detecção de EPIs em tempo real com análise de conformidade",
                   "Detecção de EPIs em Tempo Real"
                 )}
@@ -204,12 +204,12 @@ export const VisaoSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/Visao/dashboard.png"
+                src="/cases-sucesso/Visao/dashboard.png"
                 alt="Dashboard de Análise"
                 title="Dashboard Analítico"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/Visao/dashboard.png",
+                  "/cases-sucesso/Visao/dashboard.png",
                   "Dashboard analítico com métricas de produtividade e conformidade de segurança das equipes",
                   "Dashboard de Produtividade e Segurança"
                 )}

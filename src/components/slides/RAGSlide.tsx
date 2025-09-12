@@ -220,12 +220,12 @@ export const RAGSlide = () => {
           <div className="grid grid-cols-3 gap-4">
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/RAG/coleções.png"
+                src="/cases-sucesso/RAG/coleções.png"
                 alt="Coleções de Documentos"
                 title="Gestão de Coleções"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/RAG/coleções.png",
+                  "/cases-sucesso/RAG/coleções.png",
                   "Interface de gestão de coleções de documentos da plataforma RAG",
                   "Gestão de Coleções de Documentos"
                 )}
@@ -233,12 +233,12 @@ export const RAGSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/RAG/chatbot modular.png"
+                src="/cases-sucesso/RAG/chatbot modular.png"
                 alt="Chat Modular"
                 title="Interface de Chat"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/RAG/chatbot modular.png",
+                  "/cases-sucesso/RAG/chatbot modular.png",
                   "Interface de chat inteligente para interação com documentos",
                   "Chat Inteligente RAG"
                 )}
@@ -246,12 +246,12 @@ export const RAGSlide = () => {
             </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
-                src="/Cases_sucesso/RAG/preview da conversão - estaticas do documento.png"
+                src="/cases-sucesso/RAG/preview da conversão - estaticas do documento.png"
                 alt="Preview e Estatísticas"
                 title="Análise de Documentos"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
-                  "/Cases_sucesso/RAG/preview da conversão - estaticas do documento.png",
+                  "/cases-sucesso/RAG/preview da conversão - estaticas do documento.png",
                   "Preview do processamento e estatísticas detalhadas dos documentos",
                   "Análise e Estatísticas de Documentos"
                 )}

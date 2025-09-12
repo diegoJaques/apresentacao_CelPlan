@@ -175,12 +175,12 @@ export const CellWirelessSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/CellWirelles/cellwirelles SM.png"
+                  src="/cases-sucesso/CellWirelles/cellwirelles SM.png"
                   alt="Hardware CellWireless SM"
                   title="Hardware SM"
                   className="w-full h-24 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/CellWirelles/cellwirelles SM.png",
+                    "/cases-sucesso/CellWirelles/cellwirelles SM.png",
                     "CellWireless SM - Equipamento de monitoração de espectro",
                     "Hardware CellWireless SM"
                   )}
@@ -193,12 +193,12 @@ export const CellWirelessSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/CellWirelles/cellwirelles SM software.png"
+                  src="/cases-sucesso/CellWirelles/cellwirelles SM software.png"
                   alt="Software CellWireless"
                   title="Software CST"
                   className="w-full h-24 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/CellWirelles/cellwirelles SM software.png",
+                    "/cases-sucesso/CellWirelles/cellwirelles SM software.png",
                     "Interface do software CellWireless para análise de espectro",
                     "Software CellWireless CST"
                   )}
@@ -211,12 +211,12 @@ export const CellWirelessSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/CellWirelles/cellwirelles SM geografico.png"
+                  src="/cases-sucesso/CellWirelles/cellwirelles SM geografico.png"
                   alt="Mapeamento Geográfico"
                   title="Geográfico"
                   className="w-full h-24 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/CellWirelles/cellwirelles SM geografico.png",
+                    "/cases-sucesso/CellWirelles/cellwirelles SM geografico.png",
                     "Sistema de localização e mapeamento geográfico das estações CellWireless",
                     "Mapeamento Geográfico"
                   )}
@@ -229,12 +229,12 @@ export const CellWirelessSlide = () => {
                 className="glass-effect p-2 rounded-lg"
               >
                 <ClickableImage
-                  src="/Cases_sucesso/CellWirelles/cellwirelles SM modular.png"
+                  src="/cases-sucesso/CellWirelles/cellwirelles SM modular.png"
                   alt="Arquitetura Modular"
                   title="Modular"
                   className="w-full h-24 object-cover rounded"
                   onClick={() => openModal(
-                    "/Cases_sucesso/CellWirelles/cellwirelles SM modular.png",
+                    "/cases-sucesso/CellWirelles/cellwirelles SM modular.png",
                     "Design modular e escalável do sistema CellWireless SM",
                     "Arquitetura Modular"
                   )}
