@@ -186,12 +186,25 @@ export const OportunidadesSlide = () => {
           className="glass-effect p-4 rounded-xl"
         >
           <h3 className="text-sm font-bold text-neutral-400 mb-3 text-center">SISTEMA EM OPERAÇÃO</h3>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-5 gap-3">
+            <div className="glass-effect p-2 rounded-lg">
+              <ClickableImage
+                src="/cases-sucesso/oportunidades/dashboard.png"
+                alt="Dashboard Principal"
+                title="Dashboard"
+                className="w-full h-24 object-cover rounded"
+                onClick={() => openModal(
+                  "/cases-sucesso/oportunidades/dashboard.png",
+                  "Dashboard principal com análise completa de oportunidades e métricas",
+                  "Dashboard de Análise de Oportunidades"
+                )}
+              />
+            </div>
             <div className="glass-effect p-2 rounded-lg">
               <ClickableImage
                 src="/cases-sucesso/oportunidades/Tela de Leads.png"
                 alt="Dashboard de Leads"
-                title="Dashboard"
+                title="Leads"
                 className="w-full h-24 object-cover rounded"
                 onClick={() => openModal(
                   "/cases-sucesso/oportunidades/Tela de Leads.png",
