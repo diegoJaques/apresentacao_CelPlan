@@ -9,32 +9,60 @@ import { AboutSlide } from './components/slides/AboutSlide';
 import { MarketsSlide } from './components/slides/MarketsSlide';
 import { ProjectsSlide } from './components/slides/ProjectsSlide';
 import { AIProductsSlide } from './components/slides/AIProductsSlide';
+import { SerbomSlide } from './components/slides/SerbomSlide';
+import { CellWirelessSlide } from './components/slides/CellWirelessSlide';
+import { OportunidadesSlide } from './components/slides/OportunidadesSlide';
+import { RAGSlide } from './components/slides/RAGSlide';
+import { VisaoSlide } from './components/slides/VisaoSlide';
 import { MethodologySlide } from './components/slides/MethodologySlide';
 import { ContactSlide } from './components/slides/ContactSlide';
+import { slidesConfig, getActiveSlides, presentationProfiles } from './config/slideConfig';
+import { ProfileSelector } from './components/ProfileSelector';
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showTimer, setShowTimer] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
+  const [currentProfile, setCurrentProfile] = useState('Completa');
+  const [activeSlideIds, setActiveSlideIds] = useState<string[]>(getActiveSlides('Completa'));
 
-  const slides = [
-    { component: IntroSlide, name: 'Introdução' },
-    { component: AboutSlide, name: 'Sobre a CelPlan' },
-    { component: MarketsSlide, name: 'Mercados' },
-    { component: ProjectsSlide, name: 'Projetos' },
-    { component: AIProductsSlide, name: 'Soluções de IA' },
-    { component: MethodologySlide, name: 'Metodologia' },
-    { component: ContactSlide, name: 'Contato' },
-  ];
+  // Mapeamento de componentes
+  const slideComponents: { [key: string]: React.ComponentType } = {
+    IntroSlide,
+    AboutSlide,
+    MarketsSlide,
+    ProjectsSlide,
+    AIProductsSlide,
+    SerbomSlide,
+    CellWirelessSlide,
+    OportunidadesSlide,
+    RAGSlide,
+    VisaoSlide,
+    MethodologySlide,
+    ContactSlide
+  };
 
-  const slideNotes = {
-    0: "Apresentação inicial da CelPlan.\n• Enfatizar os 32 anos de experiência\n• Destacar transformação de dados em inteligência\n• Mencionar presença global",
-    1: "Detalhes sobre a empresa.\n• Fundada em 1992\n• 150+ funcionários\n• Certificações ISO\n• Investimento em P&D",
-    2: "Mercados de atuação.\n• Telecomunicações (5G/4G)\n• Smart Cities\n• Energia Inteligente\n• IA e Machine Learning",
-    3: "Projetos de transformação digital.\n• ANPTrilhos/USTDA - Eficiência metro-ferroviária\n• EDP Vila Velha - Smart Grid LTE\n• Vale EFVM - Ferrovia 4.0",
-    4: "Soluções de IA desenvolvidas.\n• Sistema de Captação\n• Portal RAG\n• Transcrição com IA\n• VISAO - Detecção de EPIs",
-    5: "Metodologia de trabalho.\n• Abordagem centrada em problemas\n• Desenvolvimento ágil\n• Arquitetura escalável",
-    6: "Informações de contato.\n• Incentivar agendamento de reunião\n• Disponibilizar QR Code\n• Mencionar canais de comunicação"
+  // Filtra slides ativos baseado na configuração
+  const slides = slidesConfig
+    .filter(config => activeSlideIds.includes(config.id))
+    .map(config => ({
+      component: slideComponents[config.component],
+      name: config.name,
+      id: config.id
+    }));
+
+  const slideNotes: { [key: string]: string } = {
+    'intro': "Apresentação inicial da CelPlan.\n• Enfatizar os 32 anos de experiência\n• Destacar transformação de dados em inteligência\n• Mencionar presença global",
+    'about': "Detalhes sobre a empresa.\n• Fundada em 1992\n• 150+ funcionários\n• Certificações ISO\n• Investimento em P&D",
+    'markets': "Mercados de atuação.\n• Telecomunicações (5G/4G)\n• Smart Cities\n• Energia Inteligente\n• IA e Machine Learning",
+    'projects': "Projetos de transformação digital.\n• ANPTrilhos/USTDA - Eficiência metro-ferroviária\n• EDP Vila Velha - Smart Grid LTE\n• Vale EFVM - Ferrovia 4.0",
+    'ai-products': "Soluções de IA desenvolvidas pela CelPlan.\n• Sistema de Captação\n• Portal RAG\n• Transcrição com IA\n• VISAO - Detecção de EPIs",
+    'cellwireless': "Case ANATEL - CellWireless SM.\n• ~40 unidades fornecidas\n• Monitoração 24/7 autônoma\n• Geolocalização TDOA\n• Enfatizar modernização do órgão regulador",
+    'oportunidades': "Sistema Multiagentes em produção.\n• Em uso interno CelPlan e BlackBox\n• Análise inteligente de editais\n• Decisão GO/NO-GO automatizada\n• Redução de 75% no tempo de análise",
+    'rag': "Plataforma RAG em produção.\n• Desenvolvida e em uso para clientes\n• 90% de redução no tempo de busca\n• Respostas 100% baseadas em documentos\n• Segurança e privacidade garantidas",
+    'visao': "Sistema VISÃO - Parceria Tellus.\n• Em desenvolvimento\n• Deep Learning + OCR\n• Análise de produtividade\n• Conformidade de segurança\n• 6 tipos de EPIs detectados",
+    'methodology': "Metodologia de trabalho.\n• Abordagem centrada em problemas\n• Desenvolvimento ágil\n• Arquitetura escalável",
+    'contact': "Informações de contato.\n• Incentivar agendamento de reunião\n• Disponibilizar QR Code\n• Mencionar canais de comunicação"
   };
 
   const handleKeyPress = (e: KeyboardEvent) => {
@@ -53,6 +81,16 @@ function App() {
     }
     if (e.key === 't' || e.key === 'T') setShowTimer(!showTimer);
     if (e.key === 'n' || e.key === 'N') setShowNotes(!showNotes);
+    if (e.key === 'p' || e.key === 'P') {
+      // Cicla entre os perfis de apresentação
+      const profiles = presentationProfiles.map(p => p.name);
+      const currentIndex = profiles.indexOf(currentProfile);
+      const nextIndex = (currentIndex + 1) % profiles.length;
+      const nextProfile = profiles[nextIndex];
+      setCurrentProfile(nextProfile);
+      setActiveSlideIds(getActiveSlides(nextProfile));
+      setCurrentSlide(0); // Volta ao início ao mudar perfil
+    }
   };
 
   useEffect(() => {
@@ -88,6 +126,15 @@ function App() {
         </motion.div>
       </AnimatePresence>
 
+      <ProfileSelector 
+        currentProfile={currentProfile}
+        onProfileChange={(profile) => {
+          setCurrentProfile(profile);
+          setActiveSlideIds(getActiveSlides(profile));
+          setCurrentSlide(0);
+        }}
+      />
+
       <Navigation
         currentSlide={currentSlide}
         totalSlides={slides.length}
@@ -96,7 +143,12 @@ function App() {
       />
 
       {showTimer && <PresentationTimer />}
-      {showNotes && <PresenterNotes slideNotes={slideNotes} currentSlide={currentSlide} />}
+      {showNotes && slides[currentSlide] && (
+        <PresenterNotes 
+          slideNotes={slideNotes} 
+          currentSlide={slides[currentSlide].id} 
+        />
+      )}
       
       {/* Fullscreen notice for first slide */}
       {currentSlide === 0 && <FullscreenNotice />}

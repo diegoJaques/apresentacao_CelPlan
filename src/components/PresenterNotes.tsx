@@ -3,8 +3,8 @@ import { FileText, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface PresenterNotesProps {
-  slideNotes: { [key: number]: string };
-  currentSlide: number;
+  slideNotes: { [key: string]: string };
+  currentSlide: string;
 }
 
 export const PresenterNotes = ({ slideNotes, currentSlide }: PresenterNotesProps) => {
@@ -44,7 +44,7 @@ export const PresenterNotes = ({ slideNotes, currentSlide }: PresenterNotesProps
 
         <div className="bg-white/5 rounded-xl p-6">
           <h4 className="text-sm font-semibold text-accent-500 mb-3">
-            Slide {currentSlide + 1}
+            Slide Atual
           </h4>
           <div className="text-gray-300 whitespace-pre-wrap">
             {currentNotes}
@@ -59,6 +59,7 @@ export const PresenterNotes = ({ slideNotes, currentSlide }: PresenterNotesProps
               <li>• Space para próximo slide</li>
               <li>• 1-9 para ir direto ao slide</li>
               <li>• F para tela cheia</li>
+              <li>• P para mudar perfil</li>
             </ul>
           </div>
         </div>

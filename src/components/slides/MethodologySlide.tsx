@@ -31,54 +31,21 @@ export const MethodologySlide = () => {
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-4"
         >
-          <h2 className="text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl font-display font-bold mb-2">
             <span className="gradient-text">{methodology.title}</span>
           </h2>
-          <p className="text-xl text-neutral-300 mb-6 max-w-3xl mx-auto">
+          <p className="text-sm text-neutral-300 mb-2 max-w-3xl mx-auto">
             {methodology.subtitle}
           </p>
         </motion.div>
 
-        {/* Hero Section - Treinamento Recente */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="glass-effect rounded-2xl p-8 mb-12 max-w-4xl mx-auto"
-        >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar className="w-6 h-6 text-accent-500" />
-                <span className="text-accent-500 font-semibold text-lg">
-                  {methodology.recentCase.title}
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-white">
-                {methodology.recentCase.date}
-              </h3>
-              <p className="text-neutral-200 text-lg leading-relaxed">
-                {methodology.recentCase.description}
-              </p>
-            </div>
-            <div className="relative">
-              <motion.img
-                src={methodology.recentCase.image}
-                alt="Treinamento SENDI 2025"
-                className="w-full rounded-xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Metodologia Steps */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-4 mb-4">
+          {/* Metodologia Steps */}
+          <div className="lg:col-span-2">
+            <div className="grid md:grid-cols-2 gap-3">
             {methodology.pillars.map((pillar, index) => {
               const Icon = getIcon(pillar.icon);
               
@@ -92,33 +59,51 @@ export const MethodologySlide = () => {
                 >
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="glass-effect p-6 rounded-xl h-full"
+                    className="glass-effect p-3 rounded-xl h-full"
                   >
                     {/* Step Number */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className={`${getStepBg(index)} p-3 rounded-full flex-shrink-0`}>
-                        <Icon className={`w-6 h-6 ${getStepColor(index)}`} />
+                    <div className="flex items-start gap-2 mb-2">
+                      <div className={`${getStepBg(index)} p-2 rounded-full flex-shrink-0`}>
+                        <Icon className={`w-4 h-4 ${getStepColor(index)}`} />
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className={`text-sm font-bold ${getStepColor(index)} bg-white/10 px-2 py-1 rounded`}>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className={`text-xs font-bold ${getStepColor(index)} bg-white/10 px-1 py-0.5 rounded`}>
                             ETAPA {index + 1}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-sm font-bold text-white mb-1">
                           {pillar.title}
                         </h3>
                       </div>
                     </div>
                     
-                    <p className="text-neutral-200 leading-relaxed">
+                    <p className="text-neutral-200 text-xs leading-relaxed">
                       {pillar.description}
                     </p>
                   </motion.div>
                 </motion.div>
               );
             })}
+            </div>
           </div>
+
+          {/* Training Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
+            className="glass-effect p-3 rounded-xl"
+          >
+            <h3 className="text-xs font-bold text-neutral-400 mb-2 text-center">TREINAMENTO CELPLAN</h3>
+            <div className="relative">
+              <img 
+                src="/logo/treinamento celplan.png"
+                alt="Treinamento CelPlan - Metodologia aplicada"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+          </motion.div>
         </div>
 
         {/* Value Proposition */}
@@ -126,10 +111,10 @@ export const MethodologySlide = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
-          className="text-center mt-12"
+          className="text-center"
         >
-          <div className="glass-effect p-6 rounded-xl max-w-4xl mx-auto">
-            <p className="text-xl font-medium text-white leading-relaxed">
+          <div className="glass-effect p-3 rounded-xl max-w-4xl mx-auto">
+            <p className="text-sm font-medium text-white leading-relaxed">
               "{methodology.valueProposition}"
             </p>
           </div>

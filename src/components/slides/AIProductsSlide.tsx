@@ -40,7 +40,7 @@ export const AIProductsSlide = () => {
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-display font-bold text-center mb-4"
+          className="text-4xl font-display font-bold text-center mb-3"
         >
           <span className="gradient-text">Nossos 3 Universos de IA</span>
         </motion.h2>
@@ -49,7 +49,7 @@ export const AIProductsSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-xl text-neutral-300 text-center mb-12 max-w-3xl mx-auto"
+          className="text-lg text-neutral-300 text-center mb-8 max-w-3xl mx-auto"
         >
           Soluções que transformam dores operacionais em vantagens competitivas
         </motion.p>
@@ -70,18 +70,18 @@ export const AIProductsSlide = () => {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`glass-effect p-6 rounded-xl transition-all duration-300 h-full
+                  className={`glass-effect p-4 rounded-xl transition-all duration-300 h-full
                     ${selectedProduct === index ? 'ring-2 ring-accent-500' : ''}`}
                 >
                   {/* Header com universo */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <IconComponent className={`w-8 h-8 ${getUniverseColor(product.universe)}`} />
+                      <IconComponent className={`w-6 h-6 ${getUniverseColor(product.universe)}`} />
                       <div>
                         <div className="text-xs text-neutral-400 mb-1">
                           {getUniverseLabel(product.universe)}
                         </div>
-                        <h3 className="text-lg font-bold">{product.name}</h3>
+                        <h3 className="text-base font-bold">{product.name}</h3>
                       </div>
                     </div>
                     <motion.div
@@ -93,25 +93,25 @@ export const AIProductsSlide = () => {
                   </div>
 
                   {/* Dor */}
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <div className="text-red-400 text-xs font-semibold mb-1">PROBLEMA:</div>
-                    <p className="text-neutral-200 text-sm leading-relaxed">
+                    <p className="text-neutral-200 text-xs leading-relaxed">
                       {product.description}
                     </p>
                   </div>
 
                   {/* Solução */}
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <div className="text-yellow-400 text-xs font-semibold mb-1">SOLUÇÃO:</div>
-                    <p className="text-neutral-200 text-sm leading-relaxed">
+                    <p className="text-neutral-200 text-xs leading-relaxed">
                       {product.solution}
                     </p>
                   </div>
 
                   {/* Benefício */}
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <div className="text-green-400 text-xs font-semibold mb-1">BENEFÍCIO:</div>
-                    <p className="text-white font-medium text-sm">
+                    <p className="text-white font-medium text-xs">
                       {product.benefit}
                     </p>
                   </div>
@@ -126,15 +126,15 @@ export const AIProductsSlide = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 border-t border-neutral-700">
-                      <h4 className="text-sm font-semibold text-neutral-400 mb-3">
+                    <div className="pt-3 border-t border-neutral-700">
+                      <h4 className="text-xs font-semibold text-neutral-400 mb-2">
                         Funcionalidades Principais:
                       </h4>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-1 mb-3">
                         {product.features.map((feature, fIndex) => (
                           <span
                             key={fIndex}
-                            className="px-3 py-1 bg-accent-500/20 text-accent-400 
+                            className="px-2 py-1 bg-accent-500/20 text-accent-400 
                                      rounded-full text-xs font-medium"
                           >
                             {feature}
@@ -142,10 +142,10 @@ export const AIProductsSlide = () => {
                         ))}
                       </div>
                       
-                      <h4 className="text-sm font-semibold text-neutral-400 mb-2">
+                      <h4 className="text-xs font-semibold text-neutral-400 mb-2">
                         Stack Tecnológica:
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1">
                         {product.technologies.map((tech, tIndex) => (
                           <span
                             key={tIndex}
@@ -168,9 +168,9 @@ export const AIProductsSlide = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="text-center mt-8"
+          className="text-center mt-4"
         >
-          <p className="text-sm text-neutral-400">
+          <p className="text-xs text-neutral-400">
             Clique em cada solução para ver detalhes técnicos
           </p>
         </motion.div>

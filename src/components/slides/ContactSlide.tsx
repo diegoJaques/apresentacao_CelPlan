@@ -15,7 +15,7 @@ export const ContactSlide = () => {
     if (qrRef.current) {
       // Gerar QR Code no canvas
       QRCode.toCanvas(qrRef.current, whatsappUrl, {
-        width: 192,
+        width: 140,
         margin: 0,
         color: {
           dark: '#1e293b',
@@ -34,7 +34,7 @@ export const ContactSlide = () => {
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-display font-bold mb-4"
+          className="text-3xl font-display font-bold mb-2"
         >
           <span className="gradient-text">Vamos Transformar Juntos</span>
         </motion.h2>
@@ -43,36 +43,36 @@ export const ContactSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-xl text-neutral-300 mb-12 max-w-2xl mx-auto"
+          className="text-base text-neutral-300 mb-4 max-w-2xl mx-auto"
         >
           Entre em contato e descubra como podemos acelerar a transformação digital do seu negócio
         </motion.p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 gap-3 max-w-4xl mx-auto mb-4">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="space-y-4"
+            className="space-y-3"
           >
             <motion.a
               href={`mailto:${contactInfo.email}`}
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-4 rounded-xl flex items-center gap-4 
+              className="glass-effect p-2 rounded-xl flex items-center gap-2 
                        hover:bg-white/10 transition-all duration-300"
             >
-              <Mail className="w-6 h-6 text-brand-500" />
-              <span>{contactInfo.email}</span>
+              <Mail className="w-5 h-5 text-brand-500" />
+              <span className="text-sm">{contactInfo.email}</span>
             </motion.a>
 
             <motion.a
               href={`tel:${contactInfo.phone}`}
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-4 rounded-xl flex items-center gap-4 
+              className="glass-effect p-2 rounded-xl flex items-center gap-2 
                        hover:bg-white/10 transition-all duration-300"
             >
-              <Phone className="w-6 h-6 text-primary-500" />
-              <span>{contactInfo.phone}</span>
+              <Phone className="w-5 h-5 text-primary-500" />
+              <span className="text-sm">{contactInfo.phone}</span>
             </motion.a>
 
             <motion.a
@@ -80,11 +80,11 @@ export const ContactSlide = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-4 rounded-xl flex items-center gap-4 
+              className="glass-effect p-2 rounded-xl flex items-center gap-2 
                        hover:bg-white/10 transition-all duration-300"
             >
-              <Globe className="w-6 h-6 text-accent-500" />
-              <span>{contactInfo.website}</span>
+              <Globe className="w-5 h-5 text-accent-500" />
+              <span className="text-sm">{contactInfo.website}</span>
             </motion.a>
           </motion.div>
 
@@ -92,29 +92,29 @@ export const ContactSlide = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
-            className="space-y-4"
+            className="space-y-3"
           >
-            <div className="glass-effect p-4 rounded-xl">
-              <div className="flex items-center gap-4 mb-2">
-                <MapPin className="w-6 h-6 text-brand-500" />
+            <div className="glass-effect p-2 rounded-xl">
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin className="w-5 h-5 text-brand-500" />
                 <span className="font-semibold">Escritórios</span>
               </div>
-              <div className="text-sm text-neutral-300 space-y-1 ml-10">
+              <div className="text-xs text-neutral-300 space-y-1 ml-8">
                 <p>{contactInfo.address.brazil}</p>
                 <p>{contactInfo.address.usa}</p>
               </div>
             </div>
 
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-3 justify-center">
               <motion.a
                 href="https://www.linkedin.com/company/celplan/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="glass-effect p-4 rounded-full hover:bg-white/10"
+                className="glass-effect p-2 rounded-full hover:bg-white/10"
               >
-                <Linkedin className="w-6 h-6 text-primary-500" />
+                <Linkedin className="w-5 h-5 text-primary-500" />
               </motion.a>
               <motion.a
                 href={`https://github.com/${contactInfo.social.github}`}
@@ -122,9 +122,9 @@ export const ContactSlide = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: -360 }}
                 transition={{ duration: 0.5 }}
-                className="glass-effect p-4 rounded-full hover:bg-white/10"
+                className="glass-effect p-2 rounded-full hover:bg-white/10"
               >
-                <Github className="w-6 h-6 text-neutral-400" />
+                <Github className="w-5 h-5 text-neutral-400" />
               </motion.a>
             </div>
           </motion.div>
@@ -135,7 +135,7 @@ export const ContactSlide = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <button className="button-accent text-lg px-8 py-4 shadow-xl hover:shadow-accent-500/30">
+          <button className="button-accent text-sm px-5 py-2 shadow-xl hover:shadow-accent-500/30">
             Vamos Transformar Seu Negócio com IA
           </button>
         </motion.div>
@@ -144,15 +144,15 @@ export const ContactSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-12"
+          className="mt-4"
         >
-          <div className="glass-effect p-6 rounded-2xl inline-block">
-            <div className="flex items-center gap-3 mb-4">
+          <div className="glass-effect p-3 rounded-2xl inline-block">
+            <div className="flex items-center gap-2 mb-3">
               <MessageCircle className="w-6 h-6 text-green-500" />
-              <span className="text-lg font-semibold">WhatsApp Direto - Diego</span>
+              <span className="text-base font-semibold">WhatsApp Direto - Diego</span>
             </div>
             <canvas ref={qrRef} className="bg-white p-2 rounded-xl" />
-            <p className="text-sm text-neutral-300 mt-3">
+            <p className="text-xs text-neutral-300 mt-2">
               Escaneie para iniciar conversa
             </p>
             <p className="text-xs text-neutral-400 mt-1">
@@ -166,7 +166,7 @@ export const ContactSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="mt-8"
+          className="mt-4"
         >
           <p className="text-xs text-neutral-400 text-center">
             Pressione <kbd className="px-2 py-1 bg-white/10 rounded text-accent-500 font-bold">F11</kbd> para sair da tela cheia
