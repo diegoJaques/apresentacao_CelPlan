@@ -12,14 +12,6 @@ export const VisaoSlide = () => {
     setSelectedImage({ src, alt, title });
     setModalOpen(true);
   };
-  const epis = [
-    { name: "Capacetes", icon: "🪖" },
-    { name: "Óculos", icon: "🥽" },
-    { name: "Máscaras", icon: "😷" },
-    { name: "Luvas", icon: "🧤" },
-    { name: "Coletes", icon: "🦺" },
-    { name: "Botas", icon: "👢" }
-  ];
 
   const models = [
     { name: "YOLOv8n", size: "6MB", fps: "50+", color: "text-green-400" },

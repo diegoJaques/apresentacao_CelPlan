@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Slide } from '../Slide';
-import { Antenna, Network, CheckCircle, Clock, Users, Zap, Building2, Layers } from 'lucide-react';
+import { Antenna, Network, CheckCircle, Zap, Building2, Layers } from 'lucide-react';
 import { ImageModal, ClickableImage } from '../ImageModal';
 
 export const SerbomSlide = () => {

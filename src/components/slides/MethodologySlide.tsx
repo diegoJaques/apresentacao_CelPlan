@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Slide } from '../Slide';
 import { methodology } from '../../data/content';
-import { GraduationCap, Handshake, Target, RefreshCw, Calendar } from 'lucide-react';
+import { GraduationCap, Handshake, Target, RefreshCw } from 'lucide-react';
 
 export const MethodologySlide = () => {
   const getIcon = (iconType: string) => {
