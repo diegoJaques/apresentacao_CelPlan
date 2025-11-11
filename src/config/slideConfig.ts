@@ -51,7 +51,7 @@ export const slidesConfig: SlideConfig[] = [
     id: 'ai-products',
     name: 'Soluções de IA',
     component: 'AIProductsSlide',
-    enabled: true,
+    enabled: false,
     category: 'technical',
     tags: ['ai', 'products', 'all']
   },
@@ -96,6 +96,22 @@ export const slidesConfig: SlideConfig[] = [
     tags: ['case', 'ai', 'vision', 'safety']
   },
   {
+    id: 'tracking',
+    name: 'Busca Forense - ReID',
+    component: 'TrackingSlide',
+    enabled: true,
+    category: 'cases',
+    tags: ['case', 'ai', 'vision', 'tracking', 'reid', 'transit']
+  },
+  {
+    id: 'rumo',
+    name: 'Rumo - GeoInsight',
+    component: 'RumoSlide',
+    enabled: true,
+    category: 'cases',
+    tags: ['case', 'ai', 'gis', 'ocr', 'infrastructure']
+  },
+  {
     id: 'methodology',
     name: 'Metodologia',
     component: 'MethodologySlide',
@@ -118,21 +134,21 @@ export const presentationProfiles: PresentationProfile[] = [
   {
     name: 'Completa',
     description: 'Apresentação completa com todos os slides',
-    enabledSlides: ['intro', 'about', 'markets', 'projects', 'ai-products', 
-                   'serbom', 'cellwireless', 'oportunidades', 'rag', 'visao', 
+    enabledSlides: ['intro', 'about', 'markets', 'projects',
+                   'serbom', 'cellwireless', 'oportunidades', 'rag', 'visao', 'tracking', 'rumo',
                    'methodology', 'contact']
   },
   {
     name: 'Telecomunicações',
     description: 'Foco em projetos e cases de telecom',
-    enabledSlides: ['intro', 'about', 'markets', 'projects', 'ai-products', 
+    enabledSlides: ['intro', 'about', 'markets', 'projects',
                    'serbom', 'cellwireless', 'methodology', 'contact']
   },
   {
     name: 'Inteligência Artificial',
     description: 'Foco em soluções de IA',
-    enabledSlides: ['intro', 'about', 'ai-products', 'oportunidades', 
-                   'rag', 'visao', 'methodology', 'contact']
+    enabledSlides: ['intro', 'about', 'oportunidades',
+                   'rag', 'visao', 'tracking', 'rumo', 'methodology', 'contact']
   },
   {
     name: 'Energia',
@@ -143,7 +159,7 @@ export const presentationProfiles: PresentationProfile[] = [
   {
     name: 'Executiva',
     description: 'Versão resumida para apresentações executivas',
-    enabledSlides: ['intro', 'about', 'markets', 'ai-products', 'contact']
+    enabledSlides: ['intro', 'about', 'markets', 'contact']
   }
 ];
 

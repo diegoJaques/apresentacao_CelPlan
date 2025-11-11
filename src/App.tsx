@@ -14,6 +14,8 @@ import { CellWirelessSlide } from './components/slides/CellWirelessSlide';
 import { OportunidadesSlide } from './components/slides/OportunidadesSlide';
 import { RAGSlide } from './components/slides/RAGSlide';
 import { VisaoSlide } from './components/slides/VisaoSlide';
+import { TrackingSlide } from './components/slides/TrackingSlide';
+import { RumoSlide } from './components/slides/RumoSlide';
 import { MethodologySlide } from './components/slides/MethodologySlide';
 import { ContactSlide } from './components/slides/ContactSlide';
 import { slidesConfig, getActiveSlides, presentationProfiles } from './config/slideConfig';
@@ -38,6 +40,8 @@ function App() {
     OportunidadesSlide,
     RAGSlide,
     VisaoSlide,
+    TrackingSlide,
+    RumoSlide,
     MethodologySlide,
     ContactSlide
   };
@@ -56,11 +60,12 @@ function App() {
     'about': "Detalhes sobre a empresa.\n• Fundada em 1992\n• 150+ funcionários\n• Certificações ISO\n• Investimento em P&D",
     'markets': "Mercados de atuação.\n• Telecomunicações (5G/4G)\n• Smart Cities\n• Energia Inteligente\n• IA e Machine Learning",
     'projects': "Projetos de transformação digital.\n• ANPTrilhos/USTDA - Eficiência metro-ferroviária\n• EDP Vila Velha - Smart Grid LTE\n• Vale EFVM - Ferrovia 4.0",
-    'ai-products': "Soluções de IA desenvolvidas pela CelPlan.\n• Sistema de Captação\n• Portal RAG\n• Transcrição com IA\n• VISAO - Detecção de EPIs",
     'cellwireless': "Case ANATEL - CellWireless SM.\n• ~40 unidades fornecidas\n• Monitoração 24/7 autônoma\n• Geolocalização TDOA\n• Enfatizar modernização do órgão regulador",
     'oportunidades': "Sistema Multiagentes em produção.\n• Em uso interno CelPlan e BlackBox\n• Análise inteligente de editais\n• Decisão GO/NO-GO automatizada\n• Redução de 75% no tempo de análise",
     'rag': "Plataforma RAG em produção.\n• Desenvolvida e em uso para clientes\n• 90% de redução no tempo de busca\n• Respostas 100% baseadas em documentos\n• Segurança e privacidade garantidas",
     'visao': "Sistema VISÃO - Parceria Tellus.\n• Em desenvolvimento\n• Deep Learning + OCR\n• Análise de produtividade\n• Conformidade de segurança\n• 6 tipos de EPIs detectados",
+    'tracking': "Sistema de ReID para recuperação de placas.\n• MOSTRAR foto B (problema): Motoqueiro tampa placa = multa perdida\n• MOSTRAR foto A (solução): Sistema recupera placa de câmera anterior\n• Filtro espaço-temporal reduz busca de 15min para ~2min (900s → 108s)\n• GPU sob demanda (custo-eficiente, não 24/7)\n• Arquitetura robusta com fila SQS\n• Precisão: busca em 12 candidatos vs 10.000",
+    'rumo': "GeoInsight Platform - Análise geotécnica automatizada.\n• MOSTRAR dashboard: Visão geral de projetos e sondagens processadas\n• MOSTRAR mapa de calor: Densidade espacial e análise de padrões\n• Workflow em 5 passos: Upload → Classificação → OCR → Parsing IA → Visualização GIS\n• IA Híbrida: Regex + Gemini LLM para máxima precisão\n• Score de confiança 0-100 (validação automática)\n• 3 tipos de sondagem: SP (vermelho), ST (amarelo), SM (verde)\n• PostGIS: Análise geoespacial avançada com interpolação\n• Elimina digitação manual + reduz erros + visualização espacial\n• Exportação múltipla: CSV, Excel, GeoJSON",
     'methodology': "Metodologia de trabalho.\n• Abordagem centrada em problemas\n• Desenvolvimento ágil\n• Arquitetura escalável",
     'contact': "Informações de contato.\n• Incentivar agendamento de reunião\n• Disponibilizar QR Code\n• Mencionar canais de comunicação"
   };
