@@ -112,6 +112,14 @@ export const slidesConfig: SlideConfig[] = [
     tags: ['case', 'ai', 'gis', 'ocr', 'infrastructure']
   },
   {
+    id: 'moe',
+    name: 'MOE - Expertise TIC',
+    component: 'MOESlide',
+    enabled: true,
+    category: 'core',
+    tags: ['moe', 'services', 'telecom', 'all']
+  },
+  {
     id: 'methodology',
     name: 'Metodologia',
     component: 'MethodologySlide',
@@ -136,13 +144,13 @@ export const presentationProfiles: PresentationProfile[] = [
     description: 'Apresentação completa com todos os slides',
     enabledSlides: ['intro', 'about', 'markets', 'projects',
                    'serbom', 'cellwireless', 'oportunidades', 'rag', 'visao', 'tracking', 'rumo',
-                   'methodology', 'contact']
+                   'moe', 'methodology', 'contact']
   },
   {
     name: 'Telecomunicações',
     description: 'Foco em projetos e cases de telecom',
     enabledSlides: ['intro', 'about', 'markets', 'projects',
-                   'serbom', 'cellwireless', 'methodology', 'contact']
+                   'serbom', 'cellwireless', 'moe', 'methodology', 'contact']
   },
   {
     name: 'Inteligência Artificial',

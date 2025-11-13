@@ -16,6 +16,7 @@ import { RAGSlide } from './components/slides/RAGSlide';
 import { VisaoSlide } from './components/slides/VisaoSlide';
 import { TrackingSlide } from './components/slides/TrackingSlide';
 import { RumoSlide } from './components/slides/RumoSlide';
+import { MOESlide } from './components/slides/MOESlide';
 import { MethodologySlide } from './components/slides/MethodologySlide';
 import { ContactSlide } from './components/slides/ContactSlide';
 import { slidesConfig, getActiveSlides, presentationProfiles } from './config/slideConfig';
@@ -42,6 +43,7 @@ function App() {
     VisaoSlide,
     TrackingSlide,
     RumoSlide,
+    MOESlide,
     MethodologySlide,
     ContactSlide
   };
@@ -66,6 +68,7 @@ function App() {
     'visao': "Sistema VISÃO - Parceria Tellus.\n• Em desenvolvimento\n• Deep Learning + OCR\n• Análise de produtividade\n• Conformidade de segurança\n• 6 tipos de EPIs detectados",
     'tracking': "Sistema de ReID para recuperação de placas.\n• MOSTRAR foto B (problema): Motoqueiro tampa placa = multa perdida\n• MOSTRAR foto A (solução): Sistema recupera placa de câmera anterior\n• Filtro espaço-temporal reduz busca de 15min para ~2min (900s → 108s)\n• GPU sob demanda (custo-eficiente, não 24/7)\n• Arquitetura robusta com fila SQS\n• Precisão: busca em 12 candidatos vs 10.000",
     'rumo': "GeoInsight Platform - Análise geotécnica automatizada.\n• MOSTRAR dashboard: Visão geral de projetos e sondagens processadas\n• MOSTRAR mapa de calor: Densidade espacial e análise de padrões\n• Workflow em 5 passos: Upload → Classificação → OCR → Parsing IA → Visualização GIS\n• IA Híbrida: Regex + Gemini LLM para máxima precisão\n• Score de confiança 0-100 (validação automática)\n• 3 tipos de sondagem: SP (vermelho), ST (amarelo), SM (verde)\n• PostGIS: Análise geoespacial avançada com interpolação\n• Elimina digitação manual + reduz erros + visualização espacial\n• Exportação múltipla: CSV, Excel, GeoJSON",
+    'moe': "MOE - Mão de Obra Especializada para TIC.\n• Enfatizar 3 pilares principais: Redes & Infraestrutura, Gestão & Execução, TI/Dados/DevOps\n• Clientes de referência: Claro, TIM, Nokia, Huawei, SBA, Unifique\n• PILAR 1 (DNA): Engenharia de RF, CORE de rede, otimização, times QUAD\n• PILAR 2 (Garantia): PMO, mapeamento de processos, governança QA\n• PILAR 3 (Futuro): Data Science/BI, DevOps, arquitetos cloud/on-premise\n• Diferenciais: Expertise comprovada, equipes gerenciadas (não só alocação), resultados mensuráveis\n• Mais que alocação: entregamos gestão completa e know-how",
     'methodology': "Metodologia de trabalho.\n• Abordagem centrada em problemas\n• Desenvolvimento ágil\n• Arquitetura escalável",
     'contact': "Informações de contato.\n• Incentivar agendamento de reunião\n• Disponibilizar QR Code\n• Mencionar canais de comunicação"
   };

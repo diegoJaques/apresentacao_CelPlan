@@ -1,0 +1,69 @@
+Conteúdo de Texto do Slide
+Título Principal:
+
+Expertise Completa em MOE para Projetos de TIC
+Subtítulo (A Declaração de Autoridade):
+
+Do Core da Rede à Inteligência de Dados: O Parceiro Estratégico para sua Operação.
+Corpo do Slide (Organizado por Domínios de Atuação):
+
+O corpo deve ser dividido em "pilares" para mostrar organização e amplitude. Use ícones fortes para cada pilar.
+
+(Pilar 1) 🌐 Redes & Infraestrutura (Nosso DNA)
+
+Engenharia de RF (Rádio Frequência)
+
+Especialistas em CORE de Rede
+
+Otimização e Performance
+
+Times de Campo (QUAD) para instalação e manutenção
+
+(Pilar 2) ⚙️ Gestão & Execução (Sua Garantia)
+
+Gerentes de Projetos (PMO)
+
+Especialistas em Mapeamento de Processos
+
+Governança e Qualidade (QA)
+
+(Pilar 3) ☁️ TI, Dados & DevOps (O Futuro)
+
+Consultores de Dados (Data Science & BI)
+
+Engenheiros de DevOps
+
+Arquitetos de Soluções (Cloud e On-premise)
+
+Chamada Final (Rodapé do Slide):
+
+CelPlan MOE: Mais do que alocação. Entregamos equipes gerenciadas, know-how e resultados comprovados.
+
+Sugestão de Imagem Detalhada
+Para evitar a associação exclusiva com "telecom" (como uma foto de antena), a imagem precisa ser mais abstrata, abrangente e tecnológica.
+
+Conceito da Imagem: "O Hub de Comando de TIC"
+
+Descrição Detalhada: Uma imagem composta (fotomanipulação) profissional com um visual high-tech, em tons de azul escuro, branco e toques de ciano ou verde.
+
+Plano de Fundo (Background): Uma sala de controle de operações (NOC) ou um Data Center moderno, visto de forma levemente desfocada (bokeh), para dar profundidade e transmitir a ideia de infraestrutura robusta.
+
+Sobreposição (Overlay): Em primeiro plano, flutuando sobre o fundo, elementos gráficos que representam os "Pilares de Expertise":
+
+Para Redes: Ondas de sinal (RF) estilizadas e um diagrama de topologia de rede (CORE).
+
+Para Dados: Um dashboard holográfico com gráficos de análise (representando "Consultores de Dados").
+
+Para DevOps: O símbolo do "loop infinito" de DevOps e ícones de contêineres (Docker/Kubernetes).
+
+Elemento Central: Nenhum elemento deve dominar o outro. A ideia é mostrar que RF, Dados e DevOps coexistem e estão interligados por fluxos de dados digitais (linhas de luz finas conectando os elementos).
+
+Tom: A imagem deve ser "limpa", profissional e corporativa. Deve evocar a sensação de controle, inteligência e gerenciamento centralizado.
+
+Por que essa imagem funciona:
+
+Ela não mostra um cliente específico.
+
+Ela não foca apenas em torres ou hardware de telecom.
+
+Ela combina visualmente os conceitos de Rede, Dados e Operações de TI, exatamente como o texto do slide propõe.
