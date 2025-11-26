@@ -112,6 +112,14 @@ export const slidesConfig: SlideConfig[] = [
     tags: ['case', 'ai', 'gis', 'ocr', 'infrastructure']
   },
   {
+    id: 'celphone',
+    name: 'CelPhone™ - QoE',
+    component: 'CelPhoneSlide',
+    enabled: true,
+    category: 'cases',
+    tags: ['case', 'telecom', 'qoe', 'monitoring', 'mobile']
+  },
+  {
     id: 'moe',
     name: 'MOE - Expertise TIC',
     component: 'MOESlide',
@@ -143,14 +151,14 @@ export const presentationProfiles: PresentationProfile[] = [
     name: 'Completa',
     description: 'Apresentação completa com todos os slides',
     enabledSlides: ['intro', 'about', 'markets', 'projects',
-                   'serbom', 'cellwireless', 'oportunidades', 'rag', 'visao', 'tracking', 'rumo',
+                   'serbom', 'cellwireless', 'oportunidades', 'rag', 'visao', 'tracking', 'rumo', 'celphone',
                    'moe', 'methodology', 'contact']
   },
   {
     name: 'Telecomunicações',
     description: 'Foco em projetos e cases de telecom',
     enabledSlides: ['intro', 'about', 'markets', 'projects',
-                   'serbom', 'cellwireless', 'moe', 'methodology', 'contact']
+                   'serbom', 'cellwireless', 'celphone', 'moe', 'methodology', 'contact']
   },
   {
     name: 'Inteligência Artificial',
