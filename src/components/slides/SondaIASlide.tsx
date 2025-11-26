@@ -59,7 +59,7 @@ export const SondaIASlide = () => {
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="text-center mb-3"
         >
           <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 px-4 py-2 rounded-full mb-4">
             <Map className="w-5 h-5" />
@@ -75,7 +75,7 @@ export const SondaIASlide = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid lg:grid-cols-3 gap-3 mb-3">
           {/* Problema e Solução */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -84,7 +84,7 @@ export const SondaIASlide = () => {
             className="lg:col-span-2"
           >
             <div className="glass-effect p-6 rounded-xl h-full">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="grid md:grid-cols-2 gap-3 mb-3">
                 {/* O Desafio */}
                 <div>
                   <h3 className="text-lg font-bold text-red-400 mb-3">O DESAFIO</h3>
@@ -230,7 +230,7 @@ export const SondaIASlide = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95 }}
-          className="glass-effect p-4 rounded-xl mb-6"
+          className="glass-effect p-4 rounded-xl mb-3"
         >
           <h3 className="text-sm font-bold text-neutral-400 mb-3 text-center">DIFERENCIAIS DA PLATAFORMA</h3>
           <div className="grid md:grid-cols-5 gap-3">
@@ -304,7 +304,7 @@ export const SondaIASlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="text-center mt-6"
+          className="text-center mt-3"
         >
           <p className="text-sm text-neutral-300 italic">
             "Transformando análise geotécnica manual em inteligência automatizada para decisões mais rápidas e precisas"

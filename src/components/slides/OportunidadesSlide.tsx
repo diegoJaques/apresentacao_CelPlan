@@ -48,7 +48,7 @@ export const OportunidadesSlide = () => {
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="text-center mb-3"
         >
           <div className="inline-flex items-center gap-2 bg-purple-500/20 text-purple-400 px-4 py-2 rounded-full mb-4">
             <Bot className="w-5 h-5" />
@@ -64,7 +64,7 @@ export const OportunidadesSlide = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid lg:grid-cols-3 gap-3 mb-3">
           {/* Sistema Multiagentes */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ export const OportunidadesSlide = () => {
                 ARQUITETURA MULTIAGENTES
               </h3>
               
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
+              <div className="grid md:grid-cols-3 gap-3 mb-3">
                 {agents.map((agent, index) => {
                   const Icon = agent.icon;
                   return (
@@ -259,7 +259,7 @@ export const OportunidadesSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="text-center mt-6"
+          className="text-center mt-3"
         >
           <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 px-4 py-2 rounded-full">
             <TrendingUp className="w-4 h-4" />
