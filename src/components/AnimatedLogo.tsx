@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 
-export const AnimatedLogo = () => {
+interface AnimatedLogoProps {
+  size?: number;
+}
+
+export const AnimatedLogo = ({ size = 192 }: AnimatedLogoProps) => {
   return (
     <motion.div
       initial={{ scale: 0, rotate: -180 }}
       animate={{ scale: 1, rotate: 0 }}
-      transition={{ 
+      transition={{
         duration: 1.2,
         type: "spring",
         stiffness: 100
@@ -15,11 +19,13 @@ export const AnimatedLogo = () => {
       <motion.img
         src="/images/celplan-logo.png"
         alt="CelPlan"
-        className="h-48 md:h-56 w-auto mb-6 logo-enhanced"
+        className="mb-6 logo-enhanced"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         style={{
+          height: size,
+          width: 'auto',
           imageRendering: 'auto',
           backfaceVisibility: 'hidden',
           transform: 'translateZ(0)',
