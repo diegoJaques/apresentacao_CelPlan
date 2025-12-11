@@ -6,14 +6,16 @@ interface NavigationProps {
   currentSlide: number;
   totalSlides: number;
   onNavigate: (index: number) => void;
-  slideNames: string[];
+  slides: Array<{ name: string; id: string }>;
+  isReadOnly?: boolean;
 }
 
 export const Navigation = ({
   currentSlide,
   totalSlides,
   onNavigate,
-  slideNames
+  slides,
+  isReadOnly = false
 }: NavigationProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -53,45 +55,49 @@ export const Navigation = ({
         </motion.div>
       </div>
 
-      {/* Menu Toggle */}
-      <div className="fixed top-8 left-8 z-30">
-        <motion.button
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="glass-effect p-3 rounded-full hover:bg-white/10 transition-colors"
-        >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </motion.button>
-      </div>
-
-      {/* Slide Menu */}
-      <motion.div
-        initial={{ x: '-100%' }}
-        animate={{ x: menuOpen ? 0 : '-100%' }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="fixed left-0 top-0 h-full w-80 glass-effect z-20 p-8 pt-24 overflow-y-auto"
-      >
-        <h3 className="text-xl font-bold mb-6 gradient-text">Navegação</h3>
-        <div className="space-y-2">
-          {slideNames.map((name, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                onNavigate(index);
-                setMenuOpen(false);
-              }}
-              className={`w-full text-left px-4 py-3 rounded-lg transition-all 
-                ${currentSlide === index 
-                  ? 'bg-accent-500/20 text-accent-500 font-semibold' 
-                  : 'hover:bg-white/10 text-gray-300'}`}
-            >
-              <span className="text-sm opacity-50 mr-2">{index + 1}.</span>
-              {name}
-            </button>
-          ))}
+      {/* Menu Toggle - Oculto em modo read-only */}
+      {!isReadOnly && (
+        <div className="fixed top-8 left-8 z-30">
+          <motion.button
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="glass-effect p-3 rounded-full hover:bg-white/10 transition-colors"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </motion.button>
         </div>
-      </motion.div>
+      )}
+
+      {/* Slide Menu - Oculto em modo read-only */}
+      {!isReadOnly && (
+        <motion.div
+          initial={{ x: '-100%' }}
+          animate={{ x: menuOpen ? 0 : '-100%' }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          className="fixed left-0 top-0 h-full w-80 glass-effect z-20 p-8 pt-24 overflow-y-auto"
+        >
+          <h3 className="text-xl font-bold mb-6 gradient-text">Navegação</h3>
+          <div className="space-y-2">
+            {slides.map((slide, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  onNavigate(index);
+                  setMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg transition-all
+                  ${currentSlide === index
+                    ? 'bg-accent-500/20 text-accent-500 font-semibold'
+                    : 'hover:bg-white/10 text-gray-300'}`}
+              >
+                <span className="text-sm opacity-50 mr-2">{index + 1}.</span>
+                {slide.name}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      )}
 
       {/* Keyboard Instructions */}
       <motion.div

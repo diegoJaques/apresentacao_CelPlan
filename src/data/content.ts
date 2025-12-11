@@ -1,5 +1,5 @@
 export const companyInfo = {
-  name: "CelPlan International",
+  name: "CelPlan",
   tagline: "Global Technology Solutions",
   subtitle: "32 Anos de Inovação e Excelência Tecnológica",
   founded: 1992,
@@ -105,7 +105,7 @@ export const products = {
 };
 
 export const methodology = {
-  title: "Metodologia Colaborativa que Garante ROI",
+  title: "Metodologia Colaborativa que Garante RoI",
   subtitle: "A única metodologia que educa antes de implementar",
   recentCase: {
     title: "Mais Recente: Treinamento Setor Energia",

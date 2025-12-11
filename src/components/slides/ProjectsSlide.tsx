@@ -8,6 +8,7 @@ export const ProjectsSlide = () => {
       icon: Train,
       title: "Modernização do Transporte sobre Trilhos",
       client: "ANPTrilhos/USTDA",
+      members: "Metrô SP • Metrô RJ • VLT Carioca • CPTM • SuperVia • Metrô DF • Metrô BH • Metrôfor",
       problem: "Custos energéticos comprometendo sustentabilidade operacional",
       solution: "Roadmaps de gestão de ativos e eficiência energética",
       results: [
@@ -87,9 +88,14 @@ export const ProjectsSlide = () => {
                   <h3 className="text-xl font-bold mb-2 text-white">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-brand-400 font-semibold mb-4">
+                  <p className="text-sm text-brand-400 font-semibold mb-2">
                     {project.client}
                   </p>
+                  {project.members && (
+                    <p className="text-xs text-neutral-400 mb-4 italic">
+                      {project.members}
+                    </p>
+                  )}
 
                   {/* Problema */}
                   <div className="mb-4">

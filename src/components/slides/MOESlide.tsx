@@ -96,7 +96,7 @@ export const MOESlide = () => {
           </div>
 
           <h2 className="text-4xl font-display font-bold mb-2">
-            <span className="gradient-text">Expertise Completa em MOE</span>
+            <span className="gradient-text">Expertise Completa em MoE</span>
           </h2>
 
           <p className="text-lg text-neutral-300 mb-2">

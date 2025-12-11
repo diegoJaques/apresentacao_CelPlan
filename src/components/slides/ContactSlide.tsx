@@ -4,12 +4,23 @@ import { Slide } from '../Slide';
 import { contactInfo } from '../../data/content';
 import { Mail, Phone, Globe, MapPin, Linkedin, Github, MessageCircle } from 'lucide-react';
 import QRCode from 'qrcode';
+import type { VendorInfo } from '../../types/api';
 
-export const ContactSlide = () => {
+interface ContactSlideProps {
+  vendorInfo?: VendorInfo;
+}
+
+export const ContactSlide = ({ vendorInfo }: ContactSlideProps = {}) => {
   const qrRef = useRef<HTMLCanvasElement>(null);
-  const whatsappNumber = '+5519983760039'; // Diego Jaques - CelPlan
-  const whatsappMessage = 'Olá Diego! Vi a apresentação da CelPlan e gostaria de saber mais sobre as soluções de IA.';
-  const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Usar dados do vendedor se fornecidos, senão usar dados padrão
+  const displayName = vendorInfo?.name || 'Diego Jaques';
+  const displayEmail = vendorInfo?.email || contactInfo.email;
+  const displayPhone = vendorInfo?.phone || contactInfo.phone;
+  const displayWhatsApp = vendorInfo?.whatsapp || '+5519983760039';
+
+  const whatsappMessage = `Olá ${displayName.split(' ')[0]}! Vi a apresentação da CelPlan e gostaria de saber mais sobre as soluções de IA.`;
+  const whatsappUrl = `https://wa.me/${displayWhatsApp.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {
     if (qrRef.current) {
@@ -26,7 +37,7 @@ export const ContactSlide = () => {
         if (error) console.error('Erro ao gerar QR Code:', error);
       });
     }
-  }, []);
+  }, [whatsappUrl]);
 
   return (
     <Slide background="dark">
@@ -56,23 +67,23 @@ export const ContactSlide = () => {
             className="space-y-3"
           >
             <motion.a
-              href={`mailto:${contactInfo.email}`}
+              href={`mailto:${displayEmail}`}
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-2 rounded-xl flex items-center gap-2 
+              className="glass-effect p-2 rounded-xl flex items-center gap-2
                        hover:bg-white/10 transition-all duration-300"
             >
               <Mail className="w-5 h-5 text-brand-500" />
-              <span className="text-sm">{contactInfo.email}</span>
+              <span className="text-sm">{displayEmail}</span>
             </motion.a>
 
             <motion.a
-              href={`tel:${contactInfo.phone}`}
+              href={`tel:${displayPhone}`}
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-2 rounded-xl flex items-center gap-2 
+              className="glass-effect p-2 rounded-xl flex items-center gap-2
                        hover:bg-white/10 transition-all duration-300"
             >
               <Phone className="w-5 h-5 text-primary-500" />
-              <span className="text-sm">{contactInfo.phone}</span>
+              <span className="text-sm">{displayPhone}</span>
             </motion.a>
 
             <motion.a
@@ -149,14 +160,14 @@ export const ContactSlide = () => {
           <div className="glass-effect p-3 rounded-2xl inline-block">
             <div className="flex items-center gap-2 mb-3">
               <MessageCircle className="w-6 h-6 text-green-500" />
-              <span className="text-base font-semibold">WhatsApp Direto - Diego</span>
+              <span className="text-base font-semibold">WhatsApp Direto - {displayName.split(' ')[0]}</span>
             </div>
             <canvas ref={qrRef} className="bg-white p-2 rounded-xl" />
             <p className="text-xs text-neutral-300 mt-2">
               Escaneie para iniciar conversa
             </p>
             <p className="text-xs text-neutral-400 mt-1">
-              {whatsappNumber}
+              {displayWhatsApp}
             </p>
           </div>
         </motion.div>

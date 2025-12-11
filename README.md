@@ -1,23 +1,36 @@
-# CelPlan International - Apresentação Web Moderna
+# CelPlan International - Sistema de Apresentações Customizadas
 
-Uma apresentação web moderna e interativa desenvolvida para a CelPlan International, demonstrando 32 anos de inovação tecnológica e expertise em soluções de IA.
+Uma apresentação web moderna e interativa com sistema completo de autenticação e customização para vendedores.
 
-## 🚀 Características
+## Funcionalidades
 
-### ✨ Design Moderno
-- Tema escuro com gradientes elegantes
-- Paleta de cores CelPlan (azul escuro + dourado)
-- Tipografia moderna (Inter + Montserrat)
-- Efeitos glass morphism e animações fluidas
+### Modo Padrão (Original)
+Apresentação interativa completa com 32 anos de inovação tecnológica da CelPlan.
 
-### 🎯 Tecnologias Utilizadas
-- **React 18** + TypeScript
-- **Framer Motion** para animações
-- **Tailwind CSS** para estilização
-- **Lucide React** para ícones
-- **Vite** como build tool
+### Modo Customizado (Novo)
+- **Time Comercial:** Login, customização de slides e dados de contato
+- **Cliente:** Acesso via URL única com palavra de segurança
+- **Personalização:** Última página mostra dados do vendedor responsável
 
-## 🎮 Controles da Apresentação
+## Tecnologias
+
+### Frontend
+- React 19 + TypeScript
+- Vite
+- React Router DOM
+- Framer Motion
+- Tailwind CSS
+- Axios
+
+### Backend
+- Node.js + Express + TypeScript
+- PostgreSQL
+- JWT + bcryptjs
+
+### Infraestrutura
+- Docker + Traefik
+
+## Controles da Apresentação
 
 ### Navegação Básica
 - `←` / `→` - Navegar entre slides
@@ -25,34 +38,180 @@ Uma apresentação web moderna e interativa desenvolvida para a CelPlan Internat
 - `1-9` - Ir diretamente ao slide
 - `F` - Modo tela cheia
 
-### Recursos Avançados
+### Recursos Avançados (apenas modo padrão)
 - `T` - Toggle timer de apresentação
 - `N` - Toggle notas do apresentador
+- `P` - Alternar perfis de apresentação
 - `Menu` (canto superior esquerdo) - Navegação por slides
 
-## 📱 Estrutura dos Slides
+## Rotas do Sistema
 
-1. **Introdução** - Logo animado + estatísticas
-2. **Sobre a CelPlan** - História, certificações e presença global
-3. **Mercados** - Áreas de atuação com cards interativos
-4. **Soluções de IA** - Portfolio de produtos desenvolvidos
-5. **Metodologia** - Processo de desenvolvimento e inovação
-6. **Contato** - Informações para networking e negócios
+### Frontend
+- `/` - Apresentação padrão (funcionamento original)
+- `/login` - Login do time comercial
+- `/admin` - Painel administrativo (protegido)
+- `/apresentacao/:id` - Acesso do cliente
+- `/apresentacao/:id/view` - Apresentação customizada
 
-## 🛠 Como Usar
+### Backend API
+- `POST /api/auth/login` - Login vendedor
+- `POST /api/presentations` - Criar apresentação (requer auth)
+- `GET /api/presentations/:id` - Buscar apresentação
+- `POST /api/client/validate` - Validar palavra do cliente
 
+## Instalação Local
+
+### Pré-requisitos
+- Node.js 20+
+- PostgreSQL 15+ (ou Docker)
+
+### Backend
 ```bash
-# Navegar para o diretório
-cd celplan-presentation
-
-# Instalar dependências
+cd backend
 npm install
+cp .env.example .env
+# Configurar variáveis no .env
+npm run migrate
+npm run dev
+```
 
-# Iniciar servidor de desenvolvimento
+### Frontend
+```bash
+npm install
+cp .env.example .env
+# Configurar VITE_API_URL no .env
 npm run dev
 ```
 
 Acesse: http://localhost:5173
+
+## Deploy em Produção
+
+Consulte **[DEPLOY.md](./DEPLOY.md)** para instruções completas de deploy com Docker, Traefik e PostgreSQL.
+
+## Credenciais Padrão
+
+**Vendedor:**
+- Usuário: `comercial`
+- Senha: `celplan2025`
+
+**Cliente:**
+- Palavra: `celplan`
+
+IMPORTANTE: Altere em produção!
+
+## Fluxo de Uso
+
+### Vendedor:
+1. Acessa `/login`
+2. Faz login
+3. Vai para `/admin`
+4. Preenche dados e seleciona slides
+5. Gera URL única
+6. Compartilha com cliente
+
+### Cliente:
+1. Acessa URL recebida
+2. Digita palavra de segurança
+3. Visualiza apresentação customizada
+4. Vê dados do vendedor na última página
+
+## Estrutura do Projeto
+
+```
+celplan-presentation/
+├── backend/              # Backend API (Node.js + Express)
+│   ├── src/
+│   │   ├── routes/      # Auth, Presentations, Client
+│   │   ├── db/          # PostgreSQL & migrations
+│   │   ├── middleware/  # JWT auth
+│   │   └── index.ts
+│   └── Dockerfile
+│
+├── src/                  # Frontend (React + TypeScript)
+│   ├── components/
+│   │   ├── slides/      # Componentes de slides
+│   │   └── PresentationApp.tsx
+│   ├── pages/
+│   │   ├── LoginPage.tsx
+│   │   ├── AdminPanel.tsx
+│   │   ├── ClientAccessPage.tsx
+│   │   └── PresentationView.tsx
+│   ├── contexts/
+│   │   └── AuthContext.tsx
+│   ├── services/
+│   │   └── api.ts
+│   └── App.tsx          # React Router
+│
+├── DEPLOY.md            # Guia de deploy
+└── README.md            # Este arquivo
+```
+
+## Slides Disponíveis
+
+1. **Introdução** - Logo animado + estatísticas
+2. **Sobre a CelPlan** - História, certificações, presença global
+3. **Mercados** - Áreas de atuação
+4. **Projetos** - Portfolio de projetos
+5. **Cases de Sucesso:**
+   - CelPlanner™ - Planejamento RF
+   - CelPhone™ - Medição QoE
+   - CellWireless - ANATEL
+   - Sistema Multiagentes
+   - Plataforma RAG
+   - Sistema VISÃO
+   - Tracking/ReID
+   - GeoInsight (Rumo)
+   - Serbom pLTE
+6. **MOE** - Mão de Obra Especializada
+7. **Metodologia** - Processo de trabalho
+8. **Contato** - Informações de contato (personalizável)
+
+## Banco de Dados
+
+### `users`
+Credenciais dos vendedores com bcrypt
+
+### `presentations`
+Apresentações customizadas:
+- ID único (12 caracteres)
+- Dados do vendedor
+- Slides selecionados (JSONB)
+- Data de criação
+
+## Desenvolvimento
+
+### Build
+```bash
+npm run build
+```
+
+### Preview Produção
+```bash
+npm run preview
+```
+
+### Linter
+```bash
+npm run lint
+```
+
+## Segurança
+
+- JWT com expiração 24h
+- Bcrypt (salt 10) para senhas
+- Validação de palavra de segurança
+- Rotas protegidas
+- CORS configurado
+- HTTPS via Traefik
+
+## Suporte
+
+Para problemas:
+
+1. Consulte [DEPLOY.md](./DEPLOY.md)
+2. Logs: `docker logs apresentacao-api`
+3. Health check: `curl https://apresentacao-api.celintelligence.com/health`
 
 ---
 
