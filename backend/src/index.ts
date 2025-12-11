@@ -1,13 +1,13 @@
+// Carregar variáveis de ambiente ANTES de qualquer import
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
 import presentationsRoutes from './routes/presentations';
 import clientRoutes from './routes/client';
 import pool from './db/connection';
-
-// Carregar variáveis de ambiente
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
