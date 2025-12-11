@@ -1,9 +1,10 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Key, AlertCircle, Loader2 } from 'lucide-react';
 import { clientService } from '../services/api';
-import AnimatedLogo from '../components/AnimatedLogo';
+import { AnimatedLogo } from '../components/AnimatedLogo';
 
 export default function ClientAccessPage() {
   const [password, setPassword] = useState('');

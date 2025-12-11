@@ -1,9 +1,10 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lock, User, AlertCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import AnimatedLogo from '../components/AnimatedLogo';
+import { AnimatedLogo } from '../components/AnimatedLogo';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');

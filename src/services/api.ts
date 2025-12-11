@@ -1,11 +1,11 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
+import type { AxiosInstance } from 'axios';
 import type {
   LoginRequest,
   LoginResponse,
   CreatePresentationRequest,
   CreatePresentationResponse,
   PresentationData,
-  ClientValidationRequest,
   ClientValidationResponse,
 } from '../types/api';
 

@@ -1,6 +1,7 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { LogOut, User, Mail, Phone, MessageCircle, Loader2, Check, Copy, Plus } from 'lucide-react';
+import { LogOut, User, Loader2, Check, Copy, Plus } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { presentationService } from '../services/api';
 import { slidesConfig } from '../config/slideConfig';
