@@ -7,6 +7,7 @@ import type {
   CreatePresentationResponse,
   PresentationData,
   ClientValidationResponse,
+  VendorInfo,
 } from '../types/api';
 
 // URL base da API (pode ser configurada via variável de ambiente)
