@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Slide } from '../Slide';
 import { contactInfo } from '../../data/content';
-import { Mail, Phone, Globe, MapPin, Linkedin, Github, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Globe, MapPin, Linkedin, Github, MessageCircle, Edit2 } from 'lucide-react';
 import QRCode from 'qrcode';
 import type { VendorInfo } from '../../types/api';
+import { EditContactModal } from '../EditContactModal';
+import { presentationService, authService } from '../../services/api';
+import { useParams } from 'react-router-dom';
 
 interface ContactSlideProps {
   vendorInfo?: VendorInfo;
@@ -12,15 +15,34 @@ interface ContactSlideProps {
 
 export const ContactSlide = ({ vendorInfo }: ContactSlideProps = {}) => {
   const qrRef = useRef<HTMLCanvasElement>(null);
+  const { id } = useParams<{ id: string }>();
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [currentVendorInfo, setCurrentVendorInfo] = useState<VendorInfo | undefined>(vendorInfo);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Verificar autenticação ao carregar
+  useEffect(() => {
+    setIsAuthenticated(authService.isAuthenticated());
+  }, []);
 
   // Usar dados do vendedor se fornecidos, senão usar dados padrão
-  const displayName = vendorInfo?.name || 'Diego Jaques';
-  const displayEmail = vendorInfo?.email || contactInfo.email;
-  const displayPhone = vendorInfo?.phone || contactInfo.phone;
-  const displayWhatsApp = vendorInfo?.whatsapp || '+5519983760039';
+  const displayName = currentVendorInfo?.name || 'Diego Jaques';
+  const displayEmail = currentVendorInfo?.email || contactInfo.email;
+  const displayPhone = currentVendorInfo?.phone || contactInfo.phone;
+  const displayWhatsApp = currentVendorInfo?.whatsapp || '+5519983760039';
 
   const whatsappMessage = `Olá ${displayName.split(' ')[0]}! Vi a apresentação da CelPlan e gostaria de saber mais sobre as soluções de IA.`;
   const whatsappUrl = `https://wa.me/${displayWhatsApp.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Função para salvar informações atualizadas
+  const handleSaveVendorInfo = async (updatedInfo: VendorInfo) => {
+    if (!id) {
+      throw new Error('ID da apresentação não encontrado');
+    }
+
+    const result = await presentationService.updateVendorInfo(id, updatedInfo);
+    setCurrentVendorInfo(result.vendorInfo);
+  };
 
   useEffect(() => {
     if (qrRef.current) {
@@ -41,6 +63,22 @@ export const ContactSlide = ({ vendorInfo }: ContactSlideProps = {}) => {
 
   return (
     <Slide background="dark">
+      {/* Botão de edição (apenas para usuários autenticados) */}
+      {isAuthenticated && id && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          onClick={() => setIsEditModalOpen(true)}
+          className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2
+                     glass-effect hover:bg-white/10 rounded-lg transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Edit2 className="w-4 h-4" />
+          <span className="text-sm">Editar Contato</span>
+        </motion.button>
+      )}
+
       <div className="text-center">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
@@ -184,6 +222,16 @@ export const ContactSlide = ({ vendorInfo }: ContactSlideProps = {}) => {
           </p>
         </motion.div>
       </div>
+
+      {/* Modal de edição */}
+      {currentVendorInfo && (
+        <EditContactModal
+          isOpen={isEditModalOpen}
+          onClose={() => setIsEditModalOpen(false)}
+          vendorInfo={currentVendorInfo}
+          onSave={handleSaveVendorInfo}
+        />
+      )}
     </Slide>
   );
 };

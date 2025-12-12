@@ -100,6 +100,63 @@ router.get('/:id', async (req: Request, res: Response) => {
   }
 });
 
+// PUT /api/presentations/:id/vendor - Atualizar dados do vendedor (protegida)
+router.put(
+  '/:id/vendor',
+  authMiddleware,
+  async (req: AuthRequest, res: Response) => {
+    try {
+      const { id } = req.params;
+      const { name, email, phone, whatsapp } = req.body;
+
+      // Validação
+      if (!name || !email) {
+        res.status(400).json({ error: 'Nome e email são obrigatórios' });
+        return;
+      }
+
+      // Validar formato do ID
+      if (!id || id.length !== 12) {
+        res.status(400).json({ error: 'ID de apresentação inválido' });
+        return;
+      }
+
+      // Atualizar no banco
+      const result = await pool.query<Presentation>(
+        `UPDATE presentations
+         SET vendor_name = $1,
+             vendor_email = $2,
+             vendor_phone = $3,
+             vendor_whatsapp = $4,
+             updated_at = NOW()
+         WHERE id = $5
+         RETURNING *`,
+        [name, email, phone || '', whatsapp || '', id]
+      );
+
+      if (result.rows.length === 0) {
+        res.status(404).json({ error: 'Apresentação não encontrada' });
+        return;
+      }
+
+      const presentation = result.rows[0];
+
+      res.json({
+        id: presentation.id,
+        vendorInfo: {
+          name: presentation.vendor_name,
+          email: presentation.vendor_email,
+          phone: presentation.vendor_phone,
+          whatsapp: presentation.vendor_whatsapp,
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao atualizar dados do vendedor:', error);
+      res.status(500).json({ error: 'Erro ao atualizar dados do vendedor' });
+    }
+  }
+);
+
 // GET /api/presentations - Listar todas apresentações (protegida)
 router.get('/', authMiddleware, async (req: AuthRequest, res: Response) => {
   try {

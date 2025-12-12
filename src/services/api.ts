@@ -114,6 +114,14 @@ export const presentationService = {
     const response = await api.get('/presentations');
     return response.data;
   },
+
+  /**
+   * Atualizar informações do vendedor de uma apresentação
+   */
+  async updateVendorInfo(id: string, vendorInfo: VendorInfo): Promise<{ id: string; vendorInfo: VendorInfo }> {
+    const response = await api.put(`/presentations/${id}/vendor`, vendorInfo);
+    return response.data;
+  },
 };
 
 export const clientService = {
