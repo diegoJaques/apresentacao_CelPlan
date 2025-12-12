@@ -139,7 +139,8 @@ export default function PresentationView() {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slides.length]);
 
   const CurrentSlideComponent = slides[currentSlide]?.component;
   const isContactSlide = slides[currentSlide]?.id === 'contact';
