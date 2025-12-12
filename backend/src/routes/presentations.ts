@@ -63,8 +63,8 @@ router.get('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
-    // Validar formato do ID (12 caracteres alfanuméricos)
-    if (!id || id.length !== 12) {
+    // Validar formato do ID (12 caracteres alfanuméricos OU "default")
+    if (!id || (id !== 'default' && id.length !== 12)) {
       res.status(400).json({ error: 'ID de apresentação inválido' });
       return;
     }
@@ -115,8 +115,8 @@ router.put(
         return;
       }
 
-      // Validar formato do ID
-      if (!id || id.length !== 12) {
+      // Validar formato do ID (12 caracteres alfanuméricos OU "default")
+      if (!id || (id !== 'default' && id.length !== 12)) {
         res.status(400).json({ error: 'ID de apresentação inválido' });
         return;
       }

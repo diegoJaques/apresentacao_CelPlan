@@ -11,14 +11,21 @@ import { useParams } from 'react-router-dom';
 
 interface ContactSlideProps {
   vendorInfo?: VendorInfo;
+  presentationId?: string; // ID da apresentação (opcional, usa useParams se não fornecido)
 }
 
-export const ContactSlide = ({ vendorInfo }: ContactSlideProps = {}) => {
+export const ContactSlide = ({ vendorInfo, presentationId }: ContactSlideProps = {}) => {
   const qrRef = useRef<HTMLCanvasElement>(null);
-  const { id } = useParams<{ id: string }>();
+  const { id: urlId } = useParams<{ id: string }>();
+  const id = presentationId || urlId; // Usa prop se fornecida, senão usa da URL
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentVendorInfo, setCurrentVendorInfo] = useState<VendorInfo | undefined>(vendorInfo);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Atualizar currentVendorInfo quando vendorInfo mudar
+  useEffect(() => {
+    setCurrentVendorInfo(vendorInfo);
+  }, [vendorInfo]);
 
   // Verificar autenticação ao carregar
   useEffect(() => {

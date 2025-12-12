@@ -23,6 +23,8 @@ import { MethodologySlide } from './slides/MethodologySlide';
 import { ContactSlide } from './slides/ContactSlide';
 import { slidesConfig, getActiveSlides, presentationProfiles } from '../config/slideConfig';
 import { ProfileSelector } from './ProfileSelector';
+import { presentationService } from '../services/api';
+import type { VendorInfo } from '../types/api';
 
 function PresentationApp() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,6 +32,7 @@ function PresentationApp() {
   const [showNotes, setShowNotes] = useState(false);
   const [currentProfile, setCurrentProfile] = useState('Completa');
   const [activeSlideIds, setActiveSlideIds] = useState<string[]>(getActiveSlides('Completa'));
+  const [vendorInfo, setVendorInfo] = useState<VendorInfo | null>(null);
 
   // Mapeamento de componentes
   const slideComponents: { [key: string]: React.ComponentType } = {
@@ -60,6 +63,20 @@ function PresentationApp() {
       name: config.name,
       id: config.id
     }));
+
+  // Carregar dados do registro "default" ao montar o componente
+  useEffect(() => {
+    const loadDefaultPresentation = async () => {
+      try {
+        const data = await presentationService.getById('default');
+        setVendorInfo(data.vendorInfo);
+      } catch (error) {
+        console.error('Erro ao carregar dados padrão:', error);
+        // Continua sem os dados se falhar
+      }
+    };
+    loadDefaultPresentation();
+  }, []);
 
   const slideNotes: { [key: string]: string } = {
     'intro': "Apresentação inicial da CelPlan.\n• Enfatizar os 32 anos de experiência\n• Destacar transformação de dados em inteligência\n• Mencionar presença global",
@@ -125,6 +142,7 @@ function PresentationApp() {
   };
 
   const CurrentSlideComponent = slides[currentSlide].component;
+  const isContactSlide = slides[currentSlide].id === 'contact';
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-900">
@@ -136,7 +154,11 @@ function PresentationApp() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <CurrentSlideComponent />
+          {isContactSlide && vendorInfo ? (
+            <ContactSlide vendorInfo={vendorInfo} presentationId="default" />
+          ) : (
+            <CurrentSlideComponent />
+          )}
         </motion.div>
       </AnimatePresence>
 
