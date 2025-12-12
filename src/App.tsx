@@ -18,15 +18,8 @@ function App() {
           {/* Rotas de autenticação */}
           <Route path="/login" element={<LoginPage />} />
 
-          {/* Painel administrativo (protegido) */}
-          <Route
-            path="/admin"
-            element={
-              <PrivateRoute>
-                <AdminPanel />
-              </PrivateRoute>
-            }
-          />
+          {/* Painel administrativo (DESABILITADO - não usar mais) */}
+          {/* <Route path="/admin" element={<PrivateRoute><AdminPanel /></PrivateRoute>} /> */}
 
           {/* Rotas de apresentação customizada para clientes */}
           <Route path="/apresentacao/:id" element={<ClientAccessPage />} />

@@ -22,7 +22,7 @@ export default function LoginPage() {
 
     try {
       await login({ username, password });
-      navigate('/admin');
+      navigate('/'); // Redireciona para apresentação principal
     } catch (err: any) {
       setError(err.response?.data?.error || 'Erro ao fazer login. Verifique suas credenciais.');
     } finally {
