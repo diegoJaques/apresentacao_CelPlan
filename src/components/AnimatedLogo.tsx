@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface AnimatedLogoProps {
   size?: number;
 }
 
 export const AnimatedLogo = ({ size = 192 }: AnimatedLogoProps) => {
+  const { theme } = useTheme();
+
+  // Use theme-specific logo
+  const logoSrc = theme === 'light'
+    ? '/images/celplan-logo-light.png'
+    : '/images/celplan-logo-dark.png';
   return (
     <motion.div
       initial={{ scale: 0, rotate: -180 }}
@@ -17,7 +24,7 @@ export const AnimatedLogo = ({ size = 192 }: AnimatedLogoProps) => {
       className="relative flex flex-col items-center"
     >
       <motion.img
-        src="/images/celplan-logo.png"
+        src={logoSrc}
         alt="CelPlan"
         className="mb-6 logo-enhanced"
         initial={{ opacity: 0 }}

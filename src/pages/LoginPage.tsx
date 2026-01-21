@@ -21,10 +21,10 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      await login({ username, password });
-      navigate('/'); // Redireciona para apresentação principal
+      await login(username, password);
+      navigate('/dashboard'); // Redireciona para dashboard do vendedor
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Erro ao fazer login. Verifique suas credenciais.');
+      setError(err.message || 'Erro ao fazer login. Verifique suas credenciais.');
     } finally {
       setIsLoading(false);
     }

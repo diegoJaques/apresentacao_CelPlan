@@ -23,8 +23,17 @@ import { MethodologySlide } from './slides/MethodologySlide';
 import { ContactSlide } from './slides/ContactSlide';
 import { slidesConfig, getActiveSlides, presentationProfiles } from '../config/slideConfig';
 import { ProfileSelector } from './ProfileSelector';
-import { presentationService } from '../services/api';
-import type { VendorInfo } from '../types/api';
+// Removido import da API antiga - usando dados locais
+// import { presentationService } from '../services/api';
+// import type { VendorInfo } from '../types/api';
+
+// Definir tipo VendorInfo localmente para evitar dependência
+interface VendorInfo {
+  name: string;
+  phone: string;
+  email: string;
+  address?: string;
+}
 
 function PresentationApp() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -64,18 +73,30 @@ function PresentationApp() {
       id: config.id
     }));
 
-  // Carregar dados do registro "default" ao montar o componente
+  // Usar dados padrão locais - sem dependência de API externa
   useEffect(() => {
-    const loadDefaultPresentation = async () => {
-      try {
-        const data = await presentationService.getById('default');
-        setVendorInfo(data.vendorInfo);
-      } catch (error) {
-        console.error('Erro ao carregar dados padrão:', error);
-        // Continua sem os dados se falhar
-      }
+    // Dados padrão do vendedor CelPlan
+    const defaultVendorInfo: VendorInfo = {
+      name: 'CelPlan',
+      phone: '+55 61 3039-2626',
+      email: 'comercial@celplan.com.br',
+      address: 'SIA Trecho 3, Lote 945 - Brasília/DF'
     };
-    loadDefaultPresentation();
+
+    // Tentar carregar dados salvos localmente primeiro
+    const savedVendorInfo = localStorage.getItem('vendorInfo');
+    if (savedVendorInfo) {
+      try {
+        setVendorInfo(JSON.parse(savedVendorInfo));
+      } catch {
+        setVendorInfo(defaultVendorInfo);
+      }
+    } else {
+      setVendorInfo(defaultVendorInfo);
+    }
+
+    // Log para debug
+    console.log('Usando dados locais do vendedor - API de produção desabilitada');
   }, []);
 
   const slideNotes: { [key: string]: string } = {

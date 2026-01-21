@@ -17,11 +17,11 @@ export const Slide = ({
   const getBackgroundClass = () => {
     switch (background) {
       case 'gradient':
-        return 'bg-slate-900';
+        return 'bg-white dark:bg-slate-900';
       case 'image':
         return '';
       default:
-        return 'bg-slate-900';
+        return 'bg-white dark:bg-slate-900';
     }
   };
 

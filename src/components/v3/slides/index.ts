@@ -1,0 +1,14 @@
+export { IntroSlideV3 } from './IntroSlideV3';
+export { AboutSlideV3 } from './AboutSlideV3';
+export { IntellectualCapitalSlideV3 } from './IntellectualCapitalSlideV3';
+export { ChallengesSlideV3 } from './ChallengesSlideV3';
+export { ValuePropositionSlideV3 } from './ValuePropositionSlideV3';
+export { PillarsSlideV3 } from './PillarsSlideV3';
+export { ConnectivitySlideV3 } from './ConnectivitySlideV3';
+export { AIDataSlideV3 } from './AIDataSlideV3';
+export { IoTSlideV3 } from './IoTSlideV3';
+export { VisionSlideV3 } from './VisionSlideV3';
+export { ServicesSlideV3 } from './ServicesSlideV3';
+export { CasesSlideV3 } from './CasesSlideV3';
+export { CasesSlideV3Backend } from './CasesSlideV3Backend';
+export { ContactSlideV3 } from './ContactSlideV3';

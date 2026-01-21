@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -64,11 +65,21 @@ export default {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'display': ['Montserrat', 'system-ui', 'sans-serif'],
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-purple-blue': 'linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%)',
+        'gradient-purple-pink': 'linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)',
+      },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-left': 'slideLeft 0.5s ease-out',
         'scale-up': 'scaleUp 0.3s ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -87,6 +98,17 @@ export default {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%, 100%': { opacity: '0.5', filter: 'blur(20px)' },
+          '50%': { opacity: '1', filter: 'blur(30px)' },
+        },
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },

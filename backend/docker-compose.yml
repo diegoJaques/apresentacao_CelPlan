@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: celplan_postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: celplan_db
+      POSTGRES_USER: celplan
+      POSTGRES_PASSWORD: celplan2024
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - celplan_network
+
+  # MinIO Object Storage (S3 Compatible)
+  minio:
+    image: minio/minio:latest
+    container_name: celplan_minio
+    restart: unless-stopped
+    ports:
+      - "9000:9000"   # API
+      - "9001:9001"   # Console Web
+    environment:
+      MINIO_ROOT_USER: celplanadmin
+      MINIO_ROOT_PASSWORD: celplan2024secure
+      MINIO_DEFAULT_BUCKETS: celplan-media
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - celplan_network
+
+  # pgAdmin (opcional - interface web para PostgreSQL)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: celplan_pgadmin
+    restart: unless-stopped
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@celplan.com
+      PGADMIN_DEFAULT_PASSWORD: celplan2024
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - celplan_network
+    depends_on:
+      - postgres
+
+networks:
+  celplan_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  minio_data:
+    driver: local
+  pgadmin_data:
+    driver: local

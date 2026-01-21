@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User, LogOut } from 'lucide-react';
 import { useState } from 'react';
+import { ThemeToggle } from './ThemeToggle';
+import { useAuth } from '../contexts/AuthContext';
+import LoginModal from './LoginModal';
 
 interface NavigationProps {
   currentSlide: number;
@@ -18,6 +21,20 @@ export const Navigation = ({
   isReadOnly = false
 }: NavigationProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      // Optionally redirect to home
+      if (window.location.pathname.includes('/admin')) {
+        window.location.href = '/';
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
 
   return (
     <>
@@ -43,11 +60,49 @@ export const Navigation = ({
         </motion.div>
       </div>
 
-      {/* Slide Counter */}
-      <div className="fixed top-8 right-8 z-30">
+      {/* Slide Counter, Theme Toggle, and Auth Button */}
+      <div className="fixed top-8 right-8 z-30 flex items-center gap-3">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
+        >
+          <ThemeToggle />
+        </motion.div>
+
+        {/* Auth Button */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.05 }}
+        >
+          {isAuthenticated ? (
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-300 hidden md:inline">
+                {user?.username}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="glass-effect p-3 rounded-full hover:bg-white/10 transition-colors"
+                title="Logout"
+              >
+                <LogOut className="w-5 h-5" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowLoginModal(true)}
+              className="glass-effect p-3 rounded-full hover:bg-white/10 transition-colors"
+              title="Login"
+            >
+              <User className="w-5 h-5" />
+            </button>
+          )}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
           className="glass-effect px-4 py-2 rounded-full"
         >
           <span className="text-accent-500 font-bold">{currentSlide + 1}</span>
@@ -108,6 +163,16 @@ export const Navigation = ({
       >
         Use ← → ou Space para navegar
       </motion.div>
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onSuccess={(user) => {
+          console.log('Login successful:', user);
+          setShowLoginModal(false);
+        }}
+      />
     </>
   );
 };

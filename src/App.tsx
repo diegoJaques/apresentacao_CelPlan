@@ -1,19 +1,49 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import LoginPage from './pages/LoginPage';
-import AdminPanel from './pages/AdminPanel';
 import ClientAccessPage from './pages/ClientAccessPage';
 import PresentationView from './pages/PresentationView';
 import PresentationApp from './components/PresentationApp';
+import { PresentationAppV3Hybrid } from './components/v3/PresentationAppV3Hybrid';
+import { AdminPanelSimplified } from './components/admin/AdminPanelSimplified';
+import VendorDashboard from './pages/VendorDashboard';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
         <Routes>
           {/* Rota raiz - Apresentação padrão (mantém funcionamento original) */}
           <Route path="/" element={<PresentationApp />} />
+
+          {/* Apresentação V3 Institucional - Versão Híbrida (Preserva Layouts Originais) */}
+          <Route path="/v3" element={<PresentationAppV3Hybrid />} />
+
+          {/* Visualização pública de apresentação por UUID - SEM AUTENTICAÇÃO */}
+          <Route path="/v3/:presentationId" element={<PresentationAppV3Hybrid />} />
+
+          {/* Painel Administrativo V3 - Controle Simplificado - REQUER AUTENTICAÇÃO */}
+          <Route
+            path="/admin/v3"
+            element={
+              <PrivateRoute requiredRole="admin">
+                <AdminPanelSimplified />
+              </PrivateRoute>
+            }
+          />
+
+          {/* Dashboard do Vendedor - REQUER AUTENTICAÇÃO */}
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <VendorDashboard />
+              </PrivateRoute>
+            }
+          />
 
           {/* Rotas de autenticação */}
           <Route path="/login" element={<LoginPage />} />
@@ -29,7 +59,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
