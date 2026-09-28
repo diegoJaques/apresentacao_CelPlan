@@ -36,3 +36,8 @@ Referência para as próximas produções (preferências e aprendizados já vali
 
 ## Pautas em andamento
 - Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.
+
+## Retenção (aprendizado)
+- Não abrir com introdução lenta (chiado/contexto). Abrir no clímax (flash-forward) com texto-gancho no 1º quadro.
+- Encurtar pausas e acelerar a fala ~8% (atempo) melhora o ritmo sem soar artificial.
+- Terminar seco, sem fade, para favorecer o replay em loop.
