@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>HyperFrames - composição</title>
+<style>
+@font-face{font-family:M;font-weight:500;src:url(fonts/montserrat-latin-500-normal.woff2)}
+@font-face{font-family:M;font-weight:700;src:url(fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:M;font-weight:800;src:url(fonts/montserrat-latin-800-normal.woff2)}
+@font-face{font-family:M;font-weight:900;src:url(fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:J;font-weight:500;src:url(fonts/jetbrains-mono-latin-500-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--cy:#18E8FF;--mg:#FF2E88;--lm:#B6FF3B;--rd:#FF3B3B;--bg:#05070D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--bg);font-family:M;color:#fff}
+.abs{position:absolute}
+.full{position:absolute;inset:0}
+.mono{font-family:J}
+.center{left:0;right:0;text-align:center}
+.chip{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:800;font-size:38px;letter-spacing:1px}
+.card{position:absolute;border-radius:28px;overflow:hidden;background:#111}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.pill{position:absolute;padding:12px 22px;border-radius:14px;font-family:J;font-weight:700;font-size:28px;background:rgba(5,7,13,.78);border:2px solid var(--cy);color:var(--cy)}
+.big{font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-1px}
+.shadow{text-shadow:0 6px 30px rgba(0,0,0,.6)}
+
+/* avatar */
+#av{position:absolute;inset:0;overflow:hidden}
+#avimg{position:absolute;left:50%;top:0;height:1920px;width:auto;transform-origin:50% 36%}
+#avtint{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%)}
+#avgrad{position:absolute;left:0;right:0;bottom:0;height:900px;background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.72))}
+#redvig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(255,0,40,0) 40%,rgba(255,20,40,.55) 100%);opacity:0}
+
+/* mid bg */
+#mid{position:absolute;inset:0;opacity:0}
+#midbg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#0d1830 0%,#05070D 60%)}
+#floorwrap{position:absolute;left:0;right:0;bottom:0;height:1000px;perspective:700px;perspective-origin:50% 0%;overflow:hidden}
+#floor{position:absolute;left:-1200px;width:3480px;top:0;height:2600px;transform-origin:50% 0;transform:rotateX(72deg);
+  background-image:linear-gradient(rgba(24,232,255,.35) 2px,transparent 2px),linear-gradient(90deg,rgba(24,232,255,.35) 2px,transparent 2px);background-size:120px 120px;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.0),#000 25%,#000);mask-image:linear-gradient(to bottom,rgba(0,0,0,0),#000 25%,#000)}
+#glowtop{position:absolute;left:-200px;right:-200px;top:-300px;height:900px;background:radial-gradient(ellipse at 50% 50%,rgba(24,232,255,.18),rgba(0,0,0,0) 60%)}
+.scene{position:absolute;inset:0;opacity:0}
+
+/* film strip */
+.strip{position:absolute;height:420px;background:#0b0b0b;display:flex;align-items:center;gap:22px;padding:0 22px;border-top:34px solid #0b0b0b;border-bottom:34px solid #0b0b0b}
+.strip:before,.strip:after{content:"";position:absolute;left:0;right:0;height:22px;background:repeating-linear-gradient(90deg,#eee 0 26px,transparent 26px 60px);opacity:.85}
+.strip:before{top:-28px}.strip:after{bottom:-28px}
+.strip img{height:352px;width:270px;object-fit:cover;border-radius:6px;flex:none}
+
+/* editor */
+#ed{position:absolute;left:50px;top:560px;width:980px;height:640px;background:#15171d;border-radius:22px;border:2px solid #2a2e38;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#edbar{height:58px;background:#20232b;display:flex;align-items:center;gap:12px;padding:0 22px;font-family:J;font-size:22px;color:#8a91a3}
+.dot{width:16px;height:16px;border-radius:50%}
+#ruler{position:absolute;left:120px;right:0;top:58px;height:46px;border-bottom:2px solid #2a2e38;background:repeating-linear-gradient(90deg,#3a3f4c 0 2px,transparent 2px 43px);font-family:J;font-size:18px;color:#6d7385}
+.trk{position:absolute;left:0;right:0;height:130px;border-bottom:2px solid #232730}
+.trklbl{position:absolute;left:0;top:0;bottom:0;width:120px;background:#1b1e25;display:flex;align-items:center;justify-content:center;font-family:J;font-weight:700;font-size:26px;color:#9aa1b3}
+.clip{position:absolute;top:18px;height:94px;border-radius:10px;overflow:hidden}
+.fx{position:absolute;top:22px;height:86px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:J;font-weight:700;font-size:26px;color:#111}
+#playhead{position:absolute;top:58px;bottom:0;width:4px;background:var(--rd)}
+#playhead:before{content:"";position:absolute;top:0;left:-12px;border:14px solid transparent;border-top:18px solid var(--rd)}
+
+/* captions */
+#cap{position:absolute;left:60px;right:60px;text-align:center;font-weight:900;font-size:76px;line-height:1.08;text-transform:uppercase;letter-spacing:-.5px}
+#cap span{display:inline-block;margin:0 14px;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.55),0 10px 30px rgba(0,0,0,.6)}
+#cap span.on{color:var(--lm)}
+
+/* HUD */
+#hud{position:absolute;inset:0;pointer-events:none;text-shadow:0 2px 8px rgba(0,0,0,.8);font-family:J;font-weight:700;font-size:26px;color:rgba(255,255,255,.85)}
+.corner{position:absolute;width:70px;height:70px;border-color:rgba(255,255,255,.7);border-style:solid}
+#glitch{position:absolute;inset:0;pointer-events:none}
+#glitch div{position:absolute;left:0;right:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#fade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+svg{overflow:visible}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ===================== AVATAR ===================== -->
+  <div id="av">
+    <img id="avimg" src="av/intro/0001.jpg">
+    <div id="avtint"></div>
+    <div id="avgrad"></div>
+    <div id="redvig"></div>
+
+    <!-- intro overlays -->
+    <div id="i_clock" class="abs" style="left:0;right:0;top:250px;text-align:center;opacity:0">
+      <div style="display:inline-flex;align-items:center;gap:22px;background:rgba(5,7,13,.8);border:3px solid var(--mg);border-radius:999px;padding:16px 36px 16px 20px">
+        <svg width="78" height="78" viewBox="0 0 78 78"><circle cx="39" cy="42" r="30" fill="none" stroke="#FF2E88" stroke-width="6"/><rect x="33" y="2" width="12" height="8" rx="2" fill="#FF2E88"/>
+          <line id="i_hand" x1="39" y1="42" x2="39" y2="20" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="39" cy="42" r="5" fill="#fff"/></svg>
+        <span class="big" style="font-size:56px">Tempo absurdo</span>
+        <span id="i_hours" class="mono" style="font-size:44px;color:var(--mg)">+00h</span>
+      </div>
+    </div>
+    <div id="i_cut" class="abs" style="left:0;right:0;top:1060px;height:60px;opacity:0">
+      <div id="i_cutline" class="abs" style="left:0;top:28px;height:6px;width:0;background:repeating-linear-gradient(90deg,#fff 0 28px,transparent 28px 46px)"></div>
+      <svg id="i_sc" class="abs" style="top:-30px" width="120" height="120" viewBox="0 0 120 120">
+        <g id="i_scb1"><circle cx="30" cy="36" r="18" fill="none" stroke="#18E8FF" stroke-width="8"/><line x1="44" y1="46" x2="112" y2="70" stroke="#fff" stroke-width="9" stroke-linecap="round"/></g>
+        <g id="i_scb2"><circle cx="30" cy="84" r="18" fill="none" stroke="#18E8FF" stroke-width="8"/><line x1="44" y1="74" x2="112" y2="50" stroke="#fff" stroke-width="9" stroke-linecap="round"/></g>
+      </svg>
+    </div>
+    <div id="i_zoom" class="abs" style="left:250px;top:330px;width:580px;height:720px;opacity:0">
+      <div class="corner" style="left:0;top:0;border-width:8px 0 0 8px;border-color:var(--cy)"></div>
+      <div class="corner" style="right:0;top:0;border-width:8px 8px 0 0;border-color:var(--cy)"></div>
+      <div class="corner" style="left:0;bottom:0;border-width:0 0 8px 8px;border-color:var(--cy)"></div>
+      <div class="corner" style="right:0;bottom:0;border-width:0 8px 8px 0;border-color:var(--cy)"></div>
+      <div class="pill" style="left:50%;transform:translateX(-50%);top:-80px">ZOOM 1.25x</div>
+    </div>
+    <div id="i_sprL" class="abs" style="left:0;top:0;bottom:0;width:70px;background:#0b0b0b;opacity:0">
+      <div class="i_holes full" style="background:repeating-linear-gradient(180deg,transparent 0 22px,#eee 22px 58px,transparent 58px 80px);left:18px;right:18px"></div></div>
+    <div id="i_sprR" class="abs" style="right:0;top:0;bottom:0;width:70px;background:#0b0b0b;opacity:0">
+      <div class="i_holes full" style="background:repeating-linear-gradient(180deg,transparent 0 22px,#eee 22px 58px,transparent 58px 80px);left:18px;right:18px"></div></div>
+    <div id="i_frame" class="abs center mono" style="top:260px;opacity:0">
+      <span style="background:#fff;color:#000;padding:12px 26px;border-radius:12px;font-size:58px;font-weight:700">FRAME <span id="i_fnum">0000</span></span>
+    </div>
+    <div id="i_manual" class="abs center" style="top:250px;opacity:0">
+      <span class="chip" style="background:#fff;color:#000;font-size:54px;padding:18px 40px">EDIÇÃO MANUAL</span>
+    </div>
+    <div id="i_stamp" class="abs center" style="top:380px;opacity:0">
+      <span style="display:inline-block;border:8px solid var(--rd);color:var(--rd);font-weight:900;font-size:66px;padding:10px 30px;border-radius:14px;transform:rotate(-7deg);background:rgba(0,0,0,.35)">COM OS DIAS CONTADOS</span>
+    </div>
+
+    <!-- outro overlays -->
+    <div id="o_role" class="abs" style="left:90px;right:90px;top:220px;opacity:0">
+      <div id="o_r1" style="display:flex;align-items:center;gap:22px;background:rgba(5,7,13,.82);border:3px solid #555;border-radius:24px;padding:22px 30px;position:relative">
+        <svg width="64" height="64" viewBox="0 0 120 120"><circle cx="30" cy="36" r="18" fill="none" stroke="#aaa" stroke-width="9"/><line x1="44" y1="46" x2="112" y2="70" stroke="#aaa" stroke-width="10" stroke-linecap="round"/><circle cx="30" cy="84" r="18" fill="none" stroke="#aaa" stroke-width="9"/><line x1="44" y1="74" x2="112" y2="50" stroke="#aaa" stroke-width="10" stroke-linecap="round"/></svg>
+        <span class="big" style="font-size:50px;color:#ccc">Quem corta a timeline</span>
+        <div id="o_strike" class="abs" style="left:24px;top:50%;height:8px;width:0;background:var(--rd);border-radius:4px"></div>
+      </div>
+      <div id="o_arrow" style="text-align:center;font-size:60px;font-weight:900;color:var(--cy);margin:6px 0;opacity:0">↓</div>
+      <div id="o_r2" style="display:flex;align-items:center;gap:22px;background:rgba(5,7,13,.85);border:4px solid var(--cy);border-radius:24px;padding:22px 30px;box-shadow:0 0 40px rgba(24,232,255,.5);opacity:0">
+        <svg width="64" height="64" viewBox="0 0 64 64"><path d="M32 2 L38 26 L62 32 L38 38 L32 62 L26 38 L2 32 L26 26 Z" fill="#18E8FF"/></svg>
+        <span class="big" style="font-size:50px">Quem direciona a IA</span>
+      </div>
+    </div>
+    <div id="o_q" class="abs" style="left:80px;right:80px;top:200px;opacity:0">
+      <div style="background:#fff;color:#000;border-radius:30px;padding:36px 40px;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+        <div class="mono" style="font-size:28px;font-weight:700;color:var(--mg);margin-bottom:10px">SUA OPINIÃO ↓</div>
+        <div class="big" style="font-size:66px;line-height:1.02">A edição manual sobrevive por quanto tempo?</div>
+      </div>
+    </div>
+    <div id="o_cm" class="abs" style="right:70px;top:760px;opacity:0">
+      <svg width="360" height="230" viewBox="0 0 360 230"><path d="M30 10 H330 A24 24 0 0 1 354 34 V150 A24 24 0 0 1 330 174 H120 L60 224 L72 174 H30 A24 24 0 0 1 6 150 V34 A24 24 0 0 1 30 10 Z" fill="#18E8FF"/>
+        <text x="180" y="82" text-anchor="middle" font-family="M" font-weight="900" font-size="46" fill="#05070D">COMENTE</text>
+        <circle id="o_d1" cx="140" cy="128" r="12" fill="#05070D"/><circle id="o_d2" cx="180" cy="128" r="12" fill="#05070D"/><circle id="o_d3" cx="220" cy="128" r="12" fill="#05070D"/></svg>
+    </div>
+    <div id="o_follow" class="abs center" style="top:780px;opacity:0">
+      <div id="o_btn" style="display:inline-block;background:var(--mg);color:#fff;font-weight:900;font-size:64px;padding:26px 70px;border-radius:999px;box-shadow:0 12px 40px rgba(255,46,136,.55)"><span id="o_btxt">+ SEGUIR</span></div>
+      <svg id="o_hand" class="abs" style="left:640px;top:60px" width="110" height="130" viewBox="0 0 110 130"><path d="M40 10 a10 10 0 0 1 20 0 V60 l30 6 a12 12 0 0 1 10 14 l-8 40 H38 L10 80 a10 10 0 0 1 14 -14 l16 14 Z" fill="#fff" stroke="#000" stroke-width="5"/></svg>
+      <div id="o_rev" class="big" style="display:inline-block;font-size:44px;margin-top:30px;color:#fff;opacity:0;background:rgba(5,7,13,.8);padding:14px 30px;border-radius:18px">Acompanhe essa <span style="color:var(--lm)">revolução</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== MID (HyperFrames explainer) ===================== -->
+  <div id="mid">
+    <div id="midbg"></div>
+    <div id="glowtop"></div>
+    <div id="floorwrap"><div id="floor"></div></div>
+
+    <!-- S1 title -->
+    <div id="s1" class="scene">
+      <div id="s1cards" class="full" style="perspective:1400px"></div>
+      <div id="s1kick" class="abs center mono" style="top:470px;font-size:34px;color:var(--cy);letter-spacing:4px">A TECNOLOGIA POR TRÁS DA VIRADA</div>
+      <div id="s1title" class="abs center big" style="top:600px">
+        <div id="s1h" style="font-size:200px;color:var(--cy)">HYPER</div>
+        <div id="s1f" style="font-size:200px">FRAMES</div>
+      </div>
+      <div id="s1sub" class="abs center" style="top:1080px"><span class="chip" style="background:var(--lm);color:#05070D">EXPLICADO DE FORMA SIMPLES</span></div>
+    </div>
+
+    <!-- S2 film strip -->
+    <div id="s2" class="scene">
+      <div id="s2t1" class="abs center big" style="top:300px;font-size:64px;color:#9fb0c8">Um vídeo comum =</div>
+      <div id="s2t2" class="abs center big" style="top:390px;font-size:92px">Sequência de<br><span style="color:var(--cy)">fotos paradas</span></div>
+      <div id="s2strip" class="strip" style="top:700px;left:0;transform-origin:50% 50%"></div>
+      <div id="s2cnt" class="abs center mono" style="top:1230px"><span style="background:#fff;color:#000;padding:12px 24px;border-radius:12px;font-size:46px;font-weight:700">FOTO <span id="s2n">01</span>/25 · 1 SEGUNDO</span></div>
+    </div>
+
+    <!-- S3 editor -->
+    <div id="s3" class="scene">
+      <div id="s3t" class="abs center" style="top:300px">
+        <div class="big" style="font-size:84px">Editor tradicional</div>
+        <div style="margin-top:22px;display:flex;justify-content:center;gap:18px">
+          <span class="chip" style="background:var(--rd)">MANUAL</span>
+          <span class="chip mono" style="background:#fff;color:#000">⏱ <span id="s3clock">00:00</span>h</span>
+        </div>
+      </div>
+      <div id="ed">
+        <div id="edbar"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div><span style="margin-left:14px">projeto_FINAL_v7_agora_vai.prproj</span></div>
+        <div id="ruler"></div>
+        <div class="trk" style="top:104px"><div class="trklbl">FX</div><div id="fxlane" class="full" style="left:120px"></div></div>
+        <div class="trk" style="top:236px"><div class="trklbl">V1</div><div id="v1lane" class="full" style="left:120px"></div></div>
+        <div class="trk" style="top:368px"><div class="trklbl">A1</div><div id="a1lane" class="full" style="left:120px"></div></div>
+        <div id="playhead"></div>
+      </div>
+      <svg id="s3sc" class="abs" width="130" height="130" viewBox="0 0 120 120" style="opacity:0">
+        <circle cx="30" cy="36" r="18" fill="#05070D" stroke="#FF2E88" stroke-width="8"/><line id="s3b1" x1="44" y1="46" x2="112" y2="70" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="30" cy="84" r="18" fill="#05070D" stroke="#FF2E88" stroke-width="8"/><line id="s3b2" x1="44" y1="74" x2="112" y2="50" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg>
+      <svg id="s3cur" class="abs" width="60" height="80" viewBox="0 0 60 80"><path d="M4 4 L4 64 L20 50 L32 76 L44 70 L32 46 L54 46 Z" fill="#fff" stroke="#000" stroke-width="4"/></svg>
+    </div>
+
+    <!-- S4 static -> living frame -->
+    <div id="s4" class="scene">
+      <div id="s4t" class="abs center big" style="top:260px"><div style="font-size:70px;color:#9fb0c8">O HyperFrame</div><div style="font-size:104px;color:var(--cy)">muda a lógica</div></div>
+      <div id="s4wrap" class="abs" style="left:250px;top:470px;width:580px;height:758px;perspective:1600px">
+        <div id="s4glow" class="full" style="border-radius:34px;margin:-10px;background:conic-gradient(from 0deg,#18E8FF,#FF2E88,#B6FF3B,#18E8FF);filter:blur(4px);opacity:0"></div>
+        <div id="s4card" class="card full"><img id="s4img" src="av/intro/0001.jpg"><div id="s4scan" class="abs" style="left:0;right:0;height:120px;background:linear-gradient(to bottom,rgba(24,232,255,0),rgba(24,232,255,.45),rgba(24,232,255,0));opacity:0"></div></div>
+        <div id="s4x" class="full" style="opacity:0"><div class="abs" style="left:50%;top:50%;width:760px;height:34px;margin:-17px 0 0 -380px;background:var(--rd);border-radius:17px;transform:rotate(52deg)"></div><div class="abs" style="left:50%;top:50%;width:760px;height:34px;margin:-17px 0 0 -380px;background:var(--rd);border-radius:17px;transform:rotate(-52deg)"></div></div>
+      </div>
+      <div id="s4l1" class="abs center" style="top:1260px"><span class="chip" style="background:#333;color:#ddd;font-size:44px">FOTO ESTÁTICA</span></div>
+      <div id="s4l2" class="abs center" style="top:1260px"><span class="chip" style="background:var(--cy);color:#05070D;font-size:44px">QUADRO VIVO</span> <span id="s4l3" class="chip" style="background:var(--lm);color:#05070D;font-size:44px">+ INTELIGENTE</span></div>
+    </div>
+
+    <!-- S5 AI understanding -->
+    <div id="s5" class="scene">
+      <div id="s5t" class="abs center big" style="top:190px;font-size:84px">A IA <span style="color:var(--cy)">entende</span></div>
+      <div id="s5wrap" class="abs" style="left:200px;top:320px;width:680px;height:889px">
+        <div class="card full" style="border:3px solid rgba(24,232,255,.6)"><img id="s5img" src="av/intro/0001.jpg">
+          <div id="s5depth" class="full" style="mix-blend-mode:color;background:linear-gradient(160deg,#FF2E88,#6b3bff 45%,#18E8FF);opacity:0"></div>
+          <div id="s5light" class="full" style="mix-blend-mode:soft-light;opacity:0"></div>
+        </div>
+        <div id="s5gridwrap" class="full" style="perspective:900px;overflow:hidden;border-radius:28px;opacity:0">
+          <div id="s5grid" class="abs" style="left:-340px;top:300px;width:1360px;height:1360px;background-image:linear-gradient(rgba(182,255,59,.7) 2px,transparent 2px),linear-gradient(90deg,rgba(182,255,59,.7) 2px,transparent 2px);background-size:68px 68px;transform-origin:50% 0"></div>
+        </div>
+        <svg id="s5axes" class="abs" style="left:30px;bottom:30px;opacity:0" width="160" height="160" viewBox="0 0 160 160">
+          <line x1="30" y1="130" x2="150" y2="130" stroke="#FF3B3B" stroke-width="6"/><text x="150" y="118" fill="#FF3B3B" font-family="J" font-weight="700" font-size="24">X</text>
+          <line x1="30" y1="130" x2="30" y2="10" stroke="#B6FF3B" stroke-width="6"/><text x="40" y="20" fill="#B6FF3B" font-family="J" font-weight="700" font-size="24">Y</text>
+          <line x1="30" y1="130" x2="90" y2="70" stroke="#18E8FF" stroke-width="6"/><text x="96" y="68" fill="#18E8FF" font-family="J" font-weight="700" font-size="24">Z</text></svg>
+        <div id="s5orb" class="abs" style="width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:radial-gradient(circle,#fff 0,#fff6c8 25%,rgba(255,220,120,.5) 45%,rgba(255,200,80,0) 70%);opacity:0"></div>
+        <div id="s5lux" class="pill" style="opacity:0;border-color:#ffd66b;color:#ffd66b">LUZ 5600K</div>
+        <svg id="s5face" class="full" viewBox="0 0 680 889" style="opacity:0"></svg>
+        <div id="s5track" class="pill" style="left:190px;top:40px;opacity:0;border-color:var(--lm);color:var(--lm)">FACE TRACK 99.2%</div>
+      </div>
+      <div id="s5chips" class="abs center" style="top:1250px;display:flex;justify-content:center;gap:18px">
+        <span id="s5c1" class="chip" style="background:#1a2233;color:#fff;font-size:34px">✓ ESPAÇO 3D</span>
+        <span id="s5c2" class="chip" style="background:#1a2233;color:#fff;font-size:34px">✓ ILUMINAÇÃO</span>
+        <span id="s5c3" class="chip" style="background:#1a2233;color:#fff;font-size:34px">✓ ROSTO</span>
+      </div>
+    </div>
+
+    <!-- S6 continuity -->
+    <div id="s6" class="scene">
+      <div id="s6ta" class="abs center big" style="top:280px;font-size:78px">Em vez de <span style="color:var(--rd)">cortar e arrastar</span></div>
+      <div id="s6tb" class="abs center big" style="top:260px;font-size:78px">O sistema cria a<br><span style="color:var(--cy)">continuidade perfeita</span></div>
+      <div id="s6blocks" class="full"></div>
+      <svg id="s6cur" class="abs" width="60" height="80" viewBox="0 0 60 80"><path d="M4 4 L4 64 L20 50 L32 76 L44 70 L32 46 L54 46 Z" fill="#fff" stroke="#000" stroke-width="4"/></svg>
+      <div id="s6flow" class="full" style="opacity:0;perspective:1400px">
+        <svg class="full" viewBox="0 0 1080 1920"><path id="s6path" d="M200 860 C 400 560, 680 1160, 880 860" fill="none" stroke="url(#g6)" stroke-width="10" stroke-linecap="round"/>
+          <defs><linearGradient id="g6" x1="0" x2="1"><stop offset="0" stop-color="#18E8FF"/><stop offset="1" stop-color="#FF2E88"/></linearGradient></defs></svg>
+        <div id="s6ghosts" class="full"></div>
+        <div id="s6A" class="card" style="left:60px;top:660px;width:280px;height:366px;border:4px solid var(--cy)"><img src="av/intro/0120.jpg"><div class="pill" style="left:12px;top:12px;font-size:24px;padding:6px 12px">00:01</div></div>
+        <div id="s6B" class="card" style="left:740px;top:660px;width:280px;height:366px;border:4px solid var(--mg)"><img src="av/intro/0145.jpg"><div class="pill" style="left:12px;top:12px;font-size:24px;padding:6px 12px;border-color:var(--mg);color:var(--mg)">00:02</div></div>
+      </div>
+      <div id="s6chips" class="abs center" style="top:1130px;display:flex;justify-content:center;gap:18px">
+        <span id="s6c1" class="chip" style="background:var(--cy);color:#05070D">ÂNGULOS</span>
+        <span id="s6c2" class="chip" style="background:var(--mg);color:#fff">RITMOS</span>
+      </div>
+      <div id="s6wave" class="abs" style="left:240px;width:600px;top:1230px;height:100px;display:flex;align-items:center;gap:8px;opacity:0"></div>
+      <div id="s6auto" class="abs center" style="top:1350px;opacity:0"><span class="chip" style="background:var(--lm);color:#05070D;font-size:44px">✦ 100% AUTÔNOMO</span></div>
+    </div>
+
+    <!-- S7 hours -> seconds -->
+    <div id="s7" class="scene">
+      <div id="s7ta" class="abs center big" style="top:270px;font-size:80px">Tarefas que<br>consumiam <span style="color:var(--rd)">horas</span></div>
+      <div id="s7rows" class="abs" style="left:70px;right:70px;top:560px"></div>
+      <div id="s7big" class="abs center big" style="top:1110px;font-size:80px;white-space:nowrap;opacity:0"><span id="s7h" style="color:#888;position:relative">HORAS<span id="s7hs" class="abs" style="left:-10px;top:46%;height:12px;width:0;background:var(--rd)"></span></span> <span style="color:var(--cy)">→</span> <span id="s7s" style="color:var(--lm)">SEGUNDOS</span></div>
+      <div id="s7alg" class="abs center" style="top:1270px;opacity:0"><span class="chip mono" style="background:#fff;color:#05070D">⚙ PELO PRÓPRIO ALGORITMO</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== GLOBAL ===================== -->
+  <div id="cap"></div>
+  <div id="hud">
+    <div class="corner" style="left:40px;top:40px;border-width:4px 0 0 4px"></div>
+    <div class="corner" style="right:40px;top:40px;border-width:4px 4px 0 0"></div>
+    <div class="corner" style="left:40px;bottom:40px;border-width:0 0 4px 4px"></div>
+    <div class="corner" style="right:40px;bottom:40px;border-width:0 4px 4px 0"></div>
+    <div class="abs" style="left:70px;top:70px;display:flex;align-items:center;gap:12px"><span id="rec" style="width:20px;height:20px;border-radius:50%;background:#ff3b3b;display:inline-block"></span>REC</div>
+    <div class="abs" style="right:70px;top:70px;letter-spacing:3px"><span style="color:var(--cy)">HYPER</span>FRAMES</div>
+    <div id="tc" class="abs" style="left:70px;bottom:70px">00:00:00:00</div>
+    <div id="fn" class="abs" style="right:70px;bottom:70px">FRAME 0000</div>
+  </div>
+  <div id="glitch"></div>
+  <div id="flash"></div>
+  <div id="fade"></div>
+</div>
+
+<script src="words.js"></script>
+<script>
+const FPS=25, T1=12.24, T2=T1+53.47, TEND=T2+16.02;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.3,fo=.3)=>Math.min(P(t,a,a+fi),1-P(t,b-fo,b));
+function rnd(seed){let x=Math.sin(seed*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];return el}
+// pop-in helper: returns {o,s}
+function pop(t,a,dur=.4){const x=P(t,a,a+dur);return {o:clamp(x*2.5),s:lerp(.5,1,eb(x))}}
+const pad=(n,l=2)=>String(Math.floor(n)).padStart(l,'0');
+const imgs=(n)=>`av/intro/${pad(n,4)}.jpg`;
+
+// ---------- build dynamic DOM ----------
+// S1 cards
+const s1cards=[];[20,70,120,170,220,260].forEach((f,i)=>{const c=document.createElement('div');c.className='card';st(c,{width:'260px',height:'340px',left:'410px',top:'560px',boxShadow:'0 20px 60px rgba(0,0,0,.6)',border:'3px solid rgba(24,232,255,.5)'});c.innerHTML=`<img src="${imgs(f)}">`;$('s1cards').appendChild(c);s1cards.push(c)});
+// S2 strip
+for(let i=0;i<16;i++){const im=document.createElement('img');im.src=imgs(8+i*18);$('s2strip').appendChild(im)}
+// S3 editor clips
+const v1=[];const v1cols=['#3b82f6','#2563eb','#1d4ed8','#3b82f6','#2563eb','#1e40af'];
+for(let i=0;i<6;i++){const c=document.createElement('div');c.className='clip';st(c,{left:(i*143)+'px',width:'143px',background:`linear-gradient(135deg,${v1cols[i]},#0f2a6b)`});c.innerHTML=`<img src="${imgs(30+i*40)}" style="height:100%;width:72px;object-fit:cover;opacity:.9">`;$('v1lane').appendChild(c);v1.push(c)}
+{const a=document.createElement('div');a.className='clip';st(a,{left:'0',width:'858px',background:'#10331f'});
+ let bars='';for(let i=0;i<120;i++){const h=10+Math.abs(Math.sin(i*.7)*Math.cos(i*.23))*70;bars+=`<div style="position:absolute;left:${i*7.1}px;top:${47-h/2}px;width:4px;height:${h}px;background:#34d27b"></div>`}a.innerHTML=bars;$('a1lane').appendChild(a)}
+const fx=[];[['ZOOM','#B6FF3B',40],['BLUR','#18E8FF',330],['COR','#FF2E88',620]].forEach(([l,c,x])=>{const d=document.createElement('div');d.className='fx';d.textContent=l;st(d,{left:x+'px',width:'230px',background:c});$('fxlane').appendChild(d);fx.push(d)});
+{let r='';for(let i=0;i<9;i++)r+=`<span style="position:absolute;left:${i*96+6}px;top:10px">00:${pad(i*4)}</span>`;$('ruler').innerHTML=r}
+// S5 face landmarks (in 680x889 card coords; image is exactly this aspect)
+{const W=680,H=889;const L=[[.41,.345],[.59,.345],[.36,.30],[.46,.29],[.54,.29],[.64,.30],[.50,.40],[.47,.45],[.53,.45],[.44,.51],[.50,.52],[.56,.51],[.29,.40],[.31,.52],[.37,.60],[.50,.645],[.63,.60],[.69,.52],[.71,.40]];
+ const pts=L.map(([x,y])=>[x*W,y*H]);let s='';
+ const lines=[[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[2,3],[4,5],[6,7],[6,8],[9,10],[10,11],[0,6],[1,6],[7,9],[8,11]];
+ lines.forEach(([a,b],i)=>s+=`<line class="fl" x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" stroke="#B6FF3B" stroke-width="2.5" opacity=".8"/>`);
+ pts.forEach((p,i)=>s+=`<circle class="fp" cx="${p[0]}" cy="${p[1]}" r="7" fill="#B6FF3B"/>`);
+ const bx=.27*W,by=.10*H,bw=.46*W,bh=.58*H,c=40;
+ s+=`<g stroke="#B6FF3B" stroke-width="6" fill="none"><path d="M${bx} ${by+c}V${by}H${bx+c}M${bx+bw-c} ${by}H${bx+bw}V${by+c}M${bx+bw} ${by+bh-c}V${by+bh}H${bx+bw-c}M${bx+c} ${by+bh}H${bx}V${by+bh-c}"/></g>`;
+ $('s5face').innerHTML=s}
+// S6 blocks + ghosts + wave
+const s6b=[];['#3b82f6','#FF2E88','#B6FF3B','#18E8FF','#f59e0b'].forEach((c,i)=>{const d=document.createElement('div');st(d,{position:'absolute',left:(110+i*178)+'px',top:'760px',width:'150px',height:'110px',borderRadius:'14px',background:c,boxShadow:'0 10px 30px rgba(0,0,0,.5)'});$('s6blocks').appendChild(d);s6b.push(d)});
+const ghosts=[];for(let i=1;i<=5;i++){const g=document.createElement('div');g.className='card';st(g,{width:'150px',height:'196px',border:'2px solid rgba(255,255,255,.6)'});g.innerHTML=`<img src="${imgs(120+i*4)}">`;$('s6ghosts').appendChild(g);ghosts.push(g)}
+const wv=[];for(let i=0;i<30;i++){const b=document.createElement('div');st(b,{flex:'1',background:i%2?'#FF2E88':'#18E8FF',borderRadius:'6px',height:'20px'});$('s6wave').appendChild(b);wv.push(b)}
+// S7 rows
+const rows=[['DECUPAGEM',46.08,'3h 20min','4s'],['ENQUADRAMENTO DINÂMICO',47.04,'2h 45min','2s'],['TRANSIÇÕES COMPLEXAS',48.42,'4h 10min','3s']].map(([l,a,h,s],i)=>{
+  const r=document.createElement('div');st(r,{position:'absolute',left:'0',right:'0',top:(i*175)+'px',height:'150px',background:'#10141d',border:'2px solid #262c3a',borderRadius:'22px',padding:'20px 28px'});
+  r.innerHTML=`<div class="big" style="font-size:40px">${l}</div><div style="position:absolute;left:28px;right:210px;bottom:26px;height:34px;background:#1c2230;border-radius:17px;overflow:hidden"><div class="bar" style="height:100%;width:0;border-radius:17px"></div></div><div class="tm mono" style="position:absolute;right:28px;bottom:18px;font-size:46px;font-weight:700;width:170px;text-align:right"></div>`;
+  $('s7rows').appendChild(r);return {r,a:a+12.24,h,s,bar:r.querySelector('.bar'),tm:r.querySelector('.tm')}});
+// glitch stripes
+const gl=[];for(let i=0;i<16;i++){const d=document.createElement('div');$('glitch').appendChild(d);gl.push(d)}
+
+// captions grouping
+const W=window.WORDS;const groups=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];const brk=!nx||g.length>=3||/[,.?!]$/.test(w[0])||(nx[1]-w[2]>.35)||(w[1]<T1&&nx[1]>=T1)||(w[1]<T2&&nx[1]>=T2);if(brk){groups.push(g);g=[]}}}
+groups.forEach((g,i)=>{g.start=g[0][1];g.end=groups[i+1]?Math.min(groups[i+1][0][1],g[g.length-1][2]+.6):g[g.length-1][2]+.8});
+let lastGroup=-1;
+
+// ---------- per-frame ----------
+async function seek(t){
+  const f=Math.round(t*FPS);
+  // --- segment visibility
+  const inMid=t>=T1&&t<T2;
+  st('av',{display:inMid?'none':'block'});
+  st('mid',{opacity:inMid?1:0,display:inMid?'block':'none'});
+  // --- avatar frame
+  if(!inMid){
+    const intro=t<T1;const lf=intro?Math.min(309,Math.floor(t*FPS)+1):Math.min(400,Math.floor((t-T2)*FPS)+1);
+    const src=`av/${intro?'intro':'outro'}/${pad(lf,4)}.jpg`;const im=$('avimg');
+    if(!im.src.endsWith(src)){im.src=src;try{await im.decode()}catch(e){}}
+    let sc=1.0,dx=0,dy=0;
+    if(intro){sc=1.04+.05*P(t,0,12.24);
+      const z=P(t,6.05,6.3)-P(t,7.5,7.9);sc+=.22*eo(clamp(z));
+      if(t>11.0){const k=P(t,11.0,11.2)*(1-P(t,11.9,12.24));dx=(rnd(f)-.5)*18*k;dy=(rnd(f+7)-.5)*18*k}
+    }else{const o=t-T2;sc=1.04+.03*P(o,0,16);sc+=.12*eo(P(o,8.8,9.1))-.12*eo(P(o,12.4,12.7));}
+    st(im,{transform:`translate(-50%,0) translate(${dx}px,${dy}px) scale(${sc})`});
+    // intro overlays
+    const ti=t;
+    {const a=win(ti,2.2,4.1,.25,.3);const p=pop(ti,2.2);st('i_clock',{opacity:a,transform:`scale(${p.s})`});$('i_hand').setAttribute('transform',`rotate(${ti*720} 39 42)`);$('i_hours').textContent='+'+pad(clamp((ti-2.2)/1.5)*99)+'h'}
+    {const a=win(ti,4.1,5.5,.15,.3);st('i_cut',{opacity:a});const x=eio(P(ti,4.15,5.2));st('i_cutline',{width:(x*1080)+'px'});st('i_sc',{left:(x*1080-60)+'px'});const ang=Math.sin(ti*40)*12;$('i_scb1').setAttribute('transform',`rotate(${ang} 44 60)`);$('i_scb2').setAttribute('transform',`rotate(${-ang} 44 60)`)}
+    {const a=win(ti,6.05,7.55,.15,.3);const s=lerp(1.25,1,eo(P(ti,6.05,6.35)));st('i_zoom',{opacity:a,transform:`scale(${s})`})}
+    {const a=win(ti,7.6,8.75,.15,.25);const off=(ti*400)%80;st('i_sprL',{opacity:a,transform:`translateX(${(1-eo(P(ti,7.6,7.85)))*-70}px)`});st('i_sprR',{opacity:a,transform:`translateX(${(1-eo(P(ti,7.6,7.85)))*70}px)`});document.querySelectorAll('.i_holes').forEach(h=>h.style.backgroundPosition=`0 ${off}px`);
+      st('i_frame',{opacity:a});$('i_fnum').textContent=pad(f,4)}
+    {const a=win(ti,9.25,12.3,.2,.01);const p=pop(ti,9.25);st('i_manual',{opacity:a,transform:`scale(${p.s})`});
+      const b=P(ti,11.0,11.15);st('i_stamp',{opacity:b*(ti<T1?1:0),transform:`scale(${lerp(2.2,1,eo(b))})`});st('redvig',{opacity:(ti<T1?clamp(P(ti,10.9,11.3))*(.7+.3*Math.sin(ti*20)):0)})}
+    if(!intro){const o=t-T2;
+      st('o_role',{opacity:win(o,4.7,8.75,.3,.3)});
+      st('o_strike',{width:(eo(P(o,6.5,6.85))*92)+'%'});st('o_r1',{opacity:1-.45*P(o,6.5,6.9)});
+      st('o_arrow',{opacity:P(o,6.7,6.9)});const r2=pop(o,6.9);st('o_r2',{opacity:r2.o,transform:`scale(${r2.s})`});
+      const q=pop(o,8.82,.45);st('o_q',{opacity:q.o*(1-P(o,12.4,12.65)),transform:`scale(${q.s}) rotate(${(1-q.s)*-6}deg)`});
+      const cm=pop(o,12.55,.4);st('o_cm',{opacity:cm.o*(1-P(o,13.45,13.65)),transform:`scale(${cm.s})`});
+      [1,2,3].forEach(i=>$('o_d'+i).setAttribute('cy',128-Math.max(0,Math.sin(o*9-i*.9))*14));
+      const fo=pop(o,13.6,.4);st('o_follow',{opacity:fo.o});
+      const tap=P(o,14.1,14.3);const hx=lerp(760,560,eo(P(o,13.7,14.1)));const hy=lerp(200,60,eo(P(o,13.7,14.1)));
+      st('o_hand',{left:hx+'px',top:hy+'px',opacity:1-P(o,14.8,15.1),transform:`scale(${1-.15*Math.sin(tap*Math.PI)})`});
+      const done=o>=14.25;$('o_btxt').textContent=done?'✓ SEGUINDO':'+ SEGUIR';st('o_btn',{background:done?'#fff':'var(--mg)',color:done?'#05070D':'#fff',transform:`scale(${fo.s*(1-.08*Math.sin(tap*Math.PI))})`});
+      st('o_rev',{opacity:P(o,14.6,14.9),transform:`translateY(${(1-eo(P(o,14.6,15)))*30}px)`});
+    }else{['o_role','o_q','o_cm','o_follow'].forEach(i=>st(i,{opacity:0}))}
+    if(intro)['o_role','o_q','o_cm','o_follow'].forEach(i=>st(i,{opacity:0}));
+  }
+  // --- MID
+  if(inMid){const m=t-T1;
+    st('floor',{backgroundPosition:`0 ${(m*140)%120}px`});
+    const sc=(id,a,b)=>{const o=win(m,a,b,.3,.3);st(id,{opacity:o,display:o>0?'block':'none'});return o>0};
+    // S1 0..6.45
+    if(sc('s1',0,6.45)){
+      s1cards.forEach((c,i)=>{const a=.1+i*.18;const x=eo(P(m,a,a+.9));const ang=(i-2.5)*22+Math.sin(m*.8+i)*4;const z=lerp(-1600,-200,x);
+        st(c,{opacity:x*(1-.55*P(m,3.0,3.4)),transform:`translateX(${(i-2.5)*120}px) translateY(${-120+Math.sin(m*1.3+i)*14}px) translateZ(${z}px) rotateY(${ang}deg)`})});
+      const k=P(m,.2,.7);st('s1kick',{opacity:k,letterSpacing:lerp(20,4,eo(k))+'px'});
+      const tp=P(m,3.1,3.4);const g=(1-P(m,3.1,3.9))*28;const j=(rnd(f)-.5)*g;
+      st('s1title',{opacity:clamp(tp*3),transform:`scale(${lerp(2.2,1,eo(tp))})`});
+      st('s1h',{textShadow:`${j}px 0 #FF2E88,${-j}px 0 #fff`,transform:`translateX(${(rnd(f+3)-.5)*g}px)`});
+      st('s1f',{textShadow:`${-j}px 0 #18E8FF,${j}px 0 #FF2E88`,transform:`translateX(${(rnd(f+5)-.5)*g}px)`});
+      const sp=pop(m,4.5);st('s1sub',{opacity:sp.o,transform:`scale(${sp.s})`});
+    }
+    // S2 6.3..11.35
+    if(sc('s2',6.3,11.35)){
+      st('s2t1',{opacity:P(m,6.5,6.8)});const t2=pop(m,8.75);st('s2t2',{opacity:t2.o,transform:`scale(${t2.s})`});
+      const enter=eo(P(m,6.3,6.9));st('s2strip',{transform:`translateX(${(1-enter)*1100 - (m-6.3)*260}px) rotate(-5deg)`});
+      const c=P(m,10.1,10.3);st('s2cnt',{opacity:c});$('s2n').textContent=pad(clamp(Math.floor((m-10.1)*25)%25+1,1,25));
+    }
+    // S3 11.3..18.9
+    if(sc('s3',11.3,18.9)){
+      const tt=pop(m,11.4);st('s3t',{opacity:tt.o,transform:`scale(${tt.s})`});
+      const edp=eo(P(m,11.4,11.9));st('ed',{opacity:edp,transform:`translateY(${(1-edp)*120}px)`});
+      const mins=clamp((m-11.4)/7.4)*402;$('s3clock').textContent=pad(mins/60)+':'+pad(mins%60);
+      const cuts=[14.6,15.0,15.3,15.6,15.95];
+      v1.forEach((c,i)=>{let off=0;cuts.forEach((ct,k)=>{if(i>k)off+=16*eo(P(m,ct,ct+.2))});st(c,{transform:`translateX(${off}px)`})});
+      const phx=m<14.4?lerp(130,560,eio(P(m,12,14.4))):(m<16.6?lerp(560,840,P(m,14.4,16.6)):lerp(840,300,eio(P(m,16.6,18.6))));
+      st('playhead',{left:phx+'px'});
+      // scissors travelling across cut points on V1 (ed left 50 + lane 120 ; V1 top 236)
+      const ci=cuts.findIndex((c,k)=>m<(cuts[k+1]||99));const cx=ci>=0?(50+120+(ci+1)*143+ci*16):0;
+      const scv=m>=14.5&&m<16.3;st('s3sc',{opacity:scv?1:0,left:(cx-65)+'px',top:(560+236+5)+'px'});
+      const snap=scv?Math.max(0,Math.cos((m-cuts[Math.max(ci,0)])*Math.PI*3))*16:0;$('s3b1').setAttribute('transform',`rotate(${snap} 44 60)`);$('s3b2').setAttribute('transform',`rotate(${-snap} 44 60)`);
+      fx.forEach((d,i)=>{const a=[17.25,17.8,18.05][i];const x=P(m,a,a+.35);st(d,{opacity:clamp(x*3),transform:`translateY(${(1-eb(x))*-180}px)`})});
+      const curx=m<16.6?lerp(700,cx+30,eo(P(m,12,14.3))):lerp(cx+30,[50+120+40+100,50+120+330+100,50+120+620+100][clamp(Math.floor((m-16.8)/.45),0,2)],eo(P(m,16.6,17.2)));
+      st('s3cur',{left:curx+'px',top:(m<16.6?1060:700)+'px',opacity:P(m,11.9,12.2)});
+    }
+    // S4 18.8..26.1
+    if(sc('s4',18.8,26.1)){
+      const tt=pop(m,18.85);st('s4t',{opacity:tt.o,transform:`scale(${tt.s})`});
+      const cp=pop(m,19.4,.45);const live=P(m,23.3,23.8);
+      const ry=live*Math.sin((m-23.3)*1.6)*14, rx=live*Math.cos((m-23.3)*1.3)*6;
+      st('s4wrap',{opacity:cp.o,transform:`scale(${cp.s*(1+live*.03*Math.sin(m*3))})`});
+      st('s4card',{transform:`rotateY(${ry}deg) rotateX(${rx}deg)`,filter:`grayscale(${1-live}) contrast(${1-.1*(1-live)})`});
+      st('s4glow',{opacity:live,transform:`rotateY(${ry}deg) rotateX(${rx}deg)`,background:`conic-gradient(from ${m*120}deg,#18E8FF,#FF2E88,#B6FF3B,#18E8FF)`});
+      $('s4img').src=imgs(m<23.3?1:1+Math.floor(((m-23.3)*6)%8));
+      st('s4scan',{opacity:live,top:(((m-23.3)*420)%900-120)+'px'});
+      const x=P(m,22.45,22.6);st('s4x',{opacity:x*(1-live),transform:`scale(${lerp(1.6,1,eo(x))})`});
+      st('s4l1',{opacity:P(m,21.4,21.7)*(1-live)});
+      const l2=pop(m,24.35);st('s4l2',{opacity:l2.o,transform:`scale(${l2.s})`});const l3=pop(m,25.0);st('s4l3',{opacity:l3.o,transform:`scale(${l3.s})`});
+    }
+    // S5 26.0..33.4
+    if(sc('s5',26.0,33.4)){
+      const tt=pop(m,26.0);st('s5t',{opacity:tt.o,transform:`scale(${tt.s})`});
+      const w=eo(P(m,26.0,26.5));st('s5wrap',{opacity:w,transform:`scale(${lerp(.85,1,w)})`});
+      const d=P(m,28.5,28.9);st('s5gridwrap',{opacity:d*(1-.5*P(m,30.4,30.8))});st('s5grid',{transform:`rotateX(${62+Math.sin(m*.9)*6}deg) rotateZ(${(m-28.5)*8}deg)`});
+      st('s5depth',{opacity:.55*d*(1-P(m,30.3,30.8))});st('s5axes',{opacity:d,transform:`rotate(${Math.sin(m*1.5)*6}deg)`});
+      const L=P(m,30.35,30.7);const ang=(m-30.35)*1.4-2.3;const ox=340+Math.cos(ang)*300,oy=360+Math.sin(ang)*260;
+      st('s5orb',{opacity:L,left:ox+'px',top:oy+'px'});st('s5lux',{opacity:L,left:(ox+50)+'px',top:(oy-24)+'px'});
+      st('s5light',{opacity:L*.95,background:`radial-gradient(circle at ${ox/680*100}% ${oy/889*100}%,rgba(255,240,200,1) 0,rgba(255,220,150,.5) 20%,rgba(0,0,40,.9) 70%)`});
+      const F=P(m,32.05,32.35);st('s5face',{opacity:F});st('s5track',{opacity:F});
+      $('s5face').querySelectorAll('.fp').forEach((c,i)=>c.setAttribute('r',5+2*Math.abs(Math.sin(m*6+i))));
+      [['s5c1',28.5],['s5c2',30.35],['s5c3',32.05]].forEach(([id,a])=>{const on=m>=a;const p=pop(m,a,.3);st(id,{opacity:.35+.65*p.o,background:on?'#B6FF3B':'#1a2233',color:on?'#05070D':'#fff',transform:`scale(${on?p.s:1})`})});
+      st('s5chips',{opacity:P(m,26.3,26.6)});
+    }
+    // S6 33.3..43.95
+    if(sc('s6',33.3,43.95)){
+      st('s6ta',{opacity:P(m,33.35,33.6)*(1-P(m,35.8,36.0))});
+      const tb=pop(m,35.95);st('s6tb',{opacity:tb.o,transform:`scale(${tb.s})`});
+      s6b.forEach((b,i)=>{const fall=P(m,35.2+i*.06,35.9+i*.06);const drag=m>=33.8&&m<35.2?Math.sin((m-33.8)*6+i)*20:0;
+        st(b,{opacity:P(m,33.4+i*.08,33.6+i*.08)*(1-fall),transform:`translate(${drag+(i-2)*fall*120}px,${fall*fall*600}px) rotate(${fall*(i-2)*40}deg)`})});
+      st('s6cur',{opacity:P(m,33.6,33.8)*(1-P(m,35.2,35.5)),left:(560+Math.sin((m-33.8)*6+2)*20)+'px',top:'830px'});
+      const fl=P(m,36.3,36.8);st('s6flow',{opacity:fl});
+      const path=$('s6path');const len=path.getTotalLength();path.style.strokeDasharray=len;path.style.strokeDashoffset=len*(1-eio(P(m,37.8,39.2)));
+      ghosts.forEach((g,i)=>{const a=38.1+i*.22;const pt=path.getPointAtLength(len*(i+1)/6);const x=P(m,a,a+.3);
+        st(g,{left:(pt.x-75)+'px',top:(pt.y-98)+'px',opacity:x*.85,transform:`scale(${lerp(.4,1,eo(x))}) rotateY(${m>40.8?Math.sin(m*2+i)*28*P(m,40.8,41.2):0}deg)`})});
+      const ry=m>40.8?Math.sin(m*2)*30*P(m,40.8,41.2):0;
+      st('s6A',{transform:`rotateY(${ry}deg)`});st('s6B',{transform:`rotateY(${-ry}deg)`});
+      const c1=pop(m,41.45);st('s6c1',{opacity:c1.o,transform:`scale(${c1.s})`});const c2=pop(m,42.2);st('s6c2',{opacity:c2.o,transform:`scale(${c2.s})`});
+      st('s6wave',{opacity:P(m,42.2,42.4)});wv.forEach((b,i)=>b.style.height=(18+Math.abs(Math.sin(m*7+i*.55))*78)+'px');
+      const au=pop(m,42.8);st('s6auto',{opacity:au.o,transform:`scale(${au.s})`});
+    }
+    // S7 43.9..53.47
+    if(sc('s7',43.9,53.8)){
+      const ta=pop(m,43.95);st('s7ta',{opacity:ta.o,transform:`scale(${ta.s})`});
+      const shrink=eio(P(m,50.1,50.9));
+      rows.forEach(r=>{const a=r.a-T1;const x=P(m,a,a+.35);st(r.r,{opacity:x,transform:`translateX(${(1-eo(x))*-200}px)`});
+        const fill=eo(P(m,a+.1,a+.8));st(r.bar,{width:(lerp(fill*100,5,shrink))+'%',background:shrink>.5?'#B6FF3B':'#FF3B3B'});
+        r.tm.textContent=m<50.5?r.h:r.s;st(r.tm,{color:m<50.5?'#FF3B3B':'#B6FF3B',transform:`translateY(${Math.sin(P(m,50.3,50.7)*Math.PI)*-20}px)`,opacity:1-.8*Math.sin(P(m,50.3,50.7)*Math.PI)})});
+      const b=pop(m,51.2);st('s7big',{opacity:b.o,transform:`scale(${b.s})`});st('s7hs',{width:(eo(P(m,51.5,51.8))*110)+'%'});
+      const al=pop(m,52.5);st('s7alg',{opacity:al.o,transform:`scale(${al.s})`});
+    }
+  }
+  await Promise.all([...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.decode().catch(()=>{})));
+  // --- captions
+  let gi=groups.findIndex(g=>t>=g.start&&t<g.end);
+  const cap=$('cap');
+  if(gi!==lastGroup){cap.innerHTML=gi<0?'':groups[gi].map(w=>`<span>${w[0].replace(/[,.]$/,'')}</span>`).join('');lastGroup=gi}
+  if(gi>=0){const g=groups[gi];const sp=cap.children;let cur=-1;g.forEach((w,i)=>{if(t>=w[1])cur=i});
+    for(let i=0;i<sp.length;i++){sp[i].className=i===cur?'on':'';const pw=P(t,g[i][1],g[i][1]+.12);sp[i].style.transform=i===cur?`scale(${lerp(1.18,1.06,pw)})`:'scale(1)';sp[i].style.opacity=t>=g[i][1]?1:.55}
+    const gp=P(t,g.start,g.start+.12);cap.style.opacity=gp;cap.style.transform=`translateY(${(1-gp)*20}px)`}
+  st(cap,{top:(inMid?1500:1380)+'px',fontSize:(inMid?68:78)+'px'});
+  // --- HUD
+  const s=Math.floor(t);$('tc').textContent=`00:${pad(s/60)}:${pad(s%60)}:${pad(f%FPS)}`;$('fn').textContent='FRAME '+pad(f,4);
+  st('rec',{opacity:(Math.floor(t*2)%2)?.25:1});
+  // --- glitch transitions around T1, T2 and the S1 title slam
+  let gI=0;[[T1,.45],[T2,.45],[T1+3.18,.25]].forEach(([c,d])=>{gI=Math.max(gI,1-Math.abs(t-c)/d)});gI=clamp(gI);
+  gl.forEach((d,i)=>{const on=gI>0&&rnd(f*31+i)<gI*.9;const h=10+rnd(f*7+i)*90;
+    st(d,{display:on?'block':'none',top:(rnd(f*13+i)*1920)+'px',height:h+'px',transform:`translateX(${(rnd(f*17+i)-.5)*300*gI}px)`,
+      background:['rgba(24,232,255,.55)','rgba(255,46,136,.55)','rgba(255,255,255,.35)','rgba(0,0,0,.6)'][i%4],mixBlendMode:i%4===3?'normal':'screen'})});
+  st('flash',{opacity:Math.max(0,1-Math.abs(t-T1)/.12)*.85+Math.max(0,1-Math.abs(t-T2)/.12)*.85});
+  st('stage',{transform:gI>.2?`translate(${(rnd(f)-.5)*24*gI}px,${(rnd(f+1)-.5)*14*gI}px)`:'none'});
+  st('fade',{opacity:P(t,TEND-.35,TEND)});
+}
+window.seek=seek;window.TEND=TEND;window.FPS=FPS;
+window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
+</script>
+</body>
+</html>
