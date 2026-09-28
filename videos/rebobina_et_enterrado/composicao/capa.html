@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url(fonts/press-start-2p-latin-400-normal.woff2)}
+@font-face{font-family:M;font-weight:900;src:url(fonts/montserrat-latin-900-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:linear-gradient(#0b0320 0%,#2a0b4a 40%,#7a1d6e 58%,#12071f 59%);color:#fff}
+.abs{position:absolute}
+#sun{position:absolute;left:240px;top:640px;width:600px;height:600px;border-radius:50%;background:linear-gradient(#FFE600,#FF7A1A 45%,#FF2BD6);
+ mask-image:linear-gradient(#000 40%,transparent 40%),repeating-linear-gradient(#000 0 22px,transparent 22px 34px);mask-composite:add;-webkit-mask-image:repeating-linear-gradient(#000 0 22px,transparent 22px 34px)}
+.px{font-family:P;text-transform:uppercase;line-height:1.2}
+.neon{text-shadow:6px 0 #FF2BD6,-6px 0 #00E5FF,0 0 40px rgba(255,43,214,.7)}
+.cart{position:absolute;background:#1b1b1f;border-radius:14px 14px 6px 6px;box-shadow:inset 0 -24px 0 #0e0e10,0 30px 60px rgba(0,0,0,.7);border:6px solid #000}
+.cart .l{position:absolute;left:8%;right:8%;top:7%;height:60%;background:linear-gradient(#FF7A1A,#FF2BD6);display:flex;align-items:center;justify-content:center;font-family:P;color:#fff;text-shadow:5px 5px 0 #000}
+.cart .r{position:absolute;left:8%;right:8%;bottom:10%;height:15%;background:repeating-linear-gradient(90deg,#2a2a30 0 14px,#15151a 14px 26px)}
+#scan{position:absolute;inset:0;background:repeating-linear-gradient(rgba(0,0,0,.25) 0 2px,transparent 2px 5px)}
+</style></head><body><div id="c">
+<div id="sun"></div>
+<div class="abs" style="left:0;right:0;top:1133px;bottom:0;perspective:600px;overflow:hidden"><div style="position:absolute;left:-1000px;width:3080px;top:0;height:2400px;transform-origin:50% 0;transform:rotateX(70deg);background-image:linear-gradient(rgba(255,43,214,.8) 3px,transparent 3px),linear-gradient(90deg,rgba(255,43,214,.8) 3px,transparent 3px);background-size:110px 110px"></div></div>
+<!-- sand mound -->
+<div class="abs" style="left:-100px;right:-100px;top:1230px;height:800px;background:linear-gradient(#e0ad62,#9a6431);border-radius:50% 50% 0 0/140px 140px 0 0"></div>
+<!-- buried carts sticking out -->
+<div class="cart" style="left:120px;top:1200px;width:170px;height:200px;transform:rotate(-22deg)"><div class="l" style="font-size:30px">E.T.</div><div class="r"></div></div>
+<div class="cart" style="left:800px;top:1210px;width:170px;height:200px;transform:rotate(18deg)"><div class="l" style="font-size:30px">E.T.</div><div class="r"></div></div>
+<div class="cart" style="left:640px;top:1290px;width:140px;height:165px;transform:rotate(-10deg)"><div class="l" style="font-size:24px">E.T.</div><div class="r"></div></div>
+<!-- hero cart -->
+<div class="abs" style="left:270px;top:760px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(255,230,0,.55),rgba(255,230,0,0) 65%)"></div>
+<div class="cart" style="left:340px;top:880px;width:400px;height:460px;transform:rotate(-6deg)"><div class="l" style="flex-direction:column"><div style="font-size:90px">E.T.</div><div style="font-size:15px;margin-top:22px">O EXTRATERRESTRE</div></div><div class="r"></div></div>
+<div class="abs" style="left:-100px;right:-100px;top:1290px;height:700px;background:linear-gradient(#d9a45a,#8a5a2b);border-radius:50% 50% 0 0/60px 60px 0 0"></div>
+<!-- shovel -->
+<svg class="abs" style="left:780px;top:960px" width="200" height="420" viewBox="0 0 200 420" shape-rendering="crispEdges"><rect x="90" y="0" width="20" height="260" fill="#8a4b1f" transform="rotate(14 100 200)"/><rect x="70" y="0" width="60" height="18" fill="#8a4b1f" transform="rotate(14 100 200)"/><path d="M40 250 H150 V330 L95 380 L40 330Z" fill="#9aa0a6" transform="rotate(14 100 200)"/></svg>
+<!-- texts -->
+<div class="abs" style="left:0;right:0;top:120px;text-align:center"><span class="px" style="font-size:40px;background:#FF2BD6;padding:14px 22px;border:5px solid #fff">◀◀ 1983</span></div>
+<div class="abs px neon" style="left:0;right:0;top:250px;text-align:center;font-size:92px;color:#FFE600;line-height:1.25">O JOGO QUE<br>FOI<br>ENTERRADO</div>
+<div class="abs px" style="left:0;right:0;top:630px;text-align:center;font-size:44px;text-shadow:5px 5px 0 #000,0 0 20px #000">NO DESERTO</div>
+<div class="abs" style="left:0;right:0;bottom:170px;text-align:center"><span style="display:inline-block;font-family:M;font-weight:900;font-size:84px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:7px 7px 0 #FF2BD6">E ERA VERDADE</span></div>
+<div class="abs px" style="left:0;right:0;bottom:80px;text-align:center;font-size:30px;color:#FFE600;text-shadow:4px 4px 0 #000">◀◀ REBOBINA</div>
+<div id="scan"></div>
+</div></body></html>

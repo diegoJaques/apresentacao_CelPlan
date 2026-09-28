@@ -35,5 +35,4 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - GitHub: arquivos até 100 MB (originais maiores ficam só locais, fora do versionamento).
 
 ## Pautas em andamento
-- Rebobina — "O jogo que foi ENTERRADO no deserto" (E.T. da Atari, Alamogordo 1983, escavação 2014).
-  Narração gerada no Eleven v4 com marcadores em português (versão A). Próximo passo: montar o vídeo.
+- Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.

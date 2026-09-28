@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Rebobina - E.T. enterrado</title>
+<style>
+@font-face{font-family:P;src:url(fonts/press-start-2p-latin-400-normal.woff2)}
+@font-face{font-family:V;src:url(fonts/vt323-latin-400-normal.woff2)}
+@font-face{font-family:M;font-weight:900;src:url(fonts/montserrat-latin-900-normal.woff2)}
+:root{--mg:#FF2BD6;--cy:#00E5FF;--yl:#FFE600;--gr:#39FF6A;--or:#FF7A1A;--bg:#12071f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--bg);color:#fff;font-family:P}
+.abs{position:absolute}.full{position:absolute;inset:0}.center{left:0;right:0;text-align:center}
+.scene{position:absolute;inset:0;opacity:0;display:none}
+.px{font-family:P;line-height:1.25;text-transform:uppercase}
+.neon{text-shadow:4px 0 var(--mg),-4px 0 var(--cy),0 0 30px rgba(255,43,214,.6)}
+.chip{display:inline-block;font-family:P;padding:18px 26px;border:5px solid #fff;background:#000;font-size:34px;line-height:1.2}
+svg{overflow:visible;shape-rendering:crispEdges}
+/* synthwave bg */
+#sun{position:absolute;left:290px;top:760px;width:500px;height:500px;border-radius:50%;background:linear-gradient(#FFE600 0%,#FF7A1A 45%,#FF2BD6 100%);
+  -webkit-mask-image:repeating-linear-gradient(transparent 0 0,#000 0 26px,transparent 26px 36px);mask-image:linear-gradient(#000 45%,transparent 45%),repeating-linear-gradient(#000 0 20px,transparent 20px 30px);mask-composite:add}
+#sky{position:absolute;inset:0;background:linear-gradient(#0b0320 0%,#2a0b4a 45%,#6a1b6e 62%,#12071f 63%)}
+#gridw{position:absolute;left:0;right:0;top:1210px;bottom:0;perspective:600px;overflow:hidden}
+#grid{position:absolute;left:-1000px;width:3080px;top:0;height:2400px;transform-origin:50% 0;transform:rotateX(70deg);
+  background-image:linear-gradient(rgba(255,43,214,.8) 3px,transparent 3px),linear-gradient(90deg,rgba(255,43,214,.8) 3px,transparent 3px);background-size:110px 110px}
+/* CRT */
+#scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(rgba(0,0,0,.28) 0 2px,transparent 2px 5px)}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.75) 100%)}
+#bands{position:absolute;inset:0;pointer-events:none}
+#bands div{position:absolute;left:0;right:0;background:rgba(255,255,255,.18);mix-blend-mode:screen}
+#noise{position:absolute;inset:0;width:1080px;height:1920px;pointer-events:none;mix-blend-mode:screen}
+/* captions */
+#cap{position:absolute;left:40px;right:40px;top:1480px;text-align:center;font-family:M;font-weight:900;font-size:80px;line-height:1.08;text-transform:uppercase}
+#cap span{display:inline-block;margin:0 16px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:6px 6px 0 var(--mg)}
+#cap span.on{color:var(--yl)}
+/* OSD */
+#osd{position:absolute;inset:0;pointer-events:none;font-family:V;font-size:64px;color:#fff;text-shadow:3px 3px 0 #000}
+.cart{position:absolute;width:300px;height:340px;background:#1b1b1f;border-radius:10px 10px 4px 4px;box-shadow:inset 0 -18px 0 #0e0e10,0 20px 50px rgba(0,0,0,.6)}
+.cart .lbl{position:absolute;left:26px;right:26px;top:26px;height:210px;background:linear-gradient(#FF7A1A,#FF2BD6);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:P;color:#fff;text-shadow:3px 3px 0 #000}
+.cart .rid{position:absolute;left:26px;right:26px;bottom:34px;height:50px;background:repeating-linear-gradient(90deg,#2a2a30 0 12px,#15151a 12px 22px)}
+.tv{position:absolute;background:#3a2a1e;border-radius:40px;box-shadow:0 30px 80px rgba(0,0,0,.7);border:8px solid #22170f}
+.tvs{position:absolute;left:50px;top:50px;right:170px;bottom:50px;background:#081018;border-radius:40px/30px;overflow:hidden;box-shadow:inset 0 0 60px rgba(0,0,0,.9)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="sky"></div><div id="sun"></div>
+  <div id="dark" class="full" style="background:radial-gradient(ellipse at 50% 35%,#2a0b4a,#12071f 70%);opacity:0"></div>
+  <div id="gridw"><div id="grid"></div></div>
+
+  <!-- S1 0-8.3 deserto -->
+  <div id="s1" class="scene">
+    <svg id="dunes" class="abs" style="left:0;top:1060px" width="1080" height="300" viewBox="0 0 1080 300"></svg>
+    <div id="pit" class="abs" style="left:300px;top:1215px;width:480px;height:70px;background:#0a0410;border-radius:50%"></div>
+    <div id="boxes" class="full"></div>
+    <svg id="truck" class="abs" style="top:1030px" width="420" height="220" viewBox="0 0 420 220">
+      <rect x="0" y="40" width="260" height="120" fill="#c7c7d6"/><rect x="0" y="40" width="260" height="14" fill="#fff"/>
+      <rect x="260" y="80" width="120" height="80" fill="#FF2BD6"/><rect x="290" y="92" width="60" height="36" fill="#00E5FF"/>
+      <rect x="0" y="160" width="390" height="20" fill="#333"/>
+      <rect x="40" y="170" width="50" height="50" fill="#111"/><rect x="200" y="170" width="50" height="50" fill="#111"/><rect x="310" y="170" width="50" height="50" fill="#111"/></svg>
+    <div id="s1y" class="abs center px neon" style="top:230px;font-size:190px;color:var(--yl)">1983</div>
+    <div id="s1a" class="abs center px" style="top:470px;font-size:56px">MILHÕES DE<br>CARTUCHOS</div>
+    <div id="s1b" class="abs center" style="top:640px"><span class="chip" style="background:var(--mg);border-color:#fff;font-size:40px">ENTERRADOS</span></div>
+  </div>
+
+  <!-- S2 8.3-12 30 anos -->
+  <div id="s2" class="scene">
+    <div id="s2n" class="abs center px neon" style="top:470px;font-size:220px;color:var(--cy)">30</div>
+    <div id="s2a" class="abs center px" style="top:740px;font-size:70px">ANOS</div>
+    <div id="s2b" class="abs center" style="top:930px"><span class="chip" style="font-size:44px;color:var(--yl)">NINGUÉM ACREDITOU</span></div>
+  </div>
+
+  <!-- S3 12-18.6 atari / cartucho -->
+  <div id="s3" class="scene">
+    <div id="s3a" class="abs center px neon" style="top:260px;font-size:150px;letter-spacing:10px">ATARI</div>
+    <div id="s3k" class="abs center px" style="top:450px;font-size:36px;color:var(--yl)">O CULPADO TINHA NOME</div>
+    <div id="s3c" class="cart" style="left:390px;top:620px">
+      <div class="lbl"><div style="font-size:80px">E.T.</div><div style="font-size:13px;margin-top:18px">O EXTRATERRESTRE</div></div><div class="rid"></div></div>
+    <div id="s3y" class="abs center" style="top:1050px"><span class="chip" style="font-size:30px">1982 · ATARI 2600</span></div>
+  </div>
+
+  <!-- S4 18.6-30.6 dinheiro / 5 semanas -->
+  <div id="s4" class="scene">
+    <div id="s4a" class="abs center px" style="top:240px;font-size:44px;color:var(--yl)">DIREITOS DO FILME</div>
+    <div id="s4m" class="abs center px neon" style="top:340px;font-size:100px;color:var(--gr)">US$ <span id="s4v">0</span></div>
+    <div id="s4cal" class="abs" style="left:340px;top:620px;width:400px;height:420px">
+      <div class="full" style="background:#fff;border:8px solid #000;box-shadow:12px 12px 0 var(--mg)"></div>
+      <div class="abs" style="left:0;right:0;top:0;height:100px;background:#FF2BD6;border:8px solid #000"></div>
+      <div class="abs center px" style="top:26px;font-size:36px;color:#fff">PRAZO</div>
+      <div id="s4d" class="abs center px" style="top:170px;font-size:130px;color:#000">5</div>
+      <div class="abs center px" style="top:330px;font-size:36px;color:#000">SEMANAS</div>
+      <div id="s4page" class="abs" style="left:0;right:0;top:100px;bottom:0;background:#f4f4f4;border:8px solid #000;transform-origin:50% 0"></div>
+    </div>
+    <div id="s4b" class="abs center px neon" style="top:1110px;font-size:62px;color:var(--yl)">5 SEMANAS!</div>
+    <div id="s4c" class="abs center px" style="top:1220px;font-size:34px">PARA O JOGO INTEIRO</div>
+  </div>
+
+  <!-- S5 30.6-37 TV com o jogo -->
+  <div id="s5" class="scene">
+    <div id="s5t" class="abs center px" style="top:240px;font-size:60px;color:var(--yl)">O RESULTADO?</div>
+    <div class="tv" style="left:70px;top:420px;width:940px;height:760px">
+      <div class="tvs" id="tvs">
+        <div id="game" class="full" style="background:#1c5c2a"></div>
+        <div id="holes" class="full"></div>
+        <svg id="alien" class="abs" width="96" height="120" viewBox="0 0 12 15"></svg>
+        <div id="tvstat" class="full" style="opacity:0"></div>
+        <div id="s5lbl" class="abs center px" style="top:30px;font-size:26px;color:#fff;text-shadow:3px 3px 0 #000">CAINDO NO BURACO... DE NOVO</div>
+      </div>
+      <div class="abs" style="right:40px;top:120px;width:90px;height:90px;border-radius:50%;background:#1a120c;border:6px solid #111"></div>
+      <div class="abs" style="right:40px;top:260px;width:90px;height:90px;border-radius:50%;background:#1a120c;border:6px solid #111"></div>
+      <div class="abs" style="right:44px;top:420px;width:82px;height:220px;background:repeating-linear-gradient(#1a120c 0 10px,#2d2016 10px 18px)"></div>
+    </div>
+    <div id="s5cnt" class="abs center px" style="top:1230px;font-size:34px;color:var(--cy)">QUEDAS: <span id="s5n">0</span></div>
+  </div>
+
+  <!-- S6 37-43.3 odiaram / encalhe -->
+  <div id="s6" class="scene">
+    <div id="s6a" class="abs" style="left:80px;top:260px"><span class="chip" style="font-size:44px;border-color:var(--mg);color:var(--mg)">👎 ODIARAM</span></div>
+    <div id="s6b" class="abs" style="right:80px;top:400px"><span class="chip" style="font-size:44px;border-color:var(--cy);color:var(--cy)">↩ DEVOLVERAM</span></div>
+    <div id="s6pile" class="full"></div>
+    <div id="s6st" class="abs center" style="top:1180px;opacity:0"><span style="display:inline-block;font-family:P;font-size:80px;color:#ff3b3b;border:10px solid #ff3b3b;padding:20px 34px;transform:rotate(-8deg);background:rgba(0,0,0,.6)">ENCALHE</span></div>
+  </div>
+
+  <!-- S7 43.3-53.1 lenda / mapa -->
+  <div id="s7" class="scene">
+    <div id="s7t" class="abs center px neon" style="top:220px;font-size:110px;color:var(--yl)">LENDA?</div>
+    <svg id="s7map" class="abs" style="left:90px;top:440px" width="900" height="560" viewBox="0 0 900 560"></svg>
+    <div id="s7c" class="abs center" style="top:1090px"><span class="chip" style="font-size:30px">NUNCA CONFIRMADO</span></div>
+    <div id="s7m" class="abs center px" style="top:1200px;font-size:70px;color:var(--mg)">MITO</div>
+  </div>
+
+  <!-- S8 53.1-64.3 escavação -->
+  <div id="s8" class="scene">
+    <div id="s8y" class="abs center px neon" style="top:220px;font-size:150px;color:var(--cy)">2014</div>
+    <div id="sand" class="abs" style="left:0;right:0;top:1000px;height:420px;background:linear-gradient(#d9a45a,#8a5a2b)"></div>
+    <div id="hole8" class="abs" style="left:330px;top:980px;width:420px;height:0;background:#2b1705;border-radius:0 0 40px 40px"></div>
+    <svg id="exc" class="abs" style="left:640px;top:700px" width="420" height="360" viewBox="0 0 420 360">
+      <rect x="170" y="230" width="230" height="90" fill="#FFB800"/><rect x="250" y="170" width="120" height="70" fill="#FFB800"/><rect x="270" y="182" width="70" height="44" fill="#00E5FF"/>
+      <rect x="160" y="310" width="260" height="40" fill="#222"/>
+      <g id="arm"><rect x="20" y="200" width="170" height="26" fill="#FFB800"/><rect x="0" y="200" width="40" height="80" fill="#FFB800"/><rect x="-30" y="270" width="80" height="30" fill="#555"/></g></svg>
+    <div id="dirt" class="full"></div>
+    <div id="s8c" class="cart" style="left:390px;top:900px;transform:scale(.8)"><div class="lbl"><div style="font-size:80px">E.T.</div><div style="font-size:13px;margin-top:18px">O EXTRATERRESTRE</div></div><div class="rid"></div></div>
+    <div id="s8glow" class="abs" style="left:240px;top:760px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,230,0,.6),rgba(255,230,0,0) 60%);opacity:0"></div>
+    <div id="s8v" class="abs center px neon" style="top:420px;font-size:80px;color:var(--gr)">ERA VERDADE!</div>
+    <div id="s8n" class="abs center" style="top:560px"><span class="chip" style="font-size:32px">CENTENAS DE CARTUCHOS</span></div>
+    <div id="s8d" class="abs center px" style="top:670px;font-size:34px;color:var(--yl)">30 ANOS DEPOIS</div>
+  </div>
+
+  <!-- S9 64.3-69.3 crash -->
+  <div id="s9" class="scene">
+    <div id="s9t" class="abs center px" style="top:240px;font-size:48px;color:#ff3b3b">O CRASH DE 1983</div>
+    <svg class="abs" style="left:90px;top:400px" width="900" height="700" viewBox="0 0 900 700">
+      <rect x="0" y="0" width="900" height="700" fill="#0a0a14" stroke="#fff" stroke-width="6"/>
+      <g stroke="rgba(0,229,255,.25)" stroke-width="2"><line x1="0" y1="140" x2="900" y2="140"/><line x1="0" y1="280" x2="900" y2="280"/><line x1="0" y1="420" x2="900" y2="420"/><line x1="0" y1="560" x2="900" y2="560"/></g>
+      <polyline id="s9line" fill="none" stroke="#ff3b3b" stroke-width="14" stroke-linejoin="miter" points=""/>
+      <text x="30" y="60" font-family="P" font-size="24" fill="#fff">INDÚSTRIA DOS GAMES</text></svg>
+    <div id="s9s" class="full" style="opacity:0"></div>
+  </div>
+
+  <!-- S10 69.3-end CTA -->
+  <div id="s10" class="scene">
+    <div id="s10a" class="abs center px neon" style="top:230px;font-size:110px;color:var(--yl)">E VOCÊ?</div>
+    <div id="s10b" class="abs center px" style="top:420px;font-size:44px;line-height:1.5">QUAL JOGO<br>MERECIA SER<br><span style="color:var(--mg)">ENTERRADO?</span></div>
+    <div id="s10c" class="abs" style="left:170px;top:760px">
+      <svg width="740" height="250" viewBox="0 0 740 250"><path d="M20 0 H720 V180 H220 L140 240 L160 180 H20 Z" fill="#00E5FF" stroke="#000" stroke-width="8"/>
+        <text x="370" y="80" text-anchor="middle" font-family="P" font-size="44" fill="#000">COMENTA AQUI</text>
+        <rect id="k1" x="310" y="115" width="24" height="24" fill="#000"/><rect id="k2" x="358" y="115" width="24" height="24" fill="#000"/><rect id="k3" x="406" y="115" width="24" height="24" fill="#000"/></svg></div>
+    <div id="s10d" class="abs center" style="top:1080px">
+      <div class="px neon" style="font-size:84px">◀◀ REBOBINA</div>
+      <div id="s10btn" style="display:inline-block;margin-top:40px;background:var(--mg);border:6px solid #fff;font-family:P;font-size:44px;padding:24px 40px"><span id="s10bt">+ SEGUIR</span></div>
+    </div>
+  </div>
+
+  <canvas id="noise" width="270" height="480"></canvas>
+  <div id="bands"></div>
+  <div id="scan"></div>
+  <div id="vig"></div>
+  <div id="cap"></div>
+  <div id="osd">
+    <div id="osdl" class="abs" style="left:60px;top:70px">PLAY ▶</div>
+    <div class="abs" style="right:60px;top:70px;color:var(--yl)">◀◀ REBOBINA</div>
+    <div id="osdt" class="abs" style="left:60px;bottom:70px">SP 0:00:00</div>
+    <div class="abs" style="right:60px;bottom:70px">CH 03</div>
+  </div>
+  <div id="flash" class="full" style="background:#fff;opacity:0;pointer-events:none"></div>
+</div>
+<script src="words.js"></script>
+<script>
+const FPS=25, TEND=77.0;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.25,fo=.25)=>Math.min(P(t,a,a+fi),1-P(t,b-fo,b));
+function rnd(s){let x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];return el}
+function pop(t,a,d=.35){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(.4,1,eb(x))}}
+function slam(t,a,d=.16){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(2.8,1,eo(x))}}
+// stepped (pixel/retro) pop: scale snaps in 3 steps
+function step(t,a){const x=P(t,a,a+.24);const s=x<.33?.5:x<.66?1.25:1;return {o:x>0?1:0,s}}
+const pad=(n,l=2)=>String(Math.floor(n)).padStart(l,'0');
+// ---- build ----
+{let d='M0 300 L0 150 ';for(let x=0;x<=1080;x+=30)d+=`L${x} ${Math.round((140-Math.sin(x*.008)*50-Math.sin(x*.02)*20)/10)*10} `;d+='L1080 300Z';$('dunes').innerHTML=`<path d="${d}" fill="#c9844a"/><path d="M0 300 L0 230 Q540 170 1080 230 L1080 300Z" fill="#a8683a"/>`}
+const boxes=[];for(let i=0;i<9;i++){const b=document.createElement('div');st(b,{position:'absolute',width:'70px',height:'80px',background:['#1b1b1f','#FF2BD6','#2a2a30'][i%3],border:'5px solid #000'});$('boxes').appendChild(b);boxes.push(b)}
+// alien sprite (generic)
+{const G=['....GGGG....','..GGGGGGGG..','.GGGGGGGGGG.','GGWWGGGGWWGG','GGWKGGGGWKGG','GGGGGGGGGGGG','.GGGGGGGGGG.','..GGGGGGGG..','....GGGG....','..GGGGGGGG..','.GG.GGGG.GG.','.G..GGGG..G.','....G..G....','...GG..GG...','..GGG..GGG..'];
+ const C={G:'#8BD96B',W:'#fff',K:'#000'};let s='';G.forEach((r,y)=>[...r].forEach((c,x)=>{if(C[c])s+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${C[c]}"/>`}));$('alien').innerHTML=s}
+const holes=[];for(let i=0;i<4;i++){const h=document.createElement('div');st(h,{position:'absolute',width:'150px',height:'60px',background:'#062010',border:'6px solid #0d3a1a',left:(60+i*170)+'px',top:(i%2?430:520)+'px'});$('holes').appendChild(h);holes.push(h)}
+// pile of carts (S6)
+const pile=[];for(let i=0;i<28;i++){const c=document.createElement('div');const col=i%7,row=Math.floor(i/7);
+  st(c,{position:'absolute',width:'130px',height:'150px',background:'#1b1b1f',border:'5px solid #000',left:(90+col*130+(row%2)*40)+'px',top:(1050-row*150)+'px',boxShadow:'inset 0 -12px 0 #0e0e10'});
+  c.innerHTML='<div style="margin:12px;height:80px;background:linear-gradient(#FF7A1A,#FF2BD6);font-family:P;font-size:22px;display:flex;align-items:center;justify-content:center;color:#fff">E.T.</div>';$('s6pile').appendChild(c);pile.push(c)}
+// USA map
+{const L=[[-124.7,48.4],[-123.9,46],[-124.2,42],[-122.4,37.8],[-120.5,34.5],[-117.1,32.5],[-114.7,32.7],[-111,31.3],[-108.2,31.3],[-106.5,31.8],[-104.5,29.6],[-103,29],[-101.4,29.8],[-99.5,27.5],[-97.2,25.9],[-97.4,27.8],[-94.5,29.5],[-90,29.2],[-89,30.2],[-85,29.7],[-83,29],[-82.7,27.5],[-81.5,25.2],[-80.1,25.8],[-80.6,28.5],[-81.4,30.7],[-79.2,33.2],[-75.5,35.3],[-76.3,37],[-75,38.5],[-74,40.5],[-70,41.5],[-70.7,43],[-67,44.8],[-68,47.3],[-69.2,47.4],[-71.5,45],[-75,45],[-79,43.3],[-83,42],[-82.5,45.3],[-84.6,46.5],[-88,48.2],[-95,49],[-123,49]];
+ const pr=([lo,la])=>[(lo+126)*15.2,(50-la)*21];const d='M'+L.map(p=>pr(p).map(v=>v.toFixed(0)).join(' ')).join(' L')+'Z';const A=pr([-105.96,32.9]);
+ $('s7map').innerHTML=`<defs><pattern id="gp" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none" stroke="rgba(0,229,255,.25)" stroke-width="2"/></pattern></defs>
+ <path d="${d}" fill="url(#gp)" stroke="#00E5FF" stroke-width="6" stroke-linejoin="miter"/>
+ <g id="pin"><rect id="pinr" x="${A[0]-14}" y="${A[1]-14}" width="28" height="28" fill="none" stroke="#FFE600" stroke-width="5"/><rect x="${A[0]-10}" y="${A[1]-10}" width="20" height="20" fill="#FF2BD6"/>
+ <text x="${A[0]+30}" y="${A[1]+60}" font-family="P" font-size="26" fill="#fff">ALAMOGORDO</text><text x="${A[0]+30}" y="${A[1]+100}" font-family="P" font-size="22" fill="#FFE600">NOVO MÉXICO</text></g>`}
+const dirt=[];for(let i=0;i<24;i++){const d=document.createElement('div');st(d,{position:'absolute',width:'22px',height:'22px',background:i%2?'#8a5a2b':'#d9a45a'});$('dirt').appendChild(d);dirt.push(d)}
+const bandEls=[];for(let i=0;i<5;i++){const d=document.createElement('div');$('bands').appendChild(d);bandEls.push(d)}
+const nctx=$('noise').getContext('2d');const nimg=nctx.createImageData(270,480);
+function noise(f,a){const d=nimg.data;let s=f*7919+3;for(let i=0;i<d.length;i+=4){s=(s*1103515245+12345)&0x7fffffff;const v=(s>>16)&255;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}nctx.putImageData(nimg,0,0);$('noise').style.opacity=a}
+// captions
+const W=window.WORDS;const groups=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];if(!nx||g.length>=3||/[,.?!]$/.test(w[0])||(nx[1]-w[2]>.35)){groups.push(g);g=[]}}}
+groups.forEach((g,i)=>{g.start=g[0][1];g.end=groups[i+1]?Math.min(groups[i+1][0][1],g[g.length-1][2]+.6):g[g.length-1][2]+.8});
+let lastG=-1;
+
+async function seek(t){
+  const f=Math.round(t*FPS);
+  const sc=(id,a,b,fi=.2,fo=.2)=>{const o=win(t,a,b,fi,fo);st(id,{opacity:o,display:o>0?'block':'none'});return o>0};
+  // synthwave bg visible in S1-S3, S10; darker elsewhere
+  const synth=win(t,0,8.35,.01,.3);
+  st('dark',{opacity:clamp(1-synth)});
+  st('grid',{backgroundPosition:`0 ${(t*160)%110}px`});st('sun',{transform:`translateY(${Math.sin(t*.4)*6}px)`});
+  // S1
+  if(sc('s1',.6,8.35,.01,.25)){
+    const tx=lerp(-460,120,eo(P(t,.6,3.2)));st('truck',{left:tx+'px'});
+    boxes.forEach((b,i)=>{const a=3.3+i*.35;const x=P(t,a,a+.6);const sx=tx+100+i*14,sy=1050;
+      st(b,{left:lerp(sx,420+(i%4)*70,x)+'px',top:(lerp(sy,1210,x)-Math.sin(x*Math.PI)*120)+'px',opacity:x>0&&x<1?1:(x>=1?0:0),transform:`rotate(${x*200*(i%2?1:-1)}deg)`})});
+    const y=step(t,1.42);st('s1y',{opacity:y.o,transform:`scale(${y.s})`});
+    const a=step(t,4.82);st('s1a',{opacity:a.o,transform:`scale(${a.s})`});
+    const b=step(t,6.36);st('s1b',{opacity:b.o,transform:`scale(${b.s}) rotate(-3deg)`});
+  }
+  // S2
+  if(sc('s2',8.35,12.05)){
+    const n=Math.round(eo(P(t,9.3,9.9))*30);$('s2n').textContent=n;
+    st('s2a',{opacity:P(t,9.8,9.9)});const b=step(t,10.64);st('s2b',{opacity:b.o,transform:`scale(${b.s})`});
+  }
+  // S3
+  if(sc('s3',12.05,18.65)){
+    const a=slam(t,13.2);st('s3a',{opacity:a.o,transform:`scale(${a.s})`});
+    st('s3k',{opacity:P(t,14.1,14.3)});
+    const c=eo(P(t,15.9,16.5));st('s3c',{opacity:c,transform:`translateY(${(1-c)*500}px) rotate(${Math.sin(t*2)*3}deg)`});
+    const y=step(t,17.4);st('s3y',{opacity:y.o,transform:`scale(${y.s})`});
+  }
+  // S4
+  if(sc('s4',18.65,30.65)){
+    st('s4a',{opacity:P(t,20.5,20.8)});
+    const v=Math.round(eo(P(t,21.9,23.9))*20000000);$('s4v').textContent=v.toLocaleString('pt-BR');st('s4m',{opacity:P(t,21.9,22.1)});
+    const cal=pop(t,24.8,.3);st('s4cal',{opacity:cal.o,transform:`scale(${cal.s})`});
+    st('s4page',{transform:`rotateX(${eo(P(t,26.0,26.4))*100}deg)`,opacity:1-P(t,26.2,26.4)});
+    const b=slam(t,27.9);st('s4b',{opacity:b.o,transform:`scale(${b.s}) translateX(${t>27.9&&t<28.5?(rnd(f)-.5)*20:0}px)`});
+    st('s4c',{opacity:P(t,29.1,29.3)});
+    st('s4d',{color:t>27.9&&Math.floor(t*6)%2?'#FF2BD6':'#000'});
+  }
+  // S5
+  if(sc('s5',30.65,37.05)){
+    const tt=step(t,30.7);st('s5t',{opacity:tt.o,transform:`scale(${tt.s})`});
+    // alien walks between holes and falls
+    const cyc=2.0,k=Math.max(0,t-31.9),n=Math.floor(k/cyc),ph=(k%cyc)/cyc;const hi=n%4;const h=holes[hi];
+    const hx=parseFloat(h.style.left)+27,hy=parseFloat(h.style.top);
+    let ax,ay,sc2=1;if(ph<.6){ax=lerp(hx-200,hx,ph/.6);ay=hy-110+(Math.floor(ph*20)%2)*4}else{ax=hx;ay=hy-110+eio((ph-.6)/.4)*140;sc2=1-.5*((ph-.6)/.4)}
+    st('alien',{left:ax+'px',top:ay+'px',transform:`scale(${sc2})`,opacity:t>31.9?1:0});
+    $('s5n').textContent=t>31.9?n+(ph>.8?1:0):0;
+    st('s5lbl',{opacity:t>35.1?1:0});
+    st('tvstat',{opacity:t>36.6?1:0,background:`repeating-linear-gradient(${rnd(f)*180}deg,#fff 0 2px,#000 2px 5px)`});
+  }
+  // S6
+  if(sc('s6',37.05,43.35)){
+    const a=step(t,37.9);st('s6a',{opacity:a.o,transform:`scale(${a.s}) rotate(-4deg)`});
+    const b=step(t,39.4);st('s6b',{opacity:b.o,transform:`scale(${b.s}) rotate(3deg)`});
+    pile.forEach((c,i)=>{const s=40.6+i*.045;const x=P(t,s,s+.25);st(c,{opacity:x>0?1:0,transform:`translateY(${(1-eo(x))*-900}px) rotate(${(rnd(i)-.5)*14}deg)`})});
+    const s=slam(t,42.2);st('s6st',{opacity:s.o,transform:`scale(${s.s})`});
+  }
+  // S7
+  if(sc('s7',43.35,53.15)){
+    const a=step(t,44.3);st('s7t',{opacity:a.o,transform:`scale(${a.s})`});
+    const m=P(t,45.1,45.6);st('s7map',{opacity:m});
+    const pn=P(t,48.0,48.2);$('pin').style.opacity=pn;const r=(t*30)%30;$('pinr').setAttribute('transform',`scale(1)`);$('pinr').style.opacity=Math.floor(t*4)%2?1:.3;
+    const c=step(t,50.2);st('s7c',{opacity:c.o,transform:`scale(${c.s})`});
+    const mm=slam(t,52.4);st('s7m',{opacity:mm.o,transform:`scale(${mm.s})`});
+  }
+  // S8
+  if(sc('s8',53.15,64.35)){
+    const y=slam(t,54.4);st('s8y',{opacity:y.o*(1-P(t,59.9,60.1)),transform:`scale(${y.s})`});
+    const dig=P(t,56.8,58.2);st('hole8',{height:(dig*260)+'px'});
+    const armA=t>56.4&&t<58.4?Math.sin((t-56.4)*6)*14:0;$('arm').setAttribute('transform',`rotate(${armA} 190 213)`);
+    dirt.forEach((d,i)=>{const ph=((t*1.3+i/24)%1);const on=t>56.8&&t<58.4;st(d,{opacity:on?1:0,left:(420+ph*300+rnd(i)*100)+'px',top:(980-Math.sin(ph*Math.PI)*260+rnd(i+3)*40)+'px'})});
+    const up=eo(P(t,58.3,59.4));st('s8c',{opacity:up,transform:`translateY(${(1-up)*200}px) scale(.8) rotate(${Math.sin(t*3)*4}deg)`});
+    st('s8glow',{opacity:P(t,59.3,59.6)*(.7+.3*Math.sin(t*6))});
+    const v=slam(t,60.0);st('s8v',{opacity:v.o,transform:`scale(${v.s})`});
+    const n=step(t,61.0);st('s8n',{opacity:n.o,transform:`scale(${n.s})`});
+    st('s8d',{opacity:P(t,62.8,63.0)});
+  }
+  // S9
+  if(sc('s9',64.35,69.35)){
+    st('s9t',{opacity:P(t,64.4,64.6)});
+    const pts=[[40,560],[160,470],[280,380],[400,250],[500,160],[560,140],[620,420],[700,600],[860,650]];
+    const pr=P(t,65.0,67.4)*(pts.length-1);let s='';for(let i=0;i<=Math.floor(pr);i++)s+=pts[i].join(',')+' ';
+    const k=Math.floor(pr);if(k<pts.length-1){const fr=pr-k;s+=`${lerp(pts[k][0],pts[k+1][0],fr)},${lerp(pts[k][1],pts[k+1][1],fr)}`}$('s9line').setAttribute('points',s);
+    st('s9s',{opacity:t>68.9?.6:0,background:`repeating-linear-gradient(${rnd(f)*180}deg,#fff 0 2px,#000 2px 5px)`});
+  }
+  // S10
+  if(sc('s10',69.35,99,.2,.01)){
+    const a=slam(t,69.4);st('s10a',{opacity:a.o,transform:`scale(${a.s})`});
+    const b=step(t,70.3);st('s10b',{opacity:b.o,transform:`scale(${b.s})`});
+    const c=pop(t,73.8);st('s10c',{opacity:c.o,transform:`scale(${c.s})`});[1,2,3].forEach(i=>$('k'+i).setAttribute('y',115-(Math.floor(t*5+i)%3===0?14:0)));
+    const d=step(t,75.0);st('s10d',{opacity:d.o,transform:`scale(${d.s})`});
+    const done=t>76.0;$('s10bt').textContent=done?'✓ SEGUINDO':'+ SEGUIR';st('s10btn',{background:done?'#fff':'var(--mg)',color:done?'#000':'#fff'});
+  }
+  // captions
+  const gi=groups.findIndex(g=>t>=g.start&&t<g.end);const cap=$('cap');
+  if(gi!==lastG){cap.innerHTML=gi<0?'':groups[gi].map(w=>`<span>${/^E\.T\./.test(w[0])?'E.T.':w[0].replace(/[,.]$/,'')}</span>`).join('');lastG=gi}
+  if(gi>=0){const g=groups[gi];const sp=cap.children;let cur=-1;g.forEach((w,i)=>{if(t>=w[1])cur=i});
+    for(let i=0;i<sp.length;i++){sp[i].className=i===cur?'on':'';sp[i].style.transform=i===cur?'scale(1.05)':'scale(1)';sp[i].style.opacity=t>=g[i][1]?1:.55}
+    cap.style.opacity=1}else cap.style.opacity=0;
+  // OSD + VHS FX
+  const rew=t<.6;$('osdl').textContent=rew?'◀◀ REW':(Math.floor(t*2)%2||t>1.5?'PLAY ▶':'PLAY ▶');
+  $('osdt').textContent=`SP ${Math.floor(t/3600)}:${pad(t/60)}:${pad(t%60)}`;
+  const cuts=[.6,8.35,12.05,18.65,30.65,37.05,43.35,53.15,64.35,69.35];let g=0;cuts.forEach(c=>g=Math.max(g,1-Math.abs(t-c)/.18));
+  if(rew)g=1;
+  noise(f,.05+g*.35);
+  bandEls.forEach((b,i)=>{const on=g>0&&rnd(f*5+i)<g;st(b,{display:on?'block':'none',top:(rnd(f*3+i)*1920)+'px',height:(8+rnd(f+i)*60)+'px',transform:`translateX(${(rnd(f*7+i)-.5)*200}px)`})});
+  st('stage',{transform:g>.3?`translateX(${(rnd(f)-.5)*30*g}px) skewX(${(rnd(f+2)-.5)*4*g}deg)`:'none',filter:g>.3?`hue-rotate(${(rnd(f)-.5)*60*g}deg)`:'none'});
+  // rewind: stage content scrolls quickly
+  st('flash',{opacity:Math.max(0,1-Math.abs(t-60.0)/.1)*.6+Math.max(0,1-Math.abs(t-13.2)/.08)*.3});
+  await Promise.all([...document.images].filter(i=>!i.complete).map(i=>i.decode().catch(()=>{})));
+}
+window.seek=seek;window.TEND=TEND;
+window.ready=document.fonts.ready;
+</script>
+</body>
+</html>
