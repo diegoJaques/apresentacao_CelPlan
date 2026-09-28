@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:B;src:url(fonts/bangers-latin-400-normal.woff2)}
+@font-face{font-family:M;font-weight:900;src:url(fonts/montserrat-latin-900-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#FFD21F;font-family:B}
+#rays{position:absolute;left:-600px;top:-500px;width:2280px;height:2280px;background:repeating-conic-gradient(from 0deg at 50% 50%,#FFB400 0 6deg,#FFD21F 6deg 12deg)}
+#dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,120,0,.35) 3px,transparent 3.5px);background-size:22px 22px}
+.abs{position:absolute}
+.title{font-family:B;color:#FFE600;-webkit-text-stroke:10px #000;paint-order:stroke fill;text-shadow:12px 12px 0 #E3001B,14px 14px 0 #000;letter-spacing:4px}
+#panel{position:absolute;left:40px;top:430px;width:1000px;height:1250px;border:12px solid #000;background:#fff;transform:rotate(-2deg);box-shadow:18px 18px 0 #000;overflow:hidden}
+#panel img{position:absolute;left:0;top:-40px;width:1000px}
+#panel svg{position:absolute;left:0;top:-40px}
+</style></head><body><div id="c">
+<div id="rays"></div><div id="dots"></div>
+<div class="abs title" style="left:0;right:0;top:40px;text-align:center;font-size:250px;line-height:1">SUPER VÓ</div>
+<div class="abs" style="left:0;right:0;top:305px;text-align:center"><span style="display:inline-block;background:#E3001B;color:#fff;font-family:B;font-size:74px;letter-spacing:3px;padding:4px 34px;border:8px solid #000;transform:rotate(-2deg);box-shadow:8px 8px 0 #000">CONTRA O RAIO ⚡</span></div>
+<div id="panel">
+  <img src="vo.jpg">
+  <svg width="1000" height="1444" viewBox="0 0 1000 1444">
+    <defs>
+      <linearGradient id="cape" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2A2A"/><stop offset="1" stop-color="#A30012"/></linearGradient>
+      <filter id="gl"><feGaussianBlur stdDeviation="10"/></filter>
+    </defs>
+    <!-- cape -->
+    <defs><linearGradient id="capeH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E0010"/><stop offset=".35" stop-color="#E8121F"/><stop offset=".6" stop-color="#FF3B3B"/><stop offset="1" stop-color="#9A0012"/></linearGradient></defs>
+    <path d="M200 760 C230 720 300 712 395 712 C490 712 560 718 600 752
+             C640 860 640 960 610 1040
+             C560 1120 470 1150 380 1175
+             C300 1195 200 1215 110 1260
+             C60 1285 10 1270 -20 1250
+             C40 1180 90 1120 120 1040
+             C150 960 175 860 200 760 Z" fill="url(#capeH)" stroke="#000" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M300 740 C290 860 250 1000 150 1150 M420 730 C430 880 400 1030 330 1160 M530 745 C570 860 560 980 510 1090" stroke="rgba(0,0,0,.28)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M360 745 C360 860 330 960 280 1060" stroke="rgba(255,255,255,.3)" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <ellipse cx="205" cy="752" rx="30" ry="22" fill="#FFD21F" stroke="#000" stroke-width="6"/><ellipse cx="598" cy="748" rx="30" ry="22" fill="#FFD21F" stroke="#000" stroke-width="6"/>
+    <!-- lightning from window -->
+    <polyline points="1010,40 920,160 965,175 830,300 880,312 650,420" fill="none" stroke="#fff" stroke-width="44" filter="url(#gl)" opacity=".9"/>
+    <polyline points="1010,40 920,160 965,175 830,300 880,312 650,420" fill="none" stroke="#000" stroke-width="30" stroke-linejoin="miter"/>
+    <polyline points="1010,40 920,160 965,175 830,300 880,312 650,420" fill="none" stroke="#FFF36B" stroke-width="18" stroke-linejoin="miter"/>
+    <!-- ZAP burst -->
+    <g transform="translate(610 400) scale(.85)">
+      <polygon points="0,-120 30,-45 110,-80 60,-10 140,30 55,45 80,125 10,70 -40,140 -45,60 -130,80 -70,15 -140,-40 -55,-45 -80,-120 -20,-60" fill="#fff" stroke="#000" stroke-width="8"/>
+      <text x="0" y="22" text-anchor="middle" font-family="B" font-size="84" fill="#E3001B" stroke="#000" stroke-width="3">ZAP!</text>
+    </g>
+    <!-- sparks deflecting -->
+    <g stroke="#000" stroke-width="6" fill="#FFF36B"><polygon points="740,330 790,300 785,345"/><polygon points="760,470 810,490 770,510"/><polygon points="700,530 720,580 680,560"/></g>
+  </svg>
+</div>
+<!-- speech bubble -->
+<div class="abs" style="left:20px;top:1560px">
+  <svg width="620" height="260" viewBox="0 0 620 260"><path d="M30 60 Q30 20 70 20 H560 Q600 20 600 60 V170 Q600 210 560 210 H260 L200 255 L210 210 H70 Q30 210 30 170 Z" fill="#fff" stroke="#000" stroke-width="9"/>
+  <text x="315" y="140" text-anchor="middle" font-family="B" font-size="92" fill="#000">AQUI NÃO, RAIO!</text></svg>
+</div>
+<div class="abs" style="right:40px;bottom:50px;font-family:M;font-weight:900;font-size:40px;color:#000">◀◀ REBOBINA</div>
+</div></body></html>

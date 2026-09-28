@@ -5,3 +5,5 @@
 Técnicas aplicadas para republicação:
 1. **Gancho de 1 segundo:** corte do silêncio inicial (0,7s), trovão + clarão no primeiro quadro, zoom de impacto (1,18→1,0 em 0,8s) e troca do texto de abertura por "POR QUE A VÓ COBRIA O ESPELHO NA TEMPESTADE? ⚡" (`gancho.png`).
 2. **Ritmo:** fala 8% mais rápida (atempo, sem alterar o tom) e clarões/trovões sincronizados em "raio" e "São Pedro arrastando os móveis".
+
+Capa: `capa_super_vo.jpg` (quadrinho "SUPER VÓ contra o raio"); fonte em `capa_fonte/`.
