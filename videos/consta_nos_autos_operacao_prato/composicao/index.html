@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Operação Prato - composição</title>
+<style>
+@font-face{font-family:O;font-weight:500;src:url(fonts/oswald-latin-500-normal.woff2)}
+@font-face{font-family:O;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}
+@font-face{font-family:T;font-weight:400;src:url(fonts/special-elite-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--am:#FFC233;--rd:#E0282E;--pp:#E9DFC7;--ink:#1d1a15;--gr:#7CFF9B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:#0a0908;font-family:O;color:#fff}
+.abs{position:absolute}.full{position:absolute;inset:0}
+.center{left:0;right:0;text-align:center}
+.scene{position:absolute;inset:0;opacity:0;display:none}
+.h{font-family:O;font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:1px;text-shadow:0 6px 30px rgba(0,0,0,.8)}
+.tw{font-family:T}
+.paper{position:absolute;background:var(--pp);color:var(--ink);font-family:T;border-radius:4px;box-shadow:0 30px 70px rgba(0,0,0,.7);
+  background-image:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.35),rgba(0,0,0,0) 60%),radial-gradient(ellipse at 80% 90%,rgba(120,90,40,.25),rgba(0,0,0,0) 55%)}
+.stamp{position:absolute;display:inline-block;border:10px solid var(--rd);color:var(--rd);font-family:O;font-weight:700;text-transform:uppercase;padding:6px 28px;border-radius:10px;letter-spacing:4px;mix-blend-mode:multiply;opacity:0}
+.stamp.dark{mix-blend-mode:normal;background:rgba(0,0,0,.35)}
+.redact{display:inline-block;background:#111;height:.9em;vertical-align:middle;border-radius:2px}
+.illu{position:absolute;right:14px;bottom:10px;font-family:J;font-size:15px;color:rgba(0,0,0,.45);letter-spacing:1px}
+.tag{display:inline-block;padding:10px 24px;font-family:J;font-weight:700;font-size:30px;letter-spacing:2px;border-radius:8px}
+.hl{background:linear-gradient(transparent 12%,rgba(255,214,0,.85) 12%,rgba(255,214,0,.85) 88%,transparent 88%);background-repeat:no-repeat;background-size:0% 100%}
+/* sky */
+#sky{position:absolute;inset:0;background:linear-gradient(#02040a 0%,#071427 55%,#0f2a2a 80%,#050806 100%);opacity:0}
+#stars{position:absolute;inset:0}
+#trees{position:absolute;left:0;right:0;bottom:0;height:720px}
+.ufo{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;
+  background:radial-gradient(circle,#fff 0,#fff3c4 18%,rgba(255,190,80,.7) 35%,rgba(255,120,40,.2) 55%,rgba(0,0,0,0) 70%)}
+.beam{position:absolute;width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:900px solid rgba(255,220,140,.16);filter:blur(8px);transform-origin:50% 0}
+/* desk */
+#desk{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#2a241b 0%,#12100c 70%);opacity:0}
+/* captions */
+#cap{position:absolute;left:50px;right:50px;top:1470px;text-align:center;font-family:O;font-weight:700;font-size:84px;line-height:1.05;text-transform:uppercase}
+#cap span{display:inline-block;margin:0 12px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.7)}
+#cap span.on{color:var(--am)}
+/* HUD */
+#hud{position:absolute;inset:0;pointer-events:none;font-family:J;font-weight:700;font-size:24px;color:rgba(255,255,255,.8);text-shadow:0 2px 8px rgba(0,0,0,.9)}
+#grain{position:absolute;inset:0;width:1080px;height:1920px;opacity:.09;mix-blend-mode:screen;pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%);pointer-events:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#fade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+svg{overflow:visible}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="sky"><canvas id="stars" width="1080" height="1920"></canvas>
+    <svg id="trees" viewBox="0 0 1080 720" preserveAspectRatio="none"></svg></div>
+  <div id="desk"></div>
+
+  <!-- S1 0-6.6 hook -->
+  <div id="s1" class="scene">
+    <div id="s1folder" class="abs" style="left:110px;top:330px;width:860px;height:1000px">
+      <div class="full" style="background:#b8955a;border-radius:10px 10px 6px 6px;box-shadow:0 40px 90px rgba(0,0,0,.8)"></div>
+      <div class="abs" style="left:0;top:-50px;width:320px;height:70px;background:#b8955a;border-radius:14px 14px 0 0"></div>
+      <div id="s1paper" class="paper" style="left:40px;top:60px;width:780px;height:900px;padding:60px 56px;font-size:34px;line-height:1.6">
+        <div style="font-size:28px;letter-spacing:3px">MINISTÉRIO DA AERONÁUTICA</div>
+        <div style="font-size:28px;letter-spacing:3px">FORÇA AÉREA BRASILEIRA</div>
+        <div style="margin-top:40px;font-size:30px">ASSUNTO: <span id="s1type"></span></div>
+        <div style="margin-top:30px"><span class="redact" style="width:520px"></span></div>
+        <div><span class="redact" style="width:640px"></span></div>
+        <div><span class="redact" style="width:380px"></span></div>
+        <div id="s1year" class="abs" style="left:0;right:0;top:470px;text-align:center;font-family:O;font-weight:700;font-size:230px;color:var(--ink)">1977</div>
+        <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+      </div>
+      <div id="s1stamp" class="stamp" style="left:150px;top:850px;font-size:78px;transform:rotate(-8deg)">CONFIDENCIAL</div>
+    </div>
+  </div>
+
+  <!-- S2 6.6-13.5 UFOs over Amazon -->
+  <div id="s2" class="scene">
+    <div id="s2beams" class="full"></div>
+    <div id="s2ufos" class="full"></div>
+    <div id="s2t1" class="abs center h" style="top:250px;font-size:60px;color:var(--am)">OPERAÇÃO MILITAR OFICIAL</div>
+    <div id="s2t2" class="abs center h" style="top:340px;font-size:118px">OBJETOS VOADORES</div>
+    <div id="s2t3" class="abs center" style="top:500px"><span class="tag" style="background:var(--rd);color:#fff;font-size:40px">⚠ ATACAVAM CIVIS</span></div>
+    <div id="s2t4" class="abs center" style="top:1080px"><span class="tag" style="background:rgba(0,0,0,.6);color:#fff;border:2px solid #fff;font-size:34px">📍 AMAZÔNIA · 1977</span></div>
+  </div>
+
+  <!-- S3 13.5-18.5 detalhe intrigante -->
+  <div id="s3" class="scene">
+    <div id="s3q" class="abs center h" style="top:250px;font-size:92px;color:var(--am)">O DETALHE MAIS<br>INTRIGANTE?</div>
+    <div id="s3doc" class="paper" style="left:130px;top:560px;width:820px;height:700px;padding:56px;font-size:36px;line-height:1.7">
+      <div style="font-size:30px;letter-spacing:3px">RELATÓRIO DE MISSÃO</div>
+      <div style="margin-top:30px"><span class="redact" style="width:560px"></span></div>
+      <div><span class="redact" style="width:420px"></span> <span>e os</span></div>
+      <div style="font-size:42px;margin:14px 0;white-space:nowrap"><span id="s3hl" class="hl">ATAQUES FORAM CONFIRMADOS</span></div>
+      <div><span class="redact" style="width:640px"></span></div>
+      <div><span class="redact" style="width:300px"></span></div>
+      <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+  </div>
+
+  <!-- S4 18.5-22.5 Operação Prato -->
+  <div id="s4" class="scene">
+    <div id="s4kick" class="abs center tw" style="top:560px;font-size:44px;color:var(--pp);letter-spacing:6px">MISSÃO DOCUMENTADA SOB O NOME</div>
+    <div id="s4title" class="abs center h" style="top:660px;font-size:210px;color:#fff">OPERAÇÃO<br><span style="color:var(--am)">PRATO</span></div>
+    <div id="s4plate" class="abs" style="left:50%;top:1180px;margin-left:-110px;width:220px;height:60px;border-radius:50%;background:radial-gradient(ellipse,#fff 0,#ffe7a8 30%,rgba(255,180,60,.5) 55%,rgba(0,0,0,0) 72%)"></div>
+  </div>
+
+  <!-- S5 22.5-32.7 captain, Pará, gear -->
+  <div id="s5" class="scene">
+    <div id="s5id" class="paper" style="left:90px;top:240px;width:900px;height:360px;padding:36px;display:flex;gap:36px">
+      <div style="width:220px;height:280px;background:#cbbf9f;border:3px solid #6b5e45;display:flex;align-items:flex-end;justify-content:center;overflow:hidden">
+        <svg width="200" height="240" viewBox="0 0 200 240"><circle cx="100" cy="90" r="52" fill="#6b5e45"/><path d="M10 240 Q100 120 190 240Z" fill="#6b5e45"/></svg></div>
+      <div style="flex:1;font-size:30px;line-height:1.55">
+        <div style="font-size:24px;letter-spacing:3px">COMANDO DA OPERAÇÃO</div>
+        <div style="font-family:O;font-weight:700;font-size:62px;line-height:1.05;margin:10px 0">CAP. UYRANGÊ<br>HOLLANDA</div>
+        <div>SERVIÇO DE INTELIGÊNCIA</div>
+      </div>
+      <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+    <div id="s5map" class="abs" style="left:190px;top:640px;width:700px;height:660px">
+      <svg id="s5svg" viewBox="0 0 700 660" width="700" height="660"></svg>
+    </div>
+    <div id="s5gear" class="abs center" style="top:1310px;display:flex;justify-content:center;gap:16px">
+      <span id="g1" class="tag" style="background:var(--am);color:#111">📷 CÂMERAS</span>
+      <span id="g2" class="tag" style="background:var(--am);color:#111">🔭 TELESCÓPIOS</span>
+      <span id="g3" class="tag" style="background:var(--am);color:#111">📡 RADARES</span>
+    </div>
+  </div>
+
+  <!-- S6 32.7-38.4 lendas x laudos -->
+  <div id="s6" class="scene">
+    <div id="s6a" class="abs center h" style="top:420px;font-size:130px;color:#9a948a">ESQUEÇA AS<br><span style="position:relative">LENDAS URBANAS<span id="s6x" class="abs" style="left:-10px;top:48%;height:16px;width:0;background:var(--rd)"></span></span></div>
+    <div id="s6doc" class="paper" style="left:150px;top:820px;width:780px;height:520px;padding:50px;font-size:34px;line-height:1.7">
+      <div style="font-family:O;font-weight:700;font-size:64px">LAUDO MÉDICO</div>
+      <div style="letter-spacing:3px">OFICIAL · POSTO DE SAÚDE</div>
+      <div style="margin-top:20px"><span class="redact" style="width:560px"></span></div>
+      <div><span class="redact" style="width:420px"></span></div>
+      <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+    <div id="s6st" class="stamp" style="left:420px;top:1150px;font-size:60px;transform:rotate(-8deg)">OFICIAL</div>
+  </div>
+
+  <!-- S7 38.4-47.3 pacientes -->
+  <div id="s7" class="scene">
+    <div id="s7t" class="abs center h" style="top:220px;font-size:96px">DEZENAS DE<br><span style="color:var(--am)">PACIENTES</span></div>
+    <div id="s7people" class="abs" style="left:90px;right:90px;top:480px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center"></div>
+    <div id="s7body" class="abs" style="left:290px;top:730px;width:500px;height:640px">
+      <svg viewBox="0 0 500 640" width="500" height="640">
+        <g fill="none" stroke="#e8e2d4" stroke-width="5">
+          <circle cx="250" cy="80" r="58"/><path d="M190 150 H310 L360 330 L330 340 L300 230 L300 420 L320 620 H270 L250 440 L230 620 H180 L200 420 L200 230 L170 340 L140 330 Z"/></g>
+        <g id="s7burn"><circle cx="268" cy="260" r="38" fill="rgba(224,40,46,.45)"/><circle cx="222" cy="300" r="26" fill="rgba(224,40,46,.4)"/></g>
+        <g id="s7dots"></g>
+      </svg>
+    </div>
+    <div id="s7l1" class="abs" style="left:40px;top:830px"><span class="tag" style="background:var(--rd);color:#fff">QUEIMADURAS<br>1º GRAU</span></div>
+    <div id="s7l2" class="abs" style="right:30px;top:1060px"><span class="tag" style="background:#fff;color:#111">PERFURAÇÕES<br>MINÚSCULAS</span></div>
+  </div>
+
+  <!-- S8 47.3-54.6 prontuário -->
+  <div id="s8" class="scene">
+    <div id="s8clip" class="abs" style="left:120px;top:230px;width:840px;height:1130px;background:#5a4630;border-radius:30px;box-shadow:0 40px 90px rgba(0,0,0,.8)">
+      <div class="abs" style="left:320px;top:-30px;width:200px;height:80px;background:#9aa0a6;border-radius:16px"></div>
+      <div class="paper" style="left:40px;top:70px;right:40px;bottom:40px;padding:50px;font-size:34px;line-height:1.7">
+        <div style="font-family:O;font-weight:700;font-size:62px">PRONTUÁRIO</div>
+        <div style="letter-spacing:3px">REGISTRO MILITAR · 1977</div>
+        <div style="margin-top:30px">PACIENTE: <span class="redact" style="width:380px"></span></div>
+        <div>ORIGEM: <span class="redact" style="width:300px"></span></div>
+        <div style="margin-top:30px;font-size:44px"><span id="s8a" class="hl">☐ PARALISIA TEMPORÁRIA</span></div>
+        <div style="font-size:44px"><span id="s8b" class="hl">☐ PERDA DE SANGUE INEXPLICÁVEL</span></div>
+        <svg id="s8ekg" style="margin-top:40px" width="660" height="160" viewBox="0 0 660 160"><polyline id="s8line" fill="none" stroke="#b3261e" stroke-width="5" points=""/></svg>
+        <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S9 54.6-65.8 arquivo nacional -->
+  <div id="s9" class="scene">
+    <div id="s9t" class="abs center h" style="top:210px;font-size:66px;color:var(--pp)">ARQUIVO NACIONAL</div>
+    <div id="s9n" class="abs center h" style="top:290px;font-size:190px;color:var(--am)">+<span id="s9num">0</span></div>
+    <div id="s9sub" class="abs center tw" style="top:500px;font-size:44px">PÁGINAS DESCLASSIFICADAS</div>
+    <div id="s9stack" class="full"></div>
+    <div id="s9sketch" class="paper" style="left:80px;top:760px;width:560px;height:430px;background:#dfe6ea;padding:0">
+      <svg viewBox="0 0 560 430" width="560" height="430"><g id="s9lines" fill="none" stroke="#1f3b7a" stroke-width="4" stroke-linecap="round"></g></svg>
+      <div class="abs tw" style="left:20px;top:14px;font-size:26px;color:#1f3b7a">CROQUI TÁTICO</div>
+      <div class="illu">ILUSTRATIVO</div>
+    </div>
+    <div id="s9photos" class="full"></div>
+  </div>
+
+  <!-- S10 65.8-73.2 abortada -->
+  <div id="s10" class="scene">
+    <div id="s10t" class="abs center h" style="top:260px;font-size:76px;color:var(--pp)">NO AUGE DAS DESCOBERTAS…</div>
+    <div id="s10tel" class="paper" style="left:120px;top:460px;width:840px;height:620px;padding:56px;font-size:38px;line-height:1.7">
+      <div style="letter-spacing:4px">RADIOGRAMA · URGENTE</div>
+      <div>DE: <span id="s10de" style="font-family:O;font-weight:700;font-size:48px">ALTO COMANDO · BRASÍLIA</span></div>
+      <div>PARA: OP. PRATO · BELÉM</div>
+      <div style="margin-top:30px;font-size:46px" id="s10msg"></div>
+      <div class="illu">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+    <div id="s10st" class="stamp dark" style="left:130px;top:1120px;font-size:120px;transform:rotate(-8deg);border-width:14px">ABORTADA</div>
+  </div>
+
+  <!-- S11 73.2-79.2 rolos -->
+  <div id="s11" class="scene">
+    <div id="s11t" class="abs center h" style="top:250px;font-size:92px">ROLOS DE FILME<br><span style="color:var(--am)">ORIGINAIS</span></div>
+    <svg id="s11reel" class="abs" style="left:290px;top:560px" width="500" height="500" viewBox="-250 -250 500 500"></svg>
+    <div id="s11q" class="abs center h" style="top:640px;font-size:340px;color:var(--rd);opacity:0">?</div>
+    <div id="s11m" class="abs center" style="top:1150px"><span class="tag" style="background:var(--rd);color:#fff;font-size:44px">PARADEIRO: DESCONHECIDO</span></div>
+  </div>
+
+  <div id="host" class="abs" style="left:40px;top:640px;width:1000px;height:1307px;opacity:0">
+    <div id="hostglow" class="abs" style="left:150px;top:-60px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,194,51,.35),rgba(255,194,51,0) 65%)"></div>
+    <img src="host.png" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 18px rgba(255,194,51,.55)) drop-shadow(0 30px 40px rgba(0,0,0,.8))">
+  </div>
+  <!-- S12 79.2-83.1 pergunta -->
+  <div id="s12" class="scene">
+    <div id="s12o1" class="ufo" style="left:150px;top:720px"></div><div id="s12o2" class="ufo" style="left:930px;top:560px"></div><div id="s12t" class="abs center h" style="top:200px;font-size:100px">O QUE A FAB<br>ENCONTROU<br><span style="color:var(--am)">DE FATO?</span></div>
+  </div>
+
+  <!-- S13 83.1-end CTA -->
+  <div id="s13" class="scene">
+    <div id="s13c" class="abs" style="left:140px;right:140px;top:200px">
+      <svg width="800" height="280" viewBox="0 0 800 280"><path d="M40 10 H760 A30 30 0 0 1 790 40 V190 A30 30 0 0 1 760 220 H240 L150 275 L170 220 H40 A30 30 0 0 1 10 190 V40 A30 30 0 0 1 40 10Z" fill="#FFC233"/>
+        <text x="400" y="100" text-anchor="middle" font-family="O" font-weight="700" font-size="64" fill="#111">COMENTE SUA TEORIA</text>
+        <circle id="d1" cx="360" cy="160" r="14" fill="#111"/><circle id="d2" cx="400" cy="160" r="14" fill="#111"/><circle id="d3" cx="440" cy="160" r="14" fill="#111"/></svg>
+    </div>
+    <div id="s13f" class="abs center" style="top:190px">
+      
+      <div class="h" style="font-size:110px">CONSTA NOS AUTOS</div>
+      <div id="s13btn" style="display:inline-block;margin-top:30px;background:var(--rd);color:#fff;font-family:O;font-weight:700;font-size:64px;padding:18px 70px;border-radius:999px"><span id="s13bt">+ SEGUIR</span></div>
+    </div>
+  </div>
+
+  <canvas id="grain" width="540" height="960"></canvas>
+  <div id="vig"></div>
+  <div id="cap"></div>
+  <div id="hud">
+    <div class="abs" style="left:60px;top:70px">● ARQUIVO · OP. PRATO</div>
+    <div class="abs" style="right:60px;top:70px;color:var(--am)">CONSTA NOS AUTOS</div>
+    <div id="doc" class="abs" style="left:60px;bottom:70px">DOC 001</div>
+    <div id="tc" class="abs" style="right:60px;bottom:70px">1977</div>
+  </div>
+  <div id="flash"></div>
+  <div id="fade"></div>
+</div>
+<script src="words.js"></script>
+<script>
+const FPS=25, TEND=86.52;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.3,fo=.3)=>Math.min(P(t,a,a+fi),1-P(t,b-fo,b));
+function rnd(s){let x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];return el}
+function pop(t,a,d=.4){const x=P(t,a,a+d);return {o:clamp(x*2.5),s:lerp(.5,1,eb(x))}}
+function slam(t,a,d=.18){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(2.6,1,eo(x))}}
+const pad=(n,l=2)=>String(Math.floor(n)).padStart(l,'0');
+
+// ---- build ----
+// stars
+{const c=$('stars').getContext('2d');for(let i=0;i<420;i++){const x=rnd(i)*1080,y=rnd(i+999)*1300,r=rnd(i+77)*2.2+.3;c.fillStyle=`rgba(255,255,255,${.3+rnd(i+5)*.7})`;c.beginPath();c.arc(x,y,r,0,7);c.fill()}}
+// tree line
+{let d='M0 720 L0 330 ';for(let x=0;x<=1080;x+=18){const h=330-(Math.sin(x*.02)*40+Math.sin(x*.07)*25+rnd(x)*55);d+=`L${x} ${h} `}d+='L1080 720 Z';
+ let d2='M0 720 L0 470 ';for(let x=0;x<=1080;x+=14){const h=470-(Math.sin(x*.03+2)*30+rnd(x+3)*45);d2+=`L${x} ${h} `}d2+='L1080 720 Z';
+ $('trees').innerHTML=`<path d="${d}" fill="#0b1712"/><path d="${d2}" fill="#050b08"/>`}
+// ufos + beams
+const ufos=[];for(let i=0;i<3;i++){const u=document.createElement('div');u.className='ufo';$('s2ufos').appendChild(u);ufos.push(u);const b=document.createElement('div');b.className='beam';$('s2beams').appendChild(b);u.beam=b}
+// S5 map
+const LL=[[-73.9,-7.5],[-72.9,-5.2],[-70.0,-4.2],[-69.5,-1.1],[-69.9,1.1],[-67.0,2.0],[-64.0,3.8],[-63.0,4.0],[-60.8,5.2],[-59.9,4.0],[-59.6,2.3],[-58.0,1.5],[-55.9,2.5],[-54.0,2.2],[-51.6,4.2],[-50.0,1.8],[-50.4,0.0],[-48.5,-1.0],[-44.5,-2.5],[-41.5,-2.9],[-38.5,-3.7],[-35.2,-5.4],[-34.8,-7.5],[-35.4,-9.5],[-37.0,-11.0],[-38.9,-13.5],[-39.1,-17.6],[-40.8,-21.9],[-42.0,-23.0],[-44.7,-23.4],[-47.0,-24.5],[-48.6,-26.0],[-48.5,-28.5],[-50.0,-30.5],[-52.3,-32.2],[-53.4,-33.7],[-53.6,-32.5],[-55.6,-30.8],[-57.6,-30.2],[-55.8,-28.2],[-53.8,-27.1],[-54.6,-25.6],[-54.3,-24.0],[-55.4,-24.0],[-55.8,-22.3],[-57.9,-22.0],[-58.1,-20.2],[-57.5,-18.2],[-58.4,-16.3],[-60.2,-16.3],[-60.4,-13.5],[-62.2,-13.0],[-64.4,-12.4],[-65.4,-11.0],[-65.3,-9.8],[-66.6,-9.9],[-68.6,-11.1],[-69.6,-10.9],[-70.6,-9.5],[-72.2,-10.0],[-73.0,-9.4]];
+const prj=([lo,la])=>[(lo+75)*16.5+20,(6-la)*16.5];
+const BSB=prj([-47.9,-15.8]), BEL=prj([-48.3,-1.0]);
+{const d='M'+LL.map(p=>prj(p).map(v=>v.toFixed(1)).join(' ')).join(' L')+'Z';
+ $('s5svg').innerHTML=`<defs><pattern id="gp" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="rgba(255,194,51,.15)" stroke-width="1"/></pattern></defs>
+ <path id="brz" d="${d}" fill="url(#gp)" stroke="#FFC233" stroke-width="4" stroke-linejoin="round"/>
+ <circle id="paraG" cx="${BEL[0]-60}" cy="${BEL[1]+80}" r="130" fill="rgba(224,40,46,.25)"/>
+ <path id="route" d="M${BSB[0]} ${BSB[1]} Q ${BSB[0]-160} ${(BSB[1]+BEL[1])/2} ${BEL[0]} ${BEL[1]}" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="14 12"/>
+ <circle cx="${BSB[0]}" cy="${BSB[1]}" r="10" fill="#fff"/><text x="${BSB[0]+18}" y="${BSB[1]+10}" font-family="J" font-weight="700" font-size="26" fill="#fff">BRASÍLIA</text>
+ <g id="pin"><circle cx="${BEL[0]}" cy="${BEL[1]}" r="16" fill="#E0282E"/><circle id="pinr" cx="${BEL[0]}" cy="${BEL[1]}" r="16" fill="none" stroke="#E0282E" stroke-width="5"/>
+ <text x="${BEL[0]+26}" y="${BEL[1]-14}" font-family="O" font-weight="700" font-size="54" fill="#fff">PARÁ</text></g>
+ <g id="plane"><path d="M0 -22 L6 -6 L26 4 L26 9 L6 3 L4 16 L10 21 L10 25 L0 22 L-10 25 L-10 21 L-4 16 L-6 3 L-26 9 L-26 4 L-6 -6 Z" fill="#fff"/></g>`}
+// S7 people + dots
+const ppl=[];for(let i=0;i<24;i++){const d=document.createElement('div');d.innerHTML='<svg width="52" height="70" viewBox="0 0 52 70"><circle cx="26" cy="15" r="12" fill="#e8e2d4"/><path d="M4 70 Q4 32 26 32 Q48 32 48 70Z" fill="#e8e2d4"/></svg>';$('s7people').appendChild(d);ppl.push(d)}
+{let s='';for(let i=0;i<14;i++){const x=205+rnd(i+40)*90,y=200+rnd(i+80)*160;s+=`<circle cx="${x+ (i%2?40:0)}" cy="${y}" r="4.5" fill="#b3261e"/>`}$('s7dots').innerHTML=s}
+const dots=[...$('s7dots').children];
+// S9 stack + sketch + photos
+const pages=[];for(let i=0;i<16;i++){const p=document.createElement('div');p.className='paper';st(p,{left:(640+rnd(i)*40)+'px',top:(1100-i*16)+'px',width:'360px',height:'120px',padding:'14px',fontSize:'18px'});p.innerHTML=`<span class="redact" style="width:${120+rnd(i+9)*180}px"></span>`;$('s9stack').appendChild(p);pages.push(p)}
+const sk=[['M60 330 Q180 250 300 300 T520 260'],['M100 110 L180 170 L150 250'],['M380 90 A60 30 0 1 0 381 90'],['M340 200 L440 150 M440 150 L420 175 M440 150 L412 148'],['M60 380 H500']];
+$('s9lines').innerHTML=sk.map((d,i)=>`<path d="${d[0]}" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>`).join('');
+const skl=[...$('s9lines').children];
+const photos=[];for(let i=0;i<4;i++){const p=document.createElement('div');st(p,{position:'absolute',width:'300px',height:'350px',background:'#f4f1ea',padding:'16px 16px 60px',boxShadow:'0 20px 50px rgba(0,0,0,.7)'});
+  const bx=30+rnd(i+3)*170, by=40+rnd(i+6)*150;
+  p.innerHTML=`<div style="width:100%;height:100%;background:radial-gradient(circle at ${bx}px ${by}px,#fff 0,#ffe3a0 6%,rgba(255,170,60,.45) 14%,rgba(0,0,0,0) 26%),linear-gradient(#050810,#0c1a1a 75%,#030504 76%)"></div><div style="position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:T;font-size:22px;color:#333">FOTO ${pad(i+1)} · ILUSTRATIVA</div>`;$('s9photos').appendChild(p);photos.push(p)}
+// S11 reel
+{let s='<circle r="240" fill="#1b1b1b" stroke="#555" stroke-width="8"/><circle r="40" fill="#333"/>';for(let i=0;i<6;i++){const a=i*Math.PI/3;s+=`<circle cx="${Math.cos(a)*140}" cy="${Math.sin(a)*140}" r="62" fill="#0a0908"/>`}$('s11reel').innerHTML='<g id="reelg">'+s+'</g>'}
+// grain
+const gctx=$('grain').getContext('2d');const gimg=gctx.createImageData(540,960);
+function grain(f){const d=gimg.data;let s=f*7919+1;for(let i=0;i<d.length;i+=4){s=(s*1103515245+12345)&0x7fffffff;const v=(s>>16)&255;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}gctx.putImageData(gimg,0,0)}
+
+// captions
+const W=window.WORDS;const groups=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];const brk=!nx||g.length>=3||/[,.?!]$/.test(w[0])||(nx[1]-w[2]>.35);if(brk){groups.push(g);g=[]}}}
+groups.forEach((g,i)=>{g.start=g[0][1];g.end=groups[i+1]?Math.min(groups[i+1][0][1],g[g.length-1][2]+.6):g[g.length-1][2]+.8});
+let lastG=-1;
+
+async function seek(t){
+  const f=Math.round(t*FPS);
+  const sc=(id,a,b,fi=.3,fo=.3)=>{const o=win(t,a,b,fi,fo);st(id,{opacity:o,display:o>0?'block':'none'});return o>0};
+  // backgrounds
+  const skyO=Math.max(win(t,6.4,13.6,.4,.4),win(t,79.0,87,.4,.01),win(t,18.3,22.7,.3,.3)*.8);
+  st('sky',{opacity:skyO});st('desk',{opacity:1-skyO});
+  // S1
+  if(sc('s1',0,6.75,.01,.35)){
+    const fo=eo(P(t,0,.6));st('s1folder',{transform:`translateY(${(1-fo)*300}px) rotate(${lerp(-6,-2,fo)}deg) scale(${1+.05*P(t,0,6.6)})`});
+    const txt='OBJETOS AÉREOS NÃO IDENTIFICADOS';const n=Math.floor(clamp((t-.3)/2.2)*txt.length);$('s1type').textContent=txt.slice(0,n)+(t%0.5<.25&&n<txt.length?'|':'');
+    const y=slam(t,4.2);st('s1year',{opacity:y.o,transform:`scale(${y.s})`,color:t>5.76?'#b3261e':'var(--ink)'});
+    const s=slam(t,1.9);st('s1stamp',{opacity:s.o*.9,transform:`rotate(-8deg) scale(${s.s})`});
+  }
+  // S2
+  if(sc('s2',6.6,13.6)){const m=t-6.6;
+    ufos.forEach((u,i)=>{const a=m*(.35+i*.12)+i*2.1;const x=540+Math.sin(a)*(260+i*60)+ (i-1)*120,y=560+Math.cos(a*1.3)*120+i*90;
+      const on=P(t,9.8+i*.25,10.2+i*.25);st(u,{left:x+'px',top:y+'px',opacity:on*(.8+.2*Math.sin(m*9+i)),transform:`scale(${.8+.3*Math.sin(m*3+i)})`});
+      const bo=P(t,11.5+i*.2,11.8+i*.2)*(0.7+.3*Math.sin(m*6+i));st(u.beam,{left:(x-120)+'px',top:y+'px',opacity:bo})});
+    const a=pop(t,7.2);st('s2t1',{opacity:a.o,transform:`scale(${a.s})`});
+    const b=slam(t,9.88);st('s2t2',{opacity:b.o,transform:`scale(${b.s})`});
+    const c=pop(t,11.54);st('s2t3',{opacity:c.o,transform:`scale(${c.s})`});
+    const d=pop(t,12.66);st('s2t4',{opacity:d.o,transform:`scale(${d.s})`});
+  }
+  // S3
+  if(sc('s3',13.5,18.55)){
+    const q=pop(t,13.9);st('s3q',{opacity:q.o,transform:`scale(${q.s}) rotate(${Math.sin(t*3)*1.2}deg)`});
+    const d=eo(P(t,15.4,15.9));st('s3doc',{opacity:d,transform:`translateY(${(1-d)*200}px) rotate(${lerp(4,-1.5,d)}deg) scale(${1+.04*P(t,16,18.5)})`});
+    st('s3hl',{backgroundSize:(eio(P(t,16.8,17.9))*100)+'% 100%'});
+  }
+  // S4
+  if(sc('s4',18.5,22.6)){
+    st('s4kick',{opacity:P(t,18.7,19.1),letterSpacing:lerp(18,6,eo(P(t,18.7,19.5)))+'px'});
+    const s=slam(t,21.0,.22);st('s4title',{opacity:s.o,transform:`scale(${s.s})`});
+    st('s4plate',{opacity:P(t,21.2,21.5)*(.7+.3*Math.sin(t*8)),transform:`translateX(${Math.sin(t*1.7)*180}px) scale(${1+.1*Math.sin(t*5)})`});
+  }
+  // S5
+  if(sc('s5',22.5,32.75)){
+    const id=eo(P(t,22.7,23.3));st('s5id',{opacity:id,transform:`translateX(${(1-id)*-700}px) rotate(-1.5deg)`});
+    const mp=P(t,25.4,26.0);st('s5map',{opacity:mp,transform:`scale(${lerp(.85,1,eo(mp))})`});
+    const route=$('route'),len=route.getTotalLength(),rp=eio(P(t,26.2,28.6));
+    route.style.strokeDashoffset=0;route.setAttribute('stroke-dasharray',`${len*rp} ${len}`);
+    const pt=route.getPointAtLength(len*rp),pt2=route.getPointAtLength(Math.min(len,len*rp+2));const ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI+90;
+    $('plane').setAttribute('transform',`translate(${pt.x} ${pt.y}) rotate(${ang})`);$('plane').style.opacity=rp>0&&rp<1?1:0;
+    const pn=P(t,28.5,28.8);$('pin').style.opacity=pn;$('paraG').style.opacity=pn*(.6+.4*Math.sin(t*4));
+    $('pinr').setAttribute('r',16+((t*40)%40));$('pinr').style.opacity=1-((t*40)%40)/40;
+    [['g1',29.92],['g2',30.68],['g3',31.76]].forEach(([g,a])=>{const p=pop(t,a,.3);st(g,{opacity:p.o,transform:`scale(${p.s})`})});
+  }
+  // S6
+  if(sc('s6',32.7,38.45)){
+    const a=pop(t,32.8);st('s6a',{opacity:a.o,transform:`scale(${a.s})`});
+    st('s6x',{width:(eo(P(t,34.0,34.4))*105)+'%'});
+    const d=eo(P(t,35.9,36.4));st('s6doc',{opacity:d,transform:`translateY(${(1-d)*300}px) rotate(${lerp(6,1,d)}deg)`});
+    const s=slam(t,37.3);st('s6st',{opacity:s.o*.9,transform:`rotate(-8deg) scale(${s.s})`});
+  }
+  // S7
+  if(sc('s7',38.45,47.4)){
+    const a=pop(t,38.62);st('s7t',{opacity:a.o,transform:`scale(${a.s})`});
+    ppl.forEach((p,i)=>{const x=P(t,38.9+i*.05,39.2+i*.05);st(p,{opacity:x*(1-.7*P(t,42.4,42.8)),transform:`translateY(${(1-eb(x))*40}px)`})});
+    const b=P(t,42.4,42.9);st('s7body',{opacity:b,transform:`scale(${lerp(.8,1,eo(b))})`});
+    $('s7burn').style.opacity=P(t,42.8,43.3)*(.75+.25*Math.sin(t*6));
+    dots.forEach((d,i)=>d.style.opacity=P(t,45.5+i*.06,45.6+i*.06));
+    const l1=pop(t,42.9);st('s7l1',{opacity:l1.o,transform:`scale(${l1.s})`});const l2=pop(t,45.56);st('s7l2',{opacity:l2.o,transform:`scale(${l2.s})`});
+  }
+  // S8
+  if(sc('s8',47.4,54.65)){
+    const c=eo(P(t,47.4,48.0));st('s8clip',{opacity:c,transform:`translateY(${(1-c)*400}px) rotate(${lerp(-5,1,c)}deg) scale(${1+.03*P(t,48,54.6)})`});
+    st('s8a',{backgroundSize:(eio(P(t,50.1,51.0))*100)+'% 100%'});$('s8a').textContent=(t>50.9?'☒':'☐')+' PARALISIA TEMPORÁRIA';
+    st('s8b',{backgroundSize:(eio(P(t,52.2,53.4))*100)+'% 100%'});$('s8b').textContent=(t>53.3?'☒':'☐')+' PERDA DE SANGUE INEXPLICÁVEL';
+    let pts='';for(let x=0;x<=660;x+=6){const ph=((x/660)*3+t*1.2)%1;let y=80;if(ph>.40&&ph<.44)y=80-(ph-.40)*1500;else if(ph>=.44&&ph<.48)y=20+(ph-.44)*2800;else if(ph>=.48&&ph<.5)y=132-(ph-.48)*2600;y+= Math.sin(x*.3+t*9)*2;const vis=x/660<P(t,48,49.5);if(vis)pts+=`${x},${y.toFixed(1)} `}$('s8line').setAttribute('points',pts);
+  }
+  // S9
+  if(sc('s9',54.65,65.85)){
+    const a=pop(t,55.4);st('s9t',{opacity:a.o,transform:`scale(${a.s})`});
+    const n=Math.round(eo(P(t,56.6,57.8))*200);$('s9num').textContent=n;st('s9n',{opacity:P(t,56.6,56.8)});
+    st('s9sub',{opacity:P(t,58.6,59.0)});
+    pages.forEach((p,i)=>{const x=P(t,56.7+i*.07,56.95+i*.07);st(p,{opacity:x,transform:`translateY(${(1-eo(x))*-500}px) rotate(${(rnd(i+1)-.5)*8}deg)`})});
+    const sk=eo(P(t,60.4,60.9));st('s9sketch',{opacity:sk,transform:`rotate(${lerp(-8,-3,sk)}deg) translateX(${(1-sk)*-400}px)`});
+    skl.forEach((l,i)=>l.style.strokeDashoffset=1-eio(P(t,60.7+i*.3,61.3+i*.3)));
+    photos.forEach((p,i)=>{const a=62.8+i*.3;const x=P(t,a,a+.35);const X=[120,480,200,560][i],Y=[860,820,1030,1000][i];
+      st(p,{left:X+'px',top:Y+'px',opacity:clamp(x*3),transform:`scale(${lerp(1.8,1,eo(x))}) rotate(${[-9,7,4,-6][i]}deg)`})});
+  }
+  // S10
+  if(sc('s10',65.85,73.3)){
+    const a=pop(t,66.0);st('s10t',{opacity:a.o,transform:`scale(${a.s})`});
+    const tl=eo(P(t,67.9,68.5));st('s10tel',{opacity:tl,transform:`translateY(${(1-tl)*300}px) rotate(${lerp(4,-1,tl)}deg)`});
+    const msg='ENCERRAR OPERAÇÃO IMEDIATAMENTE.';const k=Math.floor(clamp((t-68.6)/1.6)*msg.length);$('s10msg').textContent=msg.slice(0,k)+(k<msg.length&&t%0.5<.25?'|':'');
+    st('s10de',{color:t>72.5?'#b3261e':'var(--ink)'});
+    const s=slam(t,69.6,.2);st('s10st',{opacity:s.o,transform:`rotate(-8deg) scale(${s.s})`});
+  }
+  // S11
+  if(sc('s11',73.3,79.25)){
+    const a=pop(t,73.4);st('s11t',{opacity:a.o,transform:`scale(${a.s})`});
+    const r=eo(P(t,74.0,74.6));st('s11reel',{opacity:r*(1-.6*P(t,77.6,78.2)),transform:`scale(${lerp(.6,1,r)})`});$('reelg').setAttribute('transform',`rotate(${t*90*(1-P(t,77,78.4))+ (P(t,77,78.4))*t*20})`);
+    const q=slam(t,78.3,.2);st('s11q',{opacity:q.o,transform:`scale(${q.s})`});
+    const m=pop(t,76.2);st('s11m',{opacity:m.o,transform:`scale(${m.s})`});
+  }
+  // S12 (sky + ufo reuse through s2 ufos? simple orbs)
+  if(sc('s12',79.25,86.6,.3,.01)){const qo=1-P(t,83.0,83.25);st('s12t',{display:'block'});
+    [['s12o1',80.0],['s12o2',80.6]].forEach(([id,a],i)=>st(id,{opacity:P(t,a,a+.5)*(.75+.25*Math.sin(t*7+i)),transform:`translate(${Math.sin(t*.9+i*2)*80}px,${Math.cos(t*.7+i)*40}px)`}));const a=pop(t,79.4,.5);st('s12t',{opacity:a.o*qo,transform:`scale(${a.s*(1+.03*P(t,79.4,83.2))})`});
+  }
+  {const h=eo(P(t,79.3,80.1));st('host',{opacity:h,transform:`translateY(${(1-h)*260+Math.sin(t*.8)*6}px) scale(${1+.025*P(t,79.3,86.5)})`});st('hostglow',{opacity:.7+.3*Math.sin(t*2)});}
+  // S13
+  if(sc('s13',83.2,86.6,.3,.01)){
+    const c=pop(t,83.2);st('s13c',{opacity:c.o*(1-P(t,84.55,84.75)),transform:`scale(${c.s})`});[1,2,3].forEach(i=>$('d'+i).setAttribute('cy',160-Math.max(0,Math.sin(t*9-i*.9))*14));
+    const f2=pop(t,84.7,.45);st('s13f',{opacity:f2.o,transform:`scale(${f2.s})`});
+    const done=t>85.8;$('s13bt').textContent=done?'✓ SEGUINDO':'+ SEGUIR';st('s13btn',{background:done?'#fff':'var(--rd)',color:done?'#111':'#fff',transform:`scale(${1-.08*Math.sin(P(t,85.6,85.9)*Math.PI)})`});
+  }
+  // captions
+  const gi=groups.findIndex(g=>t>=g.start&&t<g.end);const cap=$('cap');
+  if(gi!==lastG){cap.innerHTML=gi<0?'':groups[gi].map(w=>`<span>${w[0].replace(/[,.]$/,'')}</span>`).join('');lastG=gi}
+  if(gi>=0){const g=groups[gi];const sp=cap.children;let cur=-1;g.forEach((w,i)=>{if(t>=w[1])cur=i});
+    for(let i=0;i<sp.length;i++){sp[i].className=i===cur?'on':'';sp[i].style.transform=i===cur?`scale(${lerp(1.16,1.05,P(t,g[i][1],g[i][1]+.12))})`:'scale(1)';sp[i].style.opacity=t>=g[i][1]?1:.55}
+    const gp=P(t,g.start,g.start+.1);cap.style.opacity=gp}
+  // hud / fx
+  $('doc').textContent='DOC '+pad(1+Math.floor(t/6.5),3);$('tc').textContent=`1977 · ${pad(t/60)}:${pad(t%60)}`;
+  grain(f);
+  const stamps=[1.9,21.0,37.3,69.6];let fl=0;stamps.forEach(s=>fl=Math.max(fl,1-Math.abs(t-s-.1)/.1));
+  st('flash',{opacity:fl*.35});
+  let sh=0;stamps.forEach(s=>sh=Math.max(sh,1-P(t,s+.15,s+.45)*(t>s+.15?1:0)-(t<s+.15?1:0)));
+  st('stage',{transform:sh>0?`translate(${(rnd(f)-.5)*20*sh}px,${(rnd(f+1)-.5)*20*sh}px)`:'none'});
+  st('fade',{opacity:P(t,TEND-.3,TEND)*.0});
+  await Promise.all([...document.images].filter(i=>!i.complete).map(i=>i.decode().catch(()=>{})));
+}
+window.seek=seek;window.TEND=TEND;
+window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
+</script>
+</body>
+</html>
