@@ -8,23 +8,51 @@
 .t{text-align:center;line-height:.9;text-shadow:0 10px 40px rgba(0,0,0,.9)}
 </style></head><body><div id="c">
 <canvas id="st" class="abs" width="1080" height="1920" style="left:0;top:0"></canvas>
-<div class="abs" style="left:900px;top:740px;width:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-bottom:1300px solid rgba(255,220,140,.17);filter:blur(10px);transform:translateX(-170px) rotate(8deg);transform-origin:50% 0"></div>
-<div class="ufo" style="left:800px;top:640px;width:200px;height:200px"></div>
-<div class="ufo" style="left:110px;top:640px;width:90px;height:90px;opacity:.8"></div>
+
+
 <svg class="abs" style="left:0;bottom:0" width="1080" height="700" viewBox="0 0 1080 700" preserveAspectRatio="none" id="tr"></svg>
-<div class="abs" style="left:60px;top:890px;width:420px;height:300px;background:#E9DFC7;transform:rotate(-8deg);box-shadow:0 20px 50px rgba(0,0,0,.8);padding:26px;color:#1d1a15;font-family:J;font-size:22px;text-transform:none">
-  <div>FORÇA AÉREA BRASILEIRA</div><div style="margin-top:14px;height:18px;width:300px;background:#111"></div><div style="margin-top:10px;height:18px;width:340px;background:#111"></div><div style="margin-top:10px;height:18px;width:220px;background:#111"></div>
-  <div style="position:absolute;left:40px;top:150px;border:7px solid #E0282E;color:#E0282E;font-family:O;font-weight:700;font-size:54px;padding:2px 16px;transform:rotate(-6deg)">CONFIDENCIAL</div>
+
+<!-- beam -->
+<svg class="abs" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920">
+ <defs>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ffe9" stop-opacity=".75"/><stop offset=".6" stop-color="#9dffc8" stop-opacity=".28"/><stop offset="1" stop-color="#9dffc8" stop-opacity=".05"/></linearGradient>
+  <radialGradient id="hull" cx=".5" cy=".3" r=".7"><stop offset="0" stop-color="#e9eef5"/><stop offset=".45" stop-color="#8c96a6"/><stop offset="1" stop-color="#2a303b"/></radialGradient>
+  <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a414d"/><stop offset=".5" stop-color="#c9d1dc"/><stop offset="1" stop-color="#3a414d"/></linearGradient>
+  <radialGradient id="dome" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#eafff4"/><stop offset=".35" stop-color="#7dffc0" stop-opacity=".9"/><stop offset="1" stop-color="#0e5b3b" stop-opacity=".85"/></radialGradient>
+  <radialGradient id="under" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#b8ffd8"/><stop offset="1" stop-color="#b8ffd8" stop-opacity="0"/></radialGradient>
+  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7dffc0" stop-opacity=".45"/><stop offset="1" stop-color="#7dffc0" stop-opacity="0"/></radialGradient>
+  <filter id="bl"><feGaussianBlur stdDeviation="6"/></filter>
+ </defs>
+ <ellipse cx="560" cy="930" rx="520" ry="260" fill="url(#halo)"/>
+ <path d="M470 985 L650 985 L950 1530 L170 1530 Z" fill="url(#beam)" filter="url(#bl)"/>
+ <ellipse cx="560" cy="1525" rx="400" ry="55" fill="#c9ffe0" opacity=".35" filter="url(#bl)"/>
+ <g transform="rotate(-8 560 930)">
+  <ellipse cx="560" cy="975" rx="170" ry="34" fill="url(#under)" filter="url(#bl)"/>
+  <ellipse cx="560" cy="945" rx="330" ry="62" fill="url(#hull)"/>
+  <ellipse cx="560" cy="930" rx="330" ry="22" fill="url(#rim)" opacity=".9"/>
+  <path d="M430 915 Q440 800 560 790 Q680 800 690 915 Z" fill="url(#dome)"/>
+  <path d="M470 880 Q490 820 545 812" stroke="#fff" stroke-width="10" fill="none" opacity=".6" stroke-linecap="round"/>
+  <g>
+   <circle cx="275" cy="950" r="11" fill="#fff4b0"/><circle cx="345" cy="966" r="11" fill="#7dffc0"/><circle cx="420" cy="977" r="11" fill="#fff4b0"/><circle cx="490" cy="983" r="11" fill="#7dffc0"/>
+   <circle cx="560" cy="985" r="12" fill="#fff4b0"/><circle cx="630" cy="983" r="11" fill="#7dffc0"/><circle cx="700" cy="977" r="11" fill="#fff4b0"/><circle cx="775" cy="966" r="11" fill="#7dffc0"/><circle cx="845" cy="950" r="11" fill="#fff4b0"/>
+  </g>
+ </g>
+ <!-- people silhouettes in beam -->
+ <g fill="#050806">
+  <g transform="translate(470 1450)"><circle cx="0" cy="-92" r="18"/><path d="M-20 -72 H20 L26 10 L14 10 L10 70 H2 L0 14 L-2 70 H-10 L-14 10 L-26 10 Z"/><path d="M20 -66 L52 -120 L60 -114 L28 -58Z"/></g>
+  <g transform="translate(650 1470) scale(.85)"><circle cx="0" cy="-92" r="18"/><path d="M-20 -72 H20 L26 10 L14 10 L10 70 H2 L0 14 L-2 70 H-10 L-14 10 L-26 10 Z"/><path d="M-20 -66 L-50 -118 L-58 -112 L-28 -58Z"/></g>
+ </g>
+</svg>
+<div class="abs" style="left:40px;top:1120px;width:330px;height:270px;background:#E9DFC7;transform:rotate(-10deg);box-shadow:0 20px 50px rgba(0,0,0,.8);padding:26px;color:#1d1a15;font-family:J;font-size:22px;text-transform:none">
+  <div>FORÇA AÉREA BRASILEIRA</div><div style="margin-top:14px;height:18px;width:230px;background:#111"></div><div style="margin-top:10px;height:18px;width:260px;background:#111"></div><div style="margin-top:10px;height:18px;width:170px;background:#111"></div>
+  <div style="position:absolute;left:30px;top:170px;border:6px solid #E0282E;color:#E0282E;font-family:O;font-weight:700;font-size:40px;padding:2px 12px;transform:rotate(-6deg)">CONFIDENCIAL</div>
 </div>
-<div class="abs" style="left:170px;top:700px;width:1000px;height:1307px">
-  <div class="abs" style="left:170px;top:-40px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(255,194,51,.4),rgba(255,194,51,0) 65%)"></div>
-  <img src="host.png" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 20px rgba(255,194,51,.6)) drop-shadow(0 30px 40px rgba(0,0,0,.8))">
-</div>
-<div class="abs" style="left:0;right:0;bottom:0;height:560px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.9) 55%)"></div>
+
+<div class="abs" style="left:0;right:0;bottom:0;height:420px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85) 60%)"></div>
 <div class="abs" style="left:0;right:0;top:150px;text-align:center"><span style="font-family:J;font-size:40px;letter-spacing:6px;background:#E0282E;padding:10px 26px;border-radius:8px">ARQUIVO SECRETO · 1977</span></div>
 <div class="abs t" style="left:0;right:0;top:260px;font-size:200px">OPERAÇÃO<br><span style="color:#FFC233">PRATO</span></div>
-<div class="abs t" style="left:40px;right:40px;bottom:250px;font-size:112px">ELES <span style="color:#FFC233">ATACARAM</span><br>CIVIS NA AMAZÔNIA</div>
-<div class="abs" style="left:0;right:0;bottom:120px;text-align:center"><span style="font-family:J;font-size:40px;letter-spacing:3px;color:#111;background:#FFC233;padding:12px 28px;border-radius:10px">E A FAB CONFIRMOU</span></div>
+<div class="abs" style="left:0;right:0;top:668px;text-align:center"><span style="font-family:J;font-size:42px;letter-spacing:3px;color:#111;background:#FFC233;padding:12px 28px;border-radius:10px">A FAB CONFIRMOU OS ATAQUES</span></div>
+<div class="abs t" style="left:30px;right:30px;bottom:95px;font-size:104px">ATACARAM <span style="color:#7dffc0">CIVIS</span><br>NA AMAZÔNIA</div>
 </div>
 <script>
 const c=document.getElementById('st').getContext('2d');function r(s){let x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
