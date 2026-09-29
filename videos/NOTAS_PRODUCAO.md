@@ -36,7 +36,7 @@ Referência para as próximas produções (preferências e aprendizados já vali
 
 ## Pautas em andamento
 - Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.
-- Consta nos Autos — Violet Jessop (3 naufrágios): pronto em `videos/consta_violet_jessop/`.
+- Consta nos Autos — Violet Jessop (3 desastres: 1 colisão + 2 naufrágios): pronto em `videos/consta_violet_jessop/`.
 - Consta nos Autos — Tsutomu Yamaguchi (duas bombas): pronto em `videos/consta_hiroshima_nagasaki/`.
 
 ## Retenção (aprendizado)
@@ -49,3 +49,8 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Piores: vídeos de 1:27–1:31 e títulos sem gancho ("OPERAÇÃO PRATO", "A palavra nasceu em Porto Rico").
 - Regra: título "Por que [famoso] [detalhe que parece errado]?", 35–55s, descrição começa pelo fato.
 - Evitar material com direitos autorais (ex.: gráficos BBC/RMS Titanic Inc.); preferir fotos em domínio público ou ilustração própria.
+
+## Checagem de fatos (aprendizado)
+- Textos de tela, capa e título precisam da MESMA precisão da narração. Erro real: "3 naufrágios" para Violet Jessop — o Olympic não afundou (colisão com o HMS Hawke em 1911; navegou até 1935). Correto: "3 desastres".
+- Antes de publicar, conferir cada número/verbo forte (afundou, morreu, único, primeiro) contra a fonte.
+- Se um comentário apontar erro verdadeiro: agradecer, corrigir título/descrição e fixar a resposta (não apagar o vídeo).

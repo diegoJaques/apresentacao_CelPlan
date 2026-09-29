@@ -8,3 +8,5 @@
 
 Imagens: foto do navio e retrato de Violet Jessop (1911–1916, domínio público). O gráfico BBC/RMS Titanic Inc. do naufrágio não foi usado (direitos autorais).
 Técnicas de retenção aplicadas desde a origem: gancho no 1º quadro, pausas encurtadas + fala 6% mais rápida, contador "SOBREVIVEU 1/3→3/3", final seco.
+
+Correção (29/09): texto de abertura, quadro final e capa mudaram de "3 naufrágios" para "3 desastres" — o Olympic colidiu (1911) mas não afundou.
