@@ -68,3 +68,8 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Avatar com fundo branco parece "gerado por IA": recortar (webm VP9 com alfa) e colocar à direita sobre o fundo das cenas do HyperFrames, com cartões à esquerda.
 - Um único áudio com vários blocos de narração funciona: cada bloco entra como `<audio data-media-start>`.
 - No headless shell, clipes H.264 falham na checagem: converter para webm VP9.
+
+## Continuações (aprendizado)
+- Antes de roteirizar uma "Parte 2", assistir/transcrever a Parte 1 inteira. Erro real: a Parte 2 do Varig 967 repetia a Parte 1 (comandante, Paris, cebolas, 153 quadros). A Parte 2 deve responder ao gancho que a Parte 1 deixou aberto.
+- Se a frase de abertura cita uma pessoa ("esse comandante"), o primeiro quadro precisa mostrar essa pessoa.
+- No Consta nos Autos, imagens com cara de real (fotos de época, ilustrações realistas) seguram mais que gráficos vetoriais.
