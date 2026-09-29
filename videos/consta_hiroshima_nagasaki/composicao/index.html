@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sobreviveu às duas bombas</title>
+<style>
+@font-face{font-family:O;font-weight:500;src:url(fonts/oswald-latin-500-normal.woff2)}
+@font-face{font-family:O;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}
+@font-face{font-family:T;src:url(fonts/special-elite-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--rd:#D7262B;--pp:#E9DFC7;--ink:#1d1a15;--gr:#3BD16F;--am:#FFC233}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#23201c 0%,#0b0a09 70%);font-family:O;color:#fff}
+.abs{position:absolute}.full{position:absolute;inset:0}.center{left:0;right:0;text-align:center}
+.scene{position:absolute;inset:0;opacity:0;display:none}
+.h{font-family:O;font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:1px;text-shadow:0 6px 30px rgba(0,0,0,.85)}
+.paper{position:absolute;background:var(--pp);color:var(--ink);font-family:T;border-radius:4px;box-shadow:0 30px 70px rgba(0,0,0,.7)}
+.photo{position:absolute;background:#efeae0;padding:16px;box-shadow:0 25px 60px rgba(0,0,0,.8)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15)}
+.stamp{position:absolute;display:inline-block;border:10px solid var(--gr);color:var(--gr);font-family:O;font-weight:700;text-transform:uppercase;padding:4px 26px;border-radius:10px;letter-spacing:3px;background:rgba(0,0,0,.6);opacity:0}
+.tag{display:inline-block;padding:10px 24px;font-family:J;font-weight:700;font-size:32px;letter-spacing:2px;border-radius:8px}
+#cap{position:absolute;left:50px;right:50px;top:1480px;text-align:center;font-family:O;font-weight:700;font-size:84px;line-height:1.05;text-transform:uppercase}
+#cap span{display:inline-block;margin:0 14px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.7)}
+#cap span.on{color:var(--am)}
+#hud{position:absolute;inset:0;pointer-events:none;font-family:J;font-weight:700;font-size:24px;color:rgba(255,255,255,.8);text-shadow:0 2px 8px rgba(0,0,0,.9)}
+#grain{position:absolute;inset:0;width:1080px;height:1920px;opacity:.09;mix-blend-mode:screen;pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.75) 100%);pointer-events:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+svg{overflow:visible}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- S1 hook 0-7.35 -->
+  <div id="s1" class="scene">
+    <div id="s1ban" class="abs center" style="top:150px">
+      <div style="display:inline-block;background:#fff;color:#111;font-family:O;font-weight:700;font-size:86px;line-height:1.02;padding:22px 34px;border:8px solid #000;box-shadow:12px 12px 0 var(--rd);transform:rotate(-2deg);text-transform:uppercase">ELE SOBREVIVEU<br>ÀS <span style="color:var(--rd)">DUAS</span> BOMBAS</div></div>
+    <div id="s1a" class="photo" style="left:40px;top:560px;width:490px;height:760px;transform:rotate(-3deg)"><img src="bomb.jpg" style="object-position:40% 50%"><div class="abs center h" style="bottom:26px;font-size:54px;left:16px;right:16px;background:rgba(0,0,0,.7);padding:8px 0">HIROSHIMA</div></div>
+    <div id="s1b" class="photo" style="left:550px;top:560px;width:490px;height:760px;transform:rotate(3deg)"><img src="cloud2.jpg" style="object-position:50% 40%"><div class="abs center h" style="bottom:26px;font-size:54px;left:16px;right:16px;background:rgba(0,0,0,.7);padding:8px 0">NAGASAKI</div></div>
+    <div id="s1s1" class="stamp" style="left:80px;top:820px;font-size:64px;transform:rotate(-10deg)">SOBREVIVEU ✓</div>
+    <div id="s1s2" class="stamp" style="left:600px;top:820px;font-size:64px;transform:rotate(6deg)">SOBREVIVEU ✓</div>
+    <div id="s1d" class="abs center" style="top:1010px"><span class="tag" style="background:var(--rd);color:#fff;font-size:52px;font-family:O">3 DIAS DEPOIS →</span></div>
+  </div>
+
+  <!-- S2 7.35-11.45 ficha -->
+  <div id="s2" class="scene">
+    <div id="s2doc" class="paper" style="left:80px;top:320px;width:920px;height:1040px;padding:60px 56px;font-size:34px;line-height:1.6">
+      <div style="letter-spacing:4px;font-size:28px">REGISTRO · MITSUBISHI HEAVY INDUSTRIES</div>
+      <div style="display:flex;gap:40px;margin-top:40px;align-items:flex-start">
+        <div style="width:300px;height:380px;background:#cbbf9f;border:3px solid #6b5e45;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;flex:none">
+          <svg width="260" height="330" viewBox="0 0 260 330"><circle cx="130" cy="120" r="68" fill="#6b5e45"/><path d="M10 330 Q130 170 250 330Z" fill="#6b5e45"/></svg></div>
+        <div><div>NOME:</div><div id="s2name" style="font-family:O;font-weight:700;font-size:78px;line-height:1"></div>
+          <div style="margin-top:30px">FUNÇÃO:</div><div id="s2job" style="font-family:O;font-weight:700;font-size:52px;color:#8a1c1c;line-height:1.05"></div></div>
+      </div>
+      <div style="margin-top:40px">CIDADE: NAGASAKI</div>
+      <div style="position:absolute;left:56px;bottom:40px;font-family:J;font-size:15px;color:rgba(0,0,0,.45)">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+  </div>
+
+  <!-- S3 11.45-17.9 viagem -->
+  <div id="s3" class="scene">
+    <div id="s3y" class="abs center h" style="top:240px;font-size:120px;color:var(--am)">AGOSTO · 1945</div>
+    <svg id="s3map" class="abs" style="left:90px;top:520px" width="900" height="760" viewBox="0 0 900 760"></svg>
+    <div id="s3l" class="abs center" style="top:1300px"><span class="tag" style="background:#fff;color:#111;font-size:40px;font-family:O">ÚLTIMO DIA DA VIAGEM</span></div>
+  </div>
+
+  <!-- S4 17.9-28.45 8h15 / clarão / 3km -->
+  <div id="s4" class="scene">
+    <svg id="clock" class="abs" style="left:290px;top:330px" width="500" height="500" viewBox="-250 -250 500 500"></svg>
+    <div id="s4t" class="abs center h" style="top:220px;font-size:90px">6 DE AGOSTO · 8:15</div>
+    <svg id="radius" class="abs" style="left:40px;top:340px" width="1000" height="1000" viewBox="-500 -500 1000 1000"></svg>
+    <div id="s4c" class="abs" style="left:60px;top:1250px;display:flex;gap:14px;flex-wrap:wrap">
+      <span id="c1" class="tag" style="background:var(--rd);color:#fff">QUEIMADURAS</span>
+      <span id="c2" class="tag" style="background:var(--rd);color:#fff">TÍMPANOS ROMPIDOS</span></div>
+    <div id="s4s" class="stamp" style="left:560px;top:1120px;font-size:80px;transform:rotate(-8deg)">VIVO ✓</div>
+  </div>
+
+  <!-- S5 28.45-34.1 trem -->
+  <div id="s5" class="scene">
+    <div id="s5t" class="abs center h" style="top:250px;font-size:84px">DE VOLTA PRA CASA…</div>
+    <svg id="s5map" class="abs" style="left:40px;top:560px" width="1000" height="700" viewBox="0 0 1000 700"></svg>
+    <div id="s5n" class="abs center h" style="top:1270px;font-size:120px;color:var(--rd)">NAGASAKI</div>
+  </div>
+
+  <!-- S6 34.1-41.85 9 de agosto / chefe -->
+  <div id="s6" class="scene">
+    <div id="s6t" class="abs center h" style="top:240px;font-size:110px;color:var(--am)">9 DE AGOSTO</div>
+    <svg id="s6svg" class="abs" style="left:40px;top:520px" width="1000" height="800" viewBox="0 0 1000 800"></svg>
+  </div>
+
+  <!-- S7 41.85-46.6 nagasaki cloud -->
+  <div id="s7" class="scene">
+    <div id="s7ph" class="photo" style="left:90px;top:260px;width:900px;height:1080px"><img src="cloud1.jpg" style="object-position:50% 30%"></div>
+    <div id="s7l" class="abs" style="left:120px;top:290px"><span class="tag" style="background:rgba(0,0,0,.75);color:#fff">NAGASAKI · 9 AGO 1945 · 11:02</span></div>
+    <div id="s7k" class="abs" style="right:120px;top:1170px"><span class="tag" style="background:var(--rd);color:#fff;font-size:44px;font-family:O">~3 KM DE NOVO</span></div>
+    <div id="s7s" class="stamp" style="left:120px;top:940px;font-size:88px;transform:rotate(-7deg)">SOBREVIVEU ✓✓</div>
+  </div>
+
+  <!-- S8 46.6-55 legado -->
+  <div id="s8" class="scene">
+    <svg id="s8svg" class="abs" style="left:290px;top:330px" width="500" height="720" viewBox="0 0 500 720">
+      <circle cx="250" cy="130" r="80" fill="#2b2824" stroke="#E9DFC7" stroke-width="5"/>
+      <path d="M100 720 Q100 280 250 260 Q400 280 400 720Z" fill="#2b2824" stroke="#E9DFC7" stroke-width="5"/>
+      <line x1="370" y1="420" x2="420" y2="720" stroke="#E9DFC7" stroke-width="12" stroke-linecap="round"/></svg>
+    <div id="s8y" class="abs center h" style="top:220px;font-size:70px;color:#bbb">1916 — 2010</div>
+    <div id="s8a" class="abs center h" style="top:1060px;font-size:130px;color:var(--am)">93 ANOS</div>
+    <div id="s8s" class="stamp" style="left:130px;top:1230px;font-size:52px;border-color:var(--rd);color:#fff;background:var(--rd);transform:rotate(-4deg)">ÚNICO RECONHECIDO OFICIALMENTE</div>
+  </div>
+
+  <!-- S9 55-end -->
+  <div id="s9" class="scene">
+    <div id="s9q" class="abs center h" style="top:420px;font-size:150px">SORTE<br><span style="color:#888;font-size:90px">OU</span><br><span style="color:var(--am)">DESTINO?</span></div>
+    <div id="s9c" class="abs center" style="top:1060px"><span class="tag" style="background:var(--am);color:#111;font-size:48px;font-family:O">💬 COMENTA AQUI</span></div>
+    <div id="s9f" class="abs center" style="top:1180px"><span id="s9b" class="tag" style="background:var(--rd);color:#fff;font-size:44px;font-family:O">+ SEGUIR CONSTA NOS AUTOS</span></div>
+  </div>
+
+  <canvas id="grain" width="540" height="960"></canvas>
+  <div id="vig"></div>
+  <div id="cap"></div>
+  <div id="hud">
+    <div class="abs" style="left:60px;top:70px">● ARQUIVO · TSUTOMU YAMAGUCHI</div>
+    <div class="abs" style="right:60px;top:70px;color:var(--am)">CONSTA NOS AUTOS</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<script src="words.js"></script>
+<script>
+const FPS=30;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.2,fo=.2)=>Math.min(P(t,a,a+fi),1-P(t,b-fo,b));
+function rnd(s){let x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];return el}
+function pop(t,a,d=.35){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(.5,1,eb(x))}}
+function slam(t,a,d=.16){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(2.6,1,eo(x))}}
+// S3 map: stylized route Hiroshima -> Nagasaki (schematic, not to scale)
+$('s3map').innerHTML=`<rect width="900" height="760" rx="20" fill="#14120f" stroke="#3a342a" stroke-width="4"/>
+ <path d="M140 560 C260 520 330 430 470 380 S720 280 790 200" fill="none" stroke="#555" stroke-width="10" stroke-dasharray="4 18" stroke-linecap="round"/>
+ <circle cx="790" cy="200" r="22" fill="#D7262B"/><text x="760" y="150" text-anchor="middle" font-family="O" font-weight="700" font-size="56" fill="#fff">HIROSHIMA</text>
+ <circle cx="140" cy="560" r="18" fill="#E9DFC7"/><text x="160" y="640" text-anchor="middle" font-family="O" font-weight="700" font-size="48" fill="#E9DFC7">NAGASAKI (casa)</text>
+ <g id="brief" transform="translate(790 200)"><rect x="-34" y="-26" width="68" height="50" rx="8" fill="#8a5a2b" stroke="#000" stroke-width="4"/><rect x="-14" y="-38" width="28" height="14" rx="4" fill="none" stroke="#000" stroke-width="5"/></g>
+ <text x="450" y="720" text-anchor="middle" font-family="J" font-weight="700" font-size="22" fill="#777">ESQUEMÁTICO · FORA DE ESCALA</text>`;
+// clock
+{let s='<circle r="230" fill="#efeae0" stroke="#111" stroke-width="14"/>';for(let i=0;i<12;i++){const a=i*Math.PI/6;s+=`<line x1="${Math.sin(a)*185}" y1="${-Math.cos(a)*185}" x2="${Math.sin(a)*215}" y2="${-Math.cos(a)*215}" stroke="#111" stroke-width="10"/>`}
+ s+='<line id="hh" x1="0" y1="0" x2="0" y2="-120" stroke="#111" stroke-width="16" stroke-linecap="round"/><line id="mh" x1="0" y1="0" x2="0" y2="-180" stroke="#111" stroke-width="10" stroke-linecap="round"/><circle r="14" fill="#D7262B"/>';$('clock').innerHTML=s}
+// radius
+$('radius').innerHTML=`<circle id="r3" r="440" fill="rgba(215,38,43,.12)" stroke="#D7262B" stroke-width="4" stroke-dasharray="12 10"/><circle id="r2" r="280" fill="rgba(215,38,43,.2)"/><circle id="r1" r="120" fill="rgba(255,255,255,.85)"/>
+ <text y="-455" text-anchor="middle" font-family="J" font-weight="700" font-size="34" fill="#fff">3 KM</text>
+ <line x1="0" y1="0" x2="440" y2="0" stroke="#fff" stroke-width="4"/>
+ <g id="man" transform="translate(440 0)"><circle cy="-40" r="16" fill="#FFC233"/><rect x="-14" y="-24" width="28" height="44" rx="6" fill="#FFC233"/></g>
+ <text x="440" y="70" text-anchor="middle" font-family="O" font-weight="700" font-size="40" fill="#FFC233">ELE</text>`;
+// S5 train map
+$('s5map').innerHTML=`<path id="rail" d="M880 120 C700 200 620 330 480 380 S200 520 120 600" fill="none" stroke="#E9DFC7" stroke-width="10" stroke-dasharray="26 14"/>
+ <circle cx="880" cy="120" r="20" fill="#555"/><text x="860" y="80" text-anchor="end" font-family="O" font-weight="700" font-size="44" fill="#aaa">HIROSHIMA</text>
+ <circle cx="120" cy="600" r="24" fill="#D7262B"/>
+ <g id="train"><rect x="-70" y="-34" width="140" height="60" rx="10" fill="#E9DFC7" stroke="#000" stroke-width="5"/><rect x="-54" y="-22" width="30" height="22" fill="#333"/><rect x="-14" y="-22" width="30" height="22" fill="#333"/><rect x="26" y="-22" width="30" height="22" fill="#333"/><circle cx="-40" cy="30" r="12" fill="#222"/><circle cx="40" cy="30" r="12" fill="#222"/></g>`;
+// S6 office
+$('s6svg').innerHTML=`<rect x="0" y="560" width="1000" height="30" fill="#3a342a"/><rect x="340" y="420" width="320" height="140" fill="#2b2824" stroke="#555" stroke-width="4"/>
+ <g transform="translate(220 0)"><circle cx="0" cy="250" r="60" fill="#2b2824" stroke="#E9DFC7" stroke-width="4"/><path d="M-90 560 Q-90 330 0 320 Q90 330 90 560Z" fill="#2b2824" stroke="#E9DFC7" stroke-width="4"/></g>
+ <g transform="translate(780 0)"><circle cx="0" cy="240" r="62" fill="#1e1c19" stroke="#777" stroke-width="4"/><path d="M-95 560 Q-95 320 0 310 Q95 320 95 560Z" fill="#1e1c19" stroke="#777" stroke-width="4"/></g>
+ <text x="220" y="620" text-anchor="middle" font-family="J" font-weight="700" font-size="26" fill="#E9DFC7">TSUTOMU</text><text x="780" y="620" text-anchor="middle" font-family="J" font-weight="700" font-size="26" fill="#aaa">O CHEFE</text>
+ <g id="bub"><path d="M60 20 H620 Q650 20 650 50 V150 Q650 180 620 180 H300 L250 230 L260 180 H60 Q30 180 30 150 V50 Q30 20 60 20Z" fill="#efeae0" stroke="#000" stroke-width="5"/>
+ <text x="340" y="90" text-anchor="middle" font-family="T" font-size="38" fill="#111">"Em Hiroshima, houve</text><text x="340" y="140" text-anchor="middle" font-family="T" font-size="38" fill="#111">um clarão enorme…"</text></g>`;
+const gctx=$('grain').getContext('2d');const gimg=gctx.createImageData(540,960);
+function grain(f){const d=gimg.data;let s=f*7919+1;for(let i=0;i<d.length;i+=4){s=(s*1103515245+12345)&0x7fffffff;const v=(s>>16)&255;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}gctx.putImageData(gimg,0,0)}
+const W=window.WORDS;const groups=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];if(!nx||g.length>=3||/[,.?!]$/.test(w[0])||(nx[1]-w[2]>.35)){groups.push(g);g=[]}}}
+groups.forEach((g,i)=>{g.start=g[0][1];g.end=groups[i+1]?Math.min(groups[i+1][0][1],g[g.length-1][2]+.6):g[g.length-1][2]+.8});
+let lastG=-1;
+const FL=[20.2,41.22];
+async function seek(t){
+  const f=Math.round(t*FPS);
+  const sc=(id,a,b,fi=.2,fo=.2)=>{const o=win(t,a,b,fi,fo);st(id,{opacity:o,display:o>0?'block':'none'});return o>0};
+  if(sc('s1',0,7.35,.01,.25)){
+    st('s1ban',{transform:`scale(${1+.02*Math.sin(t*5)})`});
+    st('s1a',{transform:`rotate(-3deg) scale(${1+.03*P(t,0,7)})`});st('s1b',{transform:`rotate(3deg) scale(${1+.03*P(t,0,7)})`,filter:`brightness(${t<4.66?.35:1})`});
+    const a=slam(t,2.52);st('s1s1',{opacity:a.o,transform:`rotate(-10deg) scale(${a.s})`});
+    const d=pop(t,3.8);st('s1d',{opacity:d.o*(1-P(t,5.9,6.2)),transform:`scale(${d.s})`});
+    const b=slam(t,6.46);st('s1s2',{opacity:b.o,transform:`rotate(6deg) scale(${b.s})`});
+  }
+  if(sc('s2',7.35,11.45)){
+    const d=eo(P(t,7.35,7.8));st('s2doc',{opacity:d,transform:`translateY(${(1-d)*300}px) rotate(${lerp(4,-1,d)}deg)`});
+    const nm='TSUTOMU YAMAGUCHI';const k=Math.floor(clamp((t-8.3)/1.0)*nm.length);$('s2name').innerHTML=nm.slice(0,k).replace(' ','<br>');
+    const jb='ENGENHEIRO NAVAL';const k2=Math.floor(clamp((t-10.0)/0.7)*jb.length);$('s2job').textContent=jb.slice(0,k2);
+  }
+  if(sc('s3',11.45,17.9)){
+    const y=slam(t,13.2);st('s3y',{opacity:y.o,transform:`scale(${y.s})`});
+    st('s3map',{opacity:P(t,11.6,12.0)});
+    const l=pop(t,16.5);st('s3l',{opacity:l.o,transform:`scale(${l.s})`});
+  }
+  if(sc('s4',17.9,28.45)){
+    const c=P(t,17.95,18.3);st('clock',{opacity:c*(1-P(t,20.2,20.3)),transform:`scale(${lerp(.8,1,eo(c))})`});
+    const hm=lerp(7.5,8.25,eio(P(t,17.95,19.3)));$('hh').setAttribute('transform',`rotate(${hm*30})`);$('mh').setAttribute('transform',`rotate(${(hm%1)*360})`);
+    st('s4t',{opacity:P(t,18.0,18.3)*(1-P(t,20.2,20.3))});
+    const r=P(t,20.3,21.2);st('radius',{opacity:t>20.25?1:0});
+    $('r1').setAttribute('r',lerp(10,120,eo(r)));$('r2').setAttribute('r',lerp(10,280,eo(P(t,20.4,21.6))));$('r3').setAttribute('opacity',P(t,22.2,22.6));
+    $('man').setAttribute('opacity',P(t,22.2,22.5));
+    const c1=pop(t,23.74);st('c1',{opacity:c1.o,transform:`scale(${c1.s})`});const c2=pop(t,25.5);st('c2',{opacity:c2.o,transform:`scale(${c2.s})`});
+    const s=slam(t,27.75);st('s4s',{opacity:s.o,transform:`rotate(-8deg) scale(${s.s})`});
+  }
+  if(sc('s5',28.45,34.1)){
+    st('s5t',{opacity:P(t,28.5,28.8)});
+    const rail=$('rail');const len=rail.getTotalLength();const p=eio(P(t,29.2,32.9));const pt=rail.getPointAtLength(p*len);
+    $('train').setAttribute('transform',`translate(${pt.x} ${pt.y-30})`);
+    const n=slam(t,33.2);st('s5n',{opacity:n.o,transform:`scale(${n.s})`});
+  }
+  if(sc('s6',34.1,41.85)){
+    const a=slam(t,34.6);st('s6t',{opacity:a.o,transform:`scale(${a.s})`});
+    st('s6svg',{opacity:P(t,35.6,36.0)});
+    $('bub').setAttribute('opacity',P(t,37.3,37.6));
+    st('s6svg',{filter:t>40.9?`brightness(${1+P(t,40.9,41.2)*3})`:'none'});
+  }
+  if(sc('s7',41.85,46.65)){
+    const p=P(t,41.5,42.3);st('s7ph',{opacity:1,transform:`scale(${lerp(1.15,1,eo(p))})`});
+    st('s7ph',{filter:`brightness(${lerp(3,1,eo(p))})`});
+    st('s7l',{opacity:P(t,42.3,42.6)});const k=pop(t,43.1);st('s7k',{opacity:k.o,transform:`scale(${k.s})`});
+    const s=slam(t,45.7);st('s7s',{opacity:s.o,transform:`rotate(-7deg) scale(${s.s})`});
+  }
+  if(sc('s8',46.65,55.05)){
+    st('s8svg',{opacity:P(t,46.7,47.2),transform:`translateY(${(1-eo(P(t,46.7,47.4)))*80}px)`});
+    st('s8y',{opacity:P(t,47.3,47.6)});
+    const a=slam(t,48.4);st('s8a',{opacity:a.o,transform:`scale(${a.s})`});
+    const s=slam(t,50.2);st('s8s',{opacity:s.o,transform:`rotate(-4deg) scale(${s.s})`});
+  }
+  if(sc('s9',55.05,99,.2,.01)){
+    const q=pop(t,55.15);st('s9q',{opacity:q.o,transform:`scale(${q.s})`});
+    const c=pop(t,56.45);st('s9c',{opacity:c.o,transform:`scale(${c.s})`});
+    const f2=pop(t,57.6);st('s9f',{opacity:f2.o,transform:`scale(${f2.s})`});
+    const done=t>58.6;$('s9b').textContent=done?'✓ SEGUINDO':'+ SEGUIR CONSTA NOS AUTOS';st('s9b',{background:done?'#fff':'var(--rd)',color:done?'#111':'#fff'});
+  }
+  // captions
+  const gi=groups.findIndex(g=>t>=g.start&&t<g.end);const cap=$('cap');
+  if(gi!==lastG){cap.innerHTML=gi<0?'':groups[gi].map(w=>`<span>${w[0].replace(/[,.]$/,'')}</span>`).join('');lastG=gi}
+  if(gi>=0){const g=groups[gi];const sp=cap.children;let cur=-1;g.forEach((w,i)=>{if(t>=w[1])cur=i});
+    for(let i=0;i<sp.length;i++){sp[i].className=i===cur?'on':'';sp[i].style.transform=i===cur?'scale(1.06)':'scale(1)';sp[i].style.opacity=t>=g[i][1]?1:.55}cap.style.opacity=1}else cap.style.opacity=0;
+  grain(f);
+  let fl=0;FL.forEach(s=>{if(t>=s)fl=Math.max(fl,1-P(t,s+.15,s+.9))});
+  [2.52,6.46,27.75,45.7,50.2].forEach(s=>fl=Math.max(fl,(1-Math.abs(t-s-.05)/.08)*.35));
+  st('flash',{opacity:clamp(fl)});
+  await Promise.all([...document.images].filter(i=>!i.complete).map(i=>i.decode().catch(()=>{})));
+}
+window.seek=seek;window.TEND=59.1;
+window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
+</script>
+</body>
+</html>

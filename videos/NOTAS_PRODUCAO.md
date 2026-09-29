@@ -37,6 +37,7 @@ Referência para as próximas produções (preferências e aprendizados já vali
 ## Pautas em andamento
 - Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.
 - Consta nos Autos — Violet Jessop (3 naufrágios): pronto em `videos/consta_violet_jessop/`.
+- Consta nos Autos — Tsutomu Yamaguchi (duas bombas): pronto em `videos/consta_hiroshima_nagasaki/`.
 
 ## Retenção (aprendizado)
 - Não abrir com introdução lenta (chiado/contexto). Abrir no clímax (flash-forward) com texto-gancho no 1º quadro.
