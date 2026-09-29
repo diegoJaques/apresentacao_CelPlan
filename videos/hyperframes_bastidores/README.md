@@ -35,3 +35,10 @@ hyperframes, heygen, hyperframes tutorial, vídeo com IA, editar vídeo sem edit
 
 ## Comentário fixado
 Qual parte você quer que eu detalhe num próximo vídeo: a voz clonada, o avatar ou a montagem em HTML? Comenta aqui 👇
+
+## Capas para teste A/B (Testar e comparar do YouTube, até 3 por vídeo)
+- A — `capa_youtube.jpg`: "Eu faço vídeos sem editor" (rosto + Shorts).
+- B — `capa_youtube_B_zero_editor.jpg`: "ZERO editor de vídeo" (rosto surpreso + linha do tempo riscada).
+- C — `capa_youtube_C_codigo_vira_video.jpg`: "Código vira vídeo?" (sem rosto: código → Short).
+- D — `capa_youtube_D_ia_monta_shorts.jpg`: "A IA monta meus Shorts" (rosto + leque de 4 capas).
+Sugestão de primeiro teste: B × C × D (conceitos bem diferentes); depois a vencedora contra a A.
