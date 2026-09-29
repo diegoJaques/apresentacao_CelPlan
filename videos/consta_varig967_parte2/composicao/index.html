@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<title>Varig 967 — parte 2</title><script src="gsap.min.js"></script><style>
+@font-face{font-family:"M";font-weight:900;src:url(assets/fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:"M";font-weight:700;src:url(assets/fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:"J";font-weight:700;src:url(assets/fonts/jetbrains-mono-latin-700-normal.woff2)}
+body{margin:0;background:#020806}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#06281f 0%,#020806 70%);font-family:"M";font-weight:900;color:#fff}
+.abs{position:absolute}.J{font-family:"J"}.scene{position:absolute;inset:0}
+.red{color:#FF6161}.yl{color:#FFC233}.lm{color:#50FF8C}
+.t{left:40px;right:40px;text-align:center;text-transform:uppercase;line-height:1;white-space:nowrap;text-shadow:0 10px 30px #000}
+#radarL{position:absolute;inset:0}
+#radar{left:170px;top:420px;width:740px;height:740px;border-radius:50%;border:4px solid rgba(80,255,140,.6);
+ background:repeating-radial-gradient(circle,rgba(80,255,140,0) 0 121px,rgba(80,255,140,.35) 121px 124px),
+ linear-gradient(rgba(80,255,140,.25),rgba(80,255,140,.25)) center/3px 100% no-repeat,
+ linear-gradient(90deg,rgba(80,255,140,.25),rgba(80,255,140,.25)) center/100% 3px no-repeat,
+ radial-gradient(circle,#062a1a,#010a06);box-shadow:0 0 80px rgba(80,255,140,.25) inset,0 0 60px rgba(0,0,0,.8)}
+#sweep{left:170px;top:420px;width:740px;height:740px;border-radius:50%;background:conic-gradient(from 20deg,rgba(80,255,140,.55),rgba(80,255,140,0) 70deg,rgba(80,255,140,0))}
+#blip{left:640px;top:600px;width:36px;height:36px;border-radius:50%;background:#FF3B3B;box-shadow:0 0 30px 10px rgba(255,59,59,.7)}
+#ring{left:614px;top:574px;width:88px;height:88px;border-radius:50%;border:4px dashed #FF3B3B}
+#blab{left:700px;top:570px;font-size:32px;color:#50FF8C;line-height:1.25}
+#rdate{left:0;right:0;text-align:center;top:1190px;font-size:30px;color:#50FF8C;opacity:.8}
+.sky{position:absolute;inset:0}
+.fire{background:linear-gradient(#2a0a04 0%,#5a1a08 45%,#12060a 100%)}
+.night{background:radial-gradient(ellipse at 50% 30%,#0d1830,#03060d 75%)}
+.ocean{background:linear-gradient(#020812 0%,#041a33 55%,#020a14 100%)}
+#waves{left:0;right:0;top:1000px;height:400px;background-image:repeating-linear-gradient(170deg,rgba(120,180,255,.10) 0 4px,transparent 4px 46px);opacity:.8}
+#field{left:-200px;right:-200px;top:880px;height:560px;transform:perspective(600px) rotateX(58deg);transform-origin:top;background:repeating-linear-gradient(90deg,#1f4a18 0 34px,#2f6a22 34px 44px,#3a2a12 44px 70px)}
+.chipL{left:50%;transform:translateX(-50%);top:170px;font-family:"J";font-weight:700;font-size:40px;background:#FFC233;color:#111;padding:12px 26px;border-radius:10px;white-space:nowrap}
+.strip{left:50%;transform:translateX(-50%);top:270px;font-family:"J";font-weight:700;font-size:34px;border:3px solid rgba(255,255,255,.6);padding:10px 22px;border-radius:10px;white-space:nowrap;background:rgba(0,0,0,.4)}
+.plane{position:relative;width:420px;height:150px}
+.plane i{position:absolute;display:block}
+.plane .fus{left:0;top:60px;width:420px;height:46px;border-radius:30px 60px 60px 30px;background:linear-gradient(#f2f2f2,#b9bec6)}
+.plane .stripe{left:20px;top:78px;width:380px;height:8px;background:#1e3f8f}
+.plane .fin{left:6px;top:0;width:80px;height:70px;background:#dfe3e8;clip-path:polygon(0 0,45% 0,100% 100%,0 100%)}
+.plane .win{left:150px;top:88px;width:160px;height:40px;background:#aab0b8;clip-path:polygon(0 0,70% 0,100% 100%,40% 100%)}
+.plane .eng{width:56px;height:18px;border-radius:9px;background:#8b919a}
+.plane .e1{left:200px;top:118px}.plane .e2{left:250px;top:126px}
+.smoke{width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(90,90,90,.9),rgba(60,60,60,0) 70%);filter:blur(6px)}
+.card{font-weight:900;font-size:44px;text-align:center;padding:22px 20px;border-radius:18px;background:rgba(10,30,20,.9);border:4px solid #50FF8C;color:#50FF8C}
+#tk_sun{left:390px;top:560px;width:300px;height:300px;border-radius:50%;background:#C8102E;opacity:.35;filter:blur(2px)}
+.tiles{left:100px;top:560px;width:880px;display:grid;grid-template-columns:repeat(17,1fr);gap:8px}
+.tiles i{display:block;height:46px;border-radius:4px}
+.wave2{left:90px;right:90px;top:560px;height:260px;display:flex;align-items:center;gap:8px}
+.wave2 i{display:block;flex:1;height:100%;border-radius:6px;background:#50FF8C}
+#rd_flat{left:90px;right:90px;top:688px;height:6px;background:#FF3B3B;box-shadow:0 0 20px #FF3B3B}
+.stamp2{left:50%;margin-left:-440px;width:880px;text-align:center;font-weight:900;font-size:74px;white-space:nowrap;color:#FF3B3B;border:9px solid #FF3B3B;border-radius:16px;padding:12px 0;background:rgba(0,0,0,.45)}
+.pcard{left:120px;top:300px;width:840px;padding:40px 44px;border-radius:24px;background:rgba(8,20,16,.92);border:3px solid rgba(80,255,140,.4);text-align:center}
+.prow{margin-top:26px;font-size:40px;padding:16px 10px;border-radius:14px;font-family:"J";font-weight:700}
+.prow b{font-family:"M";font-weight:900}
+.lmr{background:rgba(80,255,140,.15);color:#50FF8C}.redr{background:rgba(255,59,59,.18);color:#FF3B3B}
+#caps{position:absolute;left:40px;right:40px;top:1370px;height:200px}
+.capg{position:absolute;left:0;right:0;top:0;text-align:center}
+.capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:76px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.9)}
+</style></head>
+<body><div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="33.45">
+<div id="radarL">
+<div id="radar" class="abs"></div><div id="sweep" class="abs"></div>
+<div id="blip" class="abs"></div><div id="ring" class="abs"></div>
+<div id="blab" class="abs J">VARIG 967<br><span class="red">SINAL PERDIDO</span></div>
+<div id="rdate" class="abs J">TÓQUIO · 30 JAN 1979</div>
+</div>
+<div id="tTop" class="abs t" style="top:150px;font-size:80px">ELE ESCAPOU DE UM<br><span class="yl">AVIÃO EM CHAMAS</span></div>
+<div id="tBot" class="abs t" style="top:1280px;font-size:88px">6 ANOS DEPOIS<br><span class="red">SUMIU COM OUTRO</span></div><section id="sc_pa" class="clip scene" data-start="5.90" data-duration="8.95" data-track-index="2" >
+<div class="sky fire"></div>
+<div id="field" class="abs" data-layout-allow-overflow></div>
+<div id="pa_h" class="abs chipL">PARIS · 11 JUL 1973</div>
+<div id="pa_f" class="abs strip">VARIG 820 · BOEING 707</div>
+<div id="pa_pl" class="abs" data-layout-allow-overflow style="left:300px;top:520px"><div class="plane"><i class="fus"></i><i class="win"></i><i class="fin"></i><i class="eng e1"></i><i class="eng e2"></i><i class="stripe"></i></div></div>
+<div id="sm0" class="abs smoke" style="left:560px;top:560px"></div><div id="sm1" class="abs smoke" style="left:598px;top:554px"></div><div id="sm2" class="abs smoke" style="left:636px;top:548px"></div><div id="sm3" class="abs smoke" style="left:674px;top:542px"></div><div id="sm4" class="abs smoke" style="left:712px;top:536px"></div><div id="sm5" class="abs smoke" style="left:750px;top:530px"></div><div id="sm6" class="abs smoke" style="left:788px;top:524px"></div>
+<div id="pa_dim" class="abs" style="inset:0;background:rgba(0,0,0,.55)"></div>
+<div id="pa_m" class="abs t" style="top:420px;font-size:120px"><span class="red">123</span><div style="font-size:54px;margin-top:16px">MORTOS</div></div>
+<div id="pa_s" class="abs t" style="top:720px;font-size:120px"><span class="lm">11</span><div style="font-size:54px;margin-top:16px">SOBREVIVEM</div></div>
+<div id="pa_c" class="abs card" style="left:170px;top:1010px;width:740px">✓ &nbsp;incluindo o COMANDANTE</div>
+</section><section id="sc_tk" class="clip scene" data-start="14.85" data-duration="6.35" data-track-index="2" >
+<div class="sky night"></div>
+<div id="tk_sun" class="abs"></div>
+<div id="tk_h" class="abs chipL">TÓQUIO · 30 JAN 1979</div>
+<div id="tk_f" class="abs strip" style="top:300px">VARIG 967 · BOEING 707 CARGUEIRO</div>
+<div id="tk_pl" class="abs" data-layout-allow-overflow style="left:360px;top:430px"><div class="plane"><i class="fus"></i><i class="win"></i><i class="fin"></i><i class="eng e1"></i><i class="eng e2"></i><i class="stripe"></i></div></div>
+<div id="tk_g" class="abs tiles"><i style="background:hsl(0,70%,45%)"></i><i style="background:hsl(47,70%,58%)"></i><i style="background:hsl(94,70%,46%)"></i><i style="background:hsl(141,70%,59%)"></i><i style="background:hsl(188,70%,47%)"></i><i style="background:hsl(235,70%,60%)"></i><i style="background:hsl(282,70%,48%)"></i><i style="background:hsl(329,70%,61%)"></i><i style="background:hsl(16,70%,49%)"></i><i style="background:hsl(63,70%,62%)"></i><i style="background:hsl(110,70%,50%)"></i><i style="background:hsl(157,70%,63%)"></i><i style="background:hsl(204,70%,51%)"></i><i style="background:hsl(251,70%,64%)"></i><i style="background:hsl(298,70%,52%)"></i><i style="background:hsl(345,70%,65%)"></i><i style="background:hsl(32,70%,53%)"></i><i style="background:hsl(79,70%,66%)"></i><i style="background:hsl(126,70%,54%)"></i><i style="background:hsl(173,70%,67%)"></i><i style="background:hsl(220,70%,55%)"></i><i style="background:hsl(267,70%,68%)"></i><i style="background:hsl(314,70%,56%)"></i><i style="background:hsl(1,70%,69%)"></i><i style="background:hsl(48,70%,57%)"></i><i style="background:hsl(95,70%,45%)"></i><i style="background:hsl(142,70%,58%)"></i><i style="background:hsl(189,70%,46%)"></i><i style="background:hsl(236,70%,59%)"></i><i style="background:hsl(283,70%,47%)"></i><i style="background:hsl(330,70%,60%)"></i><i style="background:hsl(17,70%,48%)"></i><i style="background:hsl(64,70%,61%)"></i><i style="background:hsl(111,70%,49%)"></i><i style="background:hsl(158,70%,62%)"></i><i style="background:hsl(205,70%,50%)"></i><i style="background:hsl(252,70%,63%)"></i><i style="background:hsl(299,70%,51%)"></i><i style="background:hsl(346,70%,64%)"></i><i style="background:hsl(33,70%,52%)"></i><i style="background:hsl(80,70%,65%)"></i><i style="background:hsl(127,70%,53%)"></i><i style="background:hsl(174,70%,66%)"></i><i style="background:hsl(221,70%,54%)"></i><i style="background:hsl(268,70%,67%)"></i><i style="background:hsl(315,70%,55%)"></i><i style="background:hsl(2,70%,68%)"></i><i style="background:hsl(49,70%,56%)"></i><i style="background:hsl(96,70%,69%)"></i><i style="background:hsl(143,70%,57%)"></i><i style="background:hsl(190,70%,45%)"></i><i style="background:hsl(237,70%,58%)"></i><i style="background:hsl(284,70%,46%)"></i><i style="background:hsl(331,70%,59%)"></i><i style="background:hsl(18,70%,47%)"></i><i style="background:hsl(65,70%,60%)"></i><i style="background:hsl(112,70%,48%)"></i><i style="background:hsl(159,70%,61%)"></i><i style="background:hsl(206,70%,49%)"></i><i style="background:hsl(253,70%,62%)"></i><i style="background:hsl(300,70%,50%)"></i><i style="background:hsl(347,70%,63%)"></i><i style="background:hsl(34,70%,51%)"></i><i style="background:hsl(81,70%,64%)"></i><i style="background:hsl(128,70%,52%)"></i><i style="background:hsl(175,70%,65%)"></i><i style="background:hsl(222,70%,53%)"></i><i style="background:hsl(269,70%,66%)"></i><i style="background:hsl(316,70%,54%)"></i><i style="background:hsl(3,70%,67%)"></i><i style="background:hsl(50,70%,55%)"></i><i style="background:hsl(97,70%,68%)"></i><i style="background:hsl(144,70%,56%)"></i><i style="background:hsl(191,70%,69%)"></i><i style="background:hsl(238,70%,57%)"></i><i style="background:hsl(285,70%,45%)"></i><i style="background:hsl(332,70%,58%)"></i><i style="background:hsl(19,70%,46%)"></i><i style="background:hsl(66,70%,59%)"></i><i style="background:hsl(113,70%,47%)"></i><i style="background:hsl(160,70%,60%)"></i><i style="background:hsl(207,70%,48%)"></i><i style="background:hsl(254,70%,61%)"></i><i style="background:hsl(301,70%,49%)"></i><i style="background:hsl(348,70%,62%)"></i><i style="background:hsl(35,70%,50%)"></i><i style="background:hsl(82,70%,63%)"></i><i style="background:hsl(129,70%,51%)"></i><i style="background:hsl(176,70%,64%)"></i><i style="background:hsl(223,70%,52%)"></i><i style="background:hsl(270,70%,65%)"></i><i style="background:hsl(317,70%,53%)"></i><i style="background:hsl(4,70%,66%)"></i><i style="background:hsl(51,70%,54%)"></i><i style="background:hsl(98,70%,67%)"></i><i style="background:hsl(145,70%,55%)"></i><i style="background:hsl(192,70%,68%)"></i><i style="background:hsl(239,70%,56%)"></i><i style="background:hsl(286,70%,69%)"></i><i style="background:hsl(333,70%,57%)"></i><i style="background:hsl(20,70%,45%)"></i><i style="background:hsl(67,70%,58%)"></i><i style="background:hsl(114,70%,46%)"></i><i style="background:hsl(161,70%,59%)"></i><i style="background:hsl(208,70%,47%)"></i><i style="background:hsl(255,70%,60%)"></i><i style="background:hsl(302,70%,48%)"></i><i style="background:hsl(349,70%,61%)"></i><i style="background:hsl(36,70%,49%)"></i><i style="background:hsl(83,70%,62%)"></i><i style="background:hsl(130,70%,50%)"></i><i style="background:hsl(177,70%,63%)"></i><i style="background:hsl(224,70%,51%)"></i><i style="background:hsl(271,70%,64%)"></i><i style="background:hsl(318,70%,52%)"></i><i style="background:hsl(5,70%,65%)"></i><i style="background:hsl(52,70%,53%)"></i><i style="background:hsl(99,70%,66%)"></i><i style="background:hsl(146,70%,54%)"></i><i style="background:hsl(193,70%,67%)"></i><i style="background:hsl(240,70%,55%)"></i><i style="background:hsl(287,70%,68%)"></i><i style="background:hsl(334,70%,56%)"></i><i style="background:hsl(21,70%,69%)"></i><i style="background:hsl(68,70%,57%)"></i><i style="background:hsl(115,70%,45%)"></i><i style="background:hsl(162,70%,58%)"></i><i style="background:hsl(209,70%,46%)"></i><i style="background:hsl(256,70%,59%)"></i><i style="background:hsl(303,70%,47%)"></i><i style="background:hsl(350,70%,60%)"></i><i style="background:hsl(37,70%,48%)"></i><i style="background:hsl(84,70%,61%)"></i><i style="background:hsl(131,70%,49%)"></i><i style="background:hsl(178,70%,62%)"></i><i style="background:hsl(225,70%,50%)"></i><i style="background:hsl(272,70%,63%)"></i><i style="background:hsl(319,70%,51%)"></i><i style="background:hsl(6,70%,64%)"></i><i style="background:hsl(53,70%,52%)"></i><i style="background:hsl(100,70%,65%)"></i><i style="background:hsl(147,70%,53%)"></i><i style="background:hsl(194,70%,66%)"></i><i style="background:hsl(241,70%,54%)"></i><i style="background:hsl(288,70%,67%)"></i><i style="background:hsl(335,70%,55%)"></i><i style="background:hsl(22,70%,68%)"></i><i style="background:hsl(69,70%,56%)"></i><i style="background:hsl(116,70%,69%)"></i><i style="background:hsl(163,70%,57%)"></i><i style="background:hsl(210,70%,45%)"></i><i style="background:hsl(257,70%,58%)"></i><i style="background:hsl(304,70%,46%)"></i></div>
+<div id="tk_n" class="abs t" style="top:1080px;font-size:130px"><span id="tk_c">0</span><div style="font-size:46px;margin-top:16px">QUADROS DE MANABU MABE</div></div>
+</section><section id="sc_rd" class="clip scene" data-start="21.20" data-duration="2.85" data-track-index="2" >
+<div class="sky night"></div>
+<div id="rd_clk" class="abs t J" style="top:220px;font-size:110px;color:#50FF8C">T+00:30</div>
+<div id="rd_lab" class="abs t J" style="top:370px;font-size:34px;color:#8fb3a0">TORRE DE TÓQUIO → VARIG 967</div>
+<div id="rd_w" class="abs wave2"><i id="rb0"></i><i id="rb1"></i><i id="rb2"></i><i id="rb3"></i><i id="rb4"></i><i id="rb5"></i><i id="rb6"></i><i id="rb7"></i><i id="rb8"></i><i id="rb9"></i><i id="rb10"></i><i id="rb11"></i><i id="rb12"></i><i id="rb13"></i><i id="rb14"></i><i id="rb15"></i><i id="rb16"></i><i id="rb17"></i><i id="rb18"></i><i id="rb19"></i><i id="rb20"></i><i id="rb21"></i><i id="rb22"></i><i id="rb23"></i><i id="rb24"></i><i id="rb25"></i><i id="rb26"></i><i id="rb27"></i><i id="rb28"></i><i id="rb29"></i><i id="rb30"></i><i id="rb31"></i><i id="rb32"></i><i id="rb33"></i><i id="rb34"></i><i id="rb35"></i><i id="rb36"></i><i id="rb37"></i><i id="rb38"></i><i id="rb39"></i></div>
+<div id="rd_flat" class="abs"></div>
+<div id="rd_s" class="abs t" style="top:960px;font-size:130px;letter-spacing:6px">SILÊNCIO</div>
+</section><section id="sc_no" class="clip scene" data-start="24.05" data-duration="3.55" data-track-index="2" >
+<div class="sky ocean"></div><div id="waves" class="abs"></div>
+<div id="n1" class="abs stamp2" style="top:430px;transform:rotate(-4deg)">NENHUM DESTROÇO</div>
+<div id="n2" class="abs stamp2" style="top:660px;transform:rotate(3deg)">NENHUM CORPO</div>
+<div id="n3" class="abs stamp2" style="top:890px;transform:rotate(-2deg)">NENHUM SINAL</div>
+</section><section id="sc_fn" class="clip scene" data-start="27.60" data-duration="3.70" data-track-index="2" >
+<div id="fn_card" class="abs pcard">
+ <div class="J" style="font-size:28px;color:#8fb3a0;margin-bottom:10px">COMANDANTE</div>
+ <div style="font-size:52px;line-height:1.05">GILBERTO ARAÚJO<br>DA SILVA</div>
+ <div id="fn_a" class="prow lmr">1973 · VARIG 820 &nbsp;<b>✓ SOBREVIVEU</b></div>
+ <div id="fn_b" class="prow redr">1979 · VARIG 967 &nbsp;<b>✗ DESAPARECEU</b></div>
+</div></section>
+<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="33.45" data-track-index="10" data-volume="1"></audio><audio id="fx0" src="assets/audio/ping.wav" data-start="0.02" data-duration="0.35" data-track-index="11" data-volume="0.35"></audio><audio id="fx1" src="assets/audio/ping.wav" data-start="1.90" data-duration="0.35" data-track-index="12" data-volume="0.25"></audio><audio id="fx2" src="assets/audio/whump.wav" data-start="4.64" data-duration="0.50" data-track-index="13" data-volume="0.6"></audio><audio id="fx3" src="assets/audio/whump.wav" data-start="11.68" data-duration="0.50" data-track-index="11" data-volume="0.5"></audio><audio id="fx4" src="assets/audio/whump.wav" data-start="13.28" data-duration="0.50" data-track-index="12" data-volume="0.4"></audio><audio id="fx5" src="assets/audio/static.wav" data-start="22.82" data-duration="0.90" data-track-index="13" data-volume="0.35"></audio><audio id="fx6" src="assets/audio/whump.wav" data-start="24.12" data-duration="0.50" data-track-index="11" data-volume="0.6"></audio><audio id="fx7" src="assets/audio/whump.wav" data-start="25.50" data-duration="0.50" data-track-index="12" data-volume="0.6"></audio><audio id="fx8" src="assets/audio/whump.wav" data-start="26.68" data-duration="0.50" data-track-index="13" data-volume="0.6"></audio><audio id="fx9" src="assets/audio/whump.wav" data-start="29.58" data-duration="0.50" data-track-index="11" data-volume="0.5"></audio><audio id="fx10" src="assets/audio/ping.wav" data-start="31.30" data-duration="0.35" data-track-index="12" data-volume="0.3"></audio>
+<div id="caps"><div id="cg5" class="clip capg" data-start="6.02" data-duration="0.16" data-track-index="20"><span id="w5_0">outro</span></div><div id="cg6" class="clip capg" data-start="6.18" data-duration="0.68" data-track-index="20"><span id="w6_0">Paris</span></div><div id="cg7" class="clip capg" data-start="6.86" data-duration="0.88" data-track-index="20"><span id="w7_0">73</span></div><div id="cg8" class="clip capg" data-start="7.74" data-duration="1.46" data-track-index="20"><span id="w8_0">fumaça</span><span id="w8_1">na</span><span id="w8_2">cabine</span></div><div id="cg9" class="clip capg" data-start="9.20" data-duration="0.64" data-track-index="20"><span id="w9_0">Ele</span><span id="w9_1">pousa</span><span id="w9_2">o</span></div><div id="cg10" class="clip capg" data-start="9.84" data-duration="0.86" data-track-index="20"><span id="w10_0">Boeing</span><span id="w10_1">numa</span><span id="w10_2">plantação</span></div><div id="cg11" class="clip capg" data-start="10.70" data-duration="0.98" data-track-index="20"><span id="w11_0">de</span><span id="w11_1">cebolas</span></div><div id="cg12" class="clip capg" data-start="11.68" data-duration="1.60" data-track-index="20"><span id="w12_0">Quase</span><span id="w12_1">todos</span><span id="w12_2">morrem</span></div><div id="cg13" class="clip capg" data-start="13.28" data-duration="1.74" data-track-index="20"><span id="w13_0">Ele</span><span id="w13_1">sobrevive</span></div><div id="cg14" class="clip capg" data-start="15.02" data-duration="0.60" data-track-index="20"><span id="w14_0">79</span></div><div id="cg15" class="clip capg" data-start="15.62" data-duration="0.80" data-track-index="20"><span id="w15_0">Tóquio</span></div><div id="cg16" class="clip capg" data-start="16.42" data-duration="0.74" data-track-index="20"><span id="w16_0">Ele</span><span id="w16_1">decola</span><span id="w16_2">num</span></div><div id="cg17" class="clip capg" data-start="17.16" data-duration="1.16" data-track-index="20"><span id="w17_0">cargueiro</span><span id="w17_1">da</span><span id="w17_2">Varig</span></div><div id="cg18" class="clip capg" data-start="18.32" data-duration="1.72" data-track-index="20"><span id="w18_0">com</span><span id="w18_1">153</span><span id="w18_2">quadros</span></div><div id="cg19" class="clip capg" data-start="20.04" data-duration="1.28" data-track-index="20"><span id="w19_0">de</span><span id="w19_1">Manabu</span><span id="w19_2">Mabe</span></div><div id="cg20" class="clip capg" data-start="21.32" data-duration="1.50" data-track-index="20"><span id="w20_0">Meia</span><span id="w20_1">hora</span><span id="w20_2">depois</span></div><div id="cg21" class="clip capg" data-start="22.82" data-duration="1.30" data-track-index="20"><span id="w21_0">silêncio</span><span id="w21_1">no</span><span id="w21_2">rádio</span></div><div id="cg22" class="clip capg" data-start="24.12" data-duration="1.38" data-track-index="20"><span id="w22_0">Nenhum</span><span id="w22_1">destroço</span></div><div id="cg23" class="clip capg" data-start="25.50" data-duration="1.18" data-track-index="20"><span id="w23_0">nenhum</span><span id="w23_1">corpo</span></div><div id="cg24" class="clip capg" data-start="26.68" data-duration="0.92" data-track-index="20"><span id="w24_0">nenhum</span><span id="w24_1">sinal</span></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#pa_h",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},5.95);
+tl.fromTo("#pa_f",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},6.15);
+tl.fromTo("#pa_pl",{x:-420,y:-40,rotation:4},{x:0,y:0,rotation:6,duration:3.68,ease:"none"},5.90);
+tl.fromTo("#sm0",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:2.20,x:-120,y:-140,duration:1.6,ease:"power1.out"},7.74);
+tl.to("#sm0",{x:"-=160",y:"-=120",opacity:.5,duration:5.40,ease:"none"},9.40);
+tl.fromTo("#sm1",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:2.45,x:-160,y:-165,duration:1.6,ease:"power1.out"},7.92);
+tl.to("#sm1",{x:"-=160",y:"-=120",opacity:.5,duration:5.22,ease:"none"},9.58);
+tl.fromTo("#sm2",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:2.70,x:-200,y:-190,duration:1.6,ease:"power1.out"},8.10);
+tl.to("#sm2",{x:"-=160",y:"-=120",opacity:.5,duration:5.04,ease:"none"},9.76);
+tl.fromTo("#sm3",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:2.95,x:-240,y:-215,duration:1.6,ease:"power1.out"},8.28);
+tl.to("#sm3",{x:"-=160",y:"-=120",opacity:.5,duration:4.86,ease:"none"},9.94);
+tl.fromTo("#sm4",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:3.20,x:-280,y:-240,duration:1.6,ease:"power1.out"},8.46);
+tl.to("#sm4",{x:"-=160",y:"-=120",opacity:.5,duration:4.68,ease:"none"},10.12);
+tl.fromTo("#sm5",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:3.45,x:-320,y:-265,duration:1.6,ease:"power1.out"},8.64);
+tl.to("#sm5",{x:"-=160",y:"-=120",opacity:.5,duration:4.50,ease:"none"},10.30);
+tl.fromTo("#sm6",{opacity:0,scale:.3,x:0,y:0},{opacity:.85,scale:3.70,x:-360,y:-290,duration:1.6,ease:"power1.out"},8.82);
+tl.to("#sm6",{x:"-=160",y:"-=120",opacity:.5,duration:4.32,ease:"none"},10.48);
+tl.to("#pa_pl",{x:120,y:420,rotation:-2,scale:.85,duration:1.5,ease:"power2.inOut"},9.6);
+tl.fromTo("#field",{opacity:0,y:200},{opacity:1,y:0,duration:.8,ease:"power2.out"},9.7);
+tl.set("#pa_dim",{opacity:0},0.00);
+tl.set("#pa_m",{opacity:0},0.00);
+tl.set("#pa_s",{opacity:0},0.00);
+tl.set("#pa_c",{opacity:0},0.00);
+tl.fromTo("#pa_dim",{opacity:0},{opacity:1,duration:.3},11.6);
+tl.to("#pa_h",{opacity:0,duration:0.25},11.60);
+tl.to("#pa_f",{opacity:0,duration:0.25},11.60);
+tl.fromTo("#pa_m",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},11.68);
+tl.fromTo("#pa_s",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},13.28);
+tl.fromTo("#pa_c",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},13.70);
+tl.fromTo("#tk_h",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},14.90);
+tl.fromTo("#tk_sun",{opacity:0,scale:.5},{opacity:1,scale:1,duration:0.6,ease:"back.out(2.4)"},14.90);
+tl.fromTo("#tk_pl",{x:-500,y:160,rotation:-12},{x:700,y:-260,rotation:-12,duration:3.2,ease:"power1.in"},16.4);
+tl.fromTo("#tk_f",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},16.42);
+tl.set("#tk_g",{opacity:0},0.00);
+tl.set("#tk_n",{opacity:0},0.00);
+tl.set("#tk_g",{opacity:1},18.30);
+tl.set("#tk_n",{opacity:1},18.30);
+tl.fromTo("#tk_g i",{opacity:0,scale:0},{opacity:1,scale:1,duration:.18,stagger:.0085,ease:"back.out(2)"},18.32);
+(()=>{const o={v:0};tl.to(o,{v:153,duration:1.4,ease:"power1.out",onUpdate:()=>{document.querySelector("#tk_c").textContent=Math.round(o.v)}},18.32);})();
+tl.fromTo("#rd_clk",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},21.25);
+tl.fromTo("#rd_lab",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},21.40);
+for(let i=0;i<40;i++){tl.fromTo("#rb"+i,{scaleY:.15},{scaleY:()=>.25+.75*Math.abs(Math.sin(i*1.3)),duration:.22,yoyo:true,repeat:5,ease:"sine.inOut"},21.30+i*.01);}
+tl.to("#rd_w i",{scaleY:.03,duration:.15},22.82);
+tl.set("#rd_flat",{opacity:0},0.00);
+tl.set("#rd_flat",{opacity:1},22.82);
+tl.set("#rd_s",{opacity:0},0.00);
+tl.fromTo("#rd_s",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},22.90);
+tl.fromTo("#waves",{backgroundPositionX:"0px"},{backgroundPositionX:"-600px",duration:3.55,ease:"none"},24.05);
+tl.set("#n1",{opacity:0},0.00);
+tl.fromTo("#n1",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},24.12);
+tl.set("#n2",{opacity:0},0.00);
+tl.fromTo("#n2",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},25.50);
+tl.set("#n3",{opacity:0},0.00);
+tl.fromTo("#n3",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},26.68);
+tl.fromTo("#fn_card",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},27.70);
+tl.set("#fn_a",{opacity:0},0.00);
+tl.set("#fn_b",{opacity:0},0.00);
+tl.fromTo("#fn_a",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},28.20);
+tl.fromTo("#fn_b",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},29.58);
+tl.set(["#radarL","#tTop","#tBot"],{autoAlpha:0},5.90);
+tl.set("#radarL",{autoAlpha:.3},27.60);
+tl.to("#fn_card",{autoAlpha:0,duration:.25},31.2);
+tl.set(["#blab","#rdate"],{autoAlpha:0},27.60);tl.set(["#blab","#rdate"],{autoAlpha:1},31.25);
+tl.to("#radarL",{autoAlpha:1,duration:.3},31.25);
+tl.fromTo(["#tTop","#tBot"],{autoAlpha:0},{autoAlpha:1,duration:.3,immediateRender:false},31.3);
+tl.fromTo("#sweep",{rotation:0},{rotation:3240,duration:33.45,ease:"none"},0);
+tl.fromTo("#ring",{scale:1,opacity:1},{scale:1.6,opacity:0,duration:.9,repeat:4,ease:"power1.out"},0);
+tl.to(["#blip","#ring"],{opacity:0,duration:.08},4.66);tl.to("#blip",{opacity:1,duration:.06},4.8);tl.to("#blip",{opacity:0,duration:.06},4.95);
+tl.set(["#blip","#ring"],{opacity:1},31.3);tl.fromTo("#ring",{scale:1,opacity:1},{scale:1.6,opacity:0,duration:.9,repeat:1,ease:"power1.out",immediateRender:false},31.3);
+tl.fromTo("#blab .red",{opacity:1},{opacity:.25,duration:.15,yoyo:true,repeat:5},4.7);
+tl.set("#w5_0",{color:"#FFC233"},6.02);
+tl.set("#w6_0",{color:"#FFC233"},6.18);
+tl.set("#w7_0",{color:"#FFC233"},6.86);
+tl.set("#w8_0",{color:"#FFC233"},7.74);
+tl.set("#w8_0",{color:"#ffffff"},8.18);
+tl.set("#w8_1",{color:"#FFC233"},8.18);
+tl.set("#w8_1",{color:"#ffffff"},8.40);
+tl.set("#w8_2",{color:"#FFC233"},8.40);
+tl.set("#w9_0",{color:"#FFC233"},9.20);
+tl.set("#w9_0",{color:"#ffffff"},9.36);
+tl.set("#w9_1",{color:"#FFC233"},9.36);
+tl.set("#w9_1",{color:"#ffffff"},9.56);
+tl.set("#w9_2",{color:"#FFC233"},9.56);
+tl.set("#w10_0",{color:"#FFC233"},9.84);
+tl.set("#w10_0",{color:"#ffffff"},10.04);
+tl.set("#w10_1",{color:"#FFC233"},10.04);
+tl.set("#w10_1",{color:"#ffffff"},10.32);
+tl.set("#w10_2",{color:"#FFC233"},10.32);
+tl.set("#w11_0",{color:"#FFC233"},10.70);
+tl.set("#w11_0",{color:"#ffffff"},10.86);
+tl.set("#w11_1",{color:"#FFC233"},10.86);
+tl.set("#w12_0",{color:"#FFC233"},11.68);
+tl.set("#w12_0",{color:"#ffffff"},12.10);
+tl.set("#w12_1",{color:"#FFC233"},12.10);
+tl.set("#w12_1",{color:"#ffffff"},12.48);
+tl.set("#w12_2",{color:"#FFC233"},12.48);
+tl.set("#w13_0",{color:"#FFC233"},13.28);
+tl.set("#w13_0",{color:"#ffffff"},13.70);
+tl.set("#w13_1",{color:"#FFC233"},13.70);
+tl.set("#w14_0",{color:"#FFC233"},15.02);
+tl.set("#w15_0",{color:"#FFC233"},15.62);
+tl.set("#w16_0",{color:"#FFC233"},16.42);
+tl.set("#w16_0",{color:"#ffffff"},16.62);
+tl.set("#w16_1",{color:"#FFC233"},16.62);
+tl.set("#w16_1",{color:"#ffffff"},16.96);
+tl.set("#w16_2",{color:"#FFC233"},16.96);
+tl.set("#w17_0",{color:"#FFC233"},17.16);
+tl.set("#w17_0",{color:"#ffffff"},17.54);
+tl.set("#w17_1",{color:"#FFC233"},17.54);
+tl.set("#w17_1",{color:"#ffffff"},17.78);
+tl.set("#w17_2",{color:"#FFC233"},17.78);
+tl.set("#w18_0",{color:"#FFC233"},18.32);
+tl.set("#w18_0",{color:"#ffffff"},18.72);
+tl.set("#w18_1",{color:"#FFC233"},18.72);
+tl.set("#w18_1",{color:"#ffffff"},19.72);
+tl.set("#w18_2",{color:"#FFC233"},19.72);
+tl.set("#w19_0",{color:"#FFC233"},20.04);
+tl.set("#w19_0",{color:"#ffffff"},20.18);
+tl.set("#w19_1",{color:"#FFC233"},20.18);
+tl.set("#w19_1",{color:"#ffffff"},20.60);
+tl.set("#w19_2",{color:"#FFC233"},20.60);
+tl.set("#w20_0",{color:"#FFC233"},21.32);
+tl.set("#w20_0",{color:"#ffffff"},21.62);
+tl.set("#w20_1",{color:"#FFC233"},21.62);
+tl.set("#w20_1",{color:"#ffffff"},21.92);
+tl.set("#w20_2",{color:"#FFC233"},21.92);
+tl.set("#w21_0",{color:"#FFC233"},22.82);
+tl.set("#w21_0",{color:"#ffffff"},23.24);
+tl.set("#w21_1",{color:"#FFC233"},23.24);
+tl.set("#w21_1",{color:"#ffffff"},23.42);
+tl.set("#w21_2",{color:"#FFC233"},23.42);
+tl.set("#w22_0",{color:"#FFC233"},24.12);
+tl.set("#w22_0",{color:"#ffffff"},24.62);
+tl.set("#w22_1",{color:"#FFC233"},24.62);
+tl.set("#w23_0",{color:"#FFC233"},25.50);
+tl.set("#w23_0",{color:"#ffffff"},26.00);
+tl.set("#w23_1",{color:"#FFC233"},26.00);
+tl.set("#w24_0",{color:"#FFC233"},26.68);
+tl.set("#w24_0",{color:"#ffffff"},26.94);
+tl.set("#w24_1",{color:"#FFC233"},26.94);
+window.__timelines["main"] = tl;
+</script></body></html>
