@@ -1,0 +1,387 @@
+1
+00:00:00,360 --> 00:00:04,880
+Você já parou pra pensar, no tempo absurdo que alguém passa cortando
+
+2
+00:00:04,900 --> 00:00:08,680
+vídeos, aplicando Zoom e ajustando cenas frame a frame?
+
+3
+00:00:08,700 --> 00:00:12,200
+Pois esse trabalho manual está com os dias contados.
+
+4
+00:00:15,520 --> 00:00:18,480
+Mas afinal, o que é HyperFrames?
+
+5
+00:00:19,360 --> 00:00:23,960
+É uma ferramenta de código aberto, criada pela HeyGen, que transforma uma
+
+6
+00:00:23,980 --> 00:00:26,240
+página da internet em vídeo.
+
+7
+00:00:26,360 --> 00:00:27,440
+Funciona assim.
+
+8
+00:00:27,500 --> 00:00:31,080
+Em vez de arrastar clips numa linha do tempo, você escreve o
+
+9
+00:00:31,100 --> 00:00:32,880
+vídeo como se fosse um site.
+
+10
+00:00:33,140 --> 00:00:37,120
+Texto, imagem, cor, movimento Tudo em código.
+
+11
+00:00:37,360 --> 00:00:40,980
+Aí um navegador abre essa página, tira uma foto a cada fração
+
+12
+00:00:41,000 --> 00:00:45,480
+de segundo, 30 fotos por segundo e junta tudo num vídeo.
+
+13
+00:00:45,500 --> 00:00:47,520
+E o detalhe que muda o jogo.
+
+14
+00:00:47,540 --> 00:00:51,780
+Inteligência artificial é muito boa em escrever código de site.
+
+15
+00:00:51,920 --> 00:00:55,780
+Então agora, a IA consegue editar vídeo escrevendo.
+
+16
+00:00:55,800 --> 00:00:59,240
+E eu não vou só te explicar, eu vou te mostrar.
+
+17
+00:00:59,480 --> 00:01:02,440
+Todos os vídeos curtos que você viu no meu canal nos últimos
+
+18
+00:01:02,460 --> 00:01:04,140
+dias foram feitos assim.
+
+19
+00:01:04,640 --> 00:01:06,440
+Do roteiro a capa.
+
+20
+00:01:06,640 --> 00:01:08,600
+Então, bora abrir a linha de montagem.
+
+21
+00:01:08,740 --> 00:01:12,750
+São quatro etapas e a última é a que ninguém te conta.
+
+22
+00:01:12,770 --> 00:01:13,750
+Etapa 1.
+
+23
+00:01:13,770 --> 00:01:14,850
+O roteiro.
+
+24
+00:01:14,870 --> 00:01:18,350
+Eu uso o Claude, a inteligência artificial da Anthropic, para me ajudar
+
+25
+00:01:18,370 --> 00:01:19,370
+a escrever.
+
+26
+00:01:19,390 --> 00:01:21,490
+Mas não é só pedir e copiar.
+
+27
+00:01:21,510 --> 00:01:25,050
+Eu peço o gancho dos primeiros dois segundos, a frase de virada
+
+28
+00:01:25,070 --> 00:01:28,470
+no meio e a pergunta do final que puxa o comentário.
+
+29
+00:01:28,490 --> 00:01:31,210
+E peço uma coisa que muita gente esquece.
+
+30
+00:01:31,330 --> 00:01:37,690
+Checagem de fatos, datas, nomes, números, tudo conferido antes de gravar.
+
+31
+00:01:37,710 --> 00:01:40,710
+Guarda essa parte, ela vai voltar no final desse vídeo.
+
+32
+00:01:40,740 --> 00:01:43,180
+Etapa 2 A voz e o avatar.
+
+33
+00:01:43,720 --> 00:01:48,180
+Essa voz que você está ouvindo é a minha, clonada no ElevenLabs.
+
+34
+00:01:48,520 --> 00:01:52,920
+O segredo para não soar robótica está no texto, número escrito por
+
+35
+00:01:52,940 --> 00:01:58,420
+extenso, reticências para criar suspense, palavra em maiúscula quando eu quero ênfase,
+
+36
+00:01:58,440 --> 00:02:04,680
+e marcadores de emoção em português, tipo sussurra, animado, pausa longa, a
+
+37
+00:02:04,700 --> 00:02:06,060
+voz obedece.
+
+38
+00:02:06,240 --> 00:02:09,820
+Depois, o mesmo áudio vira o meu avatar falando, com a boca
+
+39
+00:02:09,840 --> 00:02:10,960
+sincronizada.
+
+40
+00:02:10,980 --> 00:02:13,100
+Uma regra que eu aprendi na prática.
+
+41
+00:02:13,120 --> 00:02:17,520
+O avatar só pode aparecer se foi gerado com aquele áudio exato.
+
+42
+00:02:17,540 --> 00:02:20,780
+Se não, a boca não bate e todo mundo percebe.
+
+43
+00:02:20,830 --> 00:02:21,870
+Etapa 3.
+
+44
+00:02:21,890 --> 00:02:23,010
+A montagem.
+
+45
+00:02:23,030 --> 00:02:25,230
+É aqui que o HyperFrames entra.
+
+46
+00:02:25,270 --> 00:02:28,850
+Primeiro, a narração é transcrita por uma IA que roda direto no
+
+47
+00:02:28,870 --> 00:02:29,770
+computador.
+
+48
+00:02:29,790 --> 00:02:32,790
+Ela me devolve o momento exato de cada palavra.
+
+49
+00:02:32,810 --> 00:02:36,070
+É isso que faz a legenda acender no ritmo da fala.
+
+50
+00:02:36,310 --> 00:02:39,310
+Depois, cada cena vira uma página de código.
+
+51
+00:02:39,330 --> 00:02:43,310
+O carimbo que bate, o contador que sobe, o navio que afunda,
+
+52
+00:02:43,410 --> 00:02:46,450
+tudo programado para acontecer no segundo certo.
+
+53
+00:02:46,530 --> 00:02:50,190
+Aí o navegador fotografa o vídeo inteiro, quadro por quadro.
+
+54
+00:02:50,230 --> 00:02:54,310
+Um vídeo de 50 segundos são 1.500 fotos.
+
+55
+00:02:54,330 --> 00:02:59,730
+No final, um programa chamado FFmpeg junta as fotos, a voz, a
+
+56
+00:02:59,750 --> 00:03:02,930
+trilha e os efeitos sonoros e sai o vídeo pronto.
+
+57
+00:03:02,950 --> 00:03:05,710
+Sem abrir nenhum editor de vídeo.
+
+58
+00:03:05,730 --> 00:03:06,950
+Etapa 4.
+
+59
+00:03:06,970 --> 00:03:08,810
+Os truques de retenção.
+
+60
+00:03:08,830 --> 00:03:10,970
+A parte que ninguém te conta.
+
+61
+00:03:11,010 --> 00:03:13,750
+Primeiro, o vídeo começa no clímax.
+
+62
+00:03:13,870 --> 00:03:15,050
+Nada de introdução.
+
+63
+00:03:15,070 --> 00:03:17,750
+O primeiro quadro já tem a frase que prende.
+
+64
+00:03:17,910 --> 00:03:22,850
+Segundo, as pausas da narração são encurtadas e a fala fica 8%
+
+65
+00:03:22,950 --> 00:03:23,850
+mais rápida.
+
+66
+00:03:23,990 --> 00:03:27,590
+Você nem percebe, mas o vídeo fica muito mais dinâmico.
+
+67
+00:03:27,650 --> 00:03:31,850
+Terceiro, o final corta seco, sem despedida lenta.
+
+68
+00:03:32,010 --> 00:03:36,030
+Assim, o vídeo emenda no começo e muita gente assiste de novo.
+
+69
+00:03:36,070 --> 00:03:37,130
+E a capa?
+
+70
+00:03:37,230 --> 00:03:40,450
+Nos vídeos de mistério, testei trocar o meu rosto por um disco
+
+71
+00:03:40,470 --> 00:03:41,350
+voador.
+
+72
+00:03:41,370 --> 00:03:44,130
+O objeto da história chama mais atenção do que eu.
+
+73
+00:03:44,580 --> 00:03:47,360
+Agora, lembra da checagem de fatos?
+
+74
+00:03:47,960 --> 00:03:51,520
+Eu fiz um vídeo sobre uma mulher que sobreviveu a três desastres
+
+75
+00:03:51,540 --> 00:03:57,440
+em navios, incluindo o Titanic, e na capa estava escrito, três naufrágios.
+
+76
+00:03:58,580 --> 00:04:03,600
+Um inscrito comentou, o Olympic nunca afundou, e ele estava certo.
+
+77
+00:04:03,660 --> 00:04:06,000
+Foi uma colisão, não um naufrágio.
+
+78
+00:04:06,140 --> 00:04:10,320
+A narração estava correta, O erro estava no texto da tela.
+
+79
+00:04:10,580 --> 00:04:13,320
+Corrigi, agradeci e fixei a resposta.
+
+80
+00:04:13,880 --> 00:04:16,800
+Lição: A IA acelera tudo.
+
+81
+00:04:16,840 --> 00:04:18,320
+Mas quem responde pelo vídeo?
+
+82
+00:04:18,540 --> 00:04:19,240
+Sou eu.
+
+83
+00:04:19,260 --> 00:04:20,540
+E o resultado?
+
+84
+00:04:20,580 --> 00:04:23,160
+Vou ser sincero, não é mágica.
+
+85
+00:04:23,180 --> 00:04:28,740
+Tem vídeo meu com 1.700 visualizações e tem vídeo com 7.
+
+86
+00:04:28,860 --> 00:04:30,200
+O que eu aprendi?
+
+87
+00:04:30,260 --> 00:04:33,640
+Título com um fato famoso e um detalhe estranho.
+
+88
+00:04:33,780 --> 00:04:38,240
+Vídeo curto, abaixo de um minuto e gancho no primeiro segundo.
+
+89
+00:04:38,340 --> 00:04:40,820
+A IA não substituiu meu trabalho.
+
+90
+00:04:40,840 --> 00:04:44,160
+Ela tirou o trabalho braçal e me deixou só com a parte
+
+91
+00:04:44,180 --> 00:04:45,100
+criativa.
+
+92
+00:04:45,120 --> 00:04:48,760
+Os editores não vão desaparecer da noite para o dia, mas a
+
+93
+00:04:48,780 --> 00:04:52,780
+função muda de quem corta a linha do tempo para quem direciona
+
+94
+00:04:52,800 --> 00:04:53,660
+a IA.
+
+95
+00:04:53,680 --> 00:04:57,440
+Na sua opinião, a edição manual sobrevive por quanto tempo.
+
+96
+00:04:57,460 --> 00:04:58,440
+Comente aqui.
+
+97
+00:04:58,460 --> 00:05:00,980
+E me siga para acompanhar essa revolução.

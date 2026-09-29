@@ -38,6 +38,7 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.
 - Consta nos Autos — Violet Jessop (3 desastres: 1 colisão + 2 naufrágios): pronto em `videos/consta_violet_jessop/`.
 - Consta nos Autos — Tsutomu Yamaguchi (duas bombas): pronto em `videos/consta_hiroshima_nagasaki/`.
+- Vídeo longo 16:9 "HyperFrames — bastidores" (5 min): pronto em `videos/hyperframes_bastidores/` (vídeo, capa, SRT, capítulos).
 
 ## Retenção (aprendizado)
 - Não abrir com introdução lenta (chiado/contexto). Abrir no clímax (flash-forward) com texto-gancho no 1º quadro.
@@ -62,3 +63,8 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Skills oficiais: `npx hyperframes skills` (instala em ~/.claude/skills: hyperframes, talking-head-recut, faceless-explainer, general-video…)
 - GSAP pelo CDN é bloqueado no render: `npm i gsap` e referenciar `gsap.min.js` local.
 - Render: `npx hyperframes render -o saida.mp4`
+
+## Vídeo longo 16:9 (aprendizado)
+- Avatar com fundo branco parece "gerado por IA": recortar (webm VP9 com alfa) e colocar à direita sobre o fundo das cenas do HyperFrames, com cartões à esquerda.
+- Um único áudio com vários blocos de narração funciona: cada bloco entra como `<audio data-media-start>`.
+- No headless shell, clipes H.264 falham na checagem: converter para webm VP9.
