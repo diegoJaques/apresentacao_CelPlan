@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A mulher que não afundava</title>
+<style>
+@font-face{font-family:O;font-weight:500;src:url(fonts/oswald-latin-500-normal.woff2)}
+@font-face{font-family:O;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}
+@font-face{font-family:T;src:url(fonts/special-elite-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--am:#FFC233;--rd:#E0282E;--pp:#E9DFC7;--ink:#1d1a15;--gr:#3BD16F;--sea:#0b2233}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:#0a0908;font-family:O;color:#fff}
+.abs{position:absolute}.full{position:absolute;inset:0}.center{left:0;right:0;text-align:center}
+.scene{position:absolute;inset:0;opacity:0;display:none}
+.h{font-family:O;font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:1px;text-shadow:0 6px 30px rgba(0,0,0,.85)}
+.paper{position:absolute;background:var(--pp);color:var(--ink);font-family:T;border-radius:4px;box-shadow:0 30px 70px rgba(0,0,0,.7);
+  background-image:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.35),rgba(0,0,0,0) 60%),radial-gradient(ellipse at 80% 90%,rgba(120,90,40,.25),rgba(0,0,0,0) 55%)}
+.photo{position:absolute;background:#f4efe2;padding:18px 18px 18px;box-shadow:0 25px 60px rgba(0,0,0,.75)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.55) contrast(1.1) brightness(.95)}
+.stamp{position:absolute;display:inline-block;border:10px solid var(--gr);color:var(--gr);font-family:O;font-weight:700;text-transform:uppercase;padding:4px 26px;border-radius:10px;letter-spacing:3px;background:rgba(0,0,0,.55);opacity:0}
+.tag{display:inline-block;padding:10px 24px;font-family:J;font-weight:700;font-size:32px;letter-spacing:2px;border-radius:8px}
+#sea{position:absolute;inset:0;background:linear-gradient(#0d1b2a 0%,#12324a 48%,#061520 49%,#020a10 100%);opacity:0}
+#desk{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#2a241b 0%,#12100c 70%)}
+#cap{position:absolute;left:50px;right:50px;top:1480px;text-align:center;font-family:O;font-weight:700;font-size:84px;line-height:1.05;text-transform:uppercase}
+#cap span{display:inline-block;margin:0 14px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.6),0 10px 30px rgba(0,0,0,.7)}
+#cap span.on{color:var(--am)}
+#hud{position:absolute;inset:0;pointer-events:none;font-family:J;font-weight:700;font-size:24px;color:rgba(255,255,255,.8);text-shadow:0 2px 8px rgba(0,0,0,.9)}
+#grain{position:absolute;inset:0;width:1080px;height:1920px;opacity:.08;mix-blend-mode:screen;pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%);pointer-events:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#counter{position:absolute;right:50px;top:130px;font-family:O;font-weight:700;font-size:44px;background:rgba(0,0,0,.6);border:4px solid var(--gr);color:var(--gr);padding:6px 20px;border-radius:10px;opacity:0}
+svg{overflow:visible}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="desk"></div>
+  <div id="sea"></div>
+
+  <!-- S1 hook 0-3.75 -->
+  <div id="s1" class="scene">
+    <div id="s1ban" class="abs center" style="top:150px">
+      <div style="display:inline-block;background:var(--am);color:#111;font-family:O;font-weight:700;font-size:92px;line-height:1;padding:24px 36px;border:8px solid #000;box-shadow:12px 12px 0 var(--rd);transform:rotate(-2deg);text-transform:uppercase">ELA SOBREVIVEU<br>A 3 NAUFRÁGIOS 😳</div></div>
+    <div id="s1ph" class="photo" style="left:280px;top:560px;width:520px;height:800px;transform:rotate(3deg)"><img src="violet.jpg" style="object-position:50% 15%"></div>
+    <div id="s1st" class="stamp" style="left:300px;top:1180px;font-size:70px;transform:rotate(-8deg)">SOBREVIVEU ✓</div>
+  </div>
+
+  <!-- S2 3.75-7.35 three ships ? -->
+  <div id="s2" class="scene">
+    <div id="s2t" class="abs center h" style="top:300px;font-size:88px">E ESSE NEM FOI O<br><span style="color:var(--am)">MAIS ESTRANHO</span></div>
+    <div id="s2ships" class="full"></div>
+  </div>
+
+  <!-- S3 7.35-11.4 ficha -->
+  <div id="s3" class="scene">
+    <div id="s3doc" class="paper" style="left:80px;top:300px;width:920px;height:1080px;padding:60px 56px;font-size:34px;line-height:1.6">
+      <div style="letter-spacing:4px;font-size:28px">FICHA DE TRIPULANTE · WHITE STAR LINE</div>
+      <div style="margin-top:40px">NOME:</div>
+      <div id="s3name" style="font-family:O;font-weight:700;font-size:96px;line-height:1"></div>
+      <div style="margin-top:30px">FUNÇÃO:</div>
+      <div id="s3job" style="font-family:O;font-weight:700;font-size:60px;color:#8a1c1c"></div>
+      <div style="position:absolute;left:56px;bottom:40px;font-family:J;font-size:15px;color:rgba(0,0,0,.45)">REPRODUÇÃO ILUSTRATIVA</div>
+    </div>
+    <div id="s3ph" class="photo" style="left:620px;top:860px;width:340px;height:520px;transform:rotate(5deg)"><img src="violet.jpg" style="object-position:50% 12%"></div>
+    <div id="s3clip" class="abs" style="left:760px;top:830px;width:60px;height:110px;border:8px solid #9aa0a6;border-radius:30px;transform:rotate(5deg)"></div>
+  </div>
+
+  <!-- S4 11.4-19.7 Olympic 1911 -->
+  <div id="s4" class="scene">
+    <div id="s4y" class="abs center h" style="top:230px;font-size:150px;color:var(--am)">1911</div>
+    <div id="s4n" class="abs center h" style="top:400px;font-size:78px">OLYMPIC</div>
+    <div id="s4s" class="abs center tw" style="top:490px;font-family:T;font-size:36px;color:var(--pp)">navio-irmão do Titanic</div>
+    <svg id="s4svg" class="abs" style="left:0;top:700px" width="1080" height="600" viewBox="0 0 1080 600"></svg>
+    <div id="s4boom" class="abs" style="left:430px;top:820px;opacity:0"><svg width="260" height="260" viewBox="-130 -130 260 260"><polygon points="0,-120 30,-45 110,-80 60,-10 130,30 55,45 80,120 10,70 -40,130 -45,60 -125,80 -70,15 -130,-40 -55,-45 -80,-115 -20,-60" fill="#FFC233" stroke="#000" stroke-width="8"/><text y="18" text-anchor="middle" font-family="O" font-weight="700" font-size="60" fill="#E0282E">CRASH!</text></svg></div>
+    <div id="s4st" class="stamp" style="left:280px;top:1180px;font-size:74px;transform:rotate(-6deg)">SOBREVIVEU ✓</div>
+  </div>
+
+  <!-- S5 19.7-30.2 Titanic 1912 -->
+  <div id="s5" class="scene">
+    <div id="s5y" class="abs center h" style="top:230px;font-size:150px;color:var(--am)">1912</div>
+    <div id="s5n" class="abs center h" style="top:400px;font-size:78px">TITANIC</div>
+    <div id="s5ph" class="photo" style="left:60px;top:560px;width:960px;height:720px;padding:16px"><div class="full" style="left:16px;top:16px;right:16px;bottom:16px;overflow:hidden"><img id="s5img" src="ship.jpg" style="width:100%;height:100%;object-fit:cover;filter:sepia(.4) contrast(1.15)"></div></div>
+    <div id="s5boat" class="abs" style="left:250px;top:840px;opacity:0">
+      <svg width="580" height="380" viewBox="0 0 580 380"><rect x="0" y="0" width="580" height="380" rx="20" fill="rgba(4,12,20,.92)" stroke="#fff" stroke-width="4"/>
+        <path d="M60 230 Q290 330 520 230 L490 280 Q290 350 90 280 Z" fill="#e9e1cf" stroke="#000" stroke-width="5"/>
+        <g fill="#cfd8dc"><circle cx="200" cy="180" r="22"/><rect x="178" y="202" width="44" height="40" rx="8"/><circle cx="300" cy="170" r="24"/><rect x="276" y="194" width="48" height="48" rx="8"/><circle cx="400" cy="182" r="21"/><rect x="379" y="203" width="42" height="40" rx="8"/></g>
+        <g><ellipse cx="300" cy="215" rx="26" ry="16" fill="#fff" stroke="#000" stroke-width="4"/><circle cx="318" cy="205" r="10" fill="#f2d3b3" stroke="#000" stroke-width="3"/></g>
+        <text x="290" y="70" text-anchor="middle" font-family="O" font-weight="700" font-size="44" fill="#FFC233">UM BEBÊ NOS BRAÇOS</text>
+        <path d="M0 330 Q145 300 290 330 T580 330 V380 H0Z" fill="#0d2d44"/></svg></div>
+    <div id="s5st" class="stamp" style="left:280px;top:1180px;font-size:74px;transform:rotate(-6deg)">SOBREVIVEU ✓</div>
+  </div>
+
+  <!-- S6 30.2-39.1 Britannic 1916 -->
+  <div id="s6" class="scene">
+    <div id="s6y" class="abs center h" style="top:230px;font-size:150px;color:var(--am)">1916</div>
+    <div id="s6n" class="abs center h" style="top:400px;font-size:78px">BRITANNIC</div>
+    <div id="s6s" class="abs center" style="top:500px;font-family:T;font-size:36px;color:var(--pp)">navio-hospital · Primeira Guerra</div>
+    <div id="s6ph" class="photo" style="left:640px;top:610px;width:360px;height:560px;transform:rotate(4deg)"><img src="violet.jpg" style="object-position:50% 20%"></div>
+    <div id="s6lbl" class="abs" style="left:640px;top:1190px"><span class="tag" style="background:#fff;color:#8a1c1c">ENFERMEIRA</span></div>
+    <svg id="s6svg" class="abs" style="left:0;top:760px" width="700" height="520" viewBox="0 0 700 520"></svg>
+    <div id="s6boom" class="abs" style="left:120px;top:900px;opacity:0"><svg width="300" height="300" viewBox="-150 -150 300 300"><polygon points="0,-140 35,-50 130,-90 70,-10 150,35 60,50 90,140 10,80 -45,150 -50,65 -145,90 -80,15 -150,-45 -60,-50 -90,-130 -20,-65" fill="#FF7A1A" stroke="#000" stroke-width="8"/><text y="20" text-anchor="middle" font-family="O" font-weight="700" font-size="62" fill="#fff" stroke="#000" stroke-width="3">BOOM!</text></svg></div>
+  </div>
+
+  <!-- S7 39.1-44.4 pulou, bateu a cabeça -->
+  <div id="s7" class="scene">
+    <svg id="s7svg" class="abs" style="left:0;top:520px" width="1080" height="900" viewBox="0 0 1080 900"></svg>
+    <div id="s7t" class="abs center h" style="top:250px;font-size:84px">PULOU DO BOTE…</div>
+    <div id="s7st" class="stamp" style="left:230px;top:1100px;font-size:96px;transform:rotate(-7deg)">SOBREVIVEU ✓</div>
+    <div id="s7d" class="abs center h" style="top:380px;font-size:150px;color:var(--gr)">DE NOVO!</div>
+  </div>
+
+  <!-- S8 44.4-49.25 3 navios / 3 desastres / 1 sobrevivente -->
+  <div id="s8" class="scene">
+    <div id="s8grid" class="abs" style="left:40px;right:40px;top:300px"></div>
+    <div id="s8a" class="abs center h" style="top:1000px;font-size:72px">3 NAVIOS IRMÃOS</div>
+    <div id="s8b" class="abs center h" style="top:1090px;font-size:72px;color:var(--rd)">3 DESASTRES</div>
+    <div id="s8c" class="abs center h" style="top:1180px;font-size:92px;color:var(--gr)">1 SOBREVIVENTE</div>
+  </div>
+
+  <!-- S9 49.25-end CTA -->
+  <div id="s9" class="scene">
+    <div id="s9ph" class="photo" style="left:330px;top:480px;width:420px;height:640px;transform:rotate(-3deg)"><img src="violet.jpg" style="object-position:50% 15%"></div>
+    <div id="s9q" class="abs center h" style="top:190px;font-size:86px">VOCÊ ENTRARIA<br>NUM NAVIO <span style="color:var(--am)">COM ELA?</span></div>
+    <div id="s9c" class="abs center" style="top:1180px"><span class="tag" style="background:var(--am);color:#111;font-size:44px;font-family:O">💬 COMENTA AQUI</span></div>
+    <div id="s9f" class="abs center" style="top:1290px"><span id="s9b" class="tag" style="background:var(--rd);color:#fff;font-size:44px;font-family:O">+ SEGUIR CONSTA NOS AUTOS</span></div>
+  </div>
+
+  <div id="counter">1/3</div>
+  <canvas id="grain" width="540" height="960"></canvas>
+  <div id="vig"></div>
+  <div id="cap"></div>
+  <div id="hud">
+    <div class="abs" style="left:60px;top:70px">● ARQUIVO · VIOLET JESSOP</div>
+    <div class="abs" style="right:60px;top:70px;color:var(--am)">CONSTA NOS AUTOS</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<script src="words.js"></script>
+<script>
+const FPS=30, TEND=53.6;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const win=(t,a,b,fi=.2,fo=.2)=>Math.min(P(t,a,a+fi),1-P(t,b-fo,b));
+function rnd(s){let x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x)}
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];return el}
+function pop(t,a,d=.35){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(.5,1,eb(x))}}
+function slam(t,a,d=.16){const x=P(t,a,a+d);return {o:clamp(x*3),s:lerp(2.6,1,eo(x))}}
+// ship silhouette generator (4 funnels liner)
+function ship(x,y,w,hull,deck,funnel,extra=''){const s=w/1000;return `<g transform="translate(${x} ${y}) scale(${s})">
+ <path d="M0 150 L40 230 L930 230 L1000 140 L960 140 L950 110 L60 110 L40 150 Z" fill="${hull}" stroke="#000" stroke-width="6"/>
+ <rect x="150" y="70" width="660" height="42" fill="${deck}" stroke="#000" stroke-width="5"/>
+ ${[240,390,540,690].map(fx=>`<rect x="${fx}" y="-40" width="62" height="112" fill="${funnel}" stroke="#000" stroke-width="5"/><rect x="${fx}" y="-40" width="62" height="22" fill="#111"/>`).join('')}
+ <line x1="110" y1="110" x2="120" y2="-110" stroke="#000" stroke-width="6"/><line x1="880" y1="110" x2="870" y2="-110" stroke="#000" stroke-width="6"/>${extra}</g>`}
+const britExtra=`<rect x="40" y="185" width="890" height="16" fill="#1e8a3c"/><g fill="#d11"><rect x="300" y="130" width="40" height="12"/><rect x="314" y="116" width="12" height="40"/><rect x="620" y="130" width="40" height="12"/><rect x="634" y="116" width="12" height="40"/></g>`;
+// S2 three ships with ?
+{const names=['OLYMPIC','TITANIC','BRITANNIC'];let h='';names.forEach((n,i)=>{h+=`<div id="sh${i}" class="abs" style="left:60px;right:60px;top:${640+i*270}px;height:240px"><svg width="960" height="240" viewBox="0 0 960 240">${ship(40,60,620,i==2?'#eee':'#161616',i==2?'#fff':'#e8e2d4',i==2?'#e6c27a':'#d9a24a',i==2?britExtra:'')}<text x="690" y="130" font-family="O" font-weight="700" font-size="48" fill="#fff">${n}</text><text x="925" y="140" font-family="O" font-weight="700" font-size="110" fill="#FFC233">?</text></svg></div>`});$('s2ships').innerHTML=h}
+// S4 Olympic + warship
+$('s4svg').innerHTML=`<rect x="0" y="330" width="1080" height="270" fill="#0d2d44"/><g id="oly">${ship(40,150,720,'#161616','#e8e2d4','#d9a24a')}</g>
+ <g id="hawke"><g transform="translate(0 0)"><path d="M0 250 L30 300 L420 300 L460 240 Z" fill="#6f7a82" stroke="#000" stroke-width="5"/><rect x="120" y="200" width="160" height="45" fill="#8a949c" stroke="#000" stroke-width="5"/><rect x="170" y="150" width="40" height="55" fill="#555" stroke="#000" stroke-width="5"/><line x1="300" y1="240" x2="380" y2="210" stroke="#000" stroke-width="10"/></g><text x="200" y="360" text-anchor="middle" font-family="J" font-weight="700" font-size="26" fill="#fff">HMS HAWKE (navio de guerra)</text></g>`;
+// S6 Britannic
+$('s6svg').innerHTML=`<rect x="0" y="330" width="700" height="190" fill="#0d2d44"/><g id="brit">${ship(10,140,640,'#f2f2f2','#fff','#e6c27a',britExtra)}</g><path id="s6wave" d="M0 340 Q175 310 350 340 T700 340 V520 H0Z" fill="#0b2436"/>`;
+// S7 lifeboat + ship stern + propeller
+$('s7svg').innerHTML=`<rect x="0" y="420" width="1080" height="480" fill="#0d2d44"/>
+ <g id="stern"><path d="M620 150 L1080 150 L1080 470 L700 470 Z" fill="#f2f2f2" stroke="#000" stroke-width="6"/><rect x="620" y="330" width="460" height="18" fill="#1e8a3c"/></g>
+ <g id="prop" transform="translate(760 520)"><circle r="18" fill="#caa35a" stroke="#000" stroke-width="5"/><path d="M0 0 L-20 -90 Q0 -110 20 -90Z M0 0 L90 -20 Q110 0 90 20Z M0 0 L20 90 Q0 110 -20 90Z M0 0 L-90 20 Q-110 0 -90 -20Z" fill="#caa35a" stroke="#000" stroke-width="5"/></g>
+ <g id="boat"><path d="M160 430 Q330 520 500 430 L470 480 Q330 540 190 480 Z" fill="#e9e1cf" stroke="#000" stroke-width="6"/></g>
+ <g id="vio"><circle cx="0" cy="-60" r="26" fill="#f2d3b3" stroke="#000" stroke-width="5"/><path d="M-30 -30 H30 L40 60 H-40 Z" fill="#fff" stroke="#000" stroke-width="5"/><rect x="-8" y="-20" width="16" height="44" fill="#d11"/><rect x="-22" y="-6" width="44" height="16" fill="#d11"/></g>
+ <g id="stars" opacity="0"><text x="0" y="0" font-size="60">💫</text></g>
+ <path d="M0 440 Q270 410 540 440 T1080 440 V900 H0Z" fill="#0b2436"/>`;
+// S8 grid
+{let h='';[['OLYMPIC','1911','#161616','#e8e2d4','#d9a24a',''],['TITANIC','1912','#161616','#e8e2d4','#d9a24a',''],['BRITANNIC','1916','#eee','#fff','#e6c27a',britExtra]].forEach((s,i)=>{h+=`<div id="g${i}" class="abs" style="left:${i*340}px;top:0;width:320px;height:620px;background:#141210;border:4px solid #3a342a;border-radius:18px;text-align:center">
+ <svg width="320" height="200" viewBox="0 0 320 200">${ship(20,70,280,s[2],s[3],s[4],s[5])}</svg>
+ <div style="font-family:O;font-weight:700;font-size:40px">${s[0]}</div><div style="font-family:J;font-size:28px;color:#aaa">${s[1]}</div>
+ <div class="xx" style="font-family:O;font-weight:700;font-size:120px;color:#E0282E;line-height:1.2">✗</div>
+ <div class="ck" style="font-family:O;font-weight:700;font-size:34px;color:#3BD16F">VIOLET ✓</div></div>`});$('s8grid').innerHTML=h}
+const gctx=$('grain').getContext('2d');const gimg=gctx.createImageData(540,960);
+function grain(f){const d=gimg.data;let s=f*7919+1;for(let i=0;i<d.length;i+=4){s=(s*1103515245+12345)&0x7fffffff;const v=(s>>16)&255;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}gctx.putImageData(gimg,0,0)}
+// captions
+const W=window.WORDS;const groups=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];if(!nx||g.length>=3||/[,.?!]$/.test(w[0])||(nx[1]-w[2]>.35)){groups.push(g);g=[]}}}
+groups.forEach((g,i)=>{g.start=g[0][1];g.end=groups[i+1]?Math.min(groups[i+1][0][1],g[g.length-1][2]+.6):g[g.length-1][2]+.8});
+let lastG=-1;
+
+async function seek(t){
+  const f=Math.round(t*FPS);
+  const sc=(id,a,b,fi=.2,fo=.2)=>{const o=win(t,a,b,fi,fo);st(id,{opacity:o,display:o>0?'block':'none'});return o>0};
+  const seaO=Math.max(win(t,11.4,19.7),win(t,30.2,44.4),win(t,19.7,30.2)*0);st('sea',{opacity:seaO});
+  // S1 (visible from frame 0)
+  if(sc('s1',0,3.75,.01,.25)){
+    st('s1ban',{transform:`scale(${1+.03*Math.sin(t*6)})`});
+    st('s1ph',{transform:`rotate(3deg) scale(${1.02+.05*P(t,0,3.7)})`});
+    const s=slam(t,2.14);st('s1st',{opacity:s.o,transform:`rotate(-8deg) scale(${s.s})`});
+  }
+  if(sc('s2',3.75,7.35)){
+    const a=pop(t,3.85);st('s2t',{opacity:a.o,transform:`scale(${a.s})`});
+    [0,1,2].forEach(i=>{const x=eo(P(t,4.4+i*.35,4.9+i*.35));st('sh'+i,{opacity:x,transform:`translateX(${(1-x)*(i%2?-600:600)}px) translateY(${Math.sin(t*2+i)*6}px)`})});
+  }
+  if(sc('s3',7.35,11.4)){
+    const d=eo(P(t,7.35,7.8));st('s3doc',{opacity:d,transform:`translateY(${(1-d)*300}px) rotate(${lerp(4,-1,d)}deg)`});
+    const nm='VIOLET JESSOP';const k=Math.floor(clamp((t-8.6)/1.0)*nm.length);$('s3name').textContent=nm.slice(0,k);
+    const jb='COMISSÁRIA DE BORDO';const k2=Math.floor(clamp((t-9.9)/0.9)*jb.length);$('s3job').textContent=jb.slice(0,k2);
+    const p=pop(t,8.8,.4);st('s3ph',{opacity:p.o,transform:`rotate(5deg) scale(${p.s})`});st('s3clip',{opacity:p.o});
+  }
+  if(sc('s4',11.4,19.7)){
+    const y=slam(t,11.76);st('s4y',{opacity:y.o,transform:`scale(${y.s})`});
+    st('s4n',{opacity:P(t,13.5,13.8)});st('s4s',{opacity:P(t,14.4,14.7)});
+    const ox=lerp(-200,120,eo(P(t,12.2,14.5)));$('oly').setAttribute('transform',`translate(${ox} ${Math.sin(t*1.5)*4})`);
+    const hx=lerp(1100,560,eio(P(t,15.8,17.2)));$('hawke').setAttribute('transform',`translate(${hx} 0)`);
+    const b=P(t,17.2,17.35);st('s4boom',{opacity:b*(1-P(t,18.2,18.5)),transform:`scale(${lerp(.3,1,eo(b))})`});
+    const s=slam(t,18.6);st('s4st',{opacity:s.o,transform:`rotate(-6deg) scale(${s.s})`});
+  }
+  if(sc('s5',19.7,30.25)){
+    const y=slam(t,19.8);st('s5y',{opacity:y.o,transform:`scale(${y.s})`});
+    st('s5n',{opacity:P(t,21.3,21.6)});
+    const p=eo(P(t,20.8,21.5));st('s5ph',{opacity:p,transform:`translateY(${(1-p)*200}px) rotate(${lerp(3,-1,p)}deg)`});
+    const sink=P(t,22.9,24.2);st('s5img',{transform:`scale(${1.05+.12*P(t,20.8,30)}) rotate(${sink*6}deg) translateY(${sink*40}px)`,filter:`sepia(.4) contrast(1.15) brightness(${1-.35*sink})`});
+    const b=pop(t,24.4,.4);st('s5boat',{opacity:b.o,transform:`scale(${b.s})`});
+    const s=slam(t,28.58);st('s5st',{opacity:s.o,transform:`rotate(-6deg) scale(${s.s})`});
+  }
+  if(sc('s6',30.25,39.15)){
+    const y=slam(t,30.58);st('s6y',{opacity:y.o,transform:`scale(${y.s})`});
+    st('s6n',{opacity:P(t,34.7,35)});st('s6s',{opacity:P(t,32.0,32.3)});
+    const p=pop(t,34.0,.4);st('s6ph',{opacity:p.o,transform:`rotate(4deg) scale(${p.s})`});st('s6lbl',{opacity:p.o});
+    const sink=eio(P(t,38.24,39.1));$('brit').setAttribute('transform',`translate(${Math.sin(t*1.4)*6} ${sink*160}) rotate(${sink*-12} 330 250)`);
+    const b=P(t,38.2,38.32);st('s6boom',{opacity:b*(1-P(t,38.8,39.1)),transform:`scale(${lerp(.3,1.1,eo(b))})`});
+  }
+  if(sc('s7',39.15,44.45)){
+    st('s7t',{opacity:P(t,39.2,39.4)*(1-P(t,42.3,42.5))});
+    $('prop').setAttribute('transform',`translate(760 520) rotate(${t*400})`);
+    const j=P(t,39.7,40.9);const vx=lerp(330,460,j),vy=lerp(400,300,Math.sin(j*Math.PI))+ (j>=1?40:0);
+    $('vio').setAttribute('transform',`translate(${vx} ${vy}) rotate(${j*200}) scale(1.8)`);
+    $('boat').setAttribute('transform',`translate(${P(t,39.7,41)*120} ${Math.sin(t*3)*6})`);
+    $('stars').setAttribute('opacity',t>40.98&&t<42.3?1:0);$('stars').setAttribute('transform',`translate(${vx-30} ${vy-90})`);
+    const s=slam(t,42.46);st('s7st',{opacity:s.o,transform:`rotate(-7deg) scale(${s.s})`});
+    const d=slam(t,43.44);st('s7d',{opacity:d.o,transform:`scale(${d.s})`});
+  }
+  if(sc('s8',44.45,49.3)){
+    [0,1,2].forEach(i=>{const x=pop(t,44.6+i*.25);st('g'+i,{opacity:x.o,transform:`scale(${x.s})`});
+      const el=$('g'+i);el.querySelector('.xx').style.opacity=P(t,46.3+i*.15,46.45+i*.15);el.querySelector('.ck').style.opacity=P(t,47.8,48.0)});
+    st('s8a',{opacity:P(t,44.54,44.7)});st('s8b',{opacity:P(t,46.32,46.5)});const c=slam(t,47.84);st('s8c',{opacity:c.o,transform:`scale(${c.s})`});
+  }
+  if(sc('s9',49.3,99,.2,.01)){
+    const q=pop(t,49.34);st('s9q',{opacity:q.o,transform:`scale(${q.s})`});
+    st('s9ph',{opacity:P(t,49.5,49.8),transform:`rotate(-3deg) scale(${1+.03*Math.sin(t*2)})`});
+    const c=pop(t,51.04);st('s9c',{opacity:c.o,transform:`scale(${c.s})`});
+    const f2=pop(t,52.14);st('s9f',{opacity:f2.o,transform:`scale(${f2.s})`});
+    const done=t>53.2;$('s9b').textContent=done?'✓ SEGUINDO':'+ SEGUIR CONSTA NOS AUTOS';st('s9b',{background:done?'#fff':'var(--rd)',color:done?'#111':'#fff'});
+  }
+  // counter
+  let n=0;if(t>=18.6)n=1;if(t>=28.58)n=2;if(t>=42.46)n=3;
+  st('counter',{opacity:(t>=18.6&&t<49.3)?1:0,transform:`scale(${[18.6,28.58,42.46].some(a=>t>=a&&t<a+.25)?1.25:1})`});$('counter').textContent=`SOBREVIVEU ${n}/3`;
+  // captions
+  const gi=groups.findIndex(g=>t>=g.start&&t<g.end);const cap=$('cap');
+  if(gi!==lastG){cap.innerHTML=gi<0?'':groups[gi].map(w=>`<span>${w[0].replace(/[,.]$/,'')}</span>`).join('');lastG=gi}
+  if(gi>=0){const g=groups[gi];const sp=cap.children;let cur=-1;g.forEach((w,i)=>{if(t>=w[1])cur=i});
+    for(let i=0;i<sp.length;i++){sp[i].className=i===cur?'on':'';sp[i].style.transform=i===cur?'scale(1.06)':'scale(1)';sp[i].style.opacity=t>=g[i][1]?1:.55}cap.style.opacity=1}else cap.style.opacity=0;
+  grain(f);
+  let fl=0;[2.14,17.25,18.6,28.58,38.24,42.46].forEach(s=>fl=Math.max(fl,1-Math.abs(t-s-.05)/.08));st('flash',{opacity:fl*.4});
+  let sh=0;[17.25,38.24,42.46].forEach(s=>{if(t>=s&&t<s+.4)sh=Math.max(sh,1-(t-s)/.4)});
+  st('stage',{transform:sh>0?`translate(${(rnd(f)-.5)*24*sh}px,${(rnd(f+1)-.5)*24*sh}px)`:'none'});
+  await Promise.all([...document.images].filter(i=>!i.complete).map(i=>i.decode().catch(()=>{})));
+}
+window.seek=seek;window.TEND=TEND;
+window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
+</script>
+</body>
+</html>

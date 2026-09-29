@@ -36,8 +36,15 @@ Referência para as próximas produções (preferências e aprendizados já vali
 
 ## Pautas em andamento
 - Rebobina — "O jogo que foi ENTERRADO no deserto": vídeo e capa prontos em `videos/rebobina_et_enterrado/`.
+- Consta nos Autos — Violet Jessop (3 naufrágios): pronto em `videos/consta_violet_jessop/`.
 
 ## Retenção (aprendizado)
 - Não abrir com introdução lenta (chiado/contexto). Abrir no clímax (flash-forward) com texto-gancho no 1º quadro.
 - Encurtar pausas e acelerar a fala ~8% (atempo) melhora o ritmo sem soar artificial.
 - Terminar seco, sem fade, para favorecer o replay em loop.
+
+## Desempenho do Consta nos Autos (set/2026)
+- Melhores: Titanic/binóculos (1.753), avião da Varig (1.490), Mona Lisa (995), Alcatraz (874) — assunto famoso + detalhe estranho, 40s–1min.
+- Piores: vídeos de 1:27–1:31 e títulos sem gancho ("OPERAÇÃO PRATO", "A palavra nasceu em Porto Rico").
+- Regra: título "Por que [famoso] [detalhe que parece errado]?", 35–55s, descrição começa pelo fato.
+- Evitar material com direitos autorais (ex.: gráficos BBC/RMS Titanic Inc.); preferir fotos em domínio público ou ilustração própria.
