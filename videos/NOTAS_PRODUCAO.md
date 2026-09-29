@@ -54,3 +54,11 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Textos de tela, capa e título precisam da MESMA precisão da narração. Erro real: "3 naufrágios" para Violet Jessop — o Olympic não afundou (colisão com o HMS Hawke em 1911; navegou até 1935). Correto: "3 desastres".
 - Antes de publicar, conferir cada número/verbo forte (afundou, morreu, único, primeiro) contra a fonte.
 - Se um comentário apontar erro verdadeiro: agradecer, corrigir título/descrição e fixar a resposta (não apagar o vídeo).
+
+## HyperFrames oficial (HeyGen) — instalação neste ambiente
+- `npm i hyperframes` (CLI v0.8.91) + `npx hyperframes telemetry disable`
+- FFmpeg: binário do imageio-ffmpeg em `~/bin/ffmpeg`; FFprobe: `npm i ffprobe-static` → link em `~/bin/ffprobe`
+- Navegador: `npx hyperframes browser ensure`
+- Skills oficiais: `npx hyperframes skills` (instala em ~/.claude/skills: hyperframes, talking-head-recut, faceless-explainer, general-video…)
+- GSAP pelo CDN é bloqueado no render: `npm i gsap` e referenciar `gsap.min.js` local.
+- Render: `npx hyperframes render -o saida.mp4`
