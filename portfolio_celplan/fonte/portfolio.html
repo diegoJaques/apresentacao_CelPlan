@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>CelPlan — Portfólio Técnico 2026</title>
+<style>
+@font-face{font-family:M;font-weight:500;src:url(fonts/montserrat-latin-500-normal.woff2)}
+@font-face{font-family:M;font-weight:600;src:url(fonts/montserrat-latin-600-normal.woff2)}
+@font-face{font-family:M;font-weight:700;src:url(fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:M;font-weight:900;src:url(fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:J;font-weight:500;src:url(fonts/jetbrains-mono-latin-500-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+@page{size:A4;margin:0}
+:root{--ink:#16132B;--mut:#5d5a72;--line:#e3e0ef;--p:#5B2A9E;--p2:#7C3AED;--dk:#1B1240;--lm:#B6FF3B;--soft:#F5F2FC}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:M;font-weight:500;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;overflow:hidden;page-break-after:always;background:#fff}
+.J{font-family:J}
+.k{font-family:J;font-weight:700;font-size:9.5px;letter-spacing:2.5px;color:var(--p2);text-transform:uppercase}
+.sec{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+.hdr{display:flex;justify-content:space-between;align-items:center;padding:26px 40px 18px}
+.hdr img{height:44px}
+.ct{text-align:right;font-size:10.5px;line-height:1.55;color:var(--mut)}
+.ct{font-weight:500}.ct b{color:var(--ink);font-weight:900;font-size:12px}
+.hero{position:relative;margin:0 28px;border-radius:18px;padding:30px 32px 26px;color:#fff;overflow:hidden;
+ background:radial-gradient(ellipse at 85% 0%,rgba(124,58,237,.55),rgba(124,58,237,0) 55%),linear-gradient(135deg,#1B1240,#2A1766)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px}
+.hero>*{position:relative}
+.h1{font-weight:900;font-size:34px;line-height:1.05;letter-spacing:-.8px;margin:10px 0 12px}
+.h1 em{font-style:normal;color:var(--lm)}
+.hs{font-weight:500;font-size:11.5px;line-height:1.55;color:#d6d0ef;max-width:470px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.st{border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:10px 12px;background:rgba(255,255,255,.05)}
+.st b{display:block;font-weight:900;font-size:24px;color:#fff}
+.st span{display:block;font-size:9.5px;color:#cfc8ec;line-height:1.35}
+.stamp{position:absolute;right:34px;top:118px;transform:rotate(-6deg);border:3px solid var(--lm);color:var(--lm);font-family:J;font-weight:700;font-size:11px;letter-spacing:2px;padding:6px 10px;border-radius:8px;text-align:center;line-height:1.3}
+.wrap{padding:22px 40px 0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:26px}
+.fs{position:relative;padding:0 8px 0 0}
+.fs .n{display:flex;align-items:center;gap:6px;font-family:J;font-weight:700;font-size:9px;color:var(--p2)}
+.fs .n i{flex:1;height:2px;background:linear-gradient(90deg,var(--p2),#d9ccfb)}
+.fs .t{font-weight:900;font-size:11.5px;margin:6px 0 4px;line-height:1.2}
+.fs .d{font-size:9.5px;color:var(--mut);line-height:1.35}
+.fs .e{display:inline-block;margin-top:6px;font-family:J;font-size:8.5px;background:var(--soft);color:var(--p);border:1px solid #e2d8fb;border-radius:6px;padding:3px 6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+.it{display:flex;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:12px}
+.it .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--soft);color:var(--p2);font-family:J;font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center}
+.it h3{font-weight:900;font-size:11.5px;margin-bottom:3px}
+.it p{font-size:9.8px;line-height:1.45;color:var(--mut)}
+.it.ai{border-color:#cdb8fb;background:linear-gradient(135deg,#fff,#F3EDFF)}
+.it.ai .num{background:var(--p2);color:#fff}
+.tagai{display:inline-block;margin-left:6px;font-family:J;font-size:7.5px;letter-spacing:1px;background:var(--lm);color:var(--dk);border-radius:4px;padding:1px 5px;vertical-align:2px}
+.it.out{border-style:dashed;background:#fafafa}
+.it.out h3{color:#8a879c}.it.out .num{background:#eee;color:#999}
+.foot{position:absolute;left:40px;right:40px;bottom:16px;display:flex;justify-content:space-between;font-size:8.5px;color:#9a97ad;border-top:1px solid var(--line);padding-top:8px}
+/* page 2 */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.cs{border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column}
+.cs .big{font-weight:900;font-size:25px;line-height:1;color:var(--p);letter-spacing:-.5px}
+.cs .unit{font-weight:700;font-family:J;font-size:8.5px;color:var(--p2);margin:4px 0 9px;text-transform:uppercase;letter-spacing:1px}
+.cs h4{font-weight:900;font-size:12px;margin-bottom:3px}
+.cs p{font-size:9.8px;line-height:1.4;color:var(--mut)}
+.row2{display:grid;grid-template-columns:1.05fr 1fr;gap:16px;margin-bottom:24px}
+.rep{position:relative;background:#FBFAF6;border:1px solid #e7e3d6;border-radius:6px;padding:14px 16px 14px;font-family:J;font-size:9.5px;color:#26232f;box-shadow:0 10px 26px rgba(27,18,64,.12)}
+.rep .rt{font-weight:700;font-size:10.5px;letter-spacing:1px;text-align:center}
+.rep .rs{text-align:center;font-size:8.5px;color:#777;margin:2px 0 8px}
+.rep .dl{border-top:1.5px dashed #26232f;margin:7px 0}
+.rep .r{display:flex;justify-content:space-between;line-height:1.85}
+.rep .r b{color:#1a8f3a;font-weight:700}
+.rep .ok{position:absolute;right:14px;bottom:12px;transform:rotate(-9deg);border:3px solid var(--p2);color:var(--p2);font-family:M;font-weight:900;font-size:15px;padding:3px 10px;border-radius:7px;background:rgba(251,250,246,.9)}
+.hire .hc{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border:1px solid var(--line);border-radius:12px;margin-bottom:7px;background:#fff}
+.hire .hc .l{flex:none;width:24px;height:24px;border-radius:50%;background:var(--p2);color:#fff;font-weight:900;font-size:11px;display:flex;align-items:center;justify-content:center}
+.hire h5{font-weight:900;font-size:11.5px;margin-bottom:2px}
+.hire p{font-size:9.8px;line-height:1.4;color:var(--mut)}
+.hire .note{font-size:9px;color:var(--p);font-family:J;margin-top:2px}
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.sectors .k{font-size:8.5px;margin-bottom:4px}
+.sectors p{font-weight:600;font-size:10px;line-height:1.45}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--line);padding-top:10px}
+.meta p{font-size:9.5px;line-height:1.45;color:var(--mut);margin-top:4px}
+.cta{position:absolute;left:28px;right:28px;bottom:44px;border-radius:18px;padding:20px 28px;color:#fff;display:flex;justify-content:space-between;align-items:center;overflow:hidden;
+ background:radial-gradient(ellipse at 10% 100%,rgba(124,58,237,.5),rgba(124,58,237,0) 60%),linear-gradient(135deg,#1B1240,#2A1766)}
+.cta .q{font-weight:900;font-size:20px;line-height:1.15;max-width:330px}
+.cta .q em{font-style:normal;color:var(--lm)}
+.cta .s{font-size:9.5px;color:#cfc8ec;margin-top:6px;max-width:330px;line-height:1.45}
+.cta .c{text-align:right;font-size:10.5px;line-height:1.6;color:#e6e1f7;border-left:1px solid rgba(255,255,255,.2);padding-left:22px}
+.cta .c b{display:block;font-weight:900;font-size:13px;color:#fff}
+</style></head><body>
+
+<!-- ================= PÁGINA 1 ================= -->
+<section class="page">
+ <div class="hdr"><img src="logo.png" alt="CelPlan">
+  <div class="ct"><div class="k" style="margin-bottom:3px">Comercial</div><b>Diego Jaques</b><br>(19) 98376-0039<br>diego.jaques@celplan.com.br<br>www.celplan.com.br</div></div>
+
+ <div class="hero">
+  <div class="stamp">RELATÓRIO<br>PONTO A PONTO</div>
+  <div class="k" style="color:#c4b5fd">Portfólio técnico · 2026</div>
+  <div class="h1">Não entregamos “funcionando”.<br><em>Entregamos medido.</em></div>
+  <div class="hs">Engenharia, implantação e operação de infraestrutura crítica. Integradores independentes com mais de 30 anos no Brasil e no exterior — do levantamento de campo ao contrato de manutenção com SLA.</div>
+  <div class="stats">
+   <div class="st"><b>30+</b><span>anos de atuação<br>fundada em 1992</span></div>
+   <div class="st"><b>100+</b><span>profissionais<br>equipe própria</span></div>
+   <div class="st"><b>~US$ 2M</b><span>em P&amp;D por ano<br>software proprietário</span></div>
+   <div class="st"><b>5</b><span>continentes<br>projetos entregues</span></div>
+  </div>
+ </div>
+
+ <div class="wrap">
+  <div class="sec"><span class="k">Como um projeto anda com a gente</span></div>
+  <div class="flow">
+   <div class="fs"><div class="n">01<i></i></div><div class="t">Levantamento de campo</div><div class="d">Site survey, estudo de cobertura e viabilidade.</div><span class="e">→ relatório de survey</span></div>
+   <div class="fs"><div class="n">02<i></i></div><div class="t">Projeto executivo</div><div class="d">Memorial, BOM e especificação para edital.</div><span class="e">→ memorial + BOM</span></div>
+   <div class="fs"><div class="n">03<i></i></div><div class="t">Implantação</div><div class="d">Fornecimento, instalação e integração com equipe própria.</div><span class="e">→ certificação por link</span></div>
+   <div class="fs"><div class="n">04<i></i></div><div class="t">Comissionamento</div><div class="d">Testes TAF/TAC, as-built em CAD e treinamento.</div><span class="e">→ as-built + TAF/TAC</span></div>
+   <div class="fs"><div class="n">05<i style="background:none"></i></div><div class="t">Operação e manutenção</div><div class="d">Preventiva e corretiva, monitoramento e help desk.</div><span class="e">→ SLA</span></div>
+  </div>
+
+  <div class="sec"><span class="k">Escopo de atuação</span></div>
+  <div class="grid">
+   <div class="it"><div class="num">01</div><div><h3>Infraestrutura e cabeamento estruturado</h3><p>Eletrocalhas, racks, patch panels e aterramento. CAT5e/6/6A, backbone vertical, certificação de link com relatório ponto a ponto.</p></div></div>
+   <div class="it"><div class="num">02</div><div><h3>Fibra óptica e redes ópticas passivas</h3><p>Lançamento aéreo e subterrâneo, fusão e conectorização, certificação OTDR por fibra. GPON/XGS-PON e PON LAN com OLT, splitters e ONTs.</p></div></div>
+   <div class="it"><div class="num">03</div><div><h3>Redes sem fio, RF e transporte</h3><p>Site survey e estudo de cobertura, Wi-Fi 6E/7, LTE/5G privado e micro-ondas. Drive test, análise de espectro e otimização de enlaces.</p></div></div>
+   <div class="it"><div class="num">04</div><div><h3>CFTV — campo, sistema e integração</h3><p>Câmeras fixas, PTZ, térmicas e LPR; postes, PoE, nobreak e solar. VMS, storage, VideoWall e integração ao centro de controle.</p></div></div>
+   <div class="it ai"><div class="num">05</div><div><h3>Vídeo analítico e visão computacional<span class="tagai">IA</span></h3><p>LPR/ANPR, re-identificação entre câmeras, intrusão e cerca virtual, contagem e classificação de veículos, EPI, fogo e fumaça. On-premise, aderente à LGPD.</p></div></div>
+   <div class="it ai"><div class="num">06</div><div><h3>IoT, inteligência artificial e data center<span class="tagai">IA</span></h3><p>LoRaWAN, BLE Mesh, RFID e UWB; RTLS e telemetria de ativos. Data Lake, modelos preditivos, LLMs privados e nós de borda. Integração com ERP e SCADA via API.</p></div></div>
+   <div class="it"><div class="num">07</div><div><h3>Engenharia, documentação e O&amp;M</h3><p>Projeto executivo, memorial, BOM e estudo de viabilidade. Comissionamento TAF/TAC, as-built em CAD, treinamento e manutenção com SLA.</p></div></div>
+   <div class="it out"><div class="num">–</div><div><h3>Fora do nosso escopo</h3><p>Não fabricamos equipamentos, não somos operadora de telecom, não executamos obra civil pesada, não desenvolvemos ERP e não prestamos vigilância patrimonial.</p></div></div>
+  </div>
+ </div>
+ <div class="foot"><span>CelPlan · Global Technology Solutions · Engenharia própria · multi-fabricante</span><span>1 / 2</span></div>
+</section>
+
+<!-- ================= PÁGINA 2 ================= -->
+<section class="page">
+ <div class="hdr" style="padding-bottom:14px"><img src="logo.png" alt="CelPlan" style="height:34px">
+  <div class="ct">Engenharia própria · multi-fabricante · do projeto ao O&amp;M</div></div>
+ <div class="wrap" style="padding-top:8px">
+  <div class="sec"><span class="k">Cases de referência</span></div>
+  <div class="cases">
+   <div class="cs"><div class="big">135</div><div class="unit">sites · 2 estados</div><h4>VALE</h4><p>Rede LTE 250 MHz de missão crítica na Estrada de Ferro Vitória-Minas.</p></div>
+   <div class="cs"><div class="big">2.600+</div><div class="unit">gateways MESH</div><h4>CEMIG</h4><p>Projeto e implantação de rede MESH para medição avançada (AMI).</p></div>
+   <div class="cs"><div class="big">Nacional</div><div class="unit">cobertura</div><h4>ANATEL</h4><p>Modernização da monitoração de espectro com CellWireless SM.</p></div>
+   <div class="cs"><div class="big">7 + 25 km</div><div class="unit">ERBs LTE · fibra</div><h4>EDP</h4><p>Rede Smart Grid para AMI e automação da distribuição.</p></div>
+   <div class="cs"><div class="big">2,4 mi</div><div class="unit">clientes</div><h4>CenterPoint Energy</h4><p>Monitoramento e gestão do consumo de energia em tempo quase real.</p></div>
+   <div class="cs"><div class="big">Trackside</div><div class="unit">modelo validado</div><h4>Amtrak</h4><p>Banda larga a bordo dos trens Acela, no Corredor Nordeste dos EUA.</p></div>
+  </div>
+
+  <div class="row2">
+   <div>
+    <div class="sec"><span class="k">O que você recebe</span></div>
+    <div class="rep">
+     <div class="rt">DOSSIÊ DE ENTREGA</div><div class="rs">conforme o escopo contratado</div>
+     <div class="dl"></div>
+     <div class="r"><span>Certificação de link (cabeamento)</span><b>✓</b></div>
+     <div class="r"><span>Certificação OTDR por fibra</span><b>✓</b></div>
+     <div class="r"><span>Drive/walk test e espectro (RF)</span><b>✓</b></div>
+     <div class="r"><span>Comissionamento TAF/TAC</span><b>✓</b></div>
+     <div class="r"><span>As-built em CAD</span><b>✓</b></div>
+     <div class="r"><span>Memorial descritivo</span><b>✓</b></div>
+     <div class="r"><span>Treinamento da equipe</span><b>✓</b></div>
+     <div class="dl"></div>
+     <div class="r" style="font-weight:700"><span>STATUS</span><span></span></div>
+     <div class="ok">MEDIDO</div>
+    </div>
+   </div>
+   <div class="hire">
+    <div class="sec"><span class="k">Como nos contratar</span></div>
+    <div class="hc"><div class="l">A</div><div><h5>Engenharia e projeto</h5><p>Site survey, projeto executivo, memorial, BOM e especificação para edital.</p><div class="note">você executa com quem quiser</div></div></div>
+    <div class="hc"><div class="l">B</div><div><h5>Implantação e obra</h5><p>Fornecimento, instalação, integração, comissionamento, as-built e treinamento — com equipe própria.</p></div></div>
+    <div class="hc"><div class="l">C</div><div><h5>Operação e manutenção</h5><p>Preventiva e corretiva com SLA, sobressalentes, monitoramento, help desk e expansão.</p></div></div>
+   </div>
+  </div>
+
+  <div class="sec"><span class="k">Base de clientes</span></div>
+  <div class="sectors">
+   <div><div class="k">Rodovias</div><p>Motiva · Ecovias Araguaia · EcoRodovias</p></div>
+   <div><div class="k">Ferrovias e logística</div><p>Rumo · MRS · VALE</p></div>
+   <div><div class="k">Energia e infraestrutura</div><p>CEMIG · EDP · Enel · Copel · CPFL · Furnas · Neoenergia · Equatorial · Petrobras</p></div>
+   <div><div class="k">Telecom e regulação</div><p>Anatel · Claro · Algar · Nokia · Huawei · ZTE</p></div>
+  </div>
+  <div class="meta">
+   <div><div class="k">Normas de referência</div><p>ABNT NBR 14565 e 5410 · TIA/EIA-568 e 606 · ITU-T G.984 / G.987 (GPON e XGS-PON) · ONVIF · NR-10, NR-12, NR-33, NR-35</p></div>
+   <div><div class="k">Instrumentos de teste</div><p>Certificador de link · OTDR e power meter · analisador de espectro (2G a 5G, até 27 GHz) · drive e walk test · ferramenta própria de predição de RF</p></div>
+  </div>
+ </div>
+
+ <div class="cta">
+  <div><div class="q">Seu próximo projeto,<br><em>entregue medido.</em></div><div class="s">Todo escopo sai com relatório de certificação, as-built e memorial — auditável ponto a ponto.</div></div>
+  <div class="c"><b>Diego Jaques</b>(19) 98376-0039<br>diego.jaques@celplan.com.br<br>www.celplan.com.br</div>
+ </div>
+ <div class="foot"><span>CelPlan · Global Technology Solutions</span><span>2 / 2</span></div>
+</section>
+</body></html>
