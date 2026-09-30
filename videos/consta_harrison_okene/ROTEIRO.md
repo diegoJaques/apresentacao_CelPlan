@@ -1,14 +1,15 @@
 # Consta nos Autos — Harrison Okene: 60 horas no fundo do mar (Short ~45s)
 
-## Texto para o ElevenLabs v4 (estabilidade ~40%)
+## Texto para o ElevenLabs v4 (estabilidade ~40%) — versão revisada
 [dramático] O mergulhador desceu pra buscar CORPOS... e uma MÃO agarrou a dele.
-[sério] Nigéria, dois mil e treze. Um rebocador vira no mar e afunda de cabeça pra baixo, a trinta metros de profundidade. Onze tripulantes morrem.
-O cozinheiro, Harrison Okene, estava no banheiro. No escuro total, ele tateia até achar um bolsão de ar... no escritório do engenheiro.
-[intrigado] E aí entra a física. A trinta metros, o ar fica espremido QUATRO vezes. É como ter quatro vezes mais oxigênio no mesmo espaço.
-[pausa] Mas o próprio ar que ele soltava ia envenená-lo: gás carbônico.
-[surpreso] Segundo cientistas, ao mexer na água, ele ajudou o mar a absorver esse gás... e ganhou tempo.
-[sussurra] Sessenta horas no escuro. Até que o resgate chega... mas ele NÃO podia subir.
-[sério] Depois de tanto tempo sob pressão, subir direto podia matar. Ele passou mais três dias numa câmara de descompressão.
+[sério] Nigéria, dois mil e treze. Um rebocador vira no mar e afunda de cabeça pra baixo. Trinta metros de profundidade. Onze tripulantes morrem.
+Só um escapa: o cozinheiro, Harrison Okene. Ele estava no banheiro.
+[intrigado] No escuro total, ele tateia pelas paredes... até achar um bolsão de ar de pouco mais de um metro.
+E aí entra a física. A trinta metros, o ar fica espremido QUATRO vezes. É como ter quatro vezes mais oxigênio no mesmo espaço.
+[sério] Mas tinha um problema: o próprio ar que ele soltava ia envenená-lo. Gás carbônico.
+[surpreso] Segundo cientistas, mexendo na água, ele ajudou o mar a absorver esse gás... e ganhou tempo.
+[sussurra] Sessenta horas no escuro.
+[sério] Aí o resgate chega... mas ele NÃO pode subir. Depois de tanto tempo sob pressão, subir direto podia matar. Foram mais três dias numa câmara de descompressão.
 [pausa] E a salvação começou... quando uma luz apareceu na água.
 
 (loop: "...uma luz apareceu na água" [luz no corredor] → "O mergulhador desceu pra buscar corpos" [mão agarrando])
