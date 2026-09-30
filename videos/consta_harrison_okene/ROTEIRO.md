@@ -1,7 +1,7 @@
 # Consta nos Autos — Harrison Okene: 60 horas no fundo do mar (Short ~45s)
 
 ## Texto para o ElevenLabs v4 (estabilidade ~40%)
-[sussurra] O mergulhador desceu pra buscar CORPOS... [pausa] e uma mão agarrou a dele.
+[dramático] O mergulhador desceu pra buscar CORPOS... e uma MÃO agarrou a dele.
 [sério] Nigéria, dois mil e treze. Um rebocador vira no mar e afunda de cabeça pra baixo, a trinta metros de profundidade. Onze tripulantes morrem.
 O cozinheiro, Harrison Okene, estava no banheiro. No escuro total, ele tateia até achar um bolsão de ar... no escritório do engenheiro.
 [intrigado] E aí entra a física. A trinta metros, o ar fica espremido QUATRO vezes. É como ter quatro vezes mais oxigênio no mesmo espaço.
