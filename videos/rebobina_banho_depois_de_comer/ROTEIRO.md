@@ -6,8 +6,8 @@ Formato vencedor do canal: REGRA DA CASA dos anos 80/90 + "por que" (telefone co
 [sério] Toda criança dos anos noventa ouviu isso. Duas horas sentado na borda... olhando os primos brincarem.
 [intrigado] Anos depois, a Cruz Vermelha revisou os estudos... e não achou NENHUM caso de afogamento por nadar depois de comer. Era mito.
 [pausa] Mas sabe de uma coisa?
-[pensativo] A vó nunca entendeu de ciência. Ela entendia de você. Aquelas duas horas eram só o jeito dela de te manter perto... e seguro.
-[sussurra] Hoje, muita gente daria tudo pra ouvir aquela bronca de novo.
+[pensativo] Mãe e vó nunca entenderam de ciência. Entendiam de você. Aquelas duas horas eram só o jeito delas de te manter perto... e seguro.
+[emocionado] Hoje, muita gente daria tudo... pra ouvir aquela bronca de novo.
 [sério] E sem perceber... quem grita na beira da piscina agora é você: "Acabou de almoçar? Nada de piscina!"
 
 (loop: termina na mesma frase do começo, agora dita por "você")
