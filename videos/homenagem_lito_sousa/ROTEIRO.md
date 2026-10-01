@@ -7,53 +7,83 @@ Canal sugerido: Consta nos Autos (o público de casos aéreos — Varig, Andes, 
 - Morreu em 01/10/2026, aos 59 anos, em São Paulo. Família confirmou nas redes. Deixa a esposa Mila e o filho Malone, de 7 anos.
 - Doença de Creutzfeldt-Jakob, diagnosticada em agosto/2026. Rara, degenerativa, sem cura.
 - O primeiro sinal foi perder o controle do braço e da mão esquerda **enquanto digitava roteiros para o canal**.
-- Nasceu em 25/01/1967, em Natal (RN). *Só uma fonte traz isso; se tiver dúvida, corte.*
+- Nasceu em 25/01/1967, em Natal (RN). Duas fontes confirmam.
 - Entrou na aviação aos 14 anos, num curso técnico ligado à FAB.
 - Mais de 30 anos como mecânico de aeronaves e na segurança de voo: Varig, Transbrasil, United Airlines.
 - Tem certificação em Fatores Humanos. Tirou o brevê de piloto privado em 2021.
 - Criou o Aviões e Músicas em 2010. Passou de 3,7 milhões de inscritos.
 - Ficou conhecido por explicar acidentes, relatórios e caixas-pretas, e por ajudar gente a perder o medo de voar.
+- Nome completo: Joselito Geraldo de Sousa.
+- Entrou na Varig aos 19 anos. Passou pela Transbrasil e ficou cerca de 25 anos na United Airlines.
+- Livro: "Onde Morrem os Aviões". Curso: "Sem Medo de Voar". Escola: Lito Aviation Academy, fundada com a esposa Mila Seidl.
+- Explicou casos como Mamonas Assassinas, Chapecoense e Marília Mendonça.
+- Reclamou publicamente da edição de uma entrevista ao Profissão Repórter (TV Globo) sobre o acidente de Vinhedo.
+- 24/08/2026: o piloto Enderson Rafael desenhou "LITO" no céu do Texas, perto de Dallas, num Cessna 150M, em mais de 3h de voo.
+- 11/09/2026: a substância experimental ALN-6457 (Regeneron) chegou de Nova York num 787 da American, foi liberada em minutos em Guarulhos e seguiu de helicóptero até o Einstein.
 
-## Roteiro longo (ElevenLabs v3)
+## Roteiro longo — "O Aviador" (ElevenLabs v3, ~5–6 min, em capítulos)
 
+### Abertura
 [sério] Hoje, o Brasil perdeu o aviador que mais explicou a aviação pra gente.
-
-[sério] Lito Sousa morreu nesta quinta-feira, aos cinquenta e nove anos.
-
+[sério] Lito Sousa morreu nesta quinta-feira, primeiro de outubro, aos cinquenta e nove anos.
 [pausa] E se você já entrou num avião com medo… é bem provável que, em algum momento, tenha sido ele quem te acalmou.
+[narrativo] Essa é a história de um menino de Natal que passou a vida inteira olhando pra cima.
 
-[pensativo] Essa história começa num hangar. Lito tinha catorze anos quando entrou num curso técnico ligado à Força Aérea. Catorze. Enquanto os amigos jogavam bola, ele aprendia como um avião se mantém de pé.
+### Capítulo 1 — O menino do hangar (1967–1986)
+[narrativo] Joselito Geraldo de Sousa nasceu em Natal, no Rio Grande do Norte, em vinte e cinco de janeiro de mil novecentos e sessenta e sete.
+[pensativo] Aos catorze anos, quando a maioria dos meninos ainda nem sabia o que queria ser, ele entrou num curso técnico ligado à Força Aérea Brasileira. Catorze. Enquanto os amigos jogavam bola, ele aprendia como um avião se mantém de pé.
 
-[narrativo] Foram mais de trinta anos de macacão sujo de graxa. Varig. Transbrasil. United Airlines. Mecânico, depois especialista em segurança de voo. Ele não pilotava os aviões… ele garantia que eles voltassem.
+### Capítulo 2 — Varig, Transbrasil e o mundo (1986–2010)
+[narrativo] Aos dezenove, conseguiu o emprego que era o sonho de qualquer mecânico no Brasil: a Varig. A maior companhia aérea do país.
+[narrativo] Depois veio a Transbrasil. E então, o salto: a United Airlines, uma das maiores companhias do mundo. Foram cerca de vinte e cinco anos ali.
+[sério] Mecânico. Supervisor. Especialista em segurança de voo. Ele não pilotava os aviões… ele garantia que eles voltassem.
+[intrigado] E foi nesse caminho que ele aprendeu a lição mais importante da carreira: a maioria dos acidentes não começa numa peça quebrada. Começa numa decisão humana. Um cansaço. Uma pressa. Um "deixa pra depois".
+[narrativo] Lito foi estudar isso a fundo, e se tornou uma das maiores referências do Brasil em Fatores Humanos na aviação.
 
-[intrigado] E foi aí que ele aprendeu a coisa mais importante da carreira dele: a maioria dos acidentes não começa numa peça quebrada. Começa numa decisão humana. Um cansaço. Uma pressa. Um "deixa pra depois". Lito estudou isso a fundo. Virou especialista em Fatores Humanos.
-
+### Capítulo 3 — Aviões e Músicas (2010)
 [pausa] Em dois mil e dez, ele fez uma coisa que nenhum manual ensinava.
+[animado] Começou a falar de aviação na internet. Primeiro num blog. Depois num canal no YouTube, com um nome curioso: Aviões e Músicas.
+[narrativo] Um mecânico de avião, falando direto pra câmera. Sem cenário caro. Sem frase decorada.
+[narrativo] Ele pegava relatórios de acidente de duzentas páginas, gravações de caixa-preta, termos que só piloto entende… e transformava em conversa de sala. Do jeito que um tio explicaria no almoço de domingo.
+[sério] Mamonas Assassinas. Chapecoense. Marília Mendonça. Quando uma tragédia aérea parava o Brasil, muita gente não ia primeiro ao jornal. Ia ver o que o Lito tinha a dizer.
+[narrativo] E ele tinha uma regra: explicar sem sensacionalismo. Ele chegou a vir a público reclamar quando uma entrevista dele foi editada de um jeito que parecia especulação sobre um acidente. Pra ele, quem perde alguém num voo merece a verdade, não palpite.
 
-[animado] Abriu um canal no YouTube. O nome? Aviões e Músicas. Um mecânico de avião, falando com a câmera, sem roteiro bonito, sem cenário caro.
+### Capítulo 4 — Sem medo de voar
+[emocionado] Mas a coisa mais bonita que ele fez foi mais silenciosa.
+[emocionado] Milhares de pessoas escreveram pra ele contando que perderam o medo de voar. Gente que nunca tinha visitado a mãe em outro estado. Gente que embarcou pela primeira vez já de cabelo branco. Por causa de vídeos de um mecânico.
+[narrativo] Ele transformou isso num curso: Sem Medo de Voar. Escreveu um livro, Onde Morrem os Aviões. E, junto com a esposa, a Mila, criou uma escola, a Lito Aviation Academy, que forma mecânicos, pilotos, comissários e engenheiros.
+[narrativo] O menino que entrou num hangar aos catorze anos agora abria a porta do hangar pra milhares de outros.
+[animado] O canal passou de três milhões e setecentos mil inscritos.
 
-[narrativo] E funcionou. Ele pegava relatórios de acidente de duzentas páginas, gravações de caixa-preta, termos que só piloto entende… e transformava em conversa de sala. Do jeito que um tio explicaria no almoço de domingo.
-
-[sério] Quando um avião caía no Brasil, muita gente não ia primeiro ao jornal. Ia ver o que o Lito tinha a dizer.
-
-[emocionado] E ele fez outra coisa, mais silenciosa. Milhares de pessoas escreveram pra ele contando que perderam o medo de voar. Gente que nunca tinha visitado a mãe em outro estado. Gente que embarcou pela primeira vez aos sessenta anos. Por causa de vídeos de um mecânico.
-
-[narrativo] Mais de três milhões e setecentos mil inscritos. E, em dois mil e vinte e um, quarenta anos depois de entrar no primeiro hangar, ele finalmente tirou o brevê.
+### Capítulo 5 — O brevê (2021)
+[pensativo] E faltava uma coisa. Depois de quarenta anos consertando aviões, ele nunca tinha sido o homem no comando.
+[narrativo] Em dois mil e vinte e um, aos cinquenta e quatro anos, Lito tirou o brevê de piloto privado.
 [emocionado] O menino do hangar tinha virado aviador.
 
+### Capítulo 6 — O último roteiro (2026)
 [pausa]
-
 [sério] Em agosto deste ano, Lito estava fazendo o que sempre fez: escrevendo roteiro pro canal. E a mão esquerda… parou de obedecer.
+[sério] O diagnóstico veio rápido: doença de Creutzfeldt-Jakob. Rara. Degenerativa. Sem cura.
+[narrativo] E aí, a aviação inteira resolveu retribuir.
+[emocionado] No Texas, um piloto brasileiro, Enderson Rafael, decolou num pequeno Cessna e passou mais de três horas voando… só pra desenhar o nome LITO no céu. Um desenho maior que a cidade de São Paulo.
+[narrativo] Em setembro, um remédio experimental, que nem tinha sido testado em humanos, foi liberado em caráter excepcional. Atravessou o continente num Boeing, foi liberado em minutos em Guarulhos e seguiu de helicóptero até o hospital. Uma operação de aviação… pra salvar um homem da aviação.
+[sério] Não deu tempo.
+[emocionado] Lito deixa a Mila… e o Malone, de sete anos.
 
-[sério] O diagnóstico veio rápido: doença de Creutzfeldt-Jakob. Rara. Sem cura. Em menos de dois meses, ela levou o homem que passou a vida explicando que voar é seguro.
-
-[emocionado] Ele deixa a Mila, a esposa… e o Malone, de sete anos.
-
-[pensativo] Na aviação, quando um piloto se despede da torre pela última vez, a frase é simples. Sem drama. Só procedimento.
-
-[emocionado] Então, Lito… da gente que aprendeu a voar sem medo por sua causa:
-
+### Encerramento
+[pensativo] Na aviação, quando um voo termina, o piloto fala com a torre pela última vez. A frase é curta. Sem drama. Só procedimento.
+[emocionado] Então, Lito… de todos nós que aprendemos a voar sem medo por sua causa:
 [firme] Obrigado. Bom voo.
+
+### Mapa visual (o que aparece em cada capítulo)
+- Abertura: foto do Lito em close + título "O AVIADOR · Lito Sousa · 1967–2026".
+- Cap. 1: mapa do Brasil com Natal em destaque, ano 1967 → 1981; Veo do hangar vazio.
+- Cap. 2: linha do tempo Varig → Transbrasil → United, com ícones genéricos e sem logos. "~25 anos" em contador.
+- Cap. 3: tela de "relatório de 200 páginas" virando balão de conversa; lista de casos (só nomes, sem imagens das vítimas); trechos curtos do canal com crédito.
+- Cap. 4: capa do livro (foto enviada por você), contador até 3,7 mi.
+- Cap. 5: carteira de piloto estilizada "2021".
+- Cap. 6: mapa do Texas com o traço "LITO" sendo desenhado no céu (animação); rota Nova York → Guarulhos → hospital.
+- Encerramento: Veo do avião decolando no pôr do sol + "Obrigado, Lito. Bom voo."
 
 ## Short (9:16, ~50s)
 Abrir com a foto do Lito no primeiro frame. Voz firme, sem sussurro.
