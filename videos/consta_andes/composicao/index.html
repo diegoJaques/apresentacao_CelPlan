@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<title>Andes 1972 — a notícia no rádio</title><script src="gsap.min.js"></script><style>
+@font-face{font-family:"M";font-weight:900;src:url(assets/fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:"M";font-weight:700;src:url(assets/fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:"J";font-weight:700;src:url(assets/fonts/jetbrains-mono-latin-700-normal.woff2)}
+body{margin:0;background:#050a14}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#050a14;font-family:"M";font-weight:900;color:#fff}
+.abs{position:absolute}.J{font-family:"J"}.scene{position:absolute;inset:0}
+.ovl{position:absolute;inset:0;z-index:4}.vid{position:absolute;object-fit:cover}
+.shadeT{left:0;right:0;top:0;height:560px;background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,0))}
+.shadeB{left:0;right:0;bottom:0;height:900px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.92))}
+.yl{color:#FFC233}.red{color:#FF5A5A}
+.t{left:30px;right:30px;text-align:center;text-transform:uppercase;line-height:1.02;white-space:nowrap;text-shadow:0 10px 30px #000}
+.ilu{left:30px;top:40px;font-family:"J";font-weight:700;font-size:22px;color:rgba(255,255,255,.75);background:rgba(0,0,0,.5);padding:6px 12px;border-radius:6px;z-index:5}
+.chipC{left:50%;transform:translateX(-50%);top:150px;font-family:"J";font-weight:700;font-size:40px;background:#FFC233;color:#111;padding:12px 24px;border-radius:10px;white-space:nowrap}
+.tag{font-weight:900;font-size:38px;background:rgba(0,0,0,.55);border:3px solid #FFC233;color:#FFC233;padding:10px 22px;border-radius:12px;white-space:nowrap}
+.stampR{left:50%;margin-left:-450px;width:900px;text-align:center;font-weight:900;font-size:80px;color:#FF5A5A;border:9px solid #FF5A5A;border-radius:16px;padding:10px 0;background:rgba(0,0,0,.5);transform:rotate(-4deg)}
+.thermo{left:470px;top:250px;width:140px;height:640px;border-radius:70px;background:#0b1828;border:8px solid #dfe8f0}
+.merc{position:absolute;left:38px;right:38px;bottom:80px;height:62%;background:#FF5A5A;border-radius:30px}
+.bulb{position:absolute;left:10px;bottom:-30px;width:104px;height:104px;border-radius:50%;background:#5fd0ff}
+.tval{left:640px;top:520px;font-size:110px;color:#5fd0ff}
+.pill{left:50%;transform:translateX(-50%);font-weight:900;font-size:50px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.4);padding:12px 30px;border-radius:999px;white-space:nowrap}
+.card2{text-align:center;font-weight:900;font-size:58px;line-height:1.05;background:rgba(0,0,0,.5);border:3px solid #FFC233;border-radius:18px;padding:18px 0}
+.river{left:0;right:0;top:930px;height:120px;background:repeating-linear-gradient(90deg,#3d7ab8 0 60px,#5a95cf 60px 120px);opacity:.9}
+.rider{left:560px;top:700px;width:300px;height:240px}.rider i{position:absolute;display:block;background:#0c0f12}
+.rider .hb{left:40px;top:100px;width:200px;height:80px;border-radius:40px}
+.rider .hh{left:210px;top:50px;width:70px;height:90px;border-radius:30px 30px 10px 10px;transform:rotate(25deg)}
+.rider .l1{left:60px;top:170px;width:16px;height:70px}.rider .l2{left:100px;top:170px;width:16px;height:70px}
+.rider .l3{left:190px;top:170px;width:16px;height:70px}.rider .l4{left:220px;top:170px;width:16px;height:70px}
+.rider .pb{left:110px;top:30px;width:50px;height:90px;border-radius:20px}
+.rider .ph{left:115px;top:-20px;width:40px;height:40px;border-radius:50%}
+.dots{left:150px;right:150px;top:470px;display:grid;grid-template-columns:repeat(9,1fr);gap:22px}
+.dots i{display:block;width:62px;height:62px;border-radius:50%;background:#dfe8f0}
+#caps{position:absolute;left:30px;right:30px;top:1380px;height:200px;z-index:6}
+.capg{position:absolute;left:0;right:0;top:0;text-align:center}
+.capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:74px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.9)}
+</style></head>
+<body><div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="49.30">
+<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="49.30" data-track-index="10" data-volume="1"></audio><video id="v_hook" class="clip vid" src="assets/clips/hook.webm" data-start="0.00" data-duration="4.30" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_desp" class="clip vid" src="assets/clips/desp.webm" data-start="19.45" data-duration="7.00" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_fim" class="clip vid" src="assets/clips/fim.webm" data-start="46.25" data-duration="3.05" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><audio id="a_v" src="assets/audio/vento.wav" data-start="0" data-duration="49.30" data-track-index="15" data-volume="0.3"></audio><audio id="fx0" src="assets/audio/radio.wav" data-start="0.00" data-duration="2.50" data-track-index="11" data-volume="0.35"></audio><audio id="fx1" src="assets/audio/whump.wav" data-start="9.52" data-duration="0.50" data-track-index="12" data-volume="0.55"></audio><audio id="fx2" src="assets/audio/whump.wav" data-start="12.00" data-duration="0.50" data-track-index="13" data-volume="0.4"></audio><audio id="fx3" src="assets/audio/radio.wav" data-start="20.60" data-duration="2.50" data-track-index="11" data-volume="0.4"></audio><audio id="fx4" src="assets/audio/whump.wav" data-start="22.86" data-duration="0.50" data-track-index="12" data-volume="0.6"></audio><audio id="fx5" src="assets/audio/whump.wav" data-start="24.94" data-duration="0.50" data-track-index="13" data-volume="0.5"></audio><audio id="fx6" src="assets/audio/whump.wav" data-start="40.84" data-duration="0.50" data-track-index="11" data-volume="0.45"></audio><audio id="fx7" src="assets/audio/whump.wav" data-start="44.84" data-duration="0.50" data-track-index="12" data-volume="0.6"></audio><audio id="fx8" src="assets/audio/radio.wav" data-start="47.00" data-duration="2.30" data-track-index="13" data-volume="0.35"></audio>
+<div id="hook" class="clip ovl" data-start="0" data-duration="4.30" data-track-index="8">
+<div class="abs shadeT"></div><div class="abs shadeB"></div>
+<div class="abs t" style="top:130px;font-size:74px">ELES OUVIRAM<br><span class="yl">NO RÁDIO QUE</span></div>
+<div id="hB" class="abs t" style="top:1200px;font-size:66px">NINGUÉM IA MAIS<br><span class="red">PROCURAR POR ELES</span></div>
+<div class="abs ilu">reconstituição ilustrativa</div></div><section id="sc1" class="clip scene" data-start="4.30" data-duration="9.30" data-track-index="2">
+<div class="abs" style="inset:0;background:linear-gradient(#0b1530 0%,#1b2b4a 55%,#0d1424 100%)"></div>
+<div id="s1d" class="abs chipC">13 · OUT · 1972</div>
+<svg class="abs" style="left:60px;top:420px" width="960" height="620" viewBox="0 0 960 620">
+ <path d="M0 520 L60 430 L120 470 L190 330 L250 420 L320 260 L390 400 L450 300 L520 430 L590 340 L660 450 L730 360 L800 470 L880 400 L960 500 L960 620 L0 620 Z" fill="#cfd8e3"/><path d="M0 520 L60 430 L120 470 L190 330 L250 420 L320 260 L390 400 L450 300 L520 430 L590 340 L660 450 L730 360 L800 470 L880 400 L960 500 L960 620 L0 620 Z" fill="url(#sh)" opacity=".55"/>
+ <defs><linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#5d6b80"/></linearGradient></defs>
+ <path id="route" d="M940 120 C 760 140 560 180 420 300" stroke="#FFC233" stroke-width="8" fill="none" stroke-dasharray="18 14"/>
+ <text x="950" y="100" text-anchor="end" font-family="J" font-weight="700" font-size="34" fill="#fff">URUGUAI →</text>
+ <text x="10" y="100" font-family="J" font-weight="700" font-size="34" fill="#fff">← CHILE</text>
+ <g id="xmark"><circle cx="420" cy="300" r="34" fill="none" stroke="#FF4545" stroke-width="8"/><path d="M398 278L442 322M442 278L398 322" stroke="#FF4545" stroke-width="10"/></g>
+</svg>
+<div id="s1r" class="abs tag" style="left:50%;top:300px;transform:translateX(-50%)">TIME DE RÚGBI · URUGUAI</div>
+<div id="s1a" class="abs t" style="top:1120px;font-size:96px"><span id="n45">0</span> <span style="font-size:60px">A BORDO</span></div>
+</section><section id="sc2" class="clip scene" data-start="13.60" data-duration="5.85" data-track-index="2">
+<div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 40%,#16324f,#050a14 75%)"></div>
+<div id="thermo" class="abs thermo"><div id="merc" class="merc"></div><div class="bulb"></div></div>
+<div id="tv" class="abs J tval"><span id="deg">0</span>°C</div>
+<div id="c1" class="abs pill" style="top:1000px">☀ roupa de verão</div>
+<div id="c2" class="abs pill" style="top:1110px">quase nada pra comer</div>
+</section><div id="ov3" class="clip ovl" data-start="19.45" data-duration="7.00" data-track-index="8">
+<div class="abs shadeT"></div>
+<div id="d10" class="abs chipC" style="top:140px">DIA 10 · RADINHO DE PILHA</div>
+<div id="canc" class="abs stampR" style="top:320px">BUSCAS CANCELADAS</div>
+<div id="soz" class="abs t" style="top:580px;font-size:110px">SOZINHOS</div>
+<div class="abs ilu">reconstituição ilustrativa</div></div><section id="sc4" class="clip scene" data-start="26.45" data-duration="3.95" data-track-index="2">
+<div class="abs" style="inset:0;background:#000"></div>
+<div id="dec" class="abs t" style="top:700px;font-size:70px;color:#ddd">A DECISÃO<br>MAIS DIFÍCIL<br>DE SUAS VIDAS</div>
+</section><section id="sc5" class="clip scene" data-start="30.40" data-duration="8.10" data-track-index="2">
+<div class="abs" style="inset:0;background:linear-gradient(#0b1530 0%,#1b2b4a 55%,#0d1424 100%)"></div>
+<div id="nm1" class="abs card2" style="left:60px;width:460px;top:150px">NANDO<br>PARRADO</div>
+<div id="nm2" class="abs card2" style="left:560px;width:460px;top:150px">ROBERTO<br>CANESSA</div>
+<svg class="abs" style="left:60px;top:420px" width="960" height="620" viewBox="0 0 960 620">
+ <path d="M0 520 L60 430 L120 470 L190 330 L250 420 L320 260 L390 400 L450 300 L520 430 L590 340 L660 450 L730 360 L800 470 L880 400 L960 500 L960 620 L0 620 Z" fill="#cfd8e3"/><path d="M0 520 L60 430 L120 470 L190 330 L250 420 L320 260 L390 400 L450 300 L520 430 L590 340 L660 450 L730 360 L800 470 L880 400 L960 500 L960 620 L0 620 Z" fill="url(#sh2)" opacity=".55"/>
+ <defs><linearGradient id="sh2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#5d6b80"/></linearGradient></defs>
+ <circle cx="420" cy="300" r="20" fill="#FF4545"/>
+ <path id="walk" d="M420 300 C 370 250 310 300 250 330 C 180 365 110 400 40 440" stroke="#FFC233" stroke-width="10" fill="none" stroke-dasharray="4 18" stroke-linecap="round"/>
+</svg>
+<div id="noeq" class="abs tag" style="left:50%;top:1060px;transform:translateX(-50%)">SEM EQUIPAMENTO</div>
+<div id="days" class="abs t" style="top:1170px;font-size:80px">DIA <span id="dd" class="yl">1</span> DE CAMINHADA</div>
+</section><section id="sc6" class="clip scene" data-start="38.50" data-duration="3.90" data-track-index="2">
+<div class="abs" style="inset:0;background:linear-gradient(#26364f 0%,#4b5d73 50%,#2b3a2e 50%,#1a2419 100%)"></div>
+<div id="river" class="abs river"></div>
+<div id="rider" class="abs rider"><i class="hb"></i><i class="hh"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><i class="pb"></i><i class="ph"></i></div>
+<div id="hc" class="abs t" style="top:260px;font-size:84px">UM HOMEM<br><span class="yl">A CAVALO</span></div>
+<div id="dt" class="abs chipC" style="top:150px">20 · DEZ · 1972</div>
+</section><section id="sc7" class="clip scene" data-start="42.40" data-duration="3.85" data-track-index="2">
+<div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 40%,#1d2d48,#050a14 75%)"></div>
+<div id="d72" class="abs t J" style="top:180px;font-size:120px;color:#FFC233"><span id="n72">0</span> DIAS</div>
+<div id="dots" class="abs dots"><i id="p0"></i><i id="p1"></i><i id="p2"></i><i id="p3"></i><i id="p4"></i><i id="p5"></i><i id="p6"></i><i id="p7"></i><i id="p8"></i><i id="p9"></i><i id="p10"></i><i id="p11"></i><i id="p12"></i><i id="p13"></i><i id="p14"></i><i id="p15"></i><i id="p16"></i><i id="p17"></i><i id="p18"></i><i id="p19"></i><i id="p20"></i><i id="p21"></i><i id="p22"></i><i id="p23"></i><i id="p24"></i><i id="p25"></i><i id="p26"></i><i id="p27"></i><i id="p28"></i><i id="p29"></i><i id="p30"></i><i id="p31"></i><i id="p32"></i><i id="p33"></i><i id="p34"></i><i id="p35"></i><i id="p36"></i><i id="p37"></i><i id="p38"></i><i id="p39"></i><i id="p40"></i><i id="p41"></i><i id="p42"></i><i id="p43"></i><i id="p44"></i></div>
+<div id="v16" class="abs t" style="top:1130px;font-size:100px"><span class="yl">16</span> VOLTARAM</div>
+</section><div id="iluF" class="clip abs ilu" data-start="46.25" data-duration="3.05" data-track-index="8">reconstituição ilustrativa</div>
+<div id="caps"><div id="cg4" class="clip capg" data-start="4.38" data-duration="0.80" data-track-index="20"><span id="w4_0">13</span><span id="w4_1">de</span><span id="w4_2">outubro</span></div><div id="cg5" class="clip capg" data-start="5.18" data-duration="2.34" data-track-index="20"><span id="w5_0">de</span><span id="w5_1">1972</span></div><div id="cg6" class="clip capg" data-start="7.52" data-duration="0.60" data-track-index="20"><span id="w6_0">Um</span><span id="w6_1">avião</span><span id="w6_2">com</span></div><div id="cg7" class="clip capg" data-start="8.12" data-duration="0.60" data-track-index="20"><span id="w7_0">um</span><span id="w7_1">time</span><span id="w7_2">de</span></div><div id="cg8" class="clip capg" data-start="8.72" data-duration="0.98" data-track-index="20"><span id="w8_0">rúgbi</span><span id="w8_1">uruguaio</span><span id="w8_2">cai</span></div><div id="cg9" class="clip capg" data-start="9.70" data-duration="0.68" data-track-index="20"><span id="w9_0">no</span><span id="w9_1">meio</span><span id="w9_2">da</span></div><div id="cg10" class="clip capg" data-start="10.38" data-duration="1.64" data-track-index="20"><span id="w10_0">cordilheira</span><span id="w10_1">dos</span><span id="w10_2">Andes</span></div><div id="cg11" class="clip capg" data-start="12.02" data-duration="1.04" data-track-index="20"><span id="w11_0">45</span><span id="w11_1">pessoas</span><span id="w11_2">a</span></div><div id="cg12" class="clip capg" data-start="13.06" data-duration="0.66" data-track-index="20"><span id="w12_0">bordo</span></div><div id="cg13" class="clip capg" data-start="13.72" data-duration="0.74" data-track-index="20"><span id="w13_0">Quem</span><span id="w13_1">sobrevive</span><span id="w13_2">à</span></div><div id="cg14" class="clip capg" data-start="14.46" data-duration="1.12" data-track-index="20"><span id="w14_0">queda</span><span id="w14_1">enfrenta</span><span id="w14_2">20</span></div><div id="cg15" class="clip capg" data-start="15.58" data-duration="1.36" data-track-index="20"><span id="w15_0">graus</span><span id="w15_1">negativos</span><span id="w15_2">com</span></div><div id="cg16" class="clip capg" data-start="16.94" data-duration="0.78" data-track-index="20"><span id="w16_0">roupa</span><span id="w16_1">de</span><span id="w16_2">verão</span></div><div id="cg17" class="clip capg" data-start="17.72" data-duration="0.88" data-track-index="20"><span id="w17_0">e</span><span id="w17_1">quase</span><span id="w17_2">nada</span></div><div id="cg18" class="clip capg" data-start="18.60" data-duration="0.92" data-track-index="20"><span id="w18_0">pra</span><span id="w18_1">comer</span></div><div id="cg19" class="clip capg" data-start="19.52" data-duration="1.12" data-track-index="20"><span id="w19_0">10</span><span id="w19_1">dias</span><span id="w19_2">depois</span></div><div id="cg20" class="clip capg" data-start="20.64" data-duration="0.78" data-track-index="20"><span id="w20_0">num</span><span id="w20_1">radinho</span><span id="w20_2">de</span></div><div id="cg21" class="clip capg" data-start="21.42" data-duration="0.34" data-track-index="20"><span id="w21_0">pilha</span></div><div id="cg22" class="clip capg" data-start="21.76" data-duration="1.10" data-track-index="20"><span id="w22_0">a</span><span id="w22_1">notícia</span></div><div id="cg23" class="clip capg" data-start="22.86" data-duration="0.96" data-track-index="20"><span id="w23_0">As</span><span id="w23_1">buscas</span><span id="w23_2">foram</span></div><div id="cg24" class="clip capg" data-start="23.82" data-duration="1.12" data-track-index="20"><span id="w24_0">canceladas</span></div><div id="cg25" class="clip capg" data-start="24.94" data-duration="1.62" data-track-index="20"><span id="w25_0">Eles</span><span id="w25_1">estavam</span><span id="w25_2">sozinhos</span></div><div id="cg26" class="clip capg" data-start="26.56" data-duration="1.18" data-track-index="20"><span id="w26_0">Pra</span><span id="w26_1">continuar</span><span id="w26_2">vivos</span></div><div id="cg27" class="clip capg" data-start="27.74" data-duration="0.96" data-track-index="20"><span id="w27_0">tomaram</span><span id="w27_1">a</span><span id="w27_2">decisão</span></div><div id="cg28" class="clip capg" data-start="28.70" data-duration="0.82" data-track-index="20"><span id="w28_0">mais</span><span id="w28_1">difícil</span><span id="w28_2">de</span></div><div id="cg29" class="clip capg" data-start="29.52" data-duration="0.96" data-track-index="20"><span id="w29_0">suas</span><span id="w29_1">vidas</span></div><div id="cg30" class="clip capg" data-start="30.48" data-duration="1.00" data-track-index="20"><span id="w30_0">E</span><span id="w30_1">dois</span><span id="w30_2">deles</span></div><div id="cg31" class="clip capg" data-start="31.48" data-duration="0.94" data-track-index="20"><span id="w31_0">Nando</span><span id="w31_1">Parrado</span><span id="w31_2">e</span></div><div id="cg32" class="clip capg" data-start="32.42" data-duration="1.02" data-track-index="20"><span id="w32_0">Roberto</span><span id="w32_1">Canessa</span></div><div id="cg33" class="clip capg" data-start="33.44" data-duration="1.00" data-track-index="20"><span id="w33_0">resolveram</span><span id="w33_1">atravessar</span><span id="w33_2">as</span></div><div id="cg34" class="clip capg" data-start="34.44" data-duration="1.32" data-track-index="20"><span id="w34_0">montanhas</span><span id="w34_1">a</span><span id="w34_2">pé</span></div><div id="cg35" class="clip capg" data-start="35.76" data-duration="1.04" data-track-index="20"><span id="w35_0">sem</span><span id="w35_1">equipamento</span></div><div id="cg36" class="clip capg" data-start="36.80" data-duration="0.84" data-track-index="20"><span id="w36_0">Dez</span><span id="w36_1">dias</span><span id="w36_2">de</span></div><div id="cg37" class="clip capg" data-start="37.64" data-duration="0.96" data-track-index="20"><span id="w37_0">caminhada</span></div><div id="cg38" class="clip capg" data-start="38.60" data-duration="0.66" data-track-index="20"><span id="w38_0">Até</span><span id="w38_1">que</span></div><div id="cg39" class="clip capg" data-start="39.26" data-duration="0.62" data-track-index="20"><span id="w39_0">do</span><span id="w39_1">outro</span><span id="w39_2">lado</span></div><div id="cg40" class="clip capg" data-start="39.88" data-duration="0.96" data-track-index="20"><span id="w40_0">de</span><span id="w40_1">um</span><span id="w40_2">rio</span></div><div id="cg41" class="clip capg" data-start="40.84" data-duration="0.56" data-track-index="20"><span id="w41_0">um</span><span id="w41_1">homem</span><span id="w41_2">a</span></div><div id="cg42" class="clip capg" data-start="41.40" data-duration="1.12" data-track-index="20"><span id="w42_0">cavalo</span></div><div id="cg43" class="clip capg" data-start="42.52" data-duration="1.08" data-track-index="20"><span id="w43_0">72</span><span id="w43_1">dias</span><span id="w43_2">depois</span></div><div id="cg44" class="clip capg" data-start="43.60" data-duration="1.24" data-track-index="20"><span id="w44_0">da</span><span id="w44_1">queda</span></div><div id="cg45" class="clip capg" data-start="44.84" data-duration="0.92" data-track-index="20"><span id="w45_0">16</span><span id="w45_1">voltaram</span><span id="w45_2">pra</span></div><div id="cg46" class="clip capg" data-start="45.76" data-duration="0.56" data-track-index="20"><span id="w46_0">casa</span></div><div id="cg47" class="clip capg" data-start="46.32" data-duration="0.60" data-track-index="20"><span id="w47_0">E</span><span id="w47_1">o</span><span id="w47_2">pior</span></div><div id="cg48" class="clip capg" data-start="46.92" data-duration="1.20" data-track-index="20"><span id="w48_0">momento</span><span id="w48_1">de</span><span id="w48_2">todos</span></div><div id="cg49" class="clip capg" data-start="48.12" data-duration="0.66" data-track-index="20"><span id="w49_0">foi</span><span id="w49_1">uma</span><span id="w49_2">notícia</span></div><div id="cg50" class="clip capg" data-start="48.78" data-duration="0.52" data-track-index="20"><span id="w50_0">no</span><span id="w50_1">rádio</span></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#hB .red",{scale:1},{scale:1.05,duration:.35,yoyo:true,repeat:5,ease:"sine.inOut"},0.1);
+tl.fromTo("#s1d",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},4.35);
+tl.fromTo("#route",{strokeDashoffset:900,opacity:1},{strokeDashoffset:0,duration:2.4,ease:"none"},7.5);tl.set("#route",{strokeDasharray:"18 14"},0);
+tl.set("#s1r",{opacity:0},0);
+tl.set("#xmark",{opacity:0},0);
+tl.set("#s1a",{opacity:0},0);
+tl.fromTo("#s1r",{opacity:0,scale:.5},{opacity:1,scale:1,duration:0.4,ease:"back.out(2.4)"},8.26);
+tl.fromTo("#xmark",{opacity:0,scale:2.5,transformOrigin:"420px 300px"},{opacity:1,scale:1,duration:.25,ease:"power4.out"},9.52);
+tl.set("#s1a",{opacity:1},12.0);
+(()=>{const o={v:0};tl.to(o,{v:45,duration:0.9,ease:"power1.out",onUpdate:()=>{const v=o.v;document.querySelector("#n45").textContent=Math.round(v)}},12.00);})();
+tl.fromTo("#thermo",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},13.65);
+tl.fromTo("#merc",{height:"62%"},{height:"12%",duration:1.4,ease:"power2.in"},15.2);tl.to("#merc",{background:"#5fd0ff",duration:.4},15.9);
+(()=>{const o={v:0};tl.to(o,{v:-20,duration:1.4,ease:"power1.out",onUpdate:()=>{const v=o.v;document.querySelector("#deg").textContent=Math.round(v)}},15.20);})();
+tl.set("#c1",{opacity:0},0);
+tl.set("#c2",{opacity:0},0);
+tl.fromTo("#c1",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},16.80);
+tl.fromTo("#c2",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},17.90);
+tl.fromTo("#d10",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},19.60);
+tl.set("#canc",{opacity:0},0);
+tl.set("#soz",{opacity:0},0);
+tl.fromTo("#canc",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},22.86);
+tl.fromTo("#soz",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},24.94);
+tl.fromTo("#dec",{opacity:0,scale:1.15},{opacity:1,scale:1,duration:1.6,ease:"power2.out"},26.75);
+tl.set("#nm1",{opacity:0},0);
+tl.set("#nm2",{opacity:0},0);
+tl.set("#noeq",{opacity:0},0);
+tl.set("#days",{opacity:0},0);
+tl.fromTo("#nm1",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},31.48);
+tl.fromTo("#nm2",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},32.42);
+tl.fromTo("#walk",{clipPath:"inset(0 0 0 100%)"},{clipPath:"inset(0 0 0 0%)",duration:4.5,ease:"none"},33.4);
+tl.fromTo("#noeq",{opacity:0,scale:.5},{opacity:1,scale:1,duration:0.4,ease:"back.out(2.4)"},35.80);
+tl.set("#days",{opacity:1},36.8);
+(()=>{const o={v:1};tl.to(o,{v:10,duration:1.4,ease:"power1.out",onUpdate:()=>{const v=o.v;document.querySelector("#dd").textContent=Math.round(v)}},36.80);})();
+tl.fromTo("#river",{backgroundPositionX:"0px"},{backgroundPositionX:"-500px",duration:4,ease:"none"},38.5);
+tl.set("#rider",{opacity:0},0);
+tl.set("#hc",{opacity:0},0);
+tl.fromTo("#rider",{opacity:0,x:120},{opacity:1,x:0,duration:1.2,ease:"power2.out"},40.6);
+tl.fromTo("#hc",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},40.84);
+tl.fromTo("#dt",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},38.70);
+tl.fromTo("#d72",{opacity:0,y:60},{opacity:1,y:0,duration:0.45,ease:"power3.out"},42.45);
+(()=>{const o={v:0};tl.to(o,{v:72,duration:1.0,ease:"power1.out",onUpdate:()=>{const v=o.v;document.querySelector("#n72").textContent=Math.round(v)}},42.50);})();
+tl.fromTo("#dots i",{opacity:0,scale:0},{opacity:1,scale:1,duration:.08,stagger:.015},42.6);
+tl.to("#dots i:nth-child(n+17)",{background:"#2a3346",duration:.4,stagger:.01},44.6);
+tl.to("#dots i:nth-child(-n+16)",{background:"#FFC233",boxShadow:"0 0 18px #FFC233",duration:.3},44.84);
+tl.set("#v16",{opacity:0},0);
+tl.fromTo("#v16",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},44.84);
+tl.set("#w4_0",{color:"#FFC233"},4.38);
+tl.set("#w4_0",{color:"#ffffff"},4.58);
+tl.set("#w4_1",{color:"#FFC233"},4.58);
+tl.set("#w4_1",{color:"#ffffff"},4.72);
+tl.set("#w4_2",{color:"#FFC233"},4.72);
+tl.set("#w5_0",{color:"#FFC233"},5.18);
+tl.set("#w5_0",{color:"#ffffff"},6.00);
+tl.set("#w5_1",{color:"#FFC233"},6.00);
+tl.set("#w6_0",{color:"#FFC233"},7.52);
+tl.set("#w6_0",{color:"#ffffff"},7.66);
+tl.set("#w6_1",{color:"#FFC233"},7.66);
+tl.set("#w6_1",{color:"#ffffff"},8.00);
+tl.set("#w6_2",{color:"#FFC233"},8.00);
+tl.set("#w7_0",{color:"#FFC233"},8.12);
+tl.set("#w7_0",{color:"#ffffff"},8.26);
+tl.set("#w7_1",{color:"#FFC233"},8.26);
+tl.set("#w7_1",{color:"#ffffff"},8.44);
+tl.set("#w7_2",{color:"#FFC233"},8.44);
+tl.set("#w8_0",{color:"#FFC233"},8.72);
+tl.set("#w8_0",{color:"#ffffff"},8.92);
+tl.set("#w8_1",{color:"#FFC233"},8.92);
+tl.set("#w8_1",{color:"#ffffff"},9.52);
+tl.set("#w8_2",{color:"#FFC233"},9.52);
+tl.set("#w9_0",{color:"#FFC233"},9.70);
+tl.set("#w9_0",{color:"#ffffff"},9.98);
+tl.set("#w9_1",{color:"#FFC233"},9.98);
+tl.set("#w9_1",{color:"#ffffff"},10.16);
+tl.set("#w9_2",{color:"#FFC233"},10.16);
+tl.set("#w10_0",{color:"#FFC233"},10.38);
+tl.set("#w10_0",{color:"#ffffff"},10.86);
+tl.set("#w10_1",{color:"#FFC233"},10.86);
+tl.set("#w10_1",{color:"#ffffff"},11.10);
+tl.set("#w10_2",{color:"#FFC233"},11.10);
+tl.set("#w11_0",{color:"#FFC233"},12.02);
+tl.set("#w11_0",{color:"#ffffff"},12.70);
+tl.set("#w11_1",{color:"#FFC233"},12.70);
+tl.set("#w11_1",{color:"#ffffff"},12.94);
+tl.set("#w11_2",{color:"#FFC233"},12.94);
+tl.set("#w12_0",{color:"#FFC233"},13.06);
+tl.set("#w13_0",{color:"#FFC233"},13.72);
+tl.set("#w13_0",{color:"#ffffff"},13.92);
+tl.set("#w13_1",{color:"#FFC233"},13.92);
+tl.set("#w13_1",{color:"#ffffff"},14.32);
+tl.set("#w13_2",{color:"#FFC233"},14.32);
+tl.set("#w14_0",{color:"#FFC233"},14.46);
+tl.set("#w14_0",{color:"#ffffff"},14.84);
+tl.set("#w14_1",{color:"#FFC233"},14.84);
+tl.set("#w14_1",{color:"#ffffff"},15.32);
+tl.set("#w14_2",{color:"#FFC233"},15.32);
+tl.set("#w15_0",{color:"#FFC233"},15.58);
+tl.set("#w15_0",{color:"#ffffff"},15.84);
+tl.set("#w15_1",{color:"#FFC233"},15.84);
+tl.set("#w15_1",{color:"#ffffff"},16.76);
+tl.set("#w15_2",{color:"#FFC233"},16.76);
+tl.set("#w16_0",{color:"#FFC233"},16.94);
+tl.set("#w16_0",{color:"#ffffff"},17.12);
+tl.set("#w16_1",{color:"#FFC233"},17.12);
+tl.set("#w16_1",{color:"#ffffff"},17.30);
+tl.set("#w16_2",{color:"#FFC233"},17.30);
+tl.set("#w17_0",{color:"#FFC233"},17.72);
+tl.set("#w17_0",{color:"#ffffff"},17.96);
+tl.set("#w17_1",{color:"#FFC233"},17.96);
+tl.set("#w17_1",{color:"#ffffff"},18.38);
+tl.set("#w17_2",{color:"#FFC233"},18.38);
+tl.set("#w18_0",{color:"#FFC233"},18.60);
+tl.set("#w18_0",{color:"#ffffff"},18.86);
+tl.set("#w18_1",{color:"#FFC233"},18.86);
+tl.set("#w19_0",{color:"#FFC233"},19.52);
+tl.set("#w19_0",{color:"#ffffff"},19.78);
+tl.set("#w19_1",{color:"#FFC233"},19.78);
+tl.set("#w19_1",{color:"#ffffff"},20.16);
+tl.set("#w19_2",{color:"#FFC233"},20.16);
+tl.set("#w20_0",{color:"#FFC233"},20.64);
+tl.set("#w20_0",{color:"#ffffff"},20.84);
+tl.set("#w20_1",{color:"#FFC233"},20.84);
+tl.set("#w20_1",{color:"#ffffff"},21.14);
+tl.set("#w20_2",{color:"#FFC233"},21.14);
+tl.set("#w21_0",{color:"#FFC233"},21.42);
+tl.set("#w22_0",{color:"#FFC233"},21.76);
+tl.set("#w22_0",{color:"#ffffff"},21.94);
+tl.set("#w22_1",{color:"#FFC233"},21.94);
+tl.set("#w23_0",{color:"#FFC233"},22.86);
+tl.set("#w23_0",{color:"#ffffff"},23.08);
+tl.set("#w23_1",{color:"#FFC233"},23.08);
+tl.set("#w23_1",{color:"#ffffff"},23.48);
+tl.set("#w23_2",{color:"#FFC233"},23.48);
+tl.set("#w24_0",{color:"#FFC233"},23.82);
+tl.set("#w25_0",{color:"#FFC233"},24.94);
+tl.set("#w25_0",{color:"#ffffff"},25.34);
+tl.set("#w25_1",{color:"#FFC233"},25.34);
+tl.set("#w25_1",{color:"#ffffff"},25.56);
+tl.set("#w25_2",{color:"#FFC233"},25.56);
+tl.set("#w26_0",{color:"#FFC233"},26.56);
+tl.set("#w26_0",{color:"#ffffff"},26.90);
+tl.set("#w26_1",{color:"#FFC233"},26.90);
+tl.set("#w26_1",{color:"#ffffff"},27.22);
+tl.set("#w26_2",{color:"#FFC233"},27.22);
+tl.set("#w27_0",{color:"#FFC233"},27.74);
+tl.set("#w27_0",{color:"#ffffff"},27.98);
+tl.set("#w27_1",{color:"#FFC233"},27.98);
+tl.set("#w27_1",{color:"#ffffff"},28.18);
+tl.set("#w27_2",{color:"#FFC233"},28.18);
+tl.set("#w28_0",{color:"#FFC233"},28.70);
+tl.set("#w28_0",{color:"#ffffff"},29.14);
+tl.set("#w28_1",{color:"#FFC233"},29.14);
+tl.set("#w28_1",{color:"#ffffff"},29.34);
+tl.set("#w28_2",{color:"#FFC233"},29.34);
+tl.set("#w29_0",{color:"#FFC233"},29.52);
+tl.set("#w29_0",{color:"#ffffff"},29.80);
+tl.set("#w29_1",{color:"#FFC233"},29.80);
+tl.set("#w30_0",{color:"#FFC233"},30.48);
+tl.set("#w30_0",{color:"#ffffff"},30.70);
+tl.set("#w30_1",{color:"#FFC233"},30.70);
+tl.set("#w30_1",{color:"#ffffff"},30.96);
+tl.set("#w30_2",{color:"#FFC233"},30.96);
+tl.set("#w31_0",{color:"#FFC233"},31.48);
+tl.set("#w31_0",{color:"#ffffff"},31.78);
+tl.set("#w31_1",{color:"#FFC233"},31.78);
+tl.set("#w31_1",{color:"#ffffff"},32.14);
+tl.set("#w31_2",{color:"#FFC233"},32.14);
+tl.set("#w32_0",{color:"#FFC233"},32.42);
+tl.set("#w32_0",{color:"#ffffff"},32.70);
+tl.set("#w32_1",{color:"#FFC233"},32.70);
+tl.set("#w33_0",{color:"#FFC233"},33.44);
+tl.set("#w33_0",{color:"#ffffff"},33.84);
+tl.set("#w33_1",{color:"#FFC233"},33.84);
+tl.set("#w33_1",{color:"#ffffff"},34.26);
+tl.set("#w33_2",{color:"#FFC233"},34.26);
+tl.set("#w34_0",{color:"#FFC233"},34.44);
+tl.set("#w34_0",{color:"#ffffff"},34.90);
+tl.set("#w34_1",{color:"#FFC233"},34.90);
+tl.set("#w34_1",{color:"#ffffff"},35.16);
+tl.set("#w34_2",{color:"#FFC233"},35.16);
+tl.set("#w35_0",{color:"#FFC233"},35.76);
+tl.set("#w35_0",{color:"#ffffff"},35.96);
+tl.set("#w35_1",{color:"#FFC233"},35.96);
+tl.set("#w36_0",{color:"#FFC233"},36.80);
+tl.set("#w36_0",{color:"#ffffff"},37.30);
+tl.set("#w36_1",{color:"#FFC233"},37.30);
+tl.set("#w36_1",{color:"#ffffff"},37.48);
+tl.set("#w36_2",{color:"#FFC233"},37.48);
+tl.set("#w37_0",{color:"#FFC233"},37.64);
+tl.set("#w38_0",{color:"#FFC233"},38.60);
+tl.set("#w38_0",{color:"#ffffff"},38.84);
+tl.set("#w38_1",{color:"#FFC233"},38.84);
+tl.set("#w39_0",{color:"#FFC233"},39.26);
+tl.set("#w39_0",{color:"#ffffff"},39.50);
+tl.set("#w39_1",{color:"#FFC233"},39.50);
+tl.set("#w39_1",{color:"#ffffff"},39.72);
+tl.set("#w39_2",{color:"#FFC233"},39.72);
+tl.set("#w40_0",{color:"#FFC233"},39.88);
+tl.set("#w40_0",{color:"#ffffff"},39.98);
+tl.set("#w40_1",{color:"#FFC233"},39.98);
+tl.set("#w40_1",{color:"#ffffff"},40.16);
+tl.set("#w40_2",{color:"#FFC233"},40.16);
+tl.set("#w41_0",{color:"#FFC233"},40.84);
+tl.set("#w41_0",{color:"#ffffff"},41.06);
+tl.set("#w41_1",{color:"#FFC233"},41.06);
+tl.set("#w41_1",{color:"#ffffff"},41.20);
+tl.set("#w41_2",{color:"#FFC233"},41.20);
+tl.set("#w42_0",{color:"#FFC233"},41.40);
+tl.set("#w43_0",{color:"#FFC233"},42.52);
+tl.set("#w43_0",{color:"#ffffff"},43.08);
+tl.set("#w43_1",{color:"#FFC233"},43.08);
+tl.set("#w43_1",{color:"#ffffff"},43.38);
+tl.set("#w43_2",{color:"#FFC233"},43.38);
+tl.set("#w44_0",{color:"#FFC233"},43.60);
+tl.set("#w44_0",{color:"#ffffff"},43.88);
+tl.set("#w44_1",{color:"#FFC233"},43.88);
+tl.set("#w45_0",{color:"#FFC233"},44.84);
+tl.set("#w45_0",{color:"#ffffff"},45.08);
+tl.set("#w45_1",{color:"#FFC233"},45.08);
+tl.set("#w45_1",{color:"#ffffff"},45.44);
+tl.set("#w45_2",{color:"#FFC233"},45.44);
+tl.set("#w46_0",{color:"#FFC233"},45.76);
+tl.set("#w47_0",{color:"#FFC233"},46.32);
+tl.set("#w47_0",{color:"#ffffff"},46.36);
+tl.set("#w47_1",{color:"#FFC233"},46.36);
+tl.set("#w47_1",{color:"#ffffff"},46.60);
+tl.set("#w47_2",{color:"#FFC233"},46.60);
+tl.set("#w48_0",{color:"#FFC233"},46.92);
+tl.set("#w48_0",{color:"#ffffff"},47.10);
+tl.set("#w48_1",{color:"#FFC233"},47.10);
+tl.set("#w48_1",{color:"#ffffff"},47.42);
+tl.set("#w48_2",{color:"#FFC233"},47.42);
+tl.set("#w49_0",{color:"#FFC233"},48.12);
+tl.set("#w49_0",{color:"#ffffff"},48.26);
+tl.set("#w49_1",{color:"#FFC233"},48.26);
+tl.set("#w49_1",{color:"#ffffff"},48.46);
+tl.set("#w49_2",{color:"#FFC233"},48.46);
+tl.set("#w50_0",{color:"#FFC233"},48.78);
+tl.set("#w50_0",{color:"#ffffff"},48.98);
+tl.set("#w50_1",{color:"#FFC233"},48.98);
+window.__timelines["main"] = tl;
+</script></body></html>
