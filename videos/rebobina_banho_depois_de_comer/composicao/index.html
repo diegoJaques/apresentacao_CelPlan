@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<title>Rebobina — nada de piscina</title><script src="gsap.min.js"></script><style>
+@font-face{font-family:"M";font-weight:900;src:url(assets/fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:"M";font-weight:700;src:url(assets/fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:"J";font-weight:700;src:url(assets/fonts/jetbrains-mono-latin-700-normal.woff2)}
+body{margin:0;background:#120c07}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#120c07;font-family:"M";font-weight:900;color:#fff}
+.abs{position:absolute}.J{font-family:"J"}.scene{position:absolute;inset:0}
+.ovl{position:absolute;inset:0;z-index:4}.vid{position:absolute;object-fit:cover}
+.shadeT{left:0;right:0;top:0;height:520px;background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,0))}
+.shadeB{left:0;right:0;bottom:0;height:900px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85))}
+.red{color:#FF5C4C}.gold{color:#FFD45C}
+.t{left:30px;right:30px;text-align:center;text-transform:uppercase;line-height:1.02;white-space:nowrap;text-shadow:0 8px 26px rgba(0,0,0,.9)}
+.soft{font-weight:900}
+.chipC{left:50%;transform:translateX(-50%);font-family:"J";font-weight:700;font-size:44px;background:#FFD45C;color:#1a1208;padding:12px 26px;border-radius:10px;white-space:nowrap}
+.paperBg{inset:0;background:radial-gradient(ellipse at 50% 30%,#f6ead2,#d9c39b 80%)}
+.doc{left:120px;right:120px;top:260px;height:700px;background:#fffaf0;border-radius:6px;box-shadow:0 30px 70px rgba(60,40,10,.35);padding:56px 50px;transform:rotate(-2deg);color:#2a2116}
+.dt{font-size:44px;color:#2a2116}.ds{font-size:24px;color:#7a6a52;margin-top:10px}
+.ln{height:18px;background:#e7dcc6;border-radius:9px;margin-top:34px;width:92%}.ln.s{width:64%}
+.q{margin-top:44px;font-size:30px;line-height:1.4;color:#5a4a33}
+.cnt{left:50%;transform:translateX(-50%);top:1000px;width:620px;text-align:center;background:#2a2116;border-radius:18px;padding:20px 0}
+.cl{font-size:30px;color:#d9c39b}.cv{font-size:120px;color:#FFD45C;line-height:1.15;margin-top:8px}
+.stamp{left:50%;margin-left:-280px;width:560px;top:520px;text-align:center;font-size:170px;color:#D63A2A;border:14px solid #D63A2A;border-radius:24px;transform:rotate(-12deg);background:rgba(255,250,240,.6)}
+.polaroid{left:150px;top:260px;width:780px;padding:30px 30px 120px;background:#fbf7ee;box-shadow:0 40px 90px rgba(0,0,0,.7)}
+.polaroid img{display:block;width:720px;height:900px;object-fit:cover}
+.pc{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:44px;color:#4a3b28}
+.vhs{inset:0;z-index:7;pointer-events:none}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.10) 0 2px,rgba(0,0,0,0) 2px 5px);mix-blend-mode:multiply}
+.rec{position:absolute;left:44px;top:48px;font-size:34px;color:#fff;background:rgba(0,0,0,.55);padding:4px 12px;border-radius:6px;text-shadow:0 0 8px rgba(0,0,0,.8)}
+.date{position:absolute;right:44px;top:48px;font-size:34px;color:#FFD45C;background:rgba(0,0,0,.55);padding:4px 12px;border-radius:6px;text-shadow:0 0 8px rgba(0,0,0,.8)}
+#caps{position:absolute;left:30px;right:30px;top:1380px;height:200px;z-index:6}
+.capg{position:absolute;left:0;right:0;top:0;text-align:center}
+.capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:72px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.9)}
+</style></head>
+<body><div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="37.80">
+<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="37.80" data-track-index="10" data-volume="1"></audio><video id="v_hook" class="clip vid" src="assets/clips/hook.webm" data-start="0.00" data-duration="3.90" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_sit" class="clip vid" src="assets/clips/sit.webm" data-start="3.90" data-duration="2.60" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_clock" class="clip vid" src="assets/clips/clock.webm" data-start="6.50" data-duration="3.70" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_mom" class="clip vid" src="assets/clips/mom.webm" data-start="17.90" data-duration="4.90" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_close" class="clip vid" src="assets/clips/close.webm" data-start="22.80" data-duration="5.10" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><video id="v_fim" class="clip vid" src="assets/clips/fim.webm" data-start="32.27" data-duration="5.53" data-track-index="5" muted playsinline style="left:0;top:0;width:1080px;height:1920px"></video><audio id="a_c" src="assets/audio/cigarras.wav" data-start="0" data-duration="19.00" data-track-index="15" data-volume="0.18"></audio><audio id="a_p" src="assets/audio/piano.wav" data-start="17.90" data-duration="19.90" data-track-index="16" data-volume="0.32"></audio><audio id="fx0" src="assets/audio/whump.wav" data-start="17.26" data-duration="0.50" data-track-index="11" data-volume="0.5"></audio>
+<div id="hk" class="clip ovl" data-start="0.00" data-duration="3.90" data-track-index="8"><div class="abs shadeT"></div><div class="abs shadeB"></div>
+<div class="abs t" style="top:150px;font-size:80px">ACABOU DE<br>ALMOÇAR?</div>
+<div class="abs t big" style="top:1180px;font-size:96px"><span class="red">NADA DE<br>PISCINA!</span></div></div><div id="o2" class="clip ovl" data-start="6.50" data-duration="3.70" data-track-index="8"><div id="clk" class="abs chipC" style="top:230px">⏱ <span id="hh">0:00</span> DE ESPERA</div></div><section id="sc3" class="clip scene" data-start="10.20" data-duration="7.70" data-track-index="2">
+<div class="abs paperBg"></div>
+<div id="doc" class="abs doc">
+ <div class="J dt">REVISÃO CIENTÍFICA</div>
+ <div class="J ds">Cruz Vermelha americana · conselho científico</div>
+ <div class="ln"></div><div class="ln s"></div><div class="ln"></div><div class="ln s"></div><div class="ln"></div>
+ <div class="J q">"comer antes de nadar não é fator de risco<br>para afogamento"</div>
+</div>
+<div id="cnt" class="abs cnt" data-layout-allow-overlap><div class="J cl" data-layout-allow-overlap>CASOS ENCONTRADOS</div><div id="cn" class="cv" data-layout-allow-overlap>137</div></div>
+<div id="mito" class="abs stamp" data-layout-allow-overlap>MITO</div>
+</section><div id="o4" class="clip ovl" data-start="17.90" data-duration="4.90" data-track-index="8"><div class="abs shadeB"></div><div id="ent" class="abs t soft" style="top:1080px;font-size:72px">ENTENDIAM<br><span class="gold">DE VOCÊ</span></div></div><section id="sc6" class="clip scene" data-start="27.90" data-duration="4.37" data-track-index="2">
+<div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 40%,#3b2a1a,#120c07 75%)"></div>
+<div id="pol" class="abs polaroid"><img src="assets/img/foto.jpg"><div class="J pc">verão de 96</div></div>
+</section><div id="hk2" class="clip ovl" data-start="35.60" data-duration="2.20" data-track-index="8"><div class="abs shadeT"></div><div class="abs shadeB"></div>
+<div class="abs t" style="top:150px;font-size:80px">ACABOU DE<br>ALMOÇAR?</div>
+<div class="abs t big" style="top:1180px;font-size:96px"><span class="red">NADA DE<br>PISCINA!</span></div></div><div id="vhs" class="abs vhs"><div class="scan"></div>
+<div class="J rec">▶ PLAY</div><div class="J date">JAN 14 1996</div></div>
+<div id="caps"><div id="cg3" class="clip capg" data-start="3.94" data-duration="0.88" data-track-index="20"><span id="w3_0">Toda</span><span id="w3_1">criança</span><span id="w3_2">dos</span></div><div id="cg4" class="clip capg" data-start="4.82" data-duration="1.16" data-track-index="20"><span id="w4_0">anos</span><span id="w4_1">90</span><span id="w4_2">ouviu</span></div><div id="cg5" class="clip capg" data-start="5.98" data-duration="0.58" data-track-index="20"><span id="w5_0">isso</span></div><div id="cg6" class="clip capg" data-start="6.56" data-duration="0.96" data-track-index="20"><span id="w6_0">Duas</span><span id="w6_1">horas</span><span id="w6_2">sentado</span></div><div id="cg7" class="clip capg" data-start="7.52" data-duration="1.02" data-track-index="20"><span id="w7_0">na</span><span id="w7_1">borda</span></div><div id="cg8" class="clip capg" data-start="8.54" data-duration="0.82" data-track-index="20"><span id="w8_0">olhando</span><span id="w8_1">os</span><span id="w8_2">primos</span></div><div id="cg9" class="clip capg" data-start="9.36" data-duration="0.88" data-track-index="20"><span id="w9_0">brincarem</span></div><div id="cg10" class="clip capg" data-start="10.24" data-duration="1.00" data-track-index="20"><span id="w10_0">Anos</span><span id="w10_1">depois</span></div><div id="cg11" class="clip capg" data-start="11.24" data-duration="0.86" data-track-index="20"><span id="w11_0">a</span><span id="w11_1">Cruz</span><span id="w11_2">Vermelha</span></div><div id="cg12" class="clip capg" data-start="12.10" data-duration="1.28" data-track-index="20"><span id="w12_0">revisou</span><span id="w12_1">os</span><span id="w12_2">estudos</span></div><div id="cg13" class="clip capg" data-start="13.38" data-duration="0.86" data-track-index="20"><span id="w13_0">e</span><span id="w13_1">não</span><span id="w13_2">achou</span></div><div id="cg14" class="clip capg" data-start="14.24" data-duration="0.76" data-track-index="20"><span id="w14_0">nenhum</span><span id="w14_1">caso</span><span id="w14_2">de</span></div><div id="cg15" class="clip capg" data-start="15.00" data-duration="1.20" data-track-index="20"><span id="w15_0">afogamento</span><span id="w15_1">por</span><span id="w15_2">nadar</span></div><div id="cg16" class="clip capg" data-start="16.20" data-duration="1.06" data-track-index="20"><span id="w16_0">depois</span><span id="w16_1">de</span><span id="w16_2">comer</span></div><div id="cg17" class="clip capg" data-start="17.26" data-duration="1.10" data-track-index="20"><span id="w17_0">Era</span><span id="w17_1">mito</span></div><div id="cg18" class="clip capg" data-start="18.36" data-duration="0.40" data-track-index="20"><span id="w18_0">Mas</span><span id="w18_1">sabe</span><span id="w18_2">de</span></div><div id="cg19" class="clip capg" data-start="18.76" data-duration="0.92" data-track-index="20"><span id="w19_0">uma</span><span id="w19_1">coisa?</span></div><div id="cg20" class="clip capg" data-start="19.68" data-duration="0.78" data-track-index="20"><span id="w20_0">Mãe</span><span id="w20_1">e</span><span id="w20_2">vó</span></div><div id="cg21" class="clip capg" data-start="20.46" data-duration="0.96" data-track-index="20"><span id="w21_0">nunca</span><span id="w21_1">entenderam</span><span id="w21_2">de</span></div><div id="cg22" class="clip capg" data-start="21.42" data-duration="0.78" data-track-index="20"><span id="w22_0">ciência</span></div><div id="cg23" class="clip capg" data-start="22.20" data-duration="1.34" data-track-index="20"><span id="w23_0">Entendiam</span><span id="w23_1">de</span><span id="w23_2">você</span></div><div id="cg24" class="clip capg" data-start="23.54" data-duration="0.98" data-track-index="20"><span id="w24_0">Aquelas</span><span id="w24_1">duas</span><span id="w24_2">horas</span></div><div id="cg25" class="clip capg" data-start="24.52" data-duration="0.54" data-track-index="20"><span id="w25_0">eram</span><span id="w25_1">só</span><span id="w25_2">o</span></div><div id="cg26" class="clip capg" data-start="25.06" data-duration="0.72" data-track-index="20"><span id="w26_0">jeito</span><span id="w26_1">delas</span><span id="w26_2">de</span></div><div id="cg27" class="clip capg" data-start="25.78" data-duration="1.20" data-track-index="20"><span id="w27_0">te</span><span id="w27_1">manter</span><span id="w27_2">perto</span></div><div id="cg28" class="clip capg" data-start="26.98" data-duration="1.08" data-track-index="20"><span id="w28_0">e</span><span id="w28_1">seguro</span></div><div id="cg29" class="clip capg" data-start="28.06" data-duration="1.18" data-track-index="20"><span id="w29_0">Hoje</span><span id="w29_1">muita</span><span id="w29_2">gente</span></div><div id="cg30" class="clip capg" data-start="29.24" data-duration="1.22" data-track-index="20"><span id="w30_0">daria</span><span id="w30_1">tudo</span><span id="w30_2">pra</span></div><div id="cg31" class="clip capg" data-start="30.46" data-duration="0.80" data-track-index="20"><span id="w31_0">ouvir</span><span id="w31_1">aquela</span><span id="w31_2">bronca</span></div><div id="cg32" class="clip capg" data-start="31.26" data-duration="0.82" data-track-index="20"><span id="w32_0">de</span><span id="w32_1">novo</span></div><div id="cg33" class="clip capg" data-start="32.08" data-duration="1.12" data-track-index="20"><span id="w33_0">E</span><span id="w33_1">sem</span><span id="w33_2">perceber</span></div><div id="cg34" class="clip capg" data-start="33.20" data-duration="0.56" data-track-index="20"><span id="w34_0">quem</span><span id="w34_1">grita</span><span id="w34_2">na</span></div><div id="cg35" class="clip capg" data-start="33.76" data-duration="0.78" data-track-index="20"><span id="w35_0">beira</span><span id="w35_1">da</span><span id="w35_2">piscina</span></div><div id="cg36" class="clip capg" data-start="34.54" data-duration="1.06" data-track-index="20"><span id="w36_0">agora</span><span id="w36_1">é</span><span id="w36_2">você</span></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#hk .big",{scale:1},{scale:1.06,duration:.3,yoyo:true,repeat:5,ease:"sine.inOut"},0.1);
+tl.fromTo("#clk",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},6.60);
+(()=>{const o={v:0};tl.to(o,{v:120,duration:2.6,ease:"power1.inOut",onUpdate:()=>{const v=o.v;document.querySelector("#hh").textContent=`${Math.floor(v/60)}:${String(Math.round(v%60)).padStart(2,"0")}`}},6.90);})();
+tl.fromTo("#doc",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},10.30);
+tl.set("#cnt",{opacity:0},0);
+tl.set("#mito",{opacity:0},0);
+tl.fromTo("#cnt",{opacity:0,y:50},{opacity:1,y:0,duration:0.5,ease:"power3.out"},13.50);
+(()=>{const o={v:137};tl.to(o,{v:0,duration:2.2,ease:"power1.inOut",onUpdate:()=>{const v=o.v;document.querySelector("#cn").textContent=Math.round(v)}},13.70);})();
+tl.fromTo("#mito",{opacity:0,scale:2.6},{opacity:1,scale:1,duration:.2,ease:"power4.out"},17.26);
+tl.set("#ent",{opacity:0},0);
+tl.fromTo("#ent",{opacity:0},{opacity:1,duration:0.6},22.20);
+tl.fromTo("#pol",{opacity:0,y:80,rotation:-8,scale:1.1},{opacity:1,y:0,rotation:-3,scale:1,duration:1.4,ease:"power2.out"},28.00);
+tl.to("#pol",{scale:1.06,duration:2.97,ease:"none"},29.40);
+tl.fromTo("#pol img",{filter:"saturate(1)"},{filter:"saturate(.35)",duration:3.5,ease:"none"},28.20);
+tl.set("#hk2 .big",{opacity:0},0);
+tl.set("#hk2 .big",{opacity:1},36.9);
+tl.fromTo(".scan",{backgroundPositionY:"0px"},{backgroundPositionY:"2268px",duration:37.8,ease:"none"},0);
+tl.set("#w3_0",{color:"#FFD45C"},3.94);
+tl.set("#w3_0",{color:"#ffffff"},4.38);
+tl.set("#w3_1",{color:"#FFD45C"},4.38);
+tl.set("#w3_1",{color:"#ffffff"},4.64);
+tl.set("#w3_2",{color:"#FFD45C"},4.64);
+tl.set("#w4_0",{color:"#FFD45C"},4.82);
+tl.set("#w4_0",{color:"#ffffff"},5.20);
+tl.set("#w4_1",{color:"#FFD45C"},5.20);
+tl.set("#w4_1",{color:"#ffffff"},5.52);
+tl.set("#w4_2",{color:"#FFD45C"},5.52);
+tl.set("#w5_0",{color:"#FFD45C"},5.98);
+tl.set("#w6_0",{color:"#FFD45C"},6.56);
+tl.set("#w6_0",{color:"#ffffff"},6.94);
+tl.set("#w6_1",{color:"#FFD45C"},6.94);
+tl.set("#w6_1",{color:"#ffffff"},7.20);
+tl.set("#w6_2",{color:"#FFD45C"},7.20);
+tl.set("#w7_0",{color:"#FFD45C"},7.52);
+tl.set("#w7_0",{color:"#ffffff"},7.84);
+tl.set("#w7_1",{color:"#FFD45C"},7.84);
+tl.set("#w8_0",{color:"#FFD45C"},8.54);
+tl.set("#w8_0",{color:"#ffffff"},8.84);
+tl.set("#w8_1",{color:"#FFD45C"},8.84);
+tl.set("#w8_1",{color:"#ffffff"},8.98);
+tl.set("#w8_2",{color:"#FFD45C"},8.98);
+tl.set("#w9_0",{color:"#FFD45C"},9.36);
+tl.set("#w10_0",{color:"#FFD45C"},10.24);
+tl.set("#w10_0",{color:"#ffffff"},10.70);
+tl.set("#w10_1",{color:"#FFD45C"},10.70);
+tl.set("#w11_0",{color:"#FFD45C"},11.24);
+tl.set("#w11_0",{color:"#ffffff"},11.32);
+tl.set("#w11_1",{color:"#FFD45C"},11.32);
+tl.set("#w11_1",{color:"#ffffff"},11.54);
+tl.set("#w11_2",{color:"#FFD45C"},11.54);
+tl.set("#w12_0",{color:"#FFD45C"},12.10);
+tl.set("#w12_0",{color:"#ffffff"},12.40);
+tl.set("#w12_1",{color:"#FFD45C"},12.40);
+tl.set("#w12_1",{color:"#ffffff"},12.72);
+tl.set("#w12_2",{color:"#FFD45C"},12.72);
+tl.set("#w13_0",{color:"#FFD45C"},13.38);
+tl.set("#w13_0",{color:"#ffffff"},13.48);
+tl.set("#w13_1",{color:"#FFD45C"},13.48);
+tl.set("#w13_1",{color:"#ffffff"},13.72);
+tl.set("#w13_2",{color:"#FFD45C"},13.72);
+tl.set("#w14_0",{color:"#FFD45C"},14.24);
+tl.set("#w14_0",{color:"#ffffff"},14.68);
+tl.set("#w14_1",{color:"#FFD45C"},14.68);
+tl.set("#w14_1",{color:"#ffffff"},14.86);
+tl.set("#w14_2",{color:"#FFD45C"},14.86);
+tl.set("#w15_0",{color:"#FFD45C"},15.00);
+tl.set("#w15_0",{color:"#ffffff"},15.64);
+tl.set("#w15_1",{color:"#FFD45C"},15.64);
+tl.set("#w15_1",{color:"#ffffff"},15.82);
+tl.set("#w15_2",{color:"#FFD45C"},15.82);
+tl.set("#w16_0",{color:"#FFD45C"},16.20);
+tl.set("#w16_0",{color:"#ffffff"},16.38);
+tl.set("#w16_1",{color:"#FFD45C"},16.38);
+tl.set("#w16_1",{color:"#ffffff"},16.62);
+tl.set("#w16_2",{color:"#FFD45C"},16.62);
+tl.set("#w17_0",{color:"#FFD45C"},17.26);
+tl.set("#w17_0",{color:"#ffffff"},17.58);
+tl.set("#w17_1",{color:"#FFD45C"},17.58);
+tl.set("#w18_0",{color:"#FFD45C"},18.36);
+tl.set("#w18_0",{color:"#ffffff"},18.54);
+tl.set("#w18_1",{color:"#FFD45C"},18.54);
+tl.set("#w18_1",{color:"#ffffff"},18.66);
+tl.set("#w18_2",{color:"#FFD45C"},18.66);
+tl.set("#w19_0",{color:"#FFD45C"},18.76);
+tl.set("#w19_0",{color:"#ffffff"},19.06);
+tl.set("#w19_1",{color:"#FFD45C"},19.06);
+tl.set("#w20_0",{color:"#FFD45C"},19.68);
+tl.set("#w20_0",{color:"#ffffff"},19.98);
+tl.set("#w20_1",{color:"#FFD45C"},19.98);
+tl.set("#w20_1",{color:"#ffffff"},20.06);
+tl.set("#w20_2",{color:"#FFD45C"},20.06);
+tl.set("#w21_0",{color:"#FFD45C"},20.46);
+tl.set("#w21_0",{color:"#ffffff"},20.96);
+tl.set("#w21_1",{color:"#FFD45C"},20.96);
+tl.set("#w21_1",{color:"#ffffff"},21.28);
+tl.set("#w21_2",{color:"#FFD45C"},21.28);
+tl.set("#w22_0",{color:"#FFD45C"},21.42);
+tl.set("#w23_0",{color:"#FFD45C"},22.20);
+tl.set("#w23_0",{color:"#ffffff"},22.64);
+tl.set("#w23_1",{color:"#FFD45C"},22.64);
+tl.set("#w23_1",{color:"#ffffff"},22.98);
+tl.set("#w23_2",{color:"#FFD45C"},22.98);
+tl.set("#w24_0",{color:"#FFD45C"},23.54);
+tl.set("#w24_0",{color:"#ffffff"},23.90);
+tl.set("#w24_1",{color:"#FFD45C"},23.90);
+tl.set("#w24_1",{color:"#ffffff"},24.32);
+tl.set("#w24_2",{color:"#FFD45C"},24.32);
+tl.set("#w25_0",{color:"#FFD45C"},24.52);
+tl.set("#w25_0",{color:"#ffffff"},24.82);
+tl.set("#w25_1",{color:"#FFD45C"},24.82);
+tl.set("#w25_1",{color:"#ffffff"},24.92);
+tl.set("#w25_2",{color:"#FFD45C"},24.92);
+tl.set("#w26_0",{color:"#FFD45C"},25.06);
+tl.set("#w26_0",{color:"#ffffff"},25.42);
+tl.set("#w26_1",{color:"#FFD45C"},25.42);
+tl.set("#w26_1",{color:"#ffffff"},25.68);
+tl.set("#w26_2",{color:"#FFD45C"},25.68);
+tl.set("#w27_0",{color:"#FFD45C"},25.78);
+tl.set("#w27_0",{color:"#ffffff"},25.94);
+tl.set("#w27_1",{color:"#FFD45C"},25.94);
+tl.set("#w27_1",{color:"#ffffff"},26.58);
+tl.set("#w27_2",{color:"#FFD45C"},26.58);
+tl.set("#w28_0",{color:"#FFD45C"},26.98);
+tl.set("#w28_0",{color:"#ffffff"},27.28);
+tl.set("#w28_1",{color:"#FFD45C"},27.28);
+tl.set("#w29_0",{color:"#FFD45C"},28.06);
+tl.set("#w29_0",{color:"#ffffff"},28.62);
+tl.set("#w29_1",{color:"#FFD45C"},28.62);
+tl.set("#w29_1",{color:"#ffffff"},28.98);
+tl.set("#w29_2",{color:"#FFD45C"},28.98);
+tl.set("#w30_0",{color:"#FFD45C"},29.24);
+tl.set("#w30_0",{color:"#ffffff"},29.82);
+tl.set("#w30_1",{color:"#FFD45C"},29.82);
+tl.set("#w30_1",{color:"#ffffff"},30.28);
+tl.set("#w30_2",{color:"#FFD45C"},30.28);
+tl.set("#w31_0",{color:"#FFD45C"},30.46);
+tl.set("#w31_0",{color:"#ffffff"},30.76);
+tl.set("#w31_1",{color:"#FFD45C"},30.76);
+tl.set("#w31_1",{color:"#ffffff"},31.02);
+tl.set("#w31_2",{color:"#FFD45C"},31.02);
+tl.set("#w32_0",{color:"#FFD45C"},31.26);
+tl.set("#w32_0",{color:"#ffffff"},31.54);
+tl.set("#w32_1",{color:"#FFD45C"},31.54);
+tl.set("#w33_0",{color:"#FFD45C"},32.08);
+tl.set("#w33_0",{color:"#ffffff"},32.18);
+tl.set("#w33_1",{color:"#FFD45C"},32.18);
+tl.set("#w33_1",{color:"#ffffff"},32.64);
+tl.set("#w33_2",{color:"#FFD45C"},32.64);
+tl.set("#w34_0",{color:"#FFD45C"},33.20);
+tl.set("#w34_0",{color:"#ffffff"},33.40);
+tl.set("#w34_1",{color:"#FFD45C"},33.40);
+tl.set("#w34_1",{color:"#ffffff"},33.62);
+tl.set("#w34_2",{color:"#FFD45C"},33.62);
+tl.set("#w35_0",{color:"#FFD45C"},33.76);
+tl.set("#w35_0",{color:"#ffffff"},33.96);
+tl.set("#w35_1",{color:"#FFD45C"},33.96);
+tl.set("#w35_1",{color:"#ffffff"},34.10);
+tl.set("#w35_2",{color:"#FFD45C"},34.10);
+tl.set("#w36_0",{color:"#FFD45C"},34.54);
+tl.set("#w36_0",{color:"#ffffff"},34.72);
+tl.set("#w36_1",{color:"#FFD45C"},34.72);
+tl.set("#w36_1",{color:"#ffffff"},35.00);
+tl.set("#w36_2",{color:"#FFD45C"},35.00);
+window.__timelines["main"] = tl;
+</script></body></html>
