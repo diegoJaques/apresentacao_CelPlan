@@ -16,7 +16,7 @@ Canal sugerido: Consta nos Autos (o público de casos aéreos — Varig, Andes, 
 
 ## Roteiro longo (ElevenLabs v3)
 
-[sério] Hoje, a aviação brasileira perdeu a voz que mais explicou ela pra gente.
+[sério] Hoje, o Brasil perdeu o aviador que mais explicou a aviação pra gente.
 
 [sério] Lito Sousa morreu nesta quinta-feira, aos cinquenta e nove anos.
 
@@ -38,7 +38,8 @@ Canal sugerido: Consta nos Autos (o público de casos aéreos — Varig, Andes, 
 
 [emocionado] E ele fez outra coisa, mais silenciosa. Milhares de pessoas escreveram pra ele contando que perderam o medo de voar. Gente que nunca tinha visitado a mãe em outro estado. Gente que embarcou pela primeira vez aos sessenta anos. Por causa de vídeos de um mecânico.
 
-[narrativo] Mais de três milhões e setecentos mil inscritos. E, em dois mil e vinte e um, quarenta anos depois de entrar no primeiro hangar, ele finalmente tirou o brevê. Virou piloto.
+[narrativo] Mais de três milhões e setecentos mil inscritos. E, em dois mil e vinte e um, quarenta anos depois de entrar no primeiro hangar, ele finalmente tirou o brevê.
+[emocionado] O menino do hangar tinha virado aviador.
 
 [pausa]
 
@@ -78,7 +79,8 @@ Pista de aeroporto ao pôr do sol, vista de trás de uma cerca baixa. Um jato co
 
 ## Título, descrição e comentário fixado
 **Títulos**
-- Longo: "Lito Sousa (1967–2026): o mecânico que ensinou o Brasil a voar sem medo"
+- Longo: "O Aviador: Lito Sousa (1967–2026) ✈️"
+- Alternativa: "O Aviador que ensinou o Brasil a voar sem medo | Lito Sousa (1967–2026)"
 - Short: "Obrigado, Lito. Bom voo. ✈️"
 
 **Descrição**
