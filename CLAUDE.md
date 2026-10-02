@@ -30,7 +30,7 @@ Pautas sugeridas em 02/10/2026: Gol 1907 (20 anos, 29/09), TAM 402 (30 anos em 3
 - Antes de uma "Parte 2", reler a Parte 1.
 
 ## Ferramentas disponíveis
-- **ElevenLabs** (conector MCP): narração direto daqui. Voz usada: "Carlos - Resonant & Majestic Storyteller" (`NFmEzNOony1UsEJGXLth`). Gasta créditos dele.
+- **ElevenLabs** (conector MCP): narração direto daqui. **Gerar só 1 take** (`generations_count: 1`); outro só se ele pedir. Voz usada: "Carlos - Resonant & Majestic Storyteller" (`NFmEzNOony1UsEJGXLth`). Gasta créditos dele.
 - **MCP de métricas do YouTube** (próprio, gratuito): `ferramentas/youtube_mcp/` + `.mcp.json`. Lê as variáveis
   `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN_<CANAL>` (ambiente "Default"). Ferramentas: canais, resumo_canal,
   videos_recentes, top_videos, metricas_video, retencao_video. Tokens: rebobina=Rebobina, sotrechaco=Só Trechaço, bonus=Fase Bônus; consta=Consta nos Autos (conta diegojaques@aplicaiaapp.com). Ao iniciar, confirmar qual canal cada token abre.
