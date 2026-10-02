@@ -45,7 +45,14 @@ def token(canal):
         raise RuntimeError(f'Canal "{canal}" sem refresh token. Canais configurados: {canais() or "nenhum"}')
     body = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'],
                                    'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
-    r = json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', body, timeout=20))
+    try:
+        r = json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', body, timeout=20))
+    except urllib.error.HTTPError as e:
+        err = json.loads(e.read() or b'{}').get('error', str(e.code))
+        dica = {'unauthorized_client': 'o refresh token foi gerado com OUTRO cliente OAuth (ex.: o cliente padrão do Playground). Gere de novo com "Use your own OAuth credentials".',
+                'invalid_client': 'YT_CLIENT_ID ou YT_CLIENT_SECRET incorretos.',
+                'invalid_grant': 'refresh token revogado ou expirado. Gere de novo no Playground.'}.get(err, '')
+        raise RuntimeError(f'Token do canal "{canal}" recusado pelo Google ({err}). {dica}')
     _tokens[canal] = r['access_token']
     return r['access_token']
 
