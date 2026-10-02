@@ -21,6 +21,7 @@ Rebobina: piscina depois de comer (emocional), ET enterrado, vó do espelho; car
 Pautas sugeridas em 02/10/2026: Gol 1907 (20 anos, 29/09), TAM 402 (30 anos em 31/10), Dia das Crianças (12/10).
 
 ## Regras de roteiro (aprendidas com ele)
+- **Antes de qualquer roteiro, título ou capa, ler `REGRAS_DE_RETENCAO.md`** (dois ganchos, ano fora da fala, escada, final seco).
 - Voz **firme desde o 1º segundo**; nada de sussurro na abertura (ele não gosta de sussurro).
 - **1º quadro = capa** e mostra quem/o que a 1ª frase cita.
 - Virada a cada 4–5s; final em loop, sem CTA falado (a pergunta vai no comentário fixado).
