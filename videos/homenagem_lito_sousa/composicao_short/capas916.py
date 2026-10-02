@@ -7,8 +7,8 @@ body{margin:0}#c{position:relative;width:1080px;height:1920px;overflow:hidden;ba
 %s</style></head><body><div id="c">%s</div></body></html>'''
 V={}
 # A — rosto grande + frase
-V['A']=('''.ph{left:-268px;top:400px;height:1150px;filter:contrast(1.05) saturate(1.05)}
-.sh{inset:0;background:linear-gradient(#07090df0 0%,#07090d80 26%,#07090d00 42%,#07090d00 58%,#07090dcc 78%,#07090d 100%)}''',
+V['A']=('''.ph{left:-268px;top:400px;height:1150px;filter:contrast(1.05) saturate(1.05);-webkit-mask-image:linear-gradient(#000 0%,#000 70%,transparent 100%)}
+.sh{display:none}''',
 '''<img class="a ph" src="assets/img/retrato.jpg"><div class="a sh"></div>
 <div class="a" style="left:0;right:0;top:150px;text-align:center"><span class="tag">1967 – 2026</span></div>
 <div class="a" style="left:40px;right:40px;top:250px;text-align:center;font-size:118px;line-height:1">LITO SOUSA</div>
