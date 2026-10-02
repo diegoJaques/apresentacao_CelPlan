@@ -73,3 +73,11 @@ Referência para as próximas produções (preferências e aprendizados já vali
 - Antes de roteirizar uma "Parte 2", assistir/transcrever a Parte 1 inteira. Erro real: a Parte 2 do Varig 967 repetia a Parte 1 (comandante, Paris, cebolas, 153 quadros). A Parte 2 deve responder ao gancho que a Parte 1 deixou aberto.
 - Se a frase de abertura cita uma pessoa ("esse comandante"), o primeiro quadro precisa mostrar essa pessoa.
 - No Consta nos Autos, imagens com cara de real (fotos de época, ilustrações realistas) seguram mais que gráficos vetoriais.
+
+## Pipeline atual (out/2026)
+- Áudio: `silenceremove` (stop_duration ~0.3) + `atempo` 1.03–1.12; transcrição Whisper local (transformers.js) para legendas palavra a palavra (máx. 3 palavras no Short, 4 no 16:9).
+- HyperFrames: lint pede `autoAlpha` para esconder, `immediateRender:false` em fromTo tardios, nunca animar autoAlpha no próprio clip (usar um div interno), overlays com z-index, `data-layout-allow-overlap` em sobreposições intencionais.
+- Clipes de vídeo em webm VP9; fotos ampliadas 2x (lanczos) + fundo desfocado pré-gerado com ffmpeg.
+- Trilha: piano original sintetizado em numpy (sem direitos autorais).
+- Short a partir de vídeo longo: recortar trechos da narração por timestamps e remontar em 9:16 (ex.: `videos/homenagem_lito_sousa/composicao_short/`).
+- Capas 9:16: texto fora da faixa inferior e da lateral direita (botões do TikTok/Shorts).
