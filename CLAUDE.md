@@ -4,7 +4,10 @@ Diego Jaques cria conteúdo com IA. Responda em **português**. Este repositóri
 capas e ferramentas. Detalhes técnicos e aprendizados: `videos/NOTAS_PRODUCAO.md` (leia antes de produzir).
 
 ## Canais
-- **Consta nos Autos** (YouTube): casos reais, acidentes aéreos, mistérios. Melhor fórmula: assunto famoso + detalhe que parece errado, 35–60s.
+- **Consta nos Autos** (YouTube): casos reais, acidentes aéreos, mistérios. ~96% do tráfego vem do feed de Shorts.
+  Retenção (out/2026, `videos/analises/retencao_consta.md`): títulos-afirmação com protagonista + paradoxo (~76% assistido) vencem
+  títulos "Por que…?" (~50%). A queda principal é entre 4s e 8s: a 2ª frase deve abrir nova pergunta, contexto só depois de 10s.
+  45–70s funciona se houver virada a cada 4–5s. Terminar na frase que liga ao início (loop), sem respiro final.
 - **Rebobina** (YouTube): nostalgia anos 80/90. O que mais funciona: memórias de família e regras da casa
   (festas de aniversário 2.364 views, internet discada 1.893, domingo 1.514, telefone com cadeado 1.178, TV saía do ar 1.105).
   Explicação de objeto vai mal (caneta na fita K7 180, queimar filme 0, vó do espelho 16). Tom emocional (vó, mãe, saudade) funciona.
