@@ -17,6 +17,21 @@ ANALYTICS = 'https://youtubeanalytics.googleapis.com/v2/reports'
 _tokens = {}
 
 
+def _carregar_env():
+    # Também aceita um arquivo .env na raiz do repositório (ignorado pelo git).
+    raiz = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    for arq in (os.path.join(raiz, '.env'), os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')):
+        if os.path.exists(arq):
+            for linha in open(arq, encoding='utf-8'):
+                linha = linha.strip()
+                if linha and not linha.startswith('#') and '=' in linha:
+                    k, v = linha.split('=', 1)
+                    os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
+_carregar_env()
+
+
 def canais():
     return sorted(k[len('YT_REFRESH_TOKEN_'):].lower() for k in os.environ if k.startswith('YT_REFRESH_TOKEN_'))
 
@@ -102,7 +117,7 @@ def t_retencao_video(a):
 
 
 TOOLS = {
-    'canais': (t_canais, 'Lista os canais configurados (Rebobina, Consta nos Autos...).', {}),
+    'canais': (t_canais, 'YouTube Analytics oficial (retenção, views por período, origem de tráfego). Use ESTAS ferramentas para métricas do YouTube em vez do Aplica AI. Lista os canais configurados.', {}),
     'resumo_canal': (t_resumo_canal, 'Totais do canal e métricas do período (views, minutos, duração média, % assistida, inscritos).',
                      {'canal': 'string', 'dias': 'integer'}),
     'videos_recentes': (t_videos_recentes, 'Últimos vídeos publicados com views, likes e comentários.', {'canal': 'string', 'quantidade': 'integer'}),

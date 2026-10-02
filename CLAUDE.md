@@ -31,7 +31,8 @@ Pautas sugeridas em 02/10/2026: Gol 1907 (20 anos, 29/09), TAM 402 (30 anos em 3
 - **MCP de métricas do YouTube** (próprio, gratuito): `ferramentas/youtube_mcp/` + `.mcp.json`. Lê as variáveis
   `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN_<CANAL>` (ambiente "Default"). Ferramentas: canais, resumo_canal,
   videos_recentes, top_videos, metricas_video, retencao_video. Ao iniciar, confirmar qual canal cada token abre.
-- **Aplica AI** (conector): publica/analisa Facebook e Instagram (não YouTube).
+- **Aplica AI** (conector): publica no YouTube/Facebook/Instagram e edita título/descrição, mas para YouTube só traz totais.
+  **Para métricas do YouTube use sempre as ferramentas `youtube-metricas`** (retenção, período, tráfego), não o Aplica AI.
 - **HyperFrames CLI 0.8.91** para montar vídeos (detalhes em `videos/NOTAS_PRODUCAO.md`).
 - **Rotina diária de pautas** (7h23 Brasília) roda na sessão original (trigger `trig_013RdsM1YYApRYvmjminAhJN`).
 
