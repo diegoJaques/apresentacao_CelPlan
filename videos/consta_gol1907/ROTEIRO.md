@@ -45,6 +45,27 @@ Pista militar isolada cortando a floresta amazônica ao entardecer, vista de lad
 **Veo 2 — floresta em silêncio**
 Vista aérea alta e lenta sobre a floresta amazônica intocada ao entardecer, névoa entre as copas, um rio fino ao fundo. Câmera drone avança devagar, nível, 10 segundos. Luz dourada suave, tom solene. Som: vento e pássaros distantes. NÃO INCLUIR: destroços, fumaça, fogo, aviões, pessoas, texto, logotipos.
 
+## Prompt profissional — Veo 1 (abertura / capa) — versão detalhada
+FORMATO: vídeo vertical 9:16, 8 segundos, 24 fps, fotorrealista, estilo documentário cinematográfico (câmera de cinema digital, lente 35 mm equivalente, f/2.8, grão de filme sutil, sem efeito de videogame).
+
+CENÁRIO: pista de pouso militar de asfalto escuro, isolada, cortando a floresta amazônica. Faixas brancas desgastadas na borda da pista. Dos dois lados, mata tropical densa e alta (30 m), copas irregulares. Ao fundo, colinas baixas cobertas de floresta e neblina leve entre as árvores. Nenhuma construção, torre, placa ou veículo visível.
+
+AERONAVE: um jato executivo branco genérico, porte médio (~26 m), fuselagem lisa toda branca sem nenhuma pintura, sem logotipo, sem bandeira, sem letras e sem números. Dois motores montados na traseira da fuselagem, cauda em T, asas enflechadas com winglets verticais nas pontas. DANO: o winglet da asa ESQUERDA está rasgado — a metade de cima arrancada, bordas de alumínio retorcidas e serrilhadas, um pedaço de painel pendurado, arranhões escuros ao longo da ponta da asa. A asa direita está intacta.
+
+ILUMINAÇÃO: fim de tarde, sol a 5° acima do horizonte, vindo de trás e à esquerda da câmera (contraluz lateral). Luz dourada quente (~3.200 K) desenhando um contorno brilhante (rim light) no topo da fuselagem e na borda do winglet danificado. Sombras longas projetadas na pista em direção à direita do quadro. Céu em degradê: laranja perto do horizonte, azul-acinzentado no alto, nuvens altas finas iluminadas por baixo. Umidade no ar e leve tremulação de calor sobre o asfalto. Exposição correta no avião; sem estouro de brancos.
+
+CÂMERA: posicionada à esquerda da pista, a 1 m de altura do chão, olhando para a pista em ângulo de 3/4. O avião passa da DIREITA para a ESQUERDA do quadro, de modo que a asa esquerda danificada fique virada para a câmera e bem visível. Movimento: travelling lateral suave acompanhando o avião (como se a câmera estivesse num carro paralelo à pista), sem tremores.
+
+AÇÃO SEGUNDO A SEGUNDO:
+- 0–1s: o jato já está a poucos metros do chão, trem de pouso baixado, ocupando o centro do quadro; o winglet rasgado em primeiro plano, nítido.
+- 1–2s: as rodas traseiras tocam o asfalto, pequena nuvem de fumaça branca dos pneus.
+- 2–5s: a roda do nariz baixa; o avião corre pela pista desacelerando; a câmera acompanha, mantendo a asa danificada no terço inferior do quadro.
+- 5–8s: o avião desacelera mais; um pedaço solto do winglet balança levemente com o vento; o sol baixo brilha nas bordas metálicas rasgadas. O plano termina com o avião ainda em movimento lento, centralizado.
+
+SOM: ronco dos motores reduzindo, chiado dos pneus no toque, vento, cigarras e pássaros da floresta ao fundo. Sem música, sem voz.
+
+NÃO INCLUIR: pessoas, rostos, pilotos visíveis nas janelas, logotipos, letras, números, matrícula, bandeiras, pinturas de companhia aérea, fogo, explosões, fumaça preta, destroços na pista, outros aviões, prédios, veículos, câmera tremida, câmera lenta exagerada, cortes de cena.
+
 ## Publicação
 - **Título:** O jatinho bateu num Boeing a 11 mil metros… e pousou inteiro ✈️
 - **Descrição:** 29 de setembro de 2006: um Legacy e o voo 1907 da Gol se chocaram a 37 mil pés sobre o Mato Grosso. 154 pessoas morreram no Boeing; o jatinho pousou numa base no meio da selva. Há 20 anos. #ConstaNosAutos #Gol1907 #aviacao #shorts
