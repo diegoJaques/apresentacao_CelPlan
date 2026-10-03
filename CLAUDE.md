@@ -1,7 +1,8 @@
 # Contexto do Diego (lido automaticamente em toda sessão)
 
 Diego Jaques cria conteúdo com IA. Responda em **português**. Este repositório guarda vídeos, roteiros,
-capas e ferramentas. Detalhes técnicos e aprendizados: `videos/NOTAS_PRODUCAO.md` (leia antes de produzir).
+capas e ferramentas. Detalhes técnicos: **`videos/MANUAL_TECNICO.md`** (pipeline completo, leia antes de produzir), ferramentas em `ferramentas/video/`,
+aprendizados em `videos/NOTAS_PRODUCAO.md`.
 
 ## Canais
 - **Consta nos Autos** (YouTube): casos reais, acidentes aéreos, mistérios. ~96% do tráfego vem do feed de Shorts.

@@ -1,25 +1,28 @@
 # Notas de produção de vídeos
 
+> Manual técnico completo e atualizado: `videos/MANUAL_TECNICO.md`.
+
 Referência para as próximas produções (preferências e aprendizados já validados).
 
 ## Canais
 - **Consta nos Autos**: casos reais, arquivos e mistérios (ex.: Operação Prato). Estética de dossiê: papel datilografado, carimbos, tarjas, granulação de filme.
-- **Rebobina**: games antigos / nostalgia. Estética retrô planejada: VHS, pixel art, chiado de TV, efeito de rebobinar.
+- **Rebobina**: nostalgia anos 80/90 (memórias de família, regras da casa, homenagens). Estética retrô planejada: VHS, pixel art, chiado de TV, efeito de rebobinar.
 - Vídeo sobre HyperFrames (IA na edição): perfil pessoal / LinkedIn.
 
 ## Narração no ElevenLabs (validado)
 - Modelo usado: **Eleven v4**.
 - **Marcadores de emoção em PORTUGUÊS funcionam** (em inglês não funcionaram na interface do usuário).
-  Exemplos testados: `[intrigado]`, `[pausa]`, `[pausa longa]`, `[sussurra]`, `[curioso]`, `[dramático]`,
+  Exemplos testados: `[intrigado]`, `[pausa]`, `[pausa longa]`, `[curioso]`, `[dramático]`,
   `[surpreso]`, `[sarcástico]`, `[ri]`, `[sério]`, `[misterioso]`, `[animado]`, `[pensativo]`, `[amigável]`.
 - v4 **não** aceita SSML (`<break time>`); usar `[pausa]` / `[pausa longa]`.
 - v4 não tem sliders de Style/Speed; só **Stability** (usar ~35–45%).
 - Boas práticas de texto: números por extenso, reticências para suspense, MAIÚSCULAS para ênfase,
   linguagem falada ("pra", "aí", "comenta aqui"), no máximo um marcador por frase.
-- Gerar 2–3 tomadas e escolher a melhor; regenerar só o parágrafo com problema.
+- **Gerar só 1 take** (`generations_count: 1`); regenerar só o parágrafo com problema e só se o Diego pedir.
+- Nada de `[sussurra]`: ele não gosta; voz firme desde o 1º segundo.
 
 ## Vídeo (técnica)
-- Formato Shorts/Reels: 1080×1920, 25 fps.
+- Formato Shorts/Reels: 1080×1920, **no máximo 60s**.
 - Composição em HTML animada por tempo (`window.seek(t)`), renderizada quadro a quadro com Playwright/Chromium
   e montada com ffmpeg. Legendas palavra a palavra a partir da transcrição (Whisper local).
 - Avatar: fundo cinza-claro pode ser recortado (`cutout.py`) e colocado sobre cenários da história.
