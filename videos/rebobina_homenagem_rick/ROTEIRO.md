@@ -62,3 +62,42 @@ Fontes: Wikipedia PT/EN, Terra, CNN Brasil, Correio Braziliense, Forbes, Diário
 
 ## Fotos
 Ele vai mandar fotos reais: show, capa de disco, a dupla. Não gerar rosto do Rick com IA.
+
+## Entregas
+- `rick_homenagem.mp4`: vídeo longo 16:9, 1m58s.
+- `rick_short.mp4`: Short 9:16, 1m10s, cortado do longo.
+- Capas: `capa_youtube.jpg` (16:9) e `capa_tiktok.jpg` (9:16).
+- Fotos reais enviadas pelo Diego, que não vão para o repositório (direitos de terceiros).
+- Imagens de apoio geradas por IA em `imagens_ia/`, sem rostos.
+- Fotos dos destroços **não usadas**, por respeito às famílias e por serem fotos de agências.
+
+## Publicação — vídeo longo (PT)
+- **Título:** Do bar, aos 9 anos, a 10 milhões de discos: obrigado, Rick
+- **Descrição:**
+  > Geraldo Antônio de Carvalho, o Rick, da dupla Rick & Renner, nasceu em Porto Nacional (TO), cresceu em Brasília e começou cantando em bar aos 9 anos. Com Renner, vendeu mais de 10 milhões de discos e fez o Brasil cantar "Ela é demais", "Filha" e "Nos bairros onde morei".
+  >
+  > Em 21 de setembro de 2026, o helicóptero em que ele viajava caiu na serra de Santa Catarina. Em memória das cinco vítimas:
+  > - Rick, cantor;
+  > - Bruno Avelar, empresário e escritor, criador do Poder do Network;
+  > - Paulo Soares, videomaker;
+  > - Antônio Roberto Nóbrega Araújo, piloto;
+  > - Leopoldo de Barros Teixeira, copiloto.
+  >
+  > Fontes: Terra, CNN Brasil, Correio Braziliense, SBT News, NDmais, Itatiaia, Jovem Pan.
+  > Imagens de apoio geradas por IA; fotos de Rick de divulgação.
+  >
+  > #Rebobina #RickERenner #Rick #Homenagem #Sertanejo
+- **Comentário fixado:** Qual música de Rick & Renner marcou a sua família?
+- **Tags:** rick e renner, rick, homenagem rick, ela é demais, mil vezes cantarei, filha, nos bairros onde morei, sertanejo anos 90, rebobina, nostalgia
+
+## Publicação — Short (PT)
+- **Título:** Começou cantando em bar aos 9 anos… e vendeu 10 milhões de discos
+- **Descrição:**
+  > Homenagem a Rick, da dupla Rick & Renner, e às outras quatro vítimas do acidente de 21/09:
+  > - Bruno Avelar;
+  > - Paulo Soares;
+  > - Antônio Roberto Nóbrega Araújo;
+  > - Leopoldo de Barros Teixeira.
+  >
+  > #RickERenner #Homenagem #Rebobina #shorts
+- **Comentário fixado:** Qual música de Rick & Renner marcou a sua família?
