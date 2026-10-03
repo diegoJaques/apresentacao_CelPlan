@@ -65,7 +65,7 @@ Ele vai mandar fotos reais: show, capa de disco, a dupla. Não gerar rosto do Ri
 
 ## Entregas
 - `rick_homenagem.mp4`: vídeo longo 16:9, 1m58s.
-- `rick_short.mp4`: Short 9:16, 1m10s, cortado do longo.
+- `rick_short.mp4`: Short 9:16, 59s (até 60s), cortado do longo.
 - Capas: `capa_youtube.jpg` (16:9) e `capa_tiktok.jpg` (9:16).
 - Fotos reais enviadas pelo Diego, que não vão para o repositório (direitos de terceiros).
 - Imagens de apoio geradas por IA em `imagens_ia/`, sem rostos.

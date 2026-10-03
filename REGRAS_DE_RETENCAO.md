@@ -14,11 +14,12 @@
 3. **O 1º quadro cumpre a promessa do título:** mostra quem ou o que a 1ª frase cita.
 4. **Título extremo:** afirmação com protagonista e paradoxo. Sem "Por que…?" e sem "Parte 1".
 5. **A escada:** cada frase ou mensagem aumenta o que está em jogo, e a maior fica para o fim.
-6. **Final seco:** termina até 0,8s depois da última fala, ligando ao início (loop). Sem respiro e sem CTA falado.
-7. **Séries em duas partes** quando a história pede. A Parte 1 termina num corte, com o cartão "continua" por ~2,8s.
-8. **Variar o cenário e o visual** a cada 4–5s.
-9. **Escrever 2 ou 3 ganchos por vídeo** e escolher o melhor. Nunca ir com o primeiro.
-10. **Medir cedo:** na 1ª hora, comparar o vídeo com os 9 anteriores ("1 de 10" do Studio, MCP `youtube-metricas`).
+6. **Short com no máximo 60s** (regra do Diego), mirando 45–59s.
+7. **Final seco:** termina até 0,8s depois da última fala, ligando ao início (loop). Sem respiro e sem CTA falado.
+8. **Séries em duas partes** quando a história pede. A Parte 1 termina num corte, com o cartão "continua" por ~2,8s.
+9. **Variar o cenário e o visual** a cada 4–5s.
+10. **Escrever 2 ou 3 ganchos por vídeo** e escolher o melhor. Nunca ir com o primeiro.
+11. **Medir cedo:** na 1ª hora, comparar o vídeo com os 9 anteriores ("1 de 10" do Studio, MCP `youtube-metricas`).
 
 Vídeos longos (16:9):
 - Mesmas regras 1–3.

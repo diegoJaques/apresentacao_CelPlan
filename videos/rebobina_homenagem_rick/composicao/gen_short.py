@@ -1,8 +1,8 @@
 # Rebobina — Short da homenagem a Rick. 9:16 1080x1920. Gera index.html.
 import json, html, re
 P = '/tmp/claude-0/-home-user-apresentacao-CelPlan/6f5535a1-b72a-5aa0-be2c-9dda47ff067c/scratchpad/hf/rks/'
-NARR = 70.55
-END = 70.55
+NARR = 59.40
+END = 59.40
 
 raw = [(x['text'].strip(), x['timestamp'][0], x['timestamp'][1]) for x in json.load(open(P + 'words.json'))]
 FIX = {'Ricky': 'Rick &', 'Ranner.': 'Renner.', 'Nobregar': 'Nóbrega', 'Aujo': 'Araújo', 'Eixeira.': 'Teixeira.',
@@ -60,25 +60,23 @@ hide('#d1', '#d2'); up('#d1', 6.6); up('#d2', 9.1)
 A('tl.set("#d3n",{textContent:"2"},9.75);'); A('tl.set("#d3n",{textContent:"3"},10.15);')
 portrait('s2', 11.5, 14.75, 'rick_retrato', card('nm', 'RICK<small>RICK &amp; RENNER<br>1966 – 2026</small>', 'nm'))
 hide('#nm'); up('#nm', 11.7)
-photo('s3', 14.75, 22.7, 'r3', card('big', '"ELA É<br>DEMAIS"', 'h1') + card('pill', 'O ESTOURO NACIONAL · 1998', 'h2'), dark=.5)
-hide('#h1', '#h2'); pop('#h1', 14.9); fade('#h2', 15.8)
 TL = '<div class="abs tline">' + ''.join(f'<div id="m{i}" class="mk {c}"><b>{y}</b>{t}</div>' for i, (y, t, c) in enumerate(
     [('2010', 'SEPARAÇÃO', 'r'), ('2012', 'VOLTA', 'g'), ('2015', 'SEPARAÇÃO', 'r'), ('2018', 'VOLTA', 'g')])) + '</div>'
-photo('s4', 22.7, 37.25, 'r5', card('pill top', 'POR TRÁS DO PALCO', 'q1') + TL, dark=.6)
-hide('#q1', '#m0', '#m1', '#m2', '#m3'); up('#q1', 22.8)
-for i, t in enumerate([28.0, 33.0, 34.5, 36.2]): pop(f'#m{i}', t)
-photo('s5', 37.25, 41.95, 'r6', card('pill', 'SERRA CATARINENSE · 21.09.2026', 'se1'), dark=.4)
-hide('#se1'); fade('#se1', 37.9)
-NM = [('RICK', 'cantor', 41.95), ('BRUNO AVELAR', 'empresário e escritor', 44.2), ('PAULO SOARES', 'videomaker', 47.7),
-      ('ANTÔNIO ROBERTO NÓBREGA ARAÚJO', 'piloto', 49.3), ('LEOPOLDO DE BARROS TEIXEIRA', 'copiloto', 52.1)]
-scene('s6', 41.95, 59.15, '<div class="abs black"></div><div class="abs J mem">EM MEMÓRIA</div><img id="c5" class="abs cinco" src="assets/img/cinco_up.jpg">' +
+photo('s4', 14.75, 26.1, 'r5', card('pill top', 'POR TRÁS DO PALCO', 'q1') + TL, dark=.6)
+hide('#q1', '#m0', '#m1', '#m2', '#m3'); up('#q1', 14.85)
+for i, t in enumerate([16.85, 21.85, 23.35, 25.05]): pop(f'#m{i}', t)
+photo('s5', 26.1, 30.8, 'r6', card('pill', 'SERRA CATARINENSE · 21.09.2026', 'se1'), dark=.4)
+hide('#se1'); fade('#se1', 26.7)
+NM = [('RICK', 'cantor', 30.8), ('BRUNO AVELAR', 'empresário e escritor', 33.0), ('PAULO SOARES', 'videomaker', 36.5),
+      ('ANTÔNIO ROBERTO NÓBREGA ARAÚJO', 'piloto', 38.1), ('LEOPOLDO DE BARROS TEIXEIRA', 'copiloto', 40.9)]
+scene('s6', 30.8, 48.0, '<div class="abs black"></div><div class="abs J mem">EM MEMÓRIA</div><img id="c5" class="abs cinco" src="assets/img/cinco_up.jpg">' +
       '<div class="abs names">' + ''.join(f'<div id="n{i}"><b>{n}</b>{r}</div>' for i, (n, r, _) in enumerate(NM)) + '</div>')
-hide('#c5', *[f'#n{i}' for i in range(5)]); fade('#c5', 42.0, .8)
+hide('#c5', *[f'#n{i}' for i in range(5)]); fade('#c5', 30.85, .8)
 for i, (_, _, t) in enumerate(NM): up(f'#n{i}', t, .4, 15)
-photo('s7', 59.15, 66.55, 'r7', card('big', 'A MÚSICA<br>FICA', 'mf'), dark=.3)
-hide('#mf'); fade('#mf', 61.1, .6)
-portrait('s8', 66.55, END, 'rick_violao', HOOK('b'))
-hide('#bh1', '#bh2', '#btg'); fade('#bh1', 66.6, .3); fade('#btg', 66.6, .3)
+photo('s7', 48.0, 55.4, 'r7', card('big', 'A MÚSICA<br>FICA', 'mf'), dark=.3)
+hide('#mf'); fade('#mf', 50.0, .6)
+portrait('s8', 55.4, END, 'rick_violao', HOOK('b'))
+hide('#bh1', '#bh2', '#btg'); fade('#bh1', 55.45, .3); fade('#btg', 55.45, .3)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
          f'<audio id="a_m" src="assets/audio/piano.mp3" data-start="0" data-duration="{END:.2f}" data-track-index="11" data-volume="0.14"></audio>']
