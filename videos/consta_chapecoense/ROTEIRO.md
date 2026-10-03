@@ -53,5 +53,12 @@ Fontes: relatório final da Aerocivil (Colômbia); Wikipedia (LaMia Flight 2933)
 - Capas:
   - `capa_tiktok.jpg` para o TikTok;
   - `capa_short.jpg` para o YouTube, que é o 1º quadro do vídeo.
-- `imagens_ia/`: 7 imagens Seedream, cerca de 1.480 créditos. Sem destroços, sem rostos e sem escudos.
+- `imagens_ia/`: 8 imagens Seedream (i8 = avião sobre a mata com a pista acesa ao fundo, usada na capa e no gancho), cerca de 1.700 créditos. Sem destroços, sem rostos e sem escudos.
 - Para o longo com vários acidentes, este Short entra como um bloco.
+
+## Capa (v2)
+- Conceito: "A PISTA ESTAVA LOGO ALI".
+  - O avião aparece sobre a mata, com a pista acesa ao fundo e a tag "PISTA · < 20 KM".
+  - Uma trajetória tracejada desce rumo às árvores.
+  - Um marcador de combustível no E, e embaixo "ACABOU O COMBUSTÍVEL".
+- A imagem de um avião "caindo" é bloqueada pelos termos do ElevenLabs. A queda é sugerida com o quadro inclinado em 7° e a linha tracejada.

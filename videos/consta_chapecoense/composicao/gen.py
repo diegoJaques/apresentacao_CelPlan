@@ -50,13 +50,21 @@ def scene(id_, s, e, img, inner='', dark=.45, z=(1.0, 1.08), left=None):
     H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner">'
              f'<img id="{id_}_img" class="abs ph" style="left:{l}px" src="assets/img/{img}.jpg"><div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
     A(f'tl.fromTo("#{id_}_img",{{scale:{z[0]}}},{{scale:{z[1]},transformOrigin:"50% 50%",duration:{e-s:.2f},ease:"none",immediateRender:false}},{s:.2f});')
+def scene_capa(id_, s, e, inner):
+    H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner" style="background:#0a1626">'
+             f'<div class="abs rot"><img id="{id_}_img" class="abs" style="left:-564px;top:0;width:2300px;height:1294px" src="assets/img/i8.jpg"></div>'
+             f'<div class="abs fadecapa"></div>'
+             f'<svg class="abs" style="left:0;top:0" width="1080" height="1920"><path d="M760,690 C740,730 735,780 730,825" stroke="#FFC83D" stroke-width="7" fill="none"/><path d="M712,815 L730,850 L748,815 z" fill="#FFC83D"/>'
+             f'<path d="M600,1070 C680,1120 730,1170 765,1225" stroke="#FF2D20" stroke-width="9" stroke-dasharray="26 18" fill="none"/></svg>'
+             f'<div class="abs pista">PISTA · &lt; 20 KM</div>{inner}</div></section>')
+    A(f'tl.fromTo("#{id_}_img",{{scale:1}},{{scale:1.05,transformOrigin:"55% 45%",duration:{e-s:.2f},ease:"none",immediateRender:false}},{s:.2f});')
 def card(cls, txt, id_): return f'<div id="{id_}" class="abs {cls}">{txt}</div>'
 
-HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · VOO 2933', p + 'tg') + '<div class="abs ring"></div>' +
+HOOK = lambda p: (card('tag', 'O VOO DA CHAPECOENSE', p + 'tg') +
                   card('hk1', 'SEM <span class="y">COMBUSTÍVEL</span>', p + 'h1') + card('hk2', 'A MENOS DE 20 KM<br>DA PISTA', p + 'h2'))
 
 # 0 — gancho (1º quadro = capa: o avião sobre as montanhas)
-scene('s0', 0, 5.3, 'i1', HOOK('a'), dark=.3, z=(1.0, 1.06))
+scene_capa('s0', 0, 5.3, HOOK('a'))
 A('tl.fromTo("#ah2",{scale:1},{scale:1.12,duration:.25,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},3.0);')
 # 1 — 2º gancho: o piloto era dono
 scene('s1', 5.3, 10.6, 'i2', card('pill', 'O PILOTO QUE NÃO PAROU', 'p1') + card('big low', 'ERA DONO<br><span class="r">DA EMPRESA</span>', 'p2'), dark=.35)
@@ -93,7 +101,7 @@ hide('#v1', '#v2', '#v3'); slam('#v1', 40.1); fade('#v2', 41.6); up('#v3', 45.5)
 scene('s9', 46.6, 52.3, 'i7', card('pill', 'O ADVERSÁRIO PEDIU', 'c1') + card('big low', 'CAMPEÃ<br><span class="y">SEM ENTRAR<br>EM CAMPO</span>', 'c2'), dark=.35)
 hide('#c1', '#c2'); fade('#c1', 46.9); up('#c2', 50.0)
 # 10 — loop
-scene('s10', 52.3, END, 'i1', HOOK('b'), dark=.3, z=(1.0, 1.06))
+scene_capa('s10', 52.3, END, HOOK('b'))
 hide('#bh1', '#bh2', '#btg'); fade('#btg', 52.4, .2); up('#bh1', 53.6); slam('#bh2', 55.4)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
@@ -129,6 +137,9 @@ body{margin:0;background:#0a0c10}
 .huge .sm{display:block;font-size:90px;color:#FFC83D;letter-spacing:6px}
 .pill2{left:60px;right:60px;top:900px;text-align:center;font-family:"J";font-size:38px;line-height:1.5;color:#eee;background:rgba(0,0,0,.6);padding:14px 10px;border-radius:12px}
 .flash{inset:0;background:#fff}
+.rot{left:0;top:420px;width:1080px;height:1294px;transform:rotate(7deg);transform-origin:650px 600px}
+.fadecapa{inset:0;background:linear-gradient(#0a1626 0%,#0a1626 24%,rgba(10,22,38,0) 34%,rgba(10,22,38,0) 70%,#0a1626 86%)}
+.pista{left:640px;top:610px;font-family:"J";font-size:40px;color:#111;background:#FFC83D;padding:10px 18px;border-radius:10px;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.6)}
 #caps{position:absolute;left:40px;right:40px;top:1530px;height:220px;z-index:6}
 .capg{position:absolute;left:0;right:0;top:0;text-align:center}
 .capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:68px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.95)}
