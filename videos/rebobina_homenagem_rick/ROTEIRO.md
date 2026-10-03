@@ -19,7 +19,14 @@ Fontes: Wikipedia PT/EN, Terra, CNN Brasil, Correio Braziliense, Forbes, Diário
   - 2012: volta.
   - 2015: nova separação.
   - 2018: volta com a turnê "Seguir em Frente".
-- 21/09/2026: Rick morreu na queda de um helicóptero entre Porto Belo e São Joaquim (SC), em Urubici, aos 59 anos, com mais 4 pessoas. O CENIPA investiga, e o mau tempo é uma das hipóteses.
+- 21/09/2026: o helicóptero Bell 430 que ia de Porto Belo para São Joaquim (SC) caiu em Urubici. Rick tinha 59 anos. O CENIPA investiga, e o mau tempo é uma das hipóteses.
+- As 5 vítimas (fontes: SBT News, NDmais, Itatiaia, Folha Vitória):
+  - Rick (Geraldo Antônio de Carvalho), cantor;
+  - Bruno Avelar, empresário;
+  - Paulo Soares, videomaker;
+  - Antônio Roberto Nóbrega Araújo, piloto, de Acari (RN);
+  - Leopoldo de Barros Teixeira, copiloto, de São Paulo.
+- **Regra:** citar as 5 vítimas na narração e no cartão "Em memória".
 
 **1 fonte só (não usar na fala):**
 - Apoio de Zezé Di Camargo & Luciano no começo.
@@ -45,7 +52,9 @@ Fontes: Wikipedia PT/EN, Terra, CNN Brasil, Correio Braziliense, Forbes, Diário
 [sério] Cada um seguiu sozinho. Até que o público chamou de volta. E eles voltaram.
 [pausa] Separaram de novo. E, de novo, voltaram. Como se uma dupla sertaneja fosse, no fundo, uma família.
 [emocionado] Foram quase quarenta anos de música. Mais de dez milhões de discos.
-[sério] Em setembro, o helicóptero em que ele viajava caiu na serra de Santa Catarina. Rick tinha cinquenta e nove anos.
+[sério] Em setembro, o helicóptero em que ele viajava caiu na serra de Santa Catarina.
+[sério] Com ele estavam o empresário Bruno Avelar, o videomaker Paulo Soares, o piloto Antônio Roberto Nóbrega Araújo e o copiloto Leopoldo de Barros Teixeira.
+[emocionado] Cinco vidas. Cinco famílias. Rick tinha cinquenta e nove anos.
 [emocionado] O Brasil perdeu uma voz. Mas a música fica. Toda vez que alguém canta "Ela é demais" numa festa, ele está ali.
 [emocionado] O menino que começou cantando em bar, aos nove anos, em Brasília.
 
