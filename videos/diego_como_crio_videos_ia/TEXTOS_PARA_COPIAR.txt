@@ -1,0 +1,38 @@
+===== TÍTULO =====
+Como eu faço Shorts com IA que viralizam (11 mil views em 8h) — passo a passo, sem editor
+
+(alternativas: "Meu Short teve 11 mil views em 8 horas e eu não abri nenhum editor" / "A fórmula dos Shorts com IA que seguram 100% do público")
+
+===== DESCRIÇÃO =====
+Meu Short sobre o voo 402 da TAM passou de 11 mil visualizações em 8 horas, com duração média acima de 100%, e foi feito 100% com IA, sem gravar e sem abrir editor de vídeo. Neste vídeo eu mostro os 7 passos, com os números reais: como escolher o tema, a fórmula do roteiro (dois ganchos, escada e final em loop), a checagem de fatos, a voz no ElevenLabs, as imagens e os clipes do Gemini, a montagem em código com HyperFrames e Claude Code, e a publicação.
+
+Capítulos:
+0:00 Abertura
+0:11 Os números (11 mil views em 8h)
+0:48 Passo 1 – O tema: o detalhe impossível
+1:23 Passo 2 – O roteiro: 2 ganchos, escada e loop
+2:05 Passo 3 – Checar fatos em 2 fontes
+2:22 Passo 4 – A voz (ElevenLabs)
+2:44 Passo 5 – Imagens e clipes (Gemini)
+3:15 Passo 6 – Montagem em código (HyperFrames + Claude Code)
+3:48 Passo 7 – Publicação: título, capa e comentário
+4:09 Resumo e o próximo teste
+
+Ferramentas: ElevenLabs (voz clonada e imagens), Gemini (clipes de vídeo), HyperFrames (open source, HTML → MP4), Claude Code.
+Avatar e voz deste vídeo gerados com IA a partir de gravações minhas.
+
+#InteligenciaArtificial #YouTubeShorts #CriacaoDeConteudo #ElevenLabs #HyperFrames
+
+===== TAGS =====
+como fazer shorts com ia, shorts que viralizam, vídeo com ia, criar vídeo com ia, youtube shorts, elevenlabs, voz clonada, avatar ia, gemini veo, hyperframes, claude code, automação de vídeo, retenção youtube shorts, roteiro para shorts, criação de conteúdo com ia
+
+===== COMENTÁRIO FIXADO =====
+Quer os prompts e o roteiro completo do Short da TAM? Comenta "PROMPTS" aqui 👇
+
+===== LEGENDAS (CC) =====
+Enviar o arquivo como_crio_videos_ia.srt (Português).
+
+===== AO PUBLICAR =====
+- Canal: Diego Jaques. Categoria: Ciência e tecnologia (ou Educação).
+- Conteúdo alterado ou sintético: SIM (avatar e voz gerados por IA).
+- Tela final: "Inscrever-se" + vídeo dos bastidores do HyperFrames.
