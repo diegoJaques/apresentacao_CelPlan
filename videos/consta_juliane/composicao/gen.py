@@ -102,6 +102,20 @@ hide('#v1', '#v2'); up('#v1', 50.3); up('#v2', 51.7)
 vscene('s10', 54.7, END, 'v1', 0.0, card('quote2', '“SIGA A ÁGUA.”', 'z1'), dark=.45)
 hide('#z1'); slam('#z1', 57.3)
 
+# chamada visual para inscrição (sem narração): ~2,2s no meio, apontando para o botão real do app
+BELL = ('<svg viewBox="0 0 24 24" width="56" height="56"><path fill="#fff" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm7-6V11a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1z"/></svg>')
+def sub(t, p='sb'):
+    H.append(f'<div id="{p}" class="clip sub" data-start="{t:.2f}" data-duration="2.30" data-track-index="19">'
+             f'<div id="{p}b" class="subbtn"><span id="{p}i" class="bell">{BELL}</span>INSCREVER-SE</div>'
+             f'<div id="{p}r" class="ripple"></div><div class="subarrow">▼</div></div>')
+    A(f'tl.fromTo("#{p}",{{autoAlpha:0,x:-60}},{{autoAlpha:1,x:0,duration:.3,ease:"back.out(1.8)",immediateRender:false}},{t:.2f});')
+    A(f'tl.fromTo("#{p}i",{{rotation:0}},{{rotation:18,duration:.08,yoyo:true,repeat:7,ease:"none",transformOrigin:"50% 10%",immediateRender:false}},{t+.35:.2f});')
+    A(f'tl.fromTo("#{p}r",{{scale:.2,opacity:.9}},{{scale:1.6,opacity:0,duration:.5,ease:"power2.out",immediateRender:false}},{t+.9:.2f});')
+    A(f'tl.fromTo("#{p}b",{{scale:1}},{{scale:.9,duration:.1,yoyo:true,repeat:1,immediateRender:false}},{t+.9:.2f});')
+    A(f'tl.set("#{p}b",{{background:"#3a3a3a"}},{t+1.05:.2f});')
+    A(f'tl.to("#{p}",{{autoAlpha:0,duration:.25}},{t+2.0:.2f});')
+sub(31.8)
+
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
          f'<audio id="a_d" src="assets/audio/piano.wav" data-start="0" data-duration="{END:.2f}" data-track-index="11" data-volume="0.22"></audio>',
          '<audio id="a_i" src="assets/audio/impacto.wav" data-start="16.10" data-duration="1.40" data-track-index="12" data-volume="0.45"></audio>']
@@ -148,6 +162,11 @@ body{margin:0;background:#0a0c10}
 .capg{position:absolute;left:0;right:0;top:0;text-align:center}
 .capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:68px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.95)}
 .g{color:#3DDC84}
+.sub{position:absolute;left:50px;top:1300px;z-index:8}
+.subbtn{display:flex;align-items:center;gap:14px;font-family:"M";font-weight:900;font-size:50px;color:#fff;background:#FF0033;padding:16px 30px;border-radius:60px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.bell{display:inline-block;line-height:0}
+.ripple{position:absolute;left:150px;top:10px;width:110px;height:110px;border-radius:50%;border:8px solid #fff;opacity:0}
+.subarrow{font-size:54px;color:#fff;text-shadow:0 4px 12px #000;margin:6px 0 0 40px}
 .ring{left:270px;top:760px;width:540px;height:440px}
 .hk1{font-size:92px!important}.hk2{top:345px!important;font-size:84px!important}
 .pv{top:1150px;font-size:40px}.pv2{top:1180px;font-size:34px}

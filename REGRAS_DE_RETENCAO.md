@@ -26,3 +26,10 @@ Vídeos longos (16:9):
 - Abrir com o momento mais forte e só depois voltar ao início da história.
 - Virada ou pergunta nova a cada 30–45s.
 - Fechar ligando à abertura.
+
+Chamada para inscrição nos Shorts (ideia do Diego, 04/10/2026):
+- **Só visual, nunca na narração.** Botão vermelho "INSCREVER-SE" com sininho, toque de clique e seta para baixo, apontando para o botão real do app (embaixo à esquerda).
+- **~2,2s, no meio do vídeo**, logo depois de um pico de emoção (na Juliane: depois do "92 → 1 saiu viva", em 31,8s).
+- **Nunca nos primeiros 8s** (mata o gancho) **e nunca no fim** (quebra o loop).
+- O código é a função `sub(t)` em `videos/consta_juliane/composicao/gen.py`; copiar para os próximos.
+
