@@ -52,3 +52,9 @@ Fontes: Wikipedia (2001 Linate Airport runway collision); Il Post (08/10/2021); 
 
 ## v2 com Gemini (opcional)
 Prompts em `PROMPTS_GEMINI.txt`. Os clipes entram na abertura e no loop (sensor + luzes apagando) e na cena da corrida (35–41s).
+
+### v2 montada (04/10/2026)
+- `clipes/veo1_luzes.mp4`: as luzes da pista apagando e o jato surgindo na neblina. Entra na abertura (0–4,8s, as luzes apagam junto com "desligado"), na cena da neblina (8,8–12,1s, trecho 5–8,3s) e no loop final.
+- `clipes/veo2_corrida.mp4`: o jato de motores traseiros acelerando. Entra no "110 a bordo" (12,1–17s, trecho 5–9,9s) e nos 270 km/h (35,2–40,6s, do início).
+- O Gemini entregou os dois já na vertical (720×1280), então só foram ampliados para 1080×1920 e convertidos em webm VP9, sem recorte.
+- `capa_short.jpg`: quadro de 3,8s, com as luzes já apagadas e o jato ao fundo.

@@ -49,6 +49,11 @@ def scene(id_, s, e, img, inner='', dark=.45, z=(1.0, 1.08), left=None):
     H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner">'
              f'<img id="{id_}_img" class="abs ph" style="left:{l}px" src="assets/img/{img}.jpg"><div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
     A(f'tl.fromTo("#{id_}_img",{{scale:{z[0]}}},{{scale:{z[1]},transformOrigin:"50% 50%",duration:{e-s:.2f},ease:"none",immediateRender:false}},{s:.2f});')
+VMEDIA = []
+def vscene(id_, s, e, clip, ms, inner='', dark=.35):
+    VMEDIA.append(f'<video id="{id_}_v" class="clip vid" src="assets/clips/{clip}.webm" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-media-start="{ms:.2f}" data-track-index="1" muted playsinline></video>')
+    H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner">'
+             f'<div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
 def card(cls, txt, id_): return f'<div id="{id_}" class="abs {cls}">{txt}</div>'
 
 HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · LINATE', p + 'tg') + '<div class="abs ring"></div>' +
@@ -56,17 +61,16 @@ HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · LINATE', p + 'tg') + '<div cl
                   card('hk2', 'ESTAVA DESLIGADO', p + 'h2'))
 
 # 0 — gancho (1º quadro = capa: o sensor e as luzes da pista apagados)
-scene('s0', 0, 4.8, 'i1', HOOK('a'), dark=.35, z=(1.0, 1.05))
+vscene('s0', 0, 4.8, 'v1', 0.0, HOOK('a'), dark=.35)
 A('tl.fromTo("#ah2",{scale:1},{scale:1.12,duration:.25,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},3.4);')
 # 1 — 2º gancho: avisou onde estava, a torre não acreditou
 scene('s1', 4.8, 8.8, 'i2', card('radio', '📻 “ESTOU NO S4”', 'g1') + card('stamp', 'A TORRE NÃO<br>ACREDITOU', 'g2'), dark=.5, z=(1.12, 1.2))
 hide('#g1', '#g2'); pop('#g1', 5.9); slam('#g2', 7.6)
 # 2 — neblina em Milão (pan até o avião)
-scene('s2', 8.8, 12.1, 'i1', card('pill', 'MILÃO · LINATE · 08.10.2001', 'd1') + card('big low', 'NEBLINA<br><span class="y" style="font-size:72px">MENOS DE 100 M DE VISÃO</span>', 'd2'), dark=.35, z=(1.0, 1.0), left=-380)
-hide('#d1', '#d2'); fade('#d1', 9.0); up('#d2', 10.4)
-A('tl.fromTo("#s2_img",{x:0},{x:-1480,duration:3.3,ease:"power1.inOut",immediateRender:false},8.8);')
+vscene('s2', 8.8, 12.1, 'v1', 5.0, card('pill', 'MILÃO · LINATE · 08.10.2001', 'd1') + card('big', 'NEBLINA<br><span class="y" style="font-size:72px">MENOS DE 100 M DE VISÃO</span>', 'd2'), dark=.35)
+hide('#d1', '#d2'); fade('#d1', 9.0); up('#d2', 10.4, y=40)
 # 3 — o MD-87
-scene('s3', 12.1, 17.0, 'i4', card('pill', 'MD-87 · SAS', 'e1') + card('big', '110<br><span class="y" style="font-size:80px">A BORDO</span>', 'e2') + card('big low', 'MILÃO → COPENHAGUE', 'e3'), dark=.4, z=(1.0, 1.06))
+vscene('s3', 12.1, 17.0, 'v2', 5.0, card('pill', 'MD-87 · SAS', 'e1') + card('big', '110<br><span class="y" style="font-size:80px">A BORDO</span>', 'e2') + card('big lower', 'MILÃO → COPENHAGUE', 'e3'), dark=.4)
 hide('#e1', '#e2', '#e3'); fade('#e1', 12.3); slam('#e2', 14.4); up('#e3', 15.7)
 # 4 — o mapa: ordem R5, entrou no R6
 MAP = '''<svg id="map" class="abs" viewBox="0 0 1080 1100" style="left:0;top:300px;width:1080px;height:1100px">
@@ -95,7 +99,7 @@ PANEL = ('<div id="pn" class="abs panel">'
 scene('s6', 28.9, 35.2, 'i2', PANEL + card('al a2', '⚠ DISPARAVAM À TOA (ATÉ COM BICHO)', 'q3'), dark=.8, z=(1.15, 1.22))
 hide('#pr1', '#pr2', '#q3'); up('#pr1', 29.4); up('#pr2', 31.1); pop('#q3', 33.3)
 # 7 — acelera a 270 km/h
-scene('s7', 35.2, 40.6, 'i4', card('alt', '<div class="lab">VELOCIDADE</div><div class="num" id="spd">0 KM/H</div>', 'k1') + card('big low', 'SÓ VIRAM O JATINHO<br><span class="r">TARDE DEMAIS</span>', 'k2'), dark=.45, z=(1.0, 1.15))
+vscene('s7', 35.2, 40.6, 'v2', 0.0, card('alt', '<div class="lab">VELOCIDADE</div><div class="num" id="spd">0 KM/H</div>', 'k1') + card('big lower', 'SÓ VIRAM O JATINHO<br><span class="r">TARDE DEMAIS</span>', 'k2'), dark=.45)
 hide('#k2'); count('#spd', 35.8, 0, 270, 1.6, 'Math.round(v)+" KM/H"'); up('#k2', 38.1)
 # 8 — a batida (flash + tremor, sem imagem de destroço)
 scene('s8', 40.6, 46.9, 'i4', '<div id="fl" class="abs flash"></div>' + card('big', 'ARRANCOU<br><span class="r">UM MOTOR</span>', 'c1') + card('big low', 'SAIU DO CHÃO…<br><span class="y">E DESLIZOU ATÉ O GALPÃO</span>', 'c2'), dark=.6, z=(1.2, 1.3))
@@ -111,7 +115,7 @@ hide('#v1', '#v2'); slam('#v1', 47.1); fade('#v2', 49.2)
 scene('s10', 52.8, 56.4, 'i1', card('big', '25 ANOS', 'z1') + card('big low', 'O PIOR ACIDENTE<br><span class="y">AÉREO DA ITÁLIA</span>', 'z2'), dark=.55, z=(1.1, 1.15), left=-1860)
 hide('#z1', '#z2'); slam('#z1', 52.9); up('#z2', 54.3)
 # 11 — loop
-scene('s11', 56.4, END, 'i1', HOOK('b'), dark=.35, z=(1.0, 1.0))
+vscene('s11', 56.4, END, 'v1', 0.0, HOOK('b'), dark=.35)
 hide('#bh1', '#bh2', '#btg'); fade('#btg', 56.45, .2); up('#bh1', 56.5); slam('#bh2', 57.3)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
@@ -132,9 +136,10 @@ body{margin:0;background:#0a0c10}
 .tag{left:50%;transform:translateX(-50%);top:80px;white-space:nowrap;font-family:"J";font-size:30px;color:#FFC83D;letter-spacing:4px;background:rgba(0,0,0,.78);padding:8px 18px;border-radius:8px}
 .hk1{left:30px;right:30px;top:160px;text-align:center;font-size:84px;line-height:1.04;text-shadow:0 8px 30px #000}
 .hk2{left:20px;right:20px;top:445px;text-align:center;font-size:92px;line-height:1.02;color:#FF4B3E;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 8px 30px #000}
-.ring{left:70px;top:640px;width:680px;height:820px;border:14px solid #FF2D20;border-radius:50%;box-shadow:0 0 40px rgba(255,45,32,.85)}
+.ring{left:280px;top:820px;width:520px;height:700px;border:14px solid #FF2D20;border-radius:50%;box-shadow:0 0 40px rgba(255,45,32,.85)}
 .big{left:40px;right:40px;top:300px;text-align:center;font-size:110px;line-height:1.02;text-shadow:0 8px 30px #000}
-.big.low{top:1100px;font-size:84px}.big.top2{top:180px;font-size:80px}
+.big.low{top:1100px;font-size:84px}.big.lower{top:1250px;font-size:76px}
+.vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}.big.top2{top:180px;font-size:80px}
 .bigx{left:40px;right:40px;top:1240px;text-align:center;font-size:96px;line-height:1.02;text-shadow:0 8px 30px #000}
 .pill{left:50%;transform:translateX(-50%);top:220px;white-space:nowrap;font-family:"J";font-size:40px;color:#eee;background:rgba(0,0,0,.85);padding:12px 24px;border-radius:10px}
 .pbot{top:1340px;font-size:34px}
@@ -163,7 +168,7 @@ page = f'''<!doctype html>
 <html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <title>Linate</title><script src="gsap.min.js"></script><style>{CSS}</style></head>
 <body><div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{END:.2f}">
-{''.join(MEDIA)}
+{''.join(MEDIA)}{''.join(VMEDIA)}
 {''.join(H)}
 <div id="caps">{''.join(cap)}</div>
 </div>
