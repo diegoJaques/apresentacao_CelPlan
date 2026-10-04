@@ -129,6 +129,7 @@ Print do Studio (out/2026, ~2,5h após publicar):
 - **5,5 mil views em ~2,5h** (5 mil acima do habitual).
 - O YouTube marcou: **"está sendo mais compartilhado do que o normal"**.
 - Mesma curva do Gol: subida lenta no teste e depois uma 2ª onda forte por volta de 1h30–2h.
+- **79,2% continuaram assistindo** (20,8% deslizaram). O Gol tinha 77,3%, então o TAM 402 tem o melhor gancho do canal até agora. A retenção ainda não estava disponível no print.
 
 O que o TAM 402 repetiu do Gol (`videos/consta_tam402/`):
 - **Título-paradoxo com protagonista e número:** "Os pilotos lutaram contra o próprio avião… e perderam em 25 segundos".
