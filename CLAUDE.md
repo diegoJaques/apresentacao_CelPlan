@@ -20,7 +20,7 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
 Consta: Varig 967 (partes 1 e 2), Mamonas Assassinas, Harrison Okene, Andes (rádio), Violet Jessop, Yamaguchi, Operação Prato,
 homenagem **Lito Sousa "O Aviador"** (longo 16:9 + Short, `videos/homenagem_lito_sousa/`).
 Rebobina: piscina depois de comer (emocional), ET enterrado, vó do espelho; cartucho (roteiro em reserva).
-Pautas sugeridas em 02/10/2026: Gol 1907 (20 anos, 29/09), TAM 402 (30 anos em 31/10), Dia das Crianças (12/10).
+Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chapecoense, TAM 402 (Short pronto, publicar perto de 31/10). Pauta: Dia das Crianças (12/10).
 
 ## Regras de roteiro (aprendidas com ele)
 - **Antes de qualquer roteiro, título ou capa, ler `REGRAS_DE_RETENCAO.md`** (dois ganchos, ano fora da fala, escada, final seco).
