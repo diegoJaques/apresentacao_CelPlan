@@ -132,6 +132,9 @@ Print do Studio (out/2026, ~2,5h após publicar):
 - **79,2% continuaram assistindo** (20,8% deslizaram). O Gol tinha 77,3%, então o TAM 402 tem o melhor gancho do canal até agora. A retenção ainda não estava disponível no print.
 - **Duração média de 1:01 num vídeo de 56,6s, ou seja, ~108% assistido** (0:15 acima do habitual). Mais de 100% indica que muita gente reassistiu, o que confirma que **o loop funciona**: o final emenda na abertura e o vídeo recomeça sem a pessoa perceber.
 - **51,8 horas de exibição** em ~2,5h (49,8 acima do habitual). Só esse Short soma quase 1/3 das 161,7 h que o canal fez em 28 dias.
+- **Com ~8h: 11,0 mil views**, 9,2× mais que os outros Shorts, e marcado como "mais compartilhado". Feed dos Shorts 99,1%. Duração média 0:57 (~100%, 0:12 acima do habitual). 77,9% continuaram assistindo. **+31 inscritos** (0,3% das views); 99,8% do tempo veio de não inscritos.
+- Mesma curva em degraus do Gol: subida até ~6 mil em 3h, platô por ~3h e uma **3ª onda** depois de ~6h.
+- **Lição:** o Short atrai muita gente nova, mas converte pouco em inscrito. Para virar inscrito (e caminhar até 500/1.000), é preciso repetir o formato com frequência (série reconhecível) e ligar cada Short a um longo.
 - A duração média subiu durante a 2ª onda (pico ~1:08). O público novo entregue pelo algoritmo assistiu mais, não menos.
 
 O que o TAM 402 repetiu do Gol (`videos/consta_tam402/`):
