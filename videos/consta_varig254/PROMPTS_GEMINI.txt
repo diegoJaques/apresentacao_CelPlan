@@ -1,0 +1,4 @@
+Usados nesta versão (enviados pelo Diego em 04/10/2026):
+1) Cabine ao pôr do sol, pilotos de costas, sol bem à frente, aproximação da bússola → clipes/veo1_cabine_sol.mp4
+2) Boeing 737-200 branco com faixa azul sobre a Amazônia, anoitecendo, sumindo no escuro → clipes/veo2_voo_amazonia.mp4
+(Textos completos dos prompts no histórico da conversa; mesmo padrão do PROMPTS_GEMINI.txt do Linate.)
