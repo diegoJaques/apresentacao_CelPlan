@@ -55,6 +55,11 @@ def scene(id_, s, e, img, inner='', dark=.45, z=(1.0, 1.08), left=None):
     H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner">'
              f'<img id="{id_}_img" class="abs ph" style="left:{l}px" src="assets/img/{img}.jpg"><div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
     A(f'tl.fromTo("#{id_}_img",{{scale:{z[0]}}},{{scale:{z[1]},transformOrigin:"50% 50%",duration:{e-s:.2f},ease:"none",immediateRender:false}},{s:.2f});')
+VMEDIA = []
+def vscene(id_, s, e, clip, ms, inner='', dark=.35):
+    VMEDIA.append(f'<video id="{id_}_v" class="clip vid" src="assets/clips/{clip}.webm" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-media-start="{ms:.2f}" data-track-index="1" muted playsinline></video>')
+    H.append(f'<section id="{id_}" class="clip scene" data-start="{s:.2f}" data-duration="{e-s:.2f}" data-track-index="2"><div id="{id_}_in" class="abs inner">'
+             f'<div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
 def card(cls, txt, id_): return f'<div id="{id_}" class="abs {cls}">{txt}</div>'
 def lever(p, x=760):
     return (f'<div id="{p}" class="abs lev" style="left:{x}px"><div class="J ltop">MÁX</div><div class="trk"></div>'
@@ -66,7 +71,7 @@ HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · VOO 402', p + 'tg') + '<div c
                   card('hk1', 'LUTARAM CONTRA<br><span class="y">O PRÓPRIO AVIÃO</span>', p + 'h1') + card('hk2', 'E PERDERAM EM<br>25 SEGUNDOS', p + 'h2'))
 
 # 0 — gancho (1º quadro = capa: a mão empurrando a manete)
-scene('s0', 0, 5.0, 'i2', HOOK('a'), dark=.3, z=(1.0, 1.06))
+vscene('s0', 0, 5.0, 'v1', 0.0, HOOK('a'), dark=.3)
 A('tl.fromTo("#ah2",{scale:1},{scale:1.12,duration:.25,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},3.9);')
 # 1 — 2º gancho
 scene('s1', 5.0, 9.7, 'i4', card('big', 'O AVIÃO TENTAVA<br><span class="y">SALVAR TODOS</span>', 'g1') + card('al a2', '🔇 NENHUM ALARME', 'g2'), dark=.55, z=(1.15, 1.25))
@@ -75,13 +80,13 @@ hide('#g1', '#g2'); up('#g1', 5.1); pop('#g2', 7.8)
 scene('s2', 9.7, 14.6, 'i3', card('pill', 'CONGONHAS · 31.10.1996', 'd1') + card('big low', 'VOO 402<br><span class="y" style="font-size:84px;white-space:nowrap">SÃO PAULO → RIO</span>', 'd2'), dark=.35)
 hide('#d1', '#d2'); fade('#d1', 10.0); up('#d2', 11.9)
 # 3 — a manete volta sozinha
-scene('s3', 14.6, 19.9, 'i2', card('pill', 'RODAS FORA DO CHÃO', 'm1') + lever('L3') + card('bigl', 'VOLTA<br><span class="r">SOZINHA</span>', 'm2'), dark=.55, z=(1.1, 1.18))
+vscene('s3', 14.6, 19.9, 'v1', 4.6, card('pill', 'RODAS FORA DO CHÃO', 'm1') + lever('L3') + card('bigl', 'VOLTA<br><span class="r">SOZINHA</span>', 'm2'), dark=.5)
 hide('#m1', '#m2'); fade('#m1', 15.3); knob('L3', 17.9, True); slam('#m2', 18.2)
 # 4 — acham que é pane e empurram
 scene('s4', 19.9, 26.4, 'i3', lever('L4') + card('bigl', 'PANE NO<br><span class="y">AUTOMÁTICO?</span>', 'n1') + card('bigl low2', 'EMPURRAM<br>DE VOLTA', 'n2'), dark=.6, z=(1.2, 1.3))
 A('tl.set("#L4k",{y:520},19.9);'); hide('#n1', '#n2'); up('#n1', 20.6); knob('L4', 23.6, False, .5); up('#n2', 23.6)
 # 5 — o reversor aberto
-scene('s5', 26.4, 33.4, 'i4', card('pill', 'A PEÇA QUE FREIA NO POUSO', 'r1') + card('big low', 'REVERSOR<br><span class="r">ABERTO<br>EM PLENO VOO</span>', 'r2') + card('al a1', '🔕 SEM AVISO NO PAINEL', 'r3'), dark=.35)
+vscene('s5', 26.4, 33.4, 'v2', 1.0, card('pill', 'A PEÇA QUE FREIA NO POUSO', 'r1') + card('big low', 'REVERSOR<br><span class="r">ABERTO<br>EM PLENO VOO</span>', 'r2') + card('al a1', '🔕 SEM AVISO NO PAINEL', 'r3'), dark=.3)
 hide('#r1', '#r2', '#r3'); fade('#r1', 28.2); slam('#r2', 30.2); pop('#r3', 31.9)
 # 6 — a briga: 3 vezes
 scene('s6', 33.4, 39.4, 'i2', lever('L6', 420) + card('stamp', '3 VEZES', 'b1'), dark=.7, z=(1.2, 1.3), left=-1400)
@@ -97,7 +102,7 @@ A('tl.fromTo("#s8_img",{rotation:0},{rotation:-7,duration:1.4,ease:"power2.in",i
 scene('s9', 50.0, 54.5, 'i6', card('huge', '99<span class="sm">VIDAS</span>', 'v1') + card('pill2', '95 A BORDO · 4 NO CHÃO', 'v2'), dark=.45, z=(1.0, 1.06))
 hide('#v1', '#v2'); slam('#v1', 50.2); fade('#v2', 52.3)
 # 10 — loop
-scene('s10', 54.5, END, 'i2', HOOK('b'), dark=.3, z=(1.0, 1.06))
+vscene('s10', 54.5, END, 'v1', 0.0, HOOK('b'), dark=.3)
 hide('#bh1', '#bh2', '#btg'); fade('#btg', 54.6, .2); up('#bh1', 54.7); slam('#bh2', 55.6)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
@@ -135,7 +140,9 @@ body{margin:0;background:#0a0c10}
 .rot{left:0;top:420px;width:1080px;height:1294px;transform:rotate(7deg);transform-origin:650px 600px}
 .fadecapa{inset:0;background:linear-gradient(#0a1626 0%,#0a1626 24%,rgba(10,22,38,0) 34%,rgba(10,22,38,0) 70%,#0a1626 86%)}
 .pista{left:640px;top:610px;font-family:"J";font-size:40px;color:#111;background:#FFC83D;padding:10px 18px;border-radius:10px;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.6)}
-.ring{left:440px!important;top:470px!important;width:560px!important;height:680px!important}
+.ring{left:150px!important;top:640px!important;width:580px!important;height:560px!important}
+.tag{left:50%!important;right:auto!important;transform:translateX(-50%);white-space:nowrap;background:rgba(0,0,0,.78);padding:8px 18px;border-radius:8px}
+.vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
 .hk1{font-size:88px!important}
 .lev{top:560px;width:220px;height:700px}
 .trk{position:absolute;left:96px;top:60px;width:28px;height:580px;border-radius:14px;background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.6)}
@@ -154,7 +161,7 @@ page = f'''<!doctype html>
 <html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <title>TAM 402</title><script src="gsap.min.js"></script><style>{CSS}</style></head>
 <body><div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{END:.2f}">
-{''.join(MEDIA)}
+{''.join(MEDIA)}{''.join(VMEDIA)}
 {''.join(H)}
 <div id="caps">{''.join(cap)}</div>
 </div>

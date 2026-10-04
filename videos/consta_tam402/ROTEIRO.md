@@ -60,3 +60,9 @@ Fontes: Wikipedia (TAM Flight 402); FAA "Lessons Learned" (PT-MRK); BAAA; SBT Ne
 - Créditos do ElevenLabs:
   - 5 imagens geradas, ~1.060 créditos;
   - 1 imagem bloqueada, que mostra preço e talvez tenha sido cobrada.
+
+## v2 com clipes do Gemini (Veo)
+- `clipes/veo1_manete.mp4`: mão empurrando a manete. Entra na abertura (0–5s), na cena "volta sozinha" (14,6–19,9s) e no loop final.
+- `clipes/veo2_reversor.mp4`: o reversor abrindo sobre a cidade (26,4–33,4s).
+- Os dois saem do Gemini em 16:9 (1280×720). Foram recortados em 9:16 (crop de 405×720, depois ampliados com lanczos e unsharp) e convertidos em webm VP9.
+- O clipe 2 tem a marca "24 fps" no canto, que ficou fora do recorte.
