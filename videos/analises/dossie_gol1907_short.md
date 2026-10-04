@@ -123,3 +123,36 @@ Uma virada a cada 4–5s, com animações de mapa, altitude e TCAS mudo, sem nen
 5. **Refazer o Short do Voepass com ≤ 60s.** É a mesma fórmula do Gol (clipe real, paradoxo "caiu girando quase sem sair do lugar"), e foi derrubado só pela duração. Para não parecer duplicado, publicar como vídeo novo com outro título.
 
 > Limitações: as views dos outros Shorts são de idades diferentes (1 a 5 dias). A curva do Gol foi lida no print, porque a API ainda não tinha os dados. Refazer esta análise com o MCP em 07/10.
+
+## 6. Confirmação: TAM 402, o 2º Short a estourar com a mesma fórmula
+Print do Studio (out/2026, ~2,5h após publicar):
+- **5,5 mil views em ~2,5h** (5 mil acima do habitual).
+- O YouTube marcou: **"está sendo mais compartilhado do que o normal"**.
+- Mesma curva do Gol: subida lenta no teste e depois uma 2ª onda forte por volta de 1h30–2h.
+
+O que o TAM 402 repetiu do Gol (`videos/consta_tam402/`):
+- **Título-paradoxo com protagonista e número:** "Os pilotos lutaram contra o próprio avião… e perderam em 25 segundos".
+- **1º quadro em vídeo real do Gemini:** a mão empurrando a manete. A abertura e o loop usam o mesmo clipe.
+- **2º gancho aos 5–9s:** "O avião estava tentando salvar todo mundo. E nenhum alarme contou isso a eles."
+- **Um elemento visual que explica o paradoxo:** a manete animada MÁX/LENTA, que volta 3 vezes.
+- **Loop:** "Até hoje, é difícil acreditar:" emenda direto na 1ª frase.
+- **56,6s** e data redonda (30 anos).
+
+O que é **novo** e explica os **compartilhamentos**:
+- **Dilema moral fácil de debater:** a máquina tentava salvar e os humanos não sabiam. Gerou comentários como "até as máquinas fazem o bem mais que os humanos".
+- Vídeos que dão ao público uma opinião para defender são compartilhados mais.
+- **Pauta derivada:** série "a máquina estava certa". O próximo candidato é **Überlingen 2002** (o sistema anticolisão mandou subir, o controlador mandou descer).
+
+**Regra nova:** além do paradoxo, procurar um **dilema que faça a pessoa querer comentar ou mandar para alguém** (culpa, injustiça, "quem estava certo?").
+
+## 7. Monetização paralela: afiliados (desde out/2026)
+- Lista de produtos por vídeo e textos padrão: `videos/afiliados/PRODUTOS_CONSTA.md`.
+- **Primeiro link ativo (Mercado Livre):** livro *Detetives da Aviação* (Christine Negroni, Objetiva): https://meli.la/1JmoAyj.
+  - Usar nos vídeos de aviação **históricos** (Gol 1907, TAM 402, Aeroperú, Varig 967).
+  - **Nunca** usar em homenagens ou tragédias recentes (Chapecoense, Voepass, Lito, Rick).
+- **Onde colocar:**
+  - nas 2 primeiras linhas da descrição dos **vídeos longos** (nos Shorts o link não é clicável);
+  - no comentário fixado dos longos;
+  - nos Links do canal;
+  - o Short leva ao longo pelo "Vídeo relacionado".
+- Texto de chamada usado: "📚 Livro "Detetives da Aviação" (Christine Negroni) → link", mais o aviso de afiliado no fim da descrição.

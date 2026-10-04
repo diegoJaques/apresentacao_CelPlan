@@ -10,6 +10,17 @@ A rede daqui não acessa a Amazon nem o Mercado Livre, por isso os títulos fora
 
 **Regra de ouro:** nada de produto em homenagens e tragédias recentes (Lito Sousa, Rick, Chapecoense, Voepass). Use só em casos históricos e curiosidades.
 
+## Links ativos
+| Produto | Link | Usar em |
+|---|---|---|
+| Livro *Detetives da Aviação*, de Christine Negroni (Objetiva), sobre os acidentes aéreos mais misteriosos do mundo | https://meli.la/1JmoAyj (Mercado Livre) | Gol 1907, TAM 402, Aeroperú 603, Varig 967 (vídeos longos e Links do canal) |
+
+Chamada pronta para as 2 primeiras linhas da descrição:
+```
+✈️ Quer entender como os investigadores desvendam acidentes como este?
+📚 Livro "Detetives da Aviação" (Christine Negroni) → https://meli.la/1JmoAyj
+```
+
 ## Por vídeo
 
 | Vídeo | Produto principal | Alternativas | Loja |

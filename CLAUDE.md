@@ -8,7 +8,8 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
 - **Consta nos Autos** (YouTube): casos reais, acidentes aéreos, mistérios. ~96% do tráfego vem do feed de Shorts.
   Retenção (out/2026, `videos/analises/retencao_consta.md`): títulos-afirmação com protagonista + paradoxo (~76% assistido) vencem
   títulos "Por que…?" (~50%). A queda principal é entre 4s e 8s: a 2ª frase deve abrir nova pergunta, contexto só depois de 10s.
-  **Maior sucesso: Short Gol 1907 (12,5 mil em 36h). Fórmula em `videos/analises/dossie_gol1907_short.md`: ler antes de cada Short.**
+  **Maiores sucessos: Short Gol 1907 (12,5 mil em 36h) e TAM 402 (5,5 mil em 2,5h, muito compartilhado). Fórmula em `videos/analises/dossie_gol1907_short.md`: ler antes de cada Short.**
+  Afiliados (Mercado Livre/Amazon): produtos e regras em `videos/afiliados/PRODUTOS_CONSTA.md`. Link ativo: livro "Detetives da Aviação" https://meli.la/1JmoAyj (só vídeos históricos de aviação, nunca homenagens).
   Short com no máximo 60s (mirar 45–59s), virada a cada 4–5s. Terminar na frase que liga ao início (loop), sem respiro final.
 - **Rebobina** (YouTube): nostalgia anos 80/90. O que mais funciona: memórias de família e regras da casa
   (festas de aniversário 2.364 views, internet discada 1.893, domingo 1.514, telefone com cadeado 1.178, TV saía do ar 1.105).
@@ -22,7 +23,7 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
 Consta: Varig 967 (partes 1 e 2), Mamonas Assassinas, Harrison Okene, Andes (rádio), Violet Jessop, Yamaguchi, Operação Prato,
 homenagem **Lito Sousa "O Aviador"** (longo 16:9 + Short, `videos/homenagem_lito_sousa/`).
 Rebobina: piscina depois de comer (emocional), ET enterrado, vó do espelho; cartucho (roteiro em reserva).
-Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chapecoense, TAM 402 (Short pronto, publicar perto de 31/10). Pauta: Dia das Crianças (12/10).
+Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chapecoense, TAM 402 (Short publicado em out/2026, estourou). Pauta: Dia das Crianças (12/10).
 
 ## Regras de roteiro (aprendidas com ele)
 - **Antes de qualquer roteiro, título ou capa, ler `REGRAS_DE_RETENCAO.md`** (dois ganchos, ano fora da fala, escada, final seco).
