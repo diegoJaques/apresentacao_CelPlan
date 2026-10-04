@@ -215,9 +215,10 @@ They were right, in a way. Those Americans were very strong. Just not in the way
 
 ## Publicação
 - **Título (opções):**
-  1. **The Secret Army of Artists That Fooled Hitler** (recomendado)
-  2. They Fooled the Germans With Rubber Tanks | The Ghost Army of WWII
-  3. The Ghost Army: America's Most Secret Unit of World War II
+  1. **How American Artists Fooled the German Army With Rubber Tanks** (recomendado, herói + rival enganado)
+  2. The Secret Army of Artists That Fooled Hitler
+  3. They Fooled the Germans With Rubber Tanks | The Ghost Army of WWII
+  4. The Ghost Army: America’s Most Secret Unit of World War II
 - **Capa:**
   - foto de arquivo de 4 soldados carregando o tanque inflável (US Army, domínio público) ou foto de tanque inflável;
   - texto "THEY FOOLED HITLER" em serifa grande, mais o selo "TOP SECRET".

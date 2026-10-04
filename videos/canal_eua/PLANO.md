@@ -73,3 +73,10 @@ Testes em `teste_vozes/`, todos com eleven_multilingual_v2, 1 take e o mesmo tre
 **Custo:** vozes da biblioteca gastam **~1 crédito por caractere**, tanto no v2 quanto no v4. Um roteiro de ~13 mil caracteres (~17 min) custa ~13 mil créditos.
 
 **Fotos de arquivo:** commons.wikimedia.org e catalog.archives.gov estão bloqueados pela rede deste ambiente. Liberar em Network access (Custom → Allowed domains: commons.wikimedia.org, upload.wikimedia.org, catalog.archives.gov, loc.gov, tile.loc.gov) ou o Diego envia as fotos.
+
+## O que esse público quer sentir (ideia do Diego, 04/10/2026)
+- **Herói americano + rival enganado ou surpreso.** O americano de 55+ gosta de ver o próprio lado vencer com astúcia, e ver o inimigo (por exemplo, os alemães) chocado, confuso ou derrotado.
+- **Na capa:** o rosto do rival surpreso (personagem fictício, nunca uma pessoa real) mais a "prova" da esperteza americana (o tanque inflável).
+- **No título:** o herói e o rival enganado. Ex.: "How American Artists Fooled the German Army With Rubber Tanks".
+- **No roteiro:** dar espaço à reação do inimigo ("the Germans never suspected…", "German intelligence reported…"), sempre com fatos confirmados.
+- **Monetização:** evitar suásticas e símbolos nazistas na capa e nas imagens. Prejudicam a monetização e podem gerar restrição de idade.
