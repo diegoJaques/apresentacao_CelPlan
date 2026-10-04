@@ -4,7 +4,7 @@ Definido com o Diego em 04/10/2026.
 - **Objetivo:** vídeos longos, calmos e aprofundados para americanos mais velhos.
 - **Ritmo:** o oposto do vício do TikTok. Sem cortes frenéticos e sem legendas piscando.
 - **Temas:** não só aviação. Segunda Guerra, Hollywood antiga, Americana dos anos 40–70 e grandes histórias reais.
-- A arte "Final Report" (logo e banner nesta pasta) fica como **rascunho**. O nome deve ser mais amplo.
+- **Nome escolhido: The Archive Room.** A arte final é `logo_the_archive_room.png` e `banner_the_archive_room.jpg`; os arquivos "Final Report" ficam como rascunho antigo.
 
 ## Nome (sugestões)
 | Nome | Por quê |

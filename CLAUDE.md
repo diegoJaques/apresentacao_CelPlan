@@ -13,7 +13,7 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
 - **Rebobina** (YouTube): nostalgia anos 80/90. O que mais funciona: memórias de família e regras da casa
   (festas de aniversário 2.364 views, internet discada 1.893, domingo 1.514, telefone com cadeado 1.178, TV saía do ar 1.105).
   Explicação de objeto vai mal (caneta na fita K7 180, queimar filme 0, vó do espelho 16). Tom emocional (vó, mãe, saudade) funciona.
-- **Canal EUA (novo, nome em definição)**: vídeos LONGOS (15–30 min) e calmos para americanos 55+: Segunda Guerra, Hollywood antiga, Americana.
+- **Canal EUA "The Archive Room"** (logo e banner em `videos/canal_eua/`): vídeos LONGOS (15–30 min) e calmos para americanos 55+: Segunda Guerra, Hollywood antiga, Americana.
   Sem ritmo de TikTok. Plano e regras de formato em `videos/canal_eua/PLANO.md`.
 - **LinkedIn / newsletter "Ninguém Está Lendo"**: autoridade em arquitetura de software com IA. Checar temas já publicados antes de propor.
 - Trabalho na **CelPlan** (portfólio em `portfolio_celplan/`).
