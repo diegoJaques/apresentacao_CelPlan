@@ -1,0 +1,83 @@
+===== CHANNEL NAME =====
+The Archive Room
+
+===== HANDLE (tente nesta ordem) =====
+@TheArchiveRoom
+@ArchiveRoomStories
+@TheArchiveRoomTV
+@ArchiveRoomHistory
+
+===== CHANNEL DESCRIPTION (cole em Personalização > Informações básicas) =====
+Welcome to The Archive Room.
+
+Here we open the old files and tell the true stories behind them — slowly, carefully, and with the respect they deserve.
+
+World War II heroes you were never taught about. The secrets behind Hollywood's golden age. The everyday America of the 1940s, '50s and '60s. Great rescues, forgotten inventions, and the people who lived through it all.
+
+No flashy edits. No shouting. Just real history, real archive photographs, and a good story — the kind you can sit back and enjoy with a cup of coffee.
+
+New episodes every week.
+
+If you lived through these years, or heard these stories from your parents and grandparents, we would love to hear from you in the comments. Your memories are part of the archive too.
+
+Sources are listed in every video description. Some illustrative images and the narration voice are created with AI tools; archive photographs come from public-domain collections such as the U.S. National Archives and the Library of Congress.
+
+===== CHANNEL KEYWORDS (cole em Configurações > Canal > Palavras-chave) =====
+"world war 2 stories" "ww2 history" "old hollywood" "classic movies history" "american history" "history documentary" "true stories" "1950s america" "vintage america" "nostalgia" "military history" "golden age of hollywood" "archive footage" "the archive room"
+
+===== DEFAULT TAGS (padrão de envio) =====
+history, world war 2, ww2, true story, documentary, american history, old hollywood, nostalgia, vintage, archive, the archive room
+
+===== DEFAULT UPLOAD DESCRIPTION (padrão de envio; troque os [ ] em cada vídeo) =====
+[One or two sentences telling what this story is about and why it matters.]
+
+Chapters:
+00:00 [Intro]
+[00:00 Chapter]
+[00:00 Chapter]
+
+Sources:
+[Source 1]
+[Source 2]
+
+Archive photographs: U.S. National Archives / Library of Congress (public domain), unless noted.
+Some illustrative images and the narration voice were created with AI tools.
+
+Did you or someone in your family live through this? Share your story in the comments — we read every one.
+
+Subscribe for a new story every week: [link do canal]
+
+#history #truestory #thearchiveroom
+
+===== PLAYLISTS (nome + descrição) =====
+World War II Stories
+The soldiers, spies, inventors and ordinary people whose stories shaped the Second World War — including many you were never taught in school.
+
+Old Hollywood Secrets
+What really happened behind the cameras of Hollywood's golden age: the accidents, the rivalries, the rewrites and the legends.
+
+The Great War (WWI)
+Stories from the First World War, from the trenches to the home front.
+
+Americana: How We Used to Live
+Houses sold by mail, drive-in theaters, Route 66 and the everyday America our parents and grandparents knew.
+
+Against All Odds: True Rescues
+Real people, impossible situations, and how they made it home.
+
+===== CHANNEL TRAILER SCRIPT (60–75s, voz calma; gravar quando a voz estiver escolhida) =====
+[warm] Somewhere in a quiet building, there are boxes no one has opened in a very long time.
+Inside them are photographs. Letters. Reports stamped "secret" eighty years ago.
+[pause] And every one of them holds a story.
+A unit of artists that fooled an entire army with rubber tanks.
+A film so troubled, its script was still being written while the cameras rolled.
+A house you could order from a catalog — and build with your own two hands.
+[pause] This is The Archive Room.
+We take our time here. No rush, no noise — just true stories, told the way they deserve.
+[warm] Pull up a chair. Let's open the first box.
+
+===== PINNED COMMENT IDEAS (1 por vídeo) =====
+- Did your father or grandfather serve in World War II? Tell us his story.
+- Do you remember seeing this movie in a theater for the first time?
+- What is the oldest family photograph you have? Who is in it?
+- Where were you when you first heard this news?
