@@ -8,6 +8,8 @@ A rede daqui não acessa a Amazon nem o Mercado Livre, por isso os títulos fora
 2. Descrição dos vídeos longos, e o Short ligado ao longo via "Vídeo relacionado".
 3. Comentário fixado dos vídeos longos.
 
+**Meta: 500 inscritos.** Com 500 inscritos e o YPP intermediário (3 vídeos em 90 dias + 3.000 h ou 3 mi views de Shorts) dá para entrar no **Afiliados do YouTube Shopping**. Ele marca produtos do Mercado Livre e da Shopee **clicáveis dentro do Short**. Notícia de mar/2026 baixou a exigência de 5 mil para 500 inscritos; confirmar no Studio em Ganhos → Compras.
+
 **Regra de ouro:** nada de produto em homenagens e tragédias recentes (Lito Sousa, Rick, Chapecoense, Voepass). Use só em casos históricos e curiosidades.
 
 ## Links ativos
