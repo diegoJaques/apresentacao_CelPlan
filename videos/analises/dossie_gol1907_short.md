@@ -130,6 +130,9 @@ Print do Studio (out/2026, ~2,5h após publicar):
 - O YouTube marcou: **"está sendo mais compartilhado do que o normal"**.
 - Mesma curva do Gol: subida lenta no teste e depois uma 2ª onda forte por volta de 1h30–2h.
 - **79,2% continuaram assistindo** (20,8% deslizaram). O Gol tinha 77,3%, então o TAM 402 tem o melhor gancho do canal até agora. A retenção ainda não estava disponível no print.
+- **Duração média de 1:01 num vídeo de 56,6s, ou seja, ~108% assistido** (0:15 acima do habitual). Mais de 100% indica que muita gente reassistiu, o que confirma que **o loop funciona**: o final emenda na abertura e o vídeo recomeça sem a pessoa perceber.
+- **51,8 horas de exibição** em ~2,5h (49,8 acima do habitual). Só esse Short soma quase 1/3 das 161,7 h que o canal fez em 28 dias.
+- A duração média subiu durante a 2ª onda (pico ~1:08). O público novo entregue pelo algoritmo assistiu mais, não menos.
 
 O que o TAM 402 repetiu do Gol (`videos/consta_tam402/`):
 - **Título-paradoxo com protagonista e número:** "Os pilotos lutaram contra o próprio avião… e perderam em 25 segundos".
