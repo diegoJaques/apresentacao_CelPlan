@@ -63,3 +63,13 @@ Definido com o Diego em 04/10/2026.
 2. Refazer o logo e o banner no estilo "arquivo / sépia".
 3. Escolher a voz em inglês no ElevenLabs. Testar com 1 parágrafo antes do roteiro inteiro.
 4. Fazer o 1º vídeo, sugerido: The Ghost Army, ~20 min.
+
+## Voz e custo (teste de 04/10/2026)
+Testes em `teste_vozes/`, todos com eleven_multilingual_v2, 1 take e o mesmo trecho:
+- A, Michael Moody (`PerZoH0r6nxBZXCoIPpv`): avô caloroso, ~130 palavras/min;
+- B, Spartan (`S75jVZ0i3J6Xa5BbK8CE`): barítono de história militar, ~150 palavras/min;
+- C, Leo (`cOHUo8FosWk7BqQhx8nk`): locutor veterano, ~160 palavras/min.
+
+**Custo:** vozes da biblioteca gastam **~1 crédito por caractere**, tanto no v2 quanto no v4. Um roteiro de ~13 mil caracteres (~17 min) custa ~13 mil créditos.
+
+**Fotos de arquivo:** commons.wikimedia.org e catalog.archives.gov estão bloqueados pela rede deste ambiente. Liberar em Network access (Custom → Allowed domains: commons.wikimedia.org, upload.wikimedia.org, catalog.archives.gov, loc.gov, tile.loc.gov) ou o Diego envia as fotos.
