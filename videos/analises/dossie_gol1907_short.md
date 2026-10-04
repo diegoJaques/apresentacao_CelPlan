@@ -163,3 +163,20 @@ O que é **novo** e explica os **compartilhamentos**:
   - nos Links do canal;
   - o Short leva ao longo pelo "Vídeo relacionado".
 - Texto de chamada usado: "📚 Livro "Detetives da Aviação" (Christine Negroni) → link", mais o aviso de afiliado no fim da descrição.
+
+## 8. Contraprova: Linate (caso estrangeiro), publicado em 04/10/2026
+Mesma fórmula (paradoxo, 2º gancho, clipes do Gemini, loop, 57,9s), mas o caso é italiano e saiu 4 dias antes da data redonda (08/10).
+Prints com ~4–5h:
+- 1,4 mil views (+18% sobre o habitual); platô desde ~1h30. Feed 98,1%.
+- **73,1% continuaram assistindo** (TAM 77,9%, Gol 77,3%).
+- **Duração média 0:40 de 0:58 (~69%)**, "na média". O TAM tinha ~100%: o loop segurou menos.
+- +4 inscritos; 9,2 h de exibição; 814 visualizações intencionais; TV 6,8%.
+
+Leitura:
+- **Caso estrangeiro rende menos no Brasil.** Sem memória nacional, quem passa pelo feed não tem o "eu lembro disso" que segura os primeiros segundos. Gol e TAM são tragédias que o brasileiro conhece.
+- O 1º quadro (caixa vermelha na neblina) é menos óbvio que a mão na manete ou o jatinho com a asa rasgada.
+- Saiu antes da data redonda e na mesma hora em que o TAM estava em alta.
+- Não apagar: o Gol ficou 14h parado antes da 2ª onda. Reavaliar em 36h.
+
+**Regra:** prioridade para casos brasileiros (ou muito conhecidos no Brasil). Estrangeiro só com data redonda no dia ou ligação forte com o Brasil.
+
