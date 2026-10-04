@@ -58,13 +58,13 @@ def vscene(id_, s, e, clip, ms, inner='', dark=.35):
              f'<div class="abs vig" style="opacity:{dark}"></div>{inner}</div></section>')
 def card(cls, txt, id_): return f'<div id="{id_}" class="abs {cls}">{txt}</div>'
 
-POS.update({'i1': -1140, 'i2': -1250, 'i3': -950, 'i4': -1167, 'i5': -1330})
-HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · CASOS REAIS', p + 'tg') + '<div class="abs ring"></div>' +
+POS.update({'i6': -1167, 'i1': -1140, 'i2': -1250, 'i3': -950, 'i4': -1167, 'i5': -1330})
+HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · CASOS REAIS', p + 'tg') +
                   card('hk1', 'ELA CAIU DE<br><span class="y">3 MIL METROS</span>', p + 'h1') +
                   card('hk2', 'E SOBREVIVEU', p + 'h2'))
 
 # 0 — gancho (1º quadro = capa: a fileira de poltronas caindo)
-scene('s0', 0, 4.8, 'i1', HOOK('a'), dark=.3, z=(1.0, 1.1))
+scene('s0', 0, 4.8, 'i6', HOOK('a'), dark=.3, z=(1.0, 1.08))
 A('tl.fromTo("#ah2",{scale:1},{scale:1.12,duration:.25,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},4.0);')
 # 1 — 2º gancho
 scene('s1', 4.8, 7.4, 'i1', card('big', 'MAS O PIOR<br><span class="r">AINDA NEM TINHA<br>COMEÇADO</span>', 'g1'), dark=.6, z=(1.35, 1.5))
@@ -99,7 +99,7 @@ hide('#m1', '#m2'); up('#m1', 46.1); fade('#m2', 48.0)
 scene('s9', 50.2, 54.7, 'i5', card('big', 'ANOS DEPOIS…', 'v1') + card('big lower', 'VOLTOU PARA<br><span class="g">A FLORESTA</span>', 'v2'), dark=.5, z=(1.0, 1.1), left=-150)
 hide('#v1', '#v2'); up('#v1', 50.3); up('#v2', 51.7)
 # 10 — siga a água → loop
-scene('s10', 54.7, END, 'i1', '<div class="abs ring"></div>' + card('quote2', '“SIGA<br>A ÁGUA.”', 'z1'), dark=.4, z=(1.1, 1.0))
+scene('s10', 54.7, END, 'i6', card('quote2', '“SIGA A ÁGUA.”', 'z1'), dark=.35, z=(1.08, 1.0))
 hide('#z1'); slam('#z1', 57.3)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',
@@ -149,14 +149,14 @@ body{margin:0;background:#0a0c10}
 .capg span{display:inline-block;margin:0 10px;font-weight:900;font-size:68px;line-height:1.1;color:#fff;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 6px 20px rgba(0,0,0,.95)}
 .g{color:#3DDC84}
 .ring{left:270px;top:760px;width:540px;height:440px}
-.hk1{font-size:96px!important}.hk2{top:400px!important;font-size:100px!important}
+.hk1{font-size:92px!important}.hk2{top:345px!important;font-size:84px!important}
 .pv{top:1150px;font-size:40px}.pv2{top:1180px;font-size:34px}
 .chk{left:50%;transform:translateX(-50%);white-space:nowrap;font-family:"J";font-size:46px;background:rgba(0,0,0,.82);color:#fff;padding:14px 26px;border-radius:12px;border-left:10px solid #FFC83D}
 .chk.c1{top:1080px}.chk.c2{top:1200px}.chk.cr{border-left-color:#FF2D20}
 .qlab{left:0;right:0;top:330px;text-align:center;font-family:"J";font-size:40px;color:#FFC83D;letter-spacing:4px}
 .quote{left:70px;right:70px;top:430px;text-align:center;font-family:"M";font-size:74px;line-height:1.15;color:#fff;text-shadow:0 8px 30px #000}
 #q2,#q3{color:#7FDBFF}
-.quote2{left:0;right:0;top:300px;text-align:center;font-size:150px;line-height:1.02;color:#7FDBFF;-webkit-text-stroke:5px #000;paint-order:stroke fill;text-shadow:0 10px 40px #000}
+.quote2{left:0;right:0;top:170px;white-space:nowrap;text-align:center;font-size:104px;line-height:1.02;color:#7FDBFF;-webkit-text-stroke:5px #000;paint-order:stroke fill;text-shadow:0 10px 40px #000}
 '''
 page = f'''<!doctype html>
 <html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>

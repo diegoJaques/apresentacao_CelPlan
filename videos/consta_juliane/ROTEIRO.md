@@ -26,6 +26,7 @@ Fontes: Wikipedia (Juliane Koepcke; LANSA Flight 508); migflug (citando a BBC); 
 [emocionado] Tudo porque, um dia, o pai disse: siga a água.  (loop: a última cena repete a imagem da capa)
 
 ## Visual
+- Anjo de luz sem rosto (ideia do Diego) na abertura, capa e loop: `imagens_ia/i6_anjo.jpg`.
 - Imagens Seedream:
   - i1: poltronas caindo (capa e loop);
   - i2: tempestade, raio e Electra;
