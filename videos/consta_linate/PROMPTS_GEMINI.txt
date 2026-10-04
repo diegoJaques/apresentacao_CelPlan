@@ -1,0 +1,22 @@
+===== CLIPE 1 — ABERTURA E LOOP (8s) =====
+Cenário: pátio de um aeroporto europeu às 8h da manhã, outono, neblina branca muito densa (visibilidade de menos de 100 metros). Asfalto molhado com uma linha amarela de taxiamento sumindo na neblina. À esquerda, uma caixa metálica vermelha de alarme no chão e, ao lado, um poste cinza fino com uma pequena caixa de sensor no topo. Uma fileira de luzes vermelhas embutidas no chão atravessa o caminho.
+Ação segundo a segundo:
+0–2s: as luzes vermelhas do chão estão acesas e a pequena lâmpada do sensor pisca em verde.
+2–4s: a lâmpada do sensor apaga. Uma a uma, as luzes vermelhas do chão se apagam, da esquerda para a direita.
+4–8s: tudo fica escuro. Ao fundo, dentro da neblina, surgem dois faróis fortes de um jato que se aproxima lentamente, só a silhueta.
+Câmera: fixa, baixa, perto do chão, com um zoom lento para dentro.
+Luz: azul-acinzentada e fria; os faróis do jato criam halos na neblina.
+Som: vento leve, zumbido elétrico que corta quando as luzes apagam, ronco distante de motor a jato.
+NÃO INCLUIR: texto, letras, números, logotipos, pintura de companhia aérea, pessoas, rostos.
+
+===== CLIPE 2 — A CORRIDA NA PISTA (8s) =====
+Cenário: pista de aeroporto na mesma neblina densa, de manhã.
+Personagem: um jato de passageiros branco sem pintura, com os DOIS motores na traseira da fuselagem e cauda em T (estilo MD-80).
+Ação segundo a segundo:
+0–3s: o jato acelera na pista, da esquerda para a direita, com os faróis acesos e spray de água saindo das rodas.
+3–6s: a câmera acompanha de lado. Ao longe, à frente do jato, aparece uma pequena luz amarela parada no meio da neblina.
+6–8s: o jato continua acelerando em direção à luz. Corte antes de qualquer contato.
+Câmera: travelling lateral na altura da pista, com motion blur nas luzes de borda.
+Luz: fria, azulada; faróis com halos.
+Som: ronco crescente dos motores, rodas no asfalto molhado.
+NÃO INCLUIR: colisão, fogo, destroços, texto, letras, logotipos, matrícula, pessoas, rostos.
