@@ -64,7 +64,7 @@ HOOK = lambda p: (card('tag', 'CONSTA NOS AUTOS · CASOS REAIS', p + 'tg') +
                   card('hk2', 'E SOBREVIVEU', p + 'h2'))
 
 # 0 — gancho (1º quadro = capa: a fileira de poltronas caindo)
-scene('s0', 0, 4.8, 'i6', HOOK('a'), dark=.3, z=(1.0, 1.08))
+vscene('s0', 0, 4.8, 'v1', 0.0, HOOK('a'), dark=.45)
 A('tl.fromTo("#ah2",{scale:1},{scale:1.12,duration:.25,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},4.0);')
 # 1 — 2º gancho
 scene('s1', 4.8, 7.4, 'i1', card('big', 'MAS O PIOR<br><span class="r">AINDA NEM TINHA<br>COMEÇADO</span>', 'g1'), dark=.6, z=(1.35, 1.5))
@@ -90,7 +90,7 @@ A('tl.fromTo("#b2",{scale:1.25},{scale:1,duration:.25,ease:"power4.out",immediat
 scene('s6', 31.6, 39.2, 'i4', card('qlab', 'O CONSELHO DO PAI', 'q0') + card('quote', '“Se um dia se perder na mata,<br><span id="q2">ache a água</span><br><span id="q3">e siga a correnteza.”</span>', 'q1') + card('big lower', 'A ÁGUA LEVA<br><span class="y">ÀS PESSOAS</span>', 'q4'), dark=.8, z=(1.1, 1.18))
 hide('#q0', '#q1', '#q2', '#q3', '#q4'); fade('#q0', 31.8); up('#q1', 33.6); fade('#q2', 35.4, .3); fade('#q3', 36.3, .3); up('#q4', 37.6)
 # 7 — 11 dias dentro do riacho
-scene('s7', 39.2, 45.6, 'i4', card('alt', '<div class="lab">NA SELVA</div><div class="num" id="dd">DIA 1</div>', 'k1') + card('chk c1', 'SANDÁLIA PARA TATEAR', 'k2') + card('chk c2 cr', 'FERIDAS INFECCIONAM', 'k3'), dark=.45, z=(1.0, 1.12))
+vscene('s7', 39.2, 45.6, 'v2', 1.0, card('alt', '<div class="lab">NA SELVA</div><div class="num" id="dd">DIA 1</div>', 'k1') + card('chk c1', 'SANDÁLIA PARA TATEAR', 'k2') + card('chk c2 cr', 'FERIDAS INFECCIONAM', 'k3'), dark=.4)
 hide('#k2', '#k3'); count('#dd', 39.5, 1, 11, 1.4, '"DIA "+Math.round(v)'); pop('#k2', 42.2); pop('#k3', 44.3)
 # 8 — o barco, a cabana, os madeireiros
 scene('s8', 45.6, 50.2, 'i5', card('big', 'UM BARCO.<br><span class="y">UMA CABANA.</span>', 'm1') + card('pill2 pv2', 'NO DIA SEGUINTE: MADEIREIROS A ENCONTRAM', 'm2'), dark=.35, z=(1.0, 1.08))
@@ -99,7 +99,7 @@ hide('#m1', '#m2'); up('#m1', 46.1); fade('#m2', 48.0)
 scene('s9', 50.2, 54.7, 'i5', card('big', 'ANOS DEPOIS…', 'v1') + card('big lower', 'VOLTOU PARA<br><span class="g">A FLORESTA</span>', 'v2'), dark=.5, z=(1.0, 1.1), left=-150)
 hide('#v1', '#v2'); up('#v1', 50.3); up('#v2', 51.7)
 # 10 — siga a água → loop
-scene('s10', 54.7, END, 'i6', card('quote2', '“SIGA A ÁGUA.”', 'z1'), dark=.35, z=(1.08, 1.0))
+vscene('s10', 54.7, END, 'v1', 0.0, card('quote2', '“SIGA A ÁGUA.”', 'z1'), dark=.45)
 hide('#z1'); slam('#z1', 57.3)
 
 MEDIA = [f'<audio id="a_n" src="assets/audio/narr.mp3" data-start="0" data-duration="{NARR:.2f}" data-track-index="10" data-volume="1"></audio>',

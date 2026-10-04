@@ -34,4 +34,7 @@ Fontes: Wikipedia (Juliane Koepcke; LANSA Flight 508); migflug (citando a BBC); 
   - i4: menina de costas no riacho;
   - i5: rio com a cabana.
 - Trilha: piano (`trilha.py piano`), mais emocional que o drone.
-- Quando chegarem os clipes do Gemini: o clipe 1 (queda) entra em s0, s1 e s10; o clipe 2 (riacho) entra em s7 (39,2–45,6s).
+- Clipes do Gemini com anjo (ideia do Diego):
+  - `clipes/veo1_queda_anjo.mp4`: anjo protegendo a fileira de poltronas na queda; entra na abertura/capa (0–4,8s) e no loop (54,7s–fim);
+  - `clipes/veo2_riacho_anjo.mp4`: anjo caminhando ao lado dela no riacho; entra em "dia 1 → 11" (39,2–45,6s).
+- A imagem `i6_anjo.jpg` ficou só de reserva: o anjo aparece nos vídeos.
