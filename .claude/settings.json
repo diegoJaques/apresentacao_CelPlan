@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node ferramentas/curso/captura.mjs:*)"
+    ]
+  }
+}
