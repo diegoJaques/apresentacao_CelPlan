@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1920, height=1080"/>
+<title>Aula 2 — Seu primeiro vídeo do zero</title><script src="gsap.min.js"></script><style>
+@font-face{font-family:"M";font-weight:900;src:url(assets/fonts/montserrat-latin-900-normal.woff2)}
+@font-face{font-family:"M7";font-weight:700;src:url(assets/fonts/montserrat-latin-700-normal.woff2)}
+@font-face{font-family:"J";font-weight:700;src:url(assets/fonts/jetbrains-mono-latin-700-normal.woff2)}
+body{margin:0;background:#0b1020}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:radial-gradient(1300px 800px at 50% 0%,#18233f,#0b1020);font-family:"M7";color:#fff}
+.cena{position:absolute;inset:0}.inner{position:absolute;inset:0}
+.win{position:absolute;left:160px;top:26px;width:1600px;height:942px;border-radius:16px;overflow:hidden;background:#1b2130;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
+.bar{height:42px;display:flex;align-items:center;gap:9px;padding:0 18px;background:#232a3b}
+.bar b{width:13px;height:13px;border-radius:50%;background:#ff5f57}.bar b:nth-child(2){background:#febc2e}.bar b:nth-child(3){background:#28c840}
+.url{margin-left:18px;flex:1;max-width:760px;background:#151a26;border-radius:8px;padding:5px 16px;font-family:"J";font-size:17px;color:#b8c1d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip{margin-left:auto;font-family:"J";font-size:17px;color:#0b1020;background:#2EE6A6;padding:5px 14px;border-radius:20px}
+.vp{position:relative;width:1600px;height:900px;overflow:hidden;background:#fff}
+.zw{position:absolute;left:0;top:0;width:1600px;height:900px;transform-origin:0 0}.zw img{width:100%;height:100%;display:block}
+.ring{position:absolute;border:4px solid #2EE6A6;border-radius:12px;box-shadow:0 0 30px rgba(46,230,166,.6);z-index:4}
+.vid{position:absolute;left:160px;top:68px;width:1600px;height:900px;object-fit:cover;z-index:3}
+.lbl{position:absolute;left:26px;bottom:26px;z-index:5;font-family:"M";font-size:34px;background:rgba(11,16,32,.92);border-left:8px solid #2EE6A6;padding:14px 26px;border-radius:10px}
+.code{position:absolute;right:26px;bottom:26px;z-index:5;background:#0d1117;border:2px solid #2EE6A6;border-radius:14px;padding:20px 28px;font-family:"J";font-size:28px;line-height:1.55;color:#e6edf3;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.code i{color:#2EE6A6;font-style:normal}
+#cursor{position:absolute;left:160px;top:68px;width:44px;height:44px;z-index:30;transform-origin:4px 4px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+#ripple{position:absolute;left:120px;top:28px;width:80px;height:80px;border-radius:50%;border:5px solid #2EE6A6;z-index:29;opacity:0}
+#abre,#fim{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:40}
+.abre{position:absolute;left:0;top:0;width:1920px;height:1080px;background:rgba(11,16,32,.86);display:flex;flex-direction:column;justify-content:center;padding-left:200px;box-sizing:border-box}
+.k{font-family:"J";font-size:30px;letter-spacing:6px;color:#2EE6A6}
+.abre h1{font-family:"M";font-size:120px;line-height:1.02;margin:20px 0 0}.abre em,.fimc h2 em{font-style:normal;color:#2EE6A6}
+.fimbg{position:absolute;left:0;top:0;width:1920px;height:1080px;background:rgba(11,16,32,.9)}
+.fimc{position:absolute;left:200px;top:300px;width:1520px}.fimc h2{font-family:"M";font-size:84px;line-height:1.08;margin:20px 0 50px}
+.sub{display:inline-flex;align-items:center;gap:18px;font-family:"M";font-size:52px;background:#FF0033;padding:20px 44px;border-radius:70px}
+.capg{position:absolute;left:0;right:0;top:974px;text-align:center;z-index:25}
+.capg span{display:inline-block;margin:0 8px;font-family:"M";font-size:40px;color:#fff;-webkit-text-stroke:2px #000;paint-order:stroke fill;text-shadow:0 3px 10px rgba(0,0,0,.9)}
+</style></head>
+<body><div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="118.51">
+<audio id="narr" src="assets/audio/narracao.mp3" data-start="0" data-duration="114.31" data-track-index="10" data-volume="1"></audio>
+<section id="c0" class="clip cena" data-start="0.00" data-duration="17.44" data-track-index="2"><div id="c0i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 1/17</span></div>
+<div class="vp"><div id="c0z" class="zw"><img src="assets/telas/02.png"/></div>
+<div id="c0r" class="ring" style="left:23px;top:73px;width:1553px;height:56px"></div>
+<div id="c0l" class="lbl">1 · Criar o projeto</div><div id="c0k" class="code"><div><i>$</i> npx hyperframes init meu-primeiro-video \</div><div>  --example kinetic-type</div></div></div></div></div></section>
+<section id="c1" class="clip cena" data-start="17.44" data-duration="8.36" data-track-index="3"><div id="c1i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 2/17</span></div>
+<div class="vp"><div id="c1z" class="zw"><img src="assets/telas/03.png"/></div>
+<div id="c1r" class="ring" style="left:23px;top:115px;width:1553px;height:56px"></div>
+<div id="c1l" class="lbl">Projeto criado</div></div></div></div></section>
+<section id="c2" class="clip cena" data-start="25.80" data-duration="4.82" data-track-index="2"><div id="c2i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 3/17</span></div>
+<div class="vp"><div id="c2z" class="zw"><img src="assets/telas/05.png"/></div>
+<div id="c2r" class="ring" style="left:23px;top:73px;width:1553px;height:56px"></div>
+<div id="c2l" class="lbl">2 · Abrir o Studio</div><div id="c2k" class="code"><div>cd meu-primeiro-video</div><div><i>$</i> npx hyperframes preview</div></div></div></div></div></section>
+<section id="c3" class="clip cena" data-start="30.62" data-duration="3.86" data-track-index="3"><div id="c3i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 4/17</span></div>
+<div class="vp"><div id="c3z" class="zw"><img src="assets/telas/06.png"/></div>
+<div id="c3r" class="ring" style="left:23px;top:296px;width:1553px;height:56px"></div>
+<div id="c3l" class="lbl">Endereço do Studio</div></div></div></div></section>
+<section id="c4" class="clip cena" data-start="34.48" data-duration="8.42" data-track-index="2"><div id="c4i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 5/17</span></div>
+<div class="vp"><div id="c4z" class="zw"><img src="assets/telas/08.png"/></div>
+<div id="c4r" class="ring" style="left:623px;top:423px;width:77px;height:77px"></div>
+<div id="c4l" class="lbl">O Studio</div></div></div></div></section>
+<section id="c5" class="clip cena" data-start="42.90" data-duration="3.06" data-track-index="3"><div id="c5i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 6/17</span></div>
+<div class="vp"><div id="c5z" class="zw"><img src="assets/telas/09.png"/></div>
+<div id="c5r" class="ring" style="left:765px;top:415px;width:71px;height:71px"></div>
+<div id="c5l" class="lbl">Assistir</div></div></div></div></section>
+<section id="c6" class="clip cena" data-start="45.96" data-duration="3.28" data-track-index="2"><div id="c6i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 7/17</span></div>
+<div class="vp"><div id="c6z" class="zw"><img src="assets/telas/10.png"/></div>
+<div id="c6r" class="ring" style="left:283px;top:78px;width:67px;height:50px"></div>
+<div id="c6l" class="lbl">3 · Mudar o texto</div></div></div></div></section>
+<section id="c7" class="clip cena" data-start="49.24" data-duration="4.24" data-track-index="3"><div id="c7i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 8/17</span></div>
+<div class="vp"><div id="c7z" class="zw"><img src="assets/telas/12.png"/></div>
+<div id="c7r" class="ring" style="left:85px;top:324px;width:139px;height:45px"></div>
+<div id="c7l" class="lbl">Arquivo das cenas</div></div></div></div></section>
+<section id="c8" class="clip cena" data-start="53.48" data-duration="7.36" data-track-index="2"><div id="c8i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 9/17</span></div>
+<div class="vp"><div id="c8z" class="zw"><img src="assets/telas/14.png"/></div>
+<div id="c8r" class="ring" style="left:322px;top:404px;width:820px;height:92px"></div>
+<div id="c8l" class="lbl">Texto da 1ª cena</div></div></div></div></section>
+<section id="c9" class="clip cena" data-start="60.84" data-duration="6.08" data-track-index="3"><div id="c9i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 10/17</span></div>
+<div class="vp"><div id="c9z" class="zw"><img src="assets/telas/20.png"/></div>
+<div id="c9r" class="ring" style="left:322px;top:404px;width:820px;height:92px"></div>
+<div id="c9l" class="lbl">Texto novo</div></div></div></div></section>
+<section id="c10" class="clip cena" data-start="66.92" data-duration="2.40" data-track-index="2"><div id="c10i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 11/17</span></div>
+<div class="vp"><div id="c10z" class="zw"><img src="assets/telas/22.png"/></div>
+<div id="c10r" class="ring" style="left:623px;top:423px;width:77px;height:77px"></div>
+<div id="c10l" class="lbl">Prévia atualizada</div></div></div></div></section>
+<section id="c11" class="clip cena" data-start="69.32" data-duration="2.20" data-track-index="3"><div id="c11i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 12/17</span></div>
+<div class="vp"><div id="c11z" class="zw"><img src="assets/telas/23.png"/></div>
+<div id="c11r" class="ring" style="left:1015px;top:423px;width:77px;height:77px"></div>
+<div id="c11l" class="lbl">Final do vídeo</div></div></div></div></section>
+<section id="c12" class="clip cena" data-start="71.52" data-duration="8.76" data-track-index="2"><div id="c12i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 13/17</span></div>
+<div class="vp"><div id="c12z" class="zw"><img src="assets/telas/24.png"/></div>
+<div id="c12r" class="ring" style="left:1351px;top:401px;width:145px;height:98px"></div>
+<div id="c12l" class="lbl">Ou peça pro agente</div><div id="c12k" class="code"><div>Troque o título final para</div><div>&quot;Meu primeiro vídeo&quot;</div></div></div></div></div></section>
+<section id="c13" class="clip cena" data-start="80.28" data-duration="6.74" data-track-index="3"><div id="c13i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 localhost:3002/#project/meu-primeiro-video</span><span class="chip">AULA 2 · 14/17</span></div>
+<div class="vp"><div id="c13z" class="zw"><img src="assets/telas/25.png"/></div>
+<div id="c13r" class="ring" style="left:1473px;top:-1px;width:118px;height:64px"></div>
+<div id="c13l" class="lbl">4 · Gerar o MP4</div></div></div></div></section>
+<section id="c14" class="clip cena" data-start="87.02" data-duration="6.86" data-track-index="2"><div id="c14i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 15/17</span></div>
+<div class="vp"><div id="c14z" class="zw"><img src="assets/telas/27.png"/></div>
+<div id="c14r" class="ring" style="left:23px;top:73px;width:1553px;height:56px"></div>
+<div id="c14l" class="lbl">Render</div><div id="c14k" class="code"><div><i>$</i> npx hyperframes render --output meu-video.mp4</div></div></div></div></div></section>
+<section id="c15" class="clip cena" data-start="93.88" data-duration="8.86" data-track-index="3"><div id="c15i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 16/17</span></div>
+<div class="vp"><div id="c15z" class="zw"><img src="assets/telas/28.png"/></div>
+
+<div id="c15l" class="lbl">Resultado</div></div></div></div></section>
+<section id="c16" class="clip cena" data-start="102.74" data-duration="15.77" data-track-index="2"><div id="c16i" class="inner">
+<div class="win"><div class="bar"><b></b><b></b><b></b><span class="url">🔒 Terminal</span><span class="chip">AULA 2 · 17/17</span></div>
+<div class="vp"><div id="c16z" class="zw"><img src="assets/telas/29.png"/></div>
+
+<div id="c16l" class="lbl">Recapitulando</div><div id="c16k" class="code"><div><i>$</i> npx hyperframes init meu-primeiro-video</div><div><i>$</i> npx hyperframes preview</div><div># troque o texto no Code</div><div><i>$</i> npx hyperframes render</div></div></div></div></div></section>
+<div id="abre" class="clip" data-start="0" data-duration="4.2" data-track-index="8"><div class="abre">
+<span class="k">CURSO HYPERFRAMES</span><h1>Aula 2<br/><em>Seu primeiro vídeo do zero</em></h1></div></div>
+<div id="fim" class="clip" data-start="114.31" data-duration="4.20" data-track-index="8"><div class="fimbg"></div><div class="fimc">
+<span class="k">CURSO HYPERFRAMES</span><h2>Próxima aula: narração e legenda no seu vídeo</h2>
+<div id="sub" class="sub"><svg width="54" height="54" viewBox="0 0 24 24"><path fill="#fff" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm7-6V11a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1z"/></svg><span id="subt">INSCREVER-SE</span></div></div></div>
+<video id="c15v" class="clip vid" src="assets/media/meu-video.mp4" data-start="93.88" data-duration="8.86" data-media-start="0.00" data-track-index="7" data-volume="0" muted playsinline></video>
+<video id="c16v" class="clip vid" src="assets/media/meu-video.mp4" data-start="102.74" data-duration="15.77" data-media-start="0.00" data-track-index="6" data-volume="0" muted playsinline></video>
+<div id="ripple"></div><svg id="cursor" viewBox="0 0 24 24"><path d="M4 2l15 11-6.5 1.2L16 21l-3 1.4-3.4-6.9L4 20z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+<div id="cap0" class="clip capg" data-start="0.18" data-duration="3.34" data-track-index="20"><span id="w0_0">Na</span><span id="w0_1">aula</span><span id="w0_2">passada</span><span id="w0_3">você</span><span id="w0_4">conheceu</span><span id="w0_5">o</span><span id="w0_6">HyperFrames.</span></div><div id="cap1" class="clip capg" data-start="3.52" data-duration="1.62" data-track-index="20"><span id="w1_0">Hoje</span><span id="w1_1">a</span><span id="w1_2">gente</span><span id="w1_3">faz</span><span id="w1_4">um</span><span id="w1_5">vídeo</span><span id="w1_6">do</span></div><div id="cap2" class="clip capg" data-start="5.14" data-duration="0.80" data-track-index="20"><span id="w2_0">zero.</span></div><div id="cap3" class="clip capg" data-start="5.94" data-duration="3.01" data-track-index="20"><span id="w3_0">Abra</span><span id="w3_1">o</span><span id="w3_2">terminal</span><span id="w3_3">numa</span><span id="w3_4">pasta</span><span id="w3_5">e</span><span id="w3_6">digite:</span></div><div id="cap4" class="clip capg" data-start="8.95" data-duration="3.57" data-track-index="20"><span id="w4_0">npx</span><span id="w4_1">hyperframes</span><span id="w4_2">init,</span><span id="w4_3">o</span><span id="w4_4">nome</span><span id="w4_5">do</span><span id="w4_6">projeto,</span></div><div id="cap5" class="clip capg" data-start="12.52" data-duration="3.72" data-track-index="20"><span id="w5_0">e</span><span id="w5_1">--example</span><span id="w5_2">kinetic-type,</span><span id="w5_3">que</span><span id="w5_4">é</span><span id="w5_5">um</span><span id="w5_6">dos</span></div><div id="cap6" class="clip capg" data-start="16.24" data-duration="1.32" data-track-index="20"><span id="w6_0">modelos</span><span id="w6_1">prontos.</span></div><div id="cap7" class="clip capg" data-start="17.56" data-duration="2.06" data-track-index="20"><span id="w7_0">Em</span><span id="w7_1">segundos</span><span id="w7_2">ele</span><span id="w7_3">cria</span><span id="w7_4">a</span><span id="w7_5">pasta</span><span id="w7_6">com</span></div><div id="cap8" class="clip capg" data-start="19.62" data-duration="0.62" data-track-index="20"><span id="w8_0">tudo:</span></div><div id="cap9" class="clip capg" data-start="20.24" data-duration="2.72" data-track-index="20"><span id="w9_0">o</span><span id="w9_1">index.html,</span><span id="w9_2">que</span><span id="w9_3">é</span><span id="w9_4">o</span><span id="w9_5">vídeo,</span><span id="w9_6">e</span></div><div id="cap10" class="clip capg" data-start="22.96" data-duration="2.96" data-track-index="20"><span id="w10_0">a</span><span id="w10_1">pasta</span><span id="w10_2">compositions,</span><span id="w10_3">com</span><span id="w10_4">as</span><span id="w10_5">cenas.</span></div><div id="cap11" class="clip capg" data-start="25.92" data-duration="3.06" data-track-index="20"><span id="w11_0">Agora</span><span id="w11_1">entre</span><span id="w11_2">na</span><span id="w11_3">pasta</span><span id="w11_4">e</span><span id="w11_5">rode</span><span id="w11_6">npx</span></div><div id="cap12" class="clip capg" data-start="28.98" data-duration="1.76" data-track-index="20"><span id="w12_0">hyperframes</span><span id="w12_1">preview.</span></div><div id="cap13" class="clip capg" data-start="30.74" data-duration="1.86" data-track-index="20"><span id="w13_0">Ele</span><span id="w13_1">mostra</span><span id="w13_2">o</span><span id="w13_3">endereço</span><span id="w13_4">do</span><span id="w13_5">Studio.</span></div><div id="cap14" class="clip capg" data-start="32.60" data-duration="2.00" data-track-index="20"><span id="w14_0">É</span><span id="w14_1">só</span><span id="w14_2">abrir</span><span id="w14_3">no</span><span id="w14_4">navegador.</span></div><div id="cap15" class="clip capg" data-start="34.60" data-duration="1.36" data-track-index="20"><span id="w15_0">Esse</span><span id="w15_1">é</span><span id="w15_2">o</span><span id="w15_3">Studio.</span></div><div id="cap16" class="clip capg" data-start="35.96" data-duration="1.84" data-track-index="20"><span id="w16_0">No</span><span id="w16_1">meio</span><span id="w16_2">fica</span><span id="w16_3">a</span><span id="w16_4">prévia</span><span id="w16_5">do</span><span id="w16_6">vídeo</span></div><div id="cap17" class="clip capg" data-start="37.80" data-duration="2.06" data-track-index="20"><span id="w17_0">e,</span><span id="w17_1">embaixo,</span><span id="w17_2">a</span><span id="w17_3">linha</span><span id="w17_4">do</span><span id="w17_5">tempo.</span></div><div id="cap18" class="clip capg" data-start="39.86" data-duration="2.02" data-track-index="20"><span id="w18_0">Clique</span><span id="w18_1">em</span><span id="w18_2">qualquer</span><span id="w18_3">ponto</span><span id="w18_4">dela</span><span id="w18_5">para</span><span id="w18_6">ver</span></div><div id="cap19" class="clip capg" data-start="41.88" data-duration="1.14" data-track-index="20"><span id="w19_0">aquele</span><span id="w19_1">momento.</span></div><div id="cap20" class="clip capg" data-start="43.02" data-duration="1.90" data-track-index="20"><span id="w20_0">E</span><span id="w20_1">no</span><span id="w20_2">play</span><span id="w20_3">você</span><span id="w20_4">assiste</span><span id="w20_5">do</span><span id="w20_6">começo</span></div><div id="cap21" class="clip capg" data-start="44.92" data-duration="1.16" data-track-index="20"><span id="w21_0">ao</span><span id="w21_1">fim.</span></div><div id="cap22" class="clip capg" data-start="46.08" data-duration="1.70" data-track-index="20"><span id="w22_0">Agora</span><span id="w22_1">vamos</span><span id="w22_2">mudar</span><span id="w22_3">o</span><span id="w22_4">texto.</span></div><div id="cap23" class="clip capg" data-start="47.78" data-duration="1.58" data-track-index="20"><span id="w23_0">Abra</span><span id="w23_1">a</span><span id="w23_2">aba</span><span id="w23_3">Code.</span></div><div id="cap24" class="clip capg" data-start="49.36" data-duration="3.14" data-track-index="20"><span id="w24_0">Dentro</span><span id="w24_1">de</span><span id="w24_2">compositions,</span><span id="w24_3">abra</span><span id="w24_4">o</span><span id="w24_5">arquivo</span></div><div id="cap25" class="clip capg" data-start="52.70" data-duration="0.90" data-track-index="20"><span id="w25_0">main-graphics.</span></div><div id="cap26" class="clip capg" data-start="53.60" data-duration="2.18" data-track-index="20"><span id="w26_0">Olha</span><span id="w26_1">aqui</span><span id="w26_2">o</span><span id="w26_3">texto</span><span id="w26_4">da</span><span id="w26_5">primeira</span><span id="w26_6">cena:</span></div><div id="cap27" class="clip capg" data-start="55.78" data-duration="3.12" data-track-index="20"><span id="w27_0">What</span><span id="w27_1">if,</span><span id="w27_2">motion</span><span id="w27_3">graphics,</span><span id="w27_4">wrote</span><span id="w27_5">themselves.</span></div><div id="cap28" class="clip capg" data-start="58.90" data-duration="2.06" data-track-index="20"><span id="w28_0">É</span><span id="w28_1">só</span><span id="w28_2">trocar</span><span id="w28_3">pelas</span><span id="w28_4">suas</span><span id="w28_5">palavras.</span></div><div id="cap29" class="clip capg" data-start="60.96" data-duration="1.02" data-track-index="20"><span id="w29_0">Eu</span><span id="w29_1">escrevi:</span></div><div id="cap30" class="clip capg" data-start="61.98" data-duration="1.52" data-track-index="20"><span id="w30_0">E</span><span id="w30_1">se</span><span id="w30_2">o</span><span id="w30_3">seu</span><span id="w30_4">vídeo</span><span id="w30_5">se</span><span id="w30_6">fizesse</span></div><div id="cap31" class="clip capg" data-start="63.50" data-duration="1.16" data-track-index="20"><span id="w31_0">sozinho?</span></div><div id="cap32" class="clip capg" data-start="64.66" data-duration="2.38" data-track-index="20"><span id="w32_0">Salvou,</span><span id="w32_1">o</span><span id="w32_2">Studio</span><span id="w32_3">atualiza</span><span id="w32_4">na</span><span id="w32_5">hora.</span></div><div id="cap33" class="clip capg" data-start="67.04" data-duration="1.66" data-track-index="20"><span id="w33_0">E</span><span id="w33_1">a</span><span id="w33_2">prévia</span><span id="w33_3">já</span><span id="w33_4">mostra</span><span id="w33_5">o</span><span id="w33_6">texto</span></div><div id="cap34" class="clip capg" data-start="68.70" data-duration="0.74" data-track-index="20"><span id="w34_0">novo.</span></div><div id="cap35" class="clip capg" data-start="69.44" data-duration="2.20" data-track-index="20"><span id="w35_0">Troquei</span><span id="w35_1">também</span><span id="w35_2">o</span><span id="w35_3">título</span><span id="w35_4">do</span><span id="w35_5">final.</span></div><div id="cap36" class="clip capg" data-start="71.64" data-duration="1.40" data-track-index="20"><span id="w36_0">Não</span><span id="w36_1">quer</span><span id="w36_2">mexer</span><span id="w36_3">no</span><span id="w36_4">código?</span></div><div id="cap37" class="clip capg" data-start="73.04" data-duration="1.40" data-track-index="20"><span id="w37_0">Peça</span><span id="w37_1">pro</span><span id="w37_2">agente.</span></div><div id="cap38" class="clip capg" data-start="74.44" data-duration="2.14" data-track-index="20"><span id="w38_0">Aqui</span><span id="w38_1">no</span><span id="w38_2">Studio</span><span id="w38_3">ou</span><span id="w38_4">no</span><span id="w38_5">Claude</span><span id="w38_6">Code,</span></div><div id="cap39" class="clip capg" data-start="76.58" data-duration="1.62" data-track-index="20"><span id="w39_0">você</span><span id="w39_1">escreve</span><span id="w39_2">o</span><span id="w39_3">que</span><span id="w39_4">quer</span><span id="w39_5">mudar,</span><span id="w39_6">em</span></div><div id="cap40" class="clip capg" data-start="78.20" data-duration="2.20" data-track-index="20"><span id="w40_0">português</span><span id="w40_1">mesmo,</span><span id="w40_2">e</span><span id="w40_3">ele</span><span id="w40_4">faz.</span></div><div id="cap41" class="clip capg" data-start="80.40" data-duration="2.10" data-track-index="20"><span id="w41_0">Quando</span><span id="w41_1">estiver</span><span id="w41_2">do</span><span id="w41_3">seu</span><span id="w41_4">jeito,</span><span id="w41_5">clique</span><span id="w41_6">em</span></div><div id="cap42" class="clip capg" data-start="82.50" data-duration="3.74" data-track-index="20"><span id="w42_0">Export,</span><span id="w42_1">ou</span><span id="w42_2">rode</span><span id="w42_3">npx</span><span id="w42_4">hyperframes</span><span id="w42_5">render</span><span id="w42_6">no</span></div><div id="cap43" class="clip capg" data-start="86.24" data-duration="0.90" data-track-index="20"><span id="w43_0">terminal.</span></div><div id="cap44" class="clip capg" data-start="87.14" data-duration="2.36" data-track-index="20"><span id="w44_0">Ele</span><span id="w44_1">monta</span><span id="w44_2">o</span><span id="w44_3">vídeo</span><span id="w44_4">quadro</span><span id="w44_5">a</span><span id="w44_6">quadro.</span></div><div id="cap45" class="clip capg" data-start="89.50" data-duration="1.76" data-track-index="20"><span id="w45_0">Aqui</span><span id="w45_1">levou</span><span id="w45_2">cerca</span><span id="w45_3">de</span><span id="w45_4">um</span><span id="w45_5">minuto,</span><span id="w45_6">e</span></div><div id="cap46" class="clip capg" data-start="91.26" data-duration="2.74" data-track-index="20"><span id="w46_0">o</span><span id="w46_1">arquivo</span><span id="w46_2">MP4</span><span id="w46_3">ficou</span><span id="w46_4">pronto.</span></div><div id="cap47" class="clip capg" data-start="94.00" data-duration="1.32" data-track-index="20"><span id="w47_0">E</span><span id="w47_1">esse</span><span id="w47_2">é</span><span id="w47_3">o</span><span id="w47_4">resultado:</span></div><div id="cap48" class="clip capg" data-start="95.32" data-duration="2.74" data-track-index="20"><span id="w48_0">o</span><span id="w48_1">seu</span><span id="w48_2">primeiro</span><span id="w48_3">vídeo,</span><span id="w48_4">feito</span><span id="w48_5">do</span><span id="w48_6">zero.</span></div><div id="cap49" class="clip capg" data-start="98.06" data-duration="1.34" data-track-index="20"><span id="w49_0">O</span><span id="w49_1">modelo</span><span id="w49_2">já</span><span id="w49_3">vem</span><span id="w49_4">com</span><span id="w49_5">um</span><span id="w49_6">vídeo</span></div><div id="cap50" class="clip capg" data-start="99.40" data-duration="2.14" data-track-index="20"><span id="w50_0">de</span><span id="w50_1">exemplo</span><span id="w50_2">no</span><span id="w50_3">fundo,</span><span id="w50_4">e</span><span id="w50_5">depois</span><span id="w50_6">você</span></div><div id="cap51" class="clip capg" data-start="101.54" data-duration="1.32" data-track-index="20"><span id="w51_0">troca</span><span id="w51_1">pelo</span><span id="w51_2">seu.</span></div><div id="cap52" class="clip capg" data-start="102.86" data-duration="1.34" data-track-index="20"><span id="w52_0">Recapitulando:</span></div><div id="cap53" class="clip capg" data-start="104.20" data-duration="2.95" data-track-index="20"><span id="w53_0">init</span><span id="w53_1">cria</span><span id="w53_2">o</span><span id="w53_3">projeto,</span><span id="w53_4">preview</span><span id="w53_5">abre</span><span id="w53_6">o</span></div><div id="cap54" class="clip capg" data-start="107.15" data-duration="2.37" data-track-index="20"><span id="w54_0">Studio,</span><span id="w54_1">você</span><span id="w54_2">troca</span><span id="w54_3">o</span><span id="w54_4">texto,</span><span id="w54_5">e</span><span id="w54_6">render</span></div><div id="cap55" class="clip capg" data-start="109.52" data-duration="1.04" data-track-index="20"><span id="w55_0">gera</span><span id="w55_1">o</span><span id="w55_2">vídeo.</span></div><div id="cap56" class="clip capg" data-start="110.56" data-duration="2.38" data-track-index="20"><span id="w56_0">Na</span><span id="w56_1">próxima</span><span id="w56_2">aula,</span><span id="w56_3">a</span><span id="w56_4">gente</span><span id="w56_5">coloca</span><span id="w56_6">narração</span></div><div id="cap57" class="clip capg" data-start="112.94" data-duration="1.64" data-track-index="20"><span id="w57_0">e</span><span id="w57_1">legenda</span><span id="w57_2">no</span><span id="w57_3">seu</span><span id="w57_4">vídeo.</span></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.set("#cursor",{x:880,y:540,autoAlpha:0},0);tl.to("#cursor",{autoAlpha:1,duration:.3},4.0);
+tl.fromTo("#c0i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},0.00);
+tl.fromTo("#c0z",{scale:1},{scale:1.05,duration:17.44,ease:"none",immediateRender:false},0.00);
+tl.fromTo("#c0r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},1.45);
+tl.to("#c0r",{scale:1.035,duration:.6,yoyo:true,repeat:25,ease:"sine.inOut"},1.90);
+tl.to("#cursor",{x:1413,y:116,duration:.9,ease:"power2.inOut"},0.60);
+tl.fromTo("#c0l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},0.50);
+tl.fromTo("#c0k",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.45,ease:"power3.out",immediateRender:false},1.90);
+tl.fromTo("#c1i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},17.44);
+tl.fromTo("#c1z",{scale:1},{scale:1.05,duration:8.36,ease:"none",immediateRender:false},17.44);
+tl.fromTo("#c1r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},18.89);
+tl.to("#c1r",{scale:1.035,duration:.6,yoyo:true,repeat:11,ease:"sine.inOut"},19.34);
+tl.to("#cursor",{x:1413,y:157,duration:.9,ease:"power2.inOut"},18.04);
+tl.fromTo("#c1l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},17.94);
+tl.fromTo("#c2i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},25.80);
+tl.fromTo("#c2z",{scale:1},{scale:1.05,duration:4.82,ease:"none",immediateRender:false},25.80);
+tl.fromTo("#c2r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},27.25);
+tl.to("#c2r",{scale:1.035,duration:.6,yoyo:true,repeat:5,ease:"sine.inOut"},27.70);
+tl.to("#cursor",{x:1413,y:116,duration:.9,ease:"power2.inOut"},26.40);
+tl.fromTo("#c2l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},26.30);
+tl.fromTo("#c2k",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.45,ease:"power3.out",immediateRender:false},27.70);
+tl.fromTo("#c3i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},30.62);
+tl.fromTo("#c3z",{scale:1},{scale:1.05,duration:3.86,ease:"none",immediateRender:false},30.62);
+tl.fromTo("#c3r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},32.07);
+tl.to("#c3r",{scale:1.035,duration:.6,yoyo:true,repeat:3,ease:"sine.inOut"},32.52);
+tl.to("#cursor",{x:1413,y:338,duration:.9,ease:"power2.inOut"},31.22);
+tl.fromTo("#c3l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},31.12);
+tl.fromTo("#c4i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},34.48);
+tl.fromTo("#c4z",{scale:1,x:0,y:0},{scale:1.900,x:0.0,y:-810.0,duration:1.1,ease:"power3.inOut",immediateRender:false},34.83);
+tl.fromTo("#c4r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},35.93);
+tl.to("#c4r",{scale:1.035,duration:.6,yoyo:true,repeat:11,ease:"sine.inOut"},36.38);
+tl.to("#cursor",{x:684,y:484,duration:.9,ease:"power2.inOut"},35.08);
+tl.fromTo("#c4l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},34.98);
+tl.fromTo("#c5i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},42.90);
+tl.fromTo("#c5z",{scale:1,x:0,y:0},{scale:1.900,x:-688.3,y:-631.4,duration:1.1,ease:"power3.inOut",immediateRender:false},43.25);
+tl.fromTo("#c5r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},44.35);
+tl.to("#c5r",{scale:1.035,duration:.6,yoyo:true,repeat:1,ease:"sine.inOut"},44.80);
+tl.to("#cursor",{x:819,y:470,duration:.9,ease:"power2.inOut"},43.50);
+tl.fromTo("#c5l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},43.40);
+tl.fromTo("#c6i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},45.96);
+tl.fromTo("#c6z",{scale:1,x:0,y:0},{scale:1.900,x:0.0,y:0.0,duration:1.1,ease:"power3.inOut",immediateRender:false},46.31);
+tl.fromTo("#c6r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},47.41);
+tl.to("#c6r",{scale:1.035,duration:.6,yoyo:true,repeat:1,ease:"sine.inOut"},47.86);
+tl.to("#cursor",{x:335,y:115,duration:.9,ease:"power2.inOut"},46.56);
+tl.to("#cursor",{scale:.82,duration:.09,yoyo:true,repeat:1},47.56);
+tl.set("#ripple",{x:335,y:115},47.56);
+tl.fromTo("#ripple",{autoAlpha:.9,scale:.2},{autoAlpha:0,scale:2.4,duration:.7,ease:"power2.out",immediateRender:false},47.58);
+tl.fromTo("#c6l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},46.46);
+tl.fromTo("#c7i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},49.24);
+tl.fromTo("#c7z",{scale:1,x:0,y:0},{scale:1.900,x:0.0,y:0.0,duration:1.1,ease:"power3.inOut",immediateRender:false},49.59);
+tl.fromTo("#c7r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},50.69);
+tl.to("#c7r",{scale:1.035,duration:.6,yoyo:true,repeat:3,ease:"sine.inOut"},51.14);
+tl.to("#cursor",{x:202,y:357,duration:.9,ease:"power2.inOut"},49.84);
+tl.to("#cursor",{scale:.82,duration:.09,yoyo:true,repeat:1},50.84);
+tl.set("#ripple",{x:202,y:357},50.84);
+tl.fromTo("#ripple",{autoAlpha:.9,scale:.2},{autoAlpha:0,scale:2.4,duration:.7,ease:"power2.out",immediateRender:false},50.86);
+tl.fromTo("#c7l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},49.74);
+tl.fromTo("#c8i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},53.48);
+tl.fromTo("#c8z",{scale:1,x:0,y:0},{scale:1.500,x:0.0,y:-165.0,duration:1.1,ease:"power3.inOut",immediateRender:false},53.83);
+tl.fromTo("#c8r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},54.93);
+tl.to("#c8r",{scale:1.035,duration:.6,yoyo:true,repeat:9,ease:"sine.inOut"},55.38);
+tl.to("#cursor",{x:1052,y:479,duration:.9,ease:"power2.inOut"},54.08);
+tl.fromTo("#c8l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},53.98);
+tl.fromTo("#c9i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},60.84);
+tl.fromTo("#c9z",{scale:1,x:0,y:0},{scale:1.500,x:0.0,y:-165.0,duration:1.1,ease:"power3.inOut",immediateRender:false},61.19);
+tl.fromTo("#c9r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},62.29);
+tl.to("#c9r",{scale:1.035,duration:.6,yoyo:true,repeat:7,ease:"sine.inOut"},62.74);
+tl.to("#cursor",{x:1052,y:479,duration:.9,ease:"power2.inOut"},61.44);
+tl.fromTo("#c9l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},61.34);
+tl.fromTo("#c10i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},66.92);
+tl.fromTo("#c10z",{scale:1,x:0,y:0},{scale:1.900,x:0.0,y:-810.0,duration:1.1,ease:"power3.inOut",immediateRender:false},67.27);
+tl.fromTo("#c10r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},68.37);
+tl.to("#c10r",{scale:1.035,duration:.6,yoyo:true,repeat:1,ease:"sine.inOut"},68.82);
+tl.to("#cursor",{x:684,y:484,duration:.9,ease:"power2.inOut"},67.52);
+tl.fromTo("#c10l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},67.42);
+tl.fromTo("#c11i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},69.32);
+tl.fromTo("#c11z",{scale:1,x:0,y:0},{scale:1.900,x:-1440.0,y:-810.0,duration:1.1,ease:"power3.inOut",immediateRender:false},69.67);
+tl.fromTo("#c11r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},70.77);
+tl.to("#c11r",{scale:1.035,duration:.6,yoyo:true,repeat:1,ease:"sine.inOut"},71.22);
+tl.to("#cursor",{x:1076,y:484,duration:.9,ease:"power2.inOut"},69.92);
+tl.fromTo("#c11l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},69.82);
+tl.fromTo("#c12i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},71.52);
+tl.fromTo("#c12z",{scale:1,x:0,y:0},{scale:1.900,x:-1440.0,y:-344.8,duration:1.1,ease:"power3.inOut",immediateRender:false},71.87);
+tl.fromTo("#c12r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},72.97);
+tl.to("#c12r",{scale:1.035,duration:.6,yoyo:true,repeat:11,ease:"sine.inOut"},73.42);
+tl.to("#cursor",{x:1474,y:481,duration:.9,ease:"power2.inOut"},72.12);
+tl.fromTo("#c12l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},72.02);
+tl.fromTo("#c12k",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.45,ease:"power3.out",immediateRender:false},73.42);
+tl.fromTo("#c13i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},80.28);
+tl.fromTo("#c13z",{scale:1,x:0,y:0},{scale:1.900,x:-1440.0,y:0.0,duration:1.1,ease:"power3.inOut",immediateRender:false},80.63);
+tl.fromTo("#c13r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},81.73);
+tl.to("#c13r",{scale:1.035,duration:.6,yoyo:true,repeat:7,ease:"sine.inOut"},82.18);
+tl.to("#cursor",{x:1571,y:49,duration:.9,ease:"power2.inOut"},80.88);
+tl.fromTo("#c13l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},80.78);
+tl.fromTo("#c14i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},87.02);
+tl.fromTo("#c14z",{scale:1},{scale:1.05,duration:6.86,ease:"none",immediateRender:false},87.02);
+tl.fromTo("#c14r",{autoAlpha:0,scale:1.25},{autoAlpha:1,scale:1,duration:.4,ease:"back.out(2)",immediateRender:false},88.47);
+tl.to("#c14r",{scale:1.035,duration:.6,yoyo:true,repeat:7,ease:"sine.inOut"},88.92);
+tl.to("#cursor",{x:1413,y:116,duration:.9,ease:"power2.inOut"},87.62);
+tl.fromTo("#c14l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},87.52);
+tl.fromTo("#c14k",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.45,ease:"power3.out",immediateRender:false},88.92);
+tl.to("#cursor",{autoAlpha:0,duration:.2},93.88);
+tl.fromTo("#c15i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},93.88);
+tl.fromTo("#c15z",{scale:1},{scale:1.05,duration:8.86,ease:"none",immediateRender:false},93.88);
+tl.fromTo("#c15l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},94.38);
+tl.to("#cursor",{autoAlpha:0,duration:.2},102.74);
+tl.fromTo("#c16i",{autoAlpha:0},{autoAlpha:1,duration:.35,ease:"power1.out",immediateRender:false},102.74);
+tl.fromTo("#c16z",{scale:1},{scale:1.05,duration:15.77,ease:"none",immediateRender:false},102.74);
+tl.fromTo("#c16l",{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.45,ease:"power3.out",immediateRender:false},103.24);
+tl.fromTo("#c16k",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.45,ease:"power3.out",immediateRender:false},104.64);
+tl.fromTo(".abre",{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.5,ease:"power3.out",immediateRender:false},.1);
+tl.to(".abre",{autoAlpha:0,duration:.4},3.7);
+tl.to("#cursor",{autoAlpha:0,duration:.3},114.31);
+tl.fromTo(".fimbg",{autoAlpha:0},{autoAlpha:1,duration:.5,immediateRender:false},114.31);
+tl.fromTo(".fimc",{autoAlpha:0,y:40},{autoAlpha:1,y:0,duration:.5,ease:"power3.out",immediateRender:false},114.51);
+tl.fromTo("#sub",{scale:.6},{scale:1,duration:.45,ease:"back.out(2)",immediateRender:false},114.91);
+tl.to("#sub",{scale:.9,duration:.1,yoyo:true,repeat:1},116.31);
+tl.set("#sub",{background:"#3a3a3a"},116.51);tl.set("#subt",{textContent:"INSCRITO"},116.51);
+tl.set("#w0_0",{color:"#2EE6A6"},0.18);
+tl.set("#w0_0",{color:"#ffffff"},0.32);
+tl.set("#w0_1",{color:"#2EE6A6"},0.32);
+tl.set("#w0_1",{color:"#ffffff"},0.60);
+tl.set("#w0_2",{color:"#2EE6A6"},0.60);
+tl.set("#w0_2",{color:"#ffffff"},1.14);
+tl.set("#w0_3",{color:"#2EE6A6"},1.14);
+tl.set("#w0_3",{color:"#ffffff"},1.44);
+tl.set("#w0_4",{color:"#2EE6A6"},1.44);
+tl.set("#w0_4",{color:"#ffffff"},1.88);
+tl.set("#w0_5",{color:"#2EE6A6"},1.88);
+tl.set("#w0_5",{color:"#ffffff"},2.14);
+tl.set("#w0_6",{color:"#2EE6A6"},2.14);
+tl.set("#w1_0",{color:"#2EE6A6"},3.52);
+tl.set("#w1_0",{color:"#ffffff"},3.78);
+tl.set("#w1_1",{color:"#2EE6A6"},3.78);
+tl.set("#w1_1",{color:"#ffffff"},3.92);
+tl.set("#w1_2",{color:"#2EE6A6"},3.92);
+tl.set("#w1_2",{color:"#ffffff"},4.14);
+tl.set("#w1_3",{color:"#2EE6A6"},4.14);
+tl.set("#w1_3",{color:"#ffffff"},4.32);
+tl.set("#w1_4",{color:"#2EE6A6"},4.32);
+tl.set("#w1_4",{color:"#ffffff"},4.56);
+tl.set("#w1_5",{color:"#2EE6A6"},4.56);
+tl.set("#w1_5",{color:"#ffffff"},4.78);
+tl.set("#w1_6",{color:"#2EE6A6"},4.78);
+tl.set("#w2_0",{color:"#2EE6A6"},5.14);
+tl.set("#w3_0",{color:"#2EE6A6"},5.94);
+tl.set("#w3_0",{color:"#ffffff"},6.12);
+tl.set("#w3_1",{color:"#2EE6A6"},6.12);
+tl.set("#w3_1",{color:"#ffffff"},6.44);
+tl.set("#w3_2",{color:"#2EE6A6"},6.44);
+tl.set("#w3_2",{color:"#ffffff"},6.70);
+tl.set("#w3_3",{color:"#2EE6A6"},6.70);
+tl.set("#w3_3",{color:"#ffffff"},7.20);
+tl.set("#w3_4",{color:"#2EE6A6"},7.20);
+tl.set("#w3_4",{color:"#ffffff"},7.54);
+tl.set("#w3_5",{color:"#2EE6A6"},7.54);
+tl.set("#w3_5",{color:"#ffffff"},7.72);
+tl.set("#w3_6",{color:"#2EE6A6"},7.72);
+tl.set("#w4_0",{color:"#2EE6A6"},8.95);
+tl.set("#w4_0",{color:"#ffffff"},9.70);
+tl.set("#w4_1",{color:"#2EE6A6"},9.70);
+tl.set("#w4_1",{color:"#ffffff"},10.64);
+tl.set("#w4_2",{color:"#2EE6A6"},10.64);
+tl.set("#w4_2",{color:"#ffffff"},11.24);
+tl.set("#w4_3",{color:"#2EE6A6"},11.24);
+tl.set("#w4_3",{color:"#ffffff"},11.38);
+tl.set("#w4_4",{color:"#2EE6A6"},11.38);
+tl.set("#w4_4",{color:"#ffffff"},11.52);
+tl.set("#w4_5",{color:"#2EE6A6"},11.52);
+tl.set("#w4_5",{color:"#ffffff"},11.84);
+tl.set("#w4_6",{color:"#2EE6A6"},11.84);
+tl.set("#w5_0",{color:"#2EE6A6"},12.52);
+tl.set("#w5_0",{color:"#ffffff"},12.84);
+tl.set("#w5_1",{color:"#2EE6A6"},12.84);
+tl.set("#w5_1",{color:"#ffffff"},14.50);
+tl.set("#w5_2",{color:"#2EE6A6"},14.50);
+tl.set("#w5_2",{color:"#ffffff"},15.66);
+tl.set("#w5_3",{color:"#2EE6A6"},15.66);
+tl.set("#w5_3",{color:"#ffffff"},15.76);
+tl.set("#w5_4",{color:"#2EE6A6"},15.76);
+tl.set("#w5_4",{color:"#ffffff"},15.88);
+tl.set("#w5_5",{color:"#2EE6A6"},15.88);
+tl.set("#w5_5",{color:"#ffffff"},15.94);
+tl.set("#w5_6",{color:"#2EE6A6"},15.94);
+tl.set("#w6_0",{color:"#2EE6A6"},16.24);
+tl.set("#w6_0",{color:"#ffffff"},16.60);
+tl.set("#w6_1",{color:"#2EE6A6"},16.60);
+tl.set("#w7_0",{color:"#2EE6A6"},17.56);
+tl.set("#w7_0",{color:"#ffffff"},18.04);
+tl.set("#w7_1",{color:"#2EE6A6"},18.04);
+tl.set("#w7_1",{color:"#ffffff"},18.44);
+tl.set("#w7_2",{color:"#2EE6A6"},18.44);
+tl.set("#w7_2",{color:"#ffffff"},18.62);
+tl.set("#w7_3",{color:"#2EE6A6"},18.62);
+tl.set("#w7_3",{color:"#ffffff"},18.82);
+tl.set("#w7_4",{color:"#2EE6A6"},18.82);
+tl.set("#w7_4",{color:"#ffffff"},19.06);
+tl.set("#w7_5",{color:"#2EE6A6"},19.06);
+tl.set("#w7_5",{color:"#ffffff"},19.28);
+tl.set("#w7_6",{color:"#2EE6A6"},19.28);
+tl.set("#w8_0",{color:"#2EE6A6"},19.62);
+tl.set("#w9_0",{color:"#2EE6A6"},20.24);
+tl.set("#w9_0",{color:"#ffffff"},20.50);
+tl.set("#w9_1",{color:"#2EE6A6"},20.50);
+tl.set("#w9_1",{color:"#ffffff"},21.96);
+tl.set("#w9_2",{color:"#2EE6A6"},21.96);
+tl.set("#w9_2",{color:"#ffffff"},22.06);
+tl.set("#w9_3",{color:"#2EE6A6"},22.06);
+tl.set("#w9_3",{color:"#ffffff"},22.14);
+tl.set("#w9_4",{color:"#2EE6A6"},22.14);
+tl.set("#w9_4",{color:"#ffffff"},22.40);
+tl.set("#w9_5",{color:"#2EE6A6"},22.40);
+tl.set("#w9_5",{color:"#ffffff"},22.86);
+tl.set("#w9_6",{color:"#2EE6A6"},22.86);
+tl.set("#w10_0",{color:"#2EE6A6"},22.96);
+tl.set("#w10_0",{color:"#ffffff"},23.26);
+tl.set("#w10_1",{color:"#2EE6A6"},23.26);
+tl.set("#w10_1",{color:"#ffffff"},24.00);
+tl.set("#w10_2",{color:"#2EE6A6"},24.00);
+tl.set("#w10_2",{color:"#ffffff"},24.44);
+tl.set("#w10_3",{color:"#2EE6A6"},24.44);
+tl.set("#w10_3",{color:"#ffffff"},24.60);
+tl.set("#w10_4",{color:"#2EE6A6"},24.60);
+tl.set("#w10_4",{color:"#ffffff"},24.74);
+tl.set("#w10_5",{color:"#2EE6A6"},24.74);
+tl.set("#w11_0",{color:"#2EE6A6"},25.92);
+tl.set("#w11_0",{color:"#ffffff"},26.34);
+tl.set("#w11_1",{color:"#2EE6A6"},26.34);
+tl.set("#w11_1",{color:"#ffffff"},26.52);
+tl.set("#w11_2",{color:"#2EE6A6"},26.52);
+tl.set("#w11_2",{color:"#ffffff"},26.90);
+tl.set("#w11_3",{color:"#2EE6A6"},26.90);
+tl.set("#w11_3",{color:"#ffffff"},27.22);
+tl.set("#w11_4",{color:"#2EE6A6"},27.22);
+tl.set("#w11_4",{color:"#ffffff"},27.50);
+tl.set("#w11_5",{color:"#2EE6A6"},27.50);
+tl.set("#w11_5",{color:"#ffffff"},28.29);
+tl.set("#w11_6",{color:"#2EE6A6"},28.29);
+tl.set("#w12_0",{color:"#2EE6A6"},28.98);
+tl.set("#w12_0",{color:"#ffffff"},29.88);
+tl.set("#w12_1",{color:"#2EE6A6"},29.88);
+tl.set("#w13_0",{color:"#2EE6A6"},30.74);
+tl.set("#w13_0",{color:"#ffffff"},31.00);
+tl.set("#w13_1",{color:"#2EE6A6"},31.00);
+tl.set("#w13_1",{color:"#ffffff"},31.22);
+tl.set("#w13_2",{color:"#2EE6A6"},31.22);
+tl.set("#w13_2",{color:"#ffffff"},31.32);
+tl.set("#w13_3",{color:"#2EE6A6"},31.32);
+tl.set("#w13_3",{color:"#ffffff"},31.70);
+tl.set("#w13_4",{color:"#2EE6A6"},31.70);
+tl.set("#w13_4",{color:"#ffffff"},32.28);
+tl.set("#w13_5",{color:"#2EE6A6"},32.28);
+tl.set("#w14_0",{color:"#2EE6A6"},32.60);
+tl.set("#w14_0",{color:"#ffffff"},32.76);
+tl.set("#w14_1",{color:"#2EE6A6"},32.76);
+tl.set("#w14_1",{color:"#ffffff"},32.98);
+tl.set("#w14_2",{color:"#2EE6A6"},32.98);
+tl.set("#w14_2",{color:"#ffffff"},33.10);
+tl.set("#w14_3",{color:"#2EE6A6"},33.10);
+tl.set("#w14_3",{color:"#ffffff"},33.28);
+tl.set("#w14_4",{color:"#2EE6A6"},33.28);
+tl.set("#w15_0",{color:"#2EE6A6"},34.60);
+tl.set("#w15_0",{color:"#ffffff"},34.86);
+tl.set("#w15_1",{color:"#2EE6A6"},34.86);
+tl.set("#w15_1",{color:"#ffffff"},34.94);
+tl.set("#w15_2",{color:"#2EE6A6"},34.94);
+tl.set("#w15_2",{color:"#ffffff"},35.57);
+tl.set("#w15_3",{color:"#2EE6A6"},35.57);
+tl.set("#w16_0",{color:"#2EE6A6"},35.96);
+tl.set("#w16_0",{color:"#ffffff"},36.24);
+tl.set("#w16_1",{color:"#2EE6A6"},36.24);
+tl.set("#w16_1",{color:"#ffffff"},36.54);
+tl.set("#w16_2",{color:"#2EE6A6"},36.54);
+tl.set("#w16_2",{color:"#ffffff"},36.80);
+tl.set("#w16_3",{color:"#2EE6A6"},36.80);
+tl.set("#w16_3",{color:"#ffffff"},36.92);
+tl.set("#w16_4",{color:"#2EE6A6"},36.92);
+tl.set("#w16_4",{color:"#ffffff"},37.18);
+tl.set("#w16_5",{color:"#2EE6A6"},37.18);
+tl.set("#w16_5",{color:"#ffffff"},37.52);
+tl.set("#w16_6",{color:"#2EE6A6"},37.52);
+tl.set("#w17_0",{color:"#2EE6A6"},37.80);
+tl.set("#w17_0",{color:"#ffffff"},38.22);
+tl.set("#w17_1",{color:"#2EE6A6"},38.22);
+tl.set("#w17_1",{color:"#ffffff"},38.54);
+tl.set("#w17_2",{color:"#2EE6A6"},38.54);
+tl.set("#w17_2",{color:"#ffffff"},38.70);
+tl.set("#w17_3",{color:"#2EE6A6"},38.70);
+tl.set("#w17_3",{color:"#ffffff"},38.86);
+tl.set("#w17_4",{color:"#2EE6A6"},38.86);
+tl.set("#w17_4",{color:"#ffffff"},39.20);
+tl.set("#w17_5",{color:"#2EE6A6"},39.20);
+tl.set("#w18_0",{color:"#2EE6A6"},39.86);
+tl.set("#w18_0",{color:"#ffffff"},40.08);
+tl.set("#w18_1",{color:"#2EE6A6"},40.08);
+tl.set("#w18_1",{color:"#ffffff"},40.32);
+tl.set("#w18_2",{color:"#2EE6A6"},40.32);
+tl.set("#w18_2",{color:"#ffffff"},40.80);
+tl.set("#w18_3",{color:"#2EE6A6"},40.80);
+tl.set("#w18_3",{color:"#ffffff"},41.16);
+tl.set("#w18_4",{color:"#2EE6A6"},41.16);
+tl.set("#w18_4",{color:"#ffffff"},41.40);
+tl.set("#w18_5",{color:"#2EE6A6"},41.40);
+tl.set("#w18_5",{color:"#ffffff"},41.60);
+tl.set("#w18_6",{color:"#2EE6A6"},41.60);
+tl.set("#w19_0",{color:"#2EE6A6"},41.88);
+tl.set("#w19_0",{color:"#ffffff"},42.28);
+tl.set("#w19_1",{color:"#2EE6A6"},42.28);
+tl.set("#w20_0",{color:"#2EE6A6"},43.02);
+tl.set("#w20_0",{color:"#ffffff"},43.12);
+tl.set("#w20_1",{color:"#2EE6A6"},43.12);
+tl.set("#w20_1",{color:"#ffffff"},43.38);
+tl.set("#w20_2",{color:"#2EE6A6"},43.38);
+tl.set("#w20_2",{color:"#ffffff"},43.78);
+tl.set("#w20_3",{color:"#2EE6A6"},43.78);
+tl.set("#w20_3",{color:"#ffffff"},44.10);
+tl.set("#w20_4",{color:"#2EE6A6"},44.10);
+tl.set("#w20_4",{color:"#ffffff"},44.38);
+tl.set("#w20_5",{color:"#2EE6A6"},44.38);
+tl.set("#w20_5",{color:"#ffffff"},44.68);
+tl.set("#w20_6",{color:"#2EE6A6"},44.68);
+tl.set("#w21_0",{color:"#2EE6A6"},44.92);
+tl.set("#w21_0",{color:"#ffffff"},45.12);
+tl.set("#w21_1",{color:"#2EE6A6"},45.12);
+tl.set("#w22_0",{color:"#2EE6A6"},46.08);
+tl.set("#w22_0",{color:"#ffffff"},46.32);
+tl.set("#w22_1",{color:"#2EE6A6"},46.32);
+tl.set("#w22_1",{color:"#ffffff"},46.64);
+tl.set("#w22_2",{color:"#2EE6A6"},46.64);
+tl.set("#w22_2",{color:"#ffffff"},46.80);
+tl.set("#w22_3",{color:"#2EE6A6"},46.80);
+tl.set("#w22_3",{color:"#ffffff"},47.02);
+tl.set("#w22_4",{color:"#2EE6A6"},47.02);
+tl.set("#w23_0",{color:"#2EE6A6"},47.78);
+tl.set("#w23_0",{color:"#ffffff"},48.02);
+tl.set("#w23_1",{color:"#2EE6A6"},48.02);
+tl.set("#w23_1",{color:"#ffffff"},48.18);
+tl.set("#w23_2",{color:"#2EE6A6"},48.18);
+tl.set("#w23_2",{color:"#ffffff"},48.62);
+tl.set("#w23_3",{color:"#2EE6A6"},48.62);
+tl.set("#w24_0",{color:"#2EE6A6"},49.36);
+tl.set("#w24_0",{color:"#ffffff"},49.66);
+tl.set("#w24_1",{color:"#2EE6A6"},49.66);
+tl.set("#w24_1",{color:"#ffffff"},49.86);
+tl.set("#w24_2",{color:"#2EE6A6"},49.86);
+tl.set("#w24_2",{color:"#ffffff"},50.80);
+tl.set("#w24_3",{color:"#2EE6A6"},50.80);
+tl.set("#w24_3",{color:"#ffffff"},50.92);
+tl.set("#w24_4",{color:"#2EE6A6"},50.92);
+tl.set("#w24_4",{color:"#ffffff"},51.14);
+tl.set("#w24_5",{color:"#2EE6A6"},51.14);
+tl.set("#w25_0",{color:"#2EE6A6"},52.70);
+tl.set("#w26_0",{color:"#2EE6A6"},53.60);
+tl.set("#w26_0",{color:"#ffffff"},53.80);
+tl.set("#w26_1",{color:"#2EE6A6"},53.80);
+tl.set("#w26_1",{color:"#ffffff"},53.96);
+tl.set("#w26_2",{color:"#2EE6A6"},53.96);
+tl.set("#w26_2",{color:"#ffffff"},54.12);
+tl.set("#w26_3",{color:"#2EE6A6"},54.12);
+tl.set("#w26_3",{color:"#ffffff"},54.34);
+tl.set("#w26_4",{color:"#2EE6A6"},54.34);
+tl.set("#w26_4",{color:"#ffffff"},54.66);
+tl.set("#w26_5",{color:"#2EE6A6"},54.66);
+tl.set("#w26_5",{color:"#ffffff"},55.06);
+tl.set("#w26_6",{color:"#2EE6A6"},55.06);
+tl.set("#w27_0",{color:"#2EE6A6"},55.78);
+tl.set("#w27_0",{color:"#ffffff"},56.06);
+tl.set("#w27_1",{color:"#2EE6A6"},56.06);
+tl.set("#w27_1",{color:"#ffffff"},56.91);
+tl.set("#w27_2",{color:"#2EE6A6"},56.91);
+tl.set("#w27_2",{color:"#ffffff"},57.23);
+tl.set("#w27_3",{color:"#2EE6A6"},57.23);
+tl.set("#w27_3",{color:"#ffffff"},57.56);
+tl.set("#w27_4",{color:"#2EE6A6"},57.56);
+tl.set("#w27_4",{color:"#ffffff"},58.04);
+tl.set("#w27_5",{color:"#2EE6A6"},58.04);
+tl.set("#w28_0",{color:"#2EE6A6"},58.90);
+tl.set("#w28_0",{color:"#ffffff"},59.06);
+tl.set("#w28_1",{color:"#2EE6A6"},59.06);
+tl.set("#w28_1",{color:"#ffffff"},59.22);
+tl.set("#w28_2",{color:"#2EE6A6"},59.22);
+tl.set("#w28_2",{color:"#ffffff"},59.56);
+tl.set("#w28_3",{color:"#2EE6A6"},59.56);
+tl.set("#w28_3",{color:"#ffffff"},59.84);
+tl.set("#w28_4",{color:"#2EE6A6"},59.84);
+tl.set("#w28_4",{color:"#ffffff"},60.26);
+tl.set("#w28_5",{color:"#2EE6A6"},60.26);
+tl.set("#w29_0",{color:"#2EE6A6"},60.96);
+tl.set("#w29_0",{color:"#ffffff"},61.18);
+tl.set("#w29_1",{color:"#2EE6A6"},61.18);
+tl.set("#w30_0",{color:"#2EE6A6"},61.98);
+tl.set("#w30_0",{color:"#ffffff"},62.06);
+tl.set("#w30_1",{color:"#2EE6A6"},62.06);
+tl.set("#w30_1",{color:"#ffffff"},62.16);
+tl.set("#w30_2",{color:"#2EE6A6"},62.16);
+tl.set("#w30_2",{color:"#ffffff"},62.28);
+tl.set("#w30_3",{color:"#2EE6A6"},62.28);
+tl.set("#w30_3",{color:"#ffffff"},62.62);
+tl.set("#w30_4",{color:"#2EE6A6"},62.62);
+tl.set("#w30_4",{color:"#ffffff"},62.84);
+tl.set("#w30_5",{color:"#2EE6A6"},62.84);
+tl.set("#w30_5",{color:"#ffffff"},63.00);
+tl.set("#w30_6",{color:"#2EE6A6"},63.00);
+tl.set("#w31_0",{color:"#2EE6A6"},63.50);
+tl.set("#w32_0",{color:"#2EE6A6"},64.66);
+tl.set("#w32_0",{color:"#ffffff"},65.26);
+tl.set("#w32_1",{color:"#2EE6A6"},65.26);
+tl.set("#w32_1",{color:"#ffffff"},65.65);
+tl.set("#w32_2",{color:"#2EE6A6"},65.65);
+tl.set("#w32_2",{color:"#ffffff"},65.82);
+tl.set("#w32_3",{color:"#2EE6A6"},65.82);
+tl.set("#w32_3",{color:"#ffffff"},66.24);
+tl.set("#w32_4",{color:"#2EE6A6"},66.24);
+tl.set("#w32_4",{color:"#ffffff"},66.56);
+tl.set("#w32_5",{color:"#2EE6A6"},66.56);
+tl.set("#w33_0",{color:"#2EE6A6"},67.04);
+tl.set("#w33_0",{color:"#ffffff"},67.16);
+tl.set("#w33_1",{color:"#2EE6A6"},67.16);
+tl.set("#w33_1",{color:"#ffffff"},67.32);
+tl.set("#w33_2",{color:"#2EE6A6"},67.32);
+tl.set("#w33_2",{color:"#ffffff"},67.70);
+tl.set("#w33_3",{color:"#2EE6A6"},67.70);
+tl.set("#w33_3",{color:"#ffffff"},68.00);
+tl.set("#w33_4",{color:"#2EE6A6"},68.00);
+tl.set("#w33_4",{color:"#ffffff"},68.18);
+tl.set("#w33_5",{color:"#2EE6A6"},68.18);
+tl.set("#w33_5",{color:"#ffffff"},68.32);
+tl.set("#w33_6",{color:"#2EE6A6"},68.32);
+tl.set("#w34_0",{color:"#2EE6A6"},68.70);
+tl.set("#w35_0",{color:"#2EE6A6"},69.44);
+tl.set("#w35_0",{color:"#ffffff"},69.86);
+tl.set("#w35_1",{color:"#2EE6A6"},69.86);
+tl.set("#w35_1",{color:"#ffffff"},70.02);
+tl.set("#w35_2",{color:"#2EE6A6"},70.02);
+tl.set("#w35_2",{color:"#ffffff"},70.32);
+tl.set("#w35_3",{color:"#2EE6A6"},70.32);
+tl.set("#w35_3",{color:"#ffffff"},70.50);
+tl.set("#w35_4",{color:"#2EE6A6"},70.50);
+tl.set("#w35_4",{color:"#ffffff"},70.76);
+tl.set("#w35_5",{color:"#2EE6A6"},70.76);
+tl.set("#w36_0",{color:"#2EE6A6"},71.64);
+tl.set("#w36_0",{color:"#ffffff"},71.80);
+tl.set("#w36_1",{color:"#2EE6A6"},71.80);
+tl.set("#w36_1",{color:"#ffffff"},71.98);
+tl.set("#w36_2",{color:"#2EE6A6"},71.98);
+tl.set("#w36_2",{color:"#ffffff"},72.16);
+tl.set("#w36_3",{color:"#2EE6A6"},72.16);
+tl.set("#w36_3",{color:"#ffffff"},72.42);
+tl.set("#w36_4",{color:"#2EE6A6"},72.42);
+tl.set("#w37_0",{color:"#2EE6A6"},73.04);
+tl.set("#w37_0",{color:"#ffffff"},73.69);
+tl.set("#w37_1",{color:"#2EE6A6"},73.69);
+tl.set("#w37_1",{color:"#ffffff"},74.07);
+tl.set("#w37_2",{color:"#2EE6A6"},74.07);
+tl.set("#w38_0",{color:"#2EE6A6"},74.44);
+tl.set("#w38_0",{color:"#ffffff"},74.56);
+tl.set("#w38_1",{color:"#2EE6A6"},74.56);
+tl.set("#w38_1",{color:"#ffffff"},75.07);
+tl.set("#w38_2",{color:"#2EE6A6"},75.07);
+tl.set("#w38_2",{color:"#ffffff"},75.30);
+tl.set("#w38_3",{color:"#2EE6A6"},75.30);
+tl.set("#w38_3",{color:"#ffffff"},75.42);
+tl.set("#w38_4",{color:"#2EE6A6"},75.42);
+tl.set("#w38_4",{color:"#ffffff"},75.92);
+tl.set("#w38_5",{color:"#2EE6A6"},75.92);
+tl.set("#w38_5",{color:"#ffffff"},76.12);
+tl.set("#w38_6",{color:"#2EE6A6"},76.12);
+tl.set("#w39_0",{color:"#2EE6A6"},76.58);
+tl.set("#w39_0",{color:"#ffffff"},76.94);
+tl.set("#w39_1",{color:"#2EE6A6"},76.94);
+tl.set("#w39_1",{color:"#ffffff"},77.18);
+tl.set("#w39_2",{color:"#2EE6A6"},77.18);
+tl.set("#w39_2",{color:"#ffffff"},77.24);
+tl.set("#w39_3",{color:"#2EE6A6"},77.24);
+tl.set("#w39_3",{color:"#ffffff"},77.40);
+tl.set("#w39_4",{color:"#2EE6A6"},77.40);
+tl.set("#w39_4",{color:"#ffffff"},77.74);
+tl.set("#w39_5",{color:"#2EE6A6"},77.74);
+tl.set("#w39_5",{color:"#ffffff"},78.02);
+tl.set("#w39_6",{color:"#2EE6A6"},78.02);
+tl.set("#w40_0",{color:"#2EE6A6"},78.20);
+tl.set("#w40_0",{color:"#ffffff"},78.76);
+tl.set("#w40_1",{color:"#2EE6A6"},78.76);
+tl.set("#w40_1",{color:"#ffffff"},79.16);
+tl.set("#w40_2",{color:"#2EE6A6"},79.16);
+tl.set("#w40_2",{color:"#ffffff"},79.26);
+tl.set("#w40_3",{color:"#2EE6A6"},79.26);
+tl.set("#w40_3",{color:"#ffffff"},79.50);
+tl.set("#w40_4",{color:"#2EE6A6"},79.50);
+tl.set("#w41_0",{color:"#2EE6A6"},80.40);
+tl.set("#w41_0",{color:"#ffffff"},80.68);
+tl.set("#w41_1",{color:"#2EE6A6"},80.68);
+tl.set("#w41_1",{color:"#ffffff"},80.86);
+tl.set("#w41_2",{color:"#2EE6A6"},80.86);
+tl.set("#w41_2",{color:"#ffffff"},81.08);
+tl.set("#w41_3",{color:"#2EE6A6"},81.08);
+tl.set("#w41_3",{color:"#ffffff"},81.46);
+tl.set("#w41_4",{color:"#2EE6A6"},81.46);
+tl.set("#w41_4",{color:"#ffffff"},81.82);
+tl.set("#w41_5",{color:"#2EE6A6"},81.82);
+tl.set("#w41_5",{color:"#ffffff"},82.06);
+tl.set("#w41_6",{color:"#2EE6A6"},82.06);
+tl.set("#w42_0",{color:"#2EE6A6"},82.50);
+tl.set("#w42_0",{color:"#ffffff"},83.14);
+tl.set("#w42_1",{color:"#2EE6A6"},83.14);
+tl.set("#w42_1",{color:"#ffffff"},83.38);
+tl.set("#w42_2",{color:"#2EE6A6"},83.38);
+tl.set("#w42_2",{color:"#ffffff"},84.17);
+tl.set("#w42_3",{color:"#2EE6A6"},84.17);
+tl.set("#w42_3",{color:"#ffffff"},84.80);
+tl.set("#w42_4",{color:"#2EE6A6"},84.80);
+tl.set("#w42_4",{color:"#ffffff"},85.68);
+tl.set("#w42_5",{color:"#2EE6A6"},85.68);
+tl.set("#w42_5",{color:"#ffffff"},85.98);
+tl.set("#w42_6",{color:"#2EE6A6"},85.98);
+tl.set("#w43_0",{color:"#2EE6A6"},86.24);
+tl.set("#w44_0",{color:"#2EE6A6"},87.14);
+tl.set("#w44_0",{color:"#ffffff"},87.40);
+tl.set("#w44_1",{color:"#2EE6A6"},87.40);
+tl.set("#w44_1",{color:"#ffffff"},87.60);
+tl.set("#w44_2",{color:"#2EE6A6"},87.60);
+tl.set("#w44_2",{color:"#ffffff"},87.86);
+tl.set("#w44_3",{color:"#2EE6A6"},87.86);
+tl.set("#w44_3",{color:"#ffffff"},88.22);
+tl.set("#w44_4",{color:"#2EE6A6"},88.22);
+tl.set("#w44_4",{color:"#ffffff"},88.40);
+tl.set("#w44_5",{color:"#2EE6A6"},88.40);
+tl.set("#w44_5",{color:"#ffffff"},88.64);
+tl.set("#w44_6",{color:"#2EE6A6"},88.64);
+tl.set("#w45_0",{color:"#2EE6A6"},89.50);
+tl.set("#w45_0",{color:"#ffffff"},89.68);
+tl.set("#w45_1",{color:"#2EE6A6"},89.68);
+tl.set("#w45_1",{color:"#ffffff"},90.02);
+tl.set("#w45_2",{color:"#2EE6A6"},90.02);
+tl.set("#w45_2",{color:"#ffffff"},90.28);
+tl.set("#w45_3",{color:"#2EE6A6"},90.28);
+tl.set("#w45_3",{color:"#ffffff"},90.52);
+tl.set("#w45_4",{color:"#2EE6A6"},90.52);
+tl.set("#w45_4",{color:"#ffffff"},90.60);
+tl.set("#w45_5",{color:"#2EE6A6"},90.60);
+tl.set("#w45_5",{color:"#ffffff"},91.18);
+tl.set("#w45_6",{color:"#2EE6A6"},91.18);
+tl.set("#w46_0",{color:"#2EE6A6"},91.26);
+tl.set("#w46_0",{color:"#ffffff"},91.44);
+tl.set("#w46_1",{color:"#2EE6A6"},91.44);
+tl.set("#w46_1",{color:"#ffffff"},92.16);
+tl.set("#w46_2",{color:"#2EE6A6"},92.16);
+tl.set("#w46_2",{color:"#ffffff"},92.82);
+tl.set("#w46_3",{color:"#2EE6A6"},92.82);
+tl.set("#w46_3",{color:"#ffffff"},93.20);
+tl.set("#w46_4",{color:"#2EE6A6"},93.20);
+tl.set("#w47_0",{color:"#2EE6A6"},94.00);
+tl.set("#w47_0",{color:"#ffffff"},94.22);
+tl.set("#w47_1",{color:"#2EE6A6"},94.22);
+tl.set("#w47_1",{color:"#ffffff"},94.30);
+tl.set("#w47_2",{color:"#2EE6A6"},94.30);
+tl.set("#w47_2",{color:"#ffffff"},94.36);
+tl.set("#w47_3",{color:"#2EE6A6"},94.36);
+tl.set("#w47_3",{color:"#ffffff"},94.70);
+tl.set("#w47_4",{color:"#2EE6A6"},94.70);
+tl.set("#w48_0",{color:"#2EE6A6"},95.32);
+tl.set("#w48_0",{color:"#ffffff"},95.40);
+tl.set("#w48_1",{color:"#2EE6A6"},95.40);
+tl.set("#w48_1",{color:"#ffffff"},95.92);
+tl.set("#w48_2",{color:"#2EE6A6"},95.92);
+tl.set("#w48_2",{color:"#ffffff"},96.40);
+tl.set("#w48_3",{color:"#2EE6A6"},96.40);
+tl.set("#w48_3",{color:"#ffffff"},96.78);
+tl.set("#w48_4",{color:"#2EE6A6"},96.78);
+tl.set("#w48_4",{color:"#ffffff"},97.04);
+tl.set("#w48_5",{color:"#2EE6A6"},97.04);
+tl.set("#w48_5",{color:"#ffffff"},97.40);
+tl.set("#w48_6",{color:"#2EE6A6"},97.40);
+tl.set("#w49_0",{color:"#2EE6A6"},98.06);
+tl.set("#w49_0",{color:"#ffffff"},98.34);
+tl.set("#w49_1",{color:"#2EE6A6"},98.34);
+tl.set("#w49_1",{color:"#ffffff"},98.58);
+tl.set("#w49_2",{color:"#2EE6A6"},98.58);
+tl.set("#w49_2",{color:"#ffffff"},98.76);
+tl.set("#w49_3",{color:"#2EE6A6"},98.76);
+tl.set("#w49_3",{color:"#ffffff"},98.92);
+tl.set("#w49_4",{color:"#2EE6A6"},98.92);
+tl.set("#w49_4",{color:"#ffffff"},99.04);
+tl.set("#w49_5",{color:"#2EE6A6"},99.04);
+tl.set("#w49_5",{color:"#ffffff"},99.26);
+tl.set("#w49_6",{color:"#2EE6A6"},99.26);
+tl.set("#w50_0",{color:"#2EE6A6"},99.40);
+tl.set("#w50_0",{color:"#ffffff"},99.78);
+tl.set("#w50_1",{color:"#2EE6A6"},99.78);
+tl.set("#w50_1",{color:"#ffffff"},99.96);
+tl.set("#w50_2",{color:"#2EE6A6"},99.96);
+tl.set("#w50_2",{color:"#ffffff"},100.32);
+tl.set("#w50_3",{color:"#2EE6A6"},100.32);
+tl.set("#w50_3",{color:"#ffffff"},100.72);
+tl.set("#w50_4",{color:"#2EE6A6"},100.72);
+tl.set("#w50_4",{color:"#ffffff"},101.02);
+tl.set("#w50_5",{color:"#2EE6A6"},101.02);
+tl.set("#w50_5",{color:"#ffffff"},101.28);
+tl.set("#w50_6",{color:"#2EE6A6"},101.28);
+tl.set("#w51_0",{color:"#2EE6A6"},101.54);
+tl.set("#w51_0",{color:"#ffffff"},101.82);
+tl.set("#w51_1",{color:"#2EE6A6"},101.82);
+tl.set("#w51_1",{color:"#ffffff"},102.04);
+tl.set("#w51_2",{color:"#2EE6A6"},102.04);
+tl.set("#w52_0",{color:"#2EE6A6"},102.86);
+tl.set("#w53_0",{color:"#2EE6A6"},104.20);
+tl.set("#w53_0",{color:"#ffffff"},104.58);
+tl.set("#w53_1",{color:"#2EE6A6"},104.58);
+tl.set("#w53_1",{color:"#ffffff"},104.72);
+tl.set("#w53_2",{color:"#2EE6A6"},104.72);
+tl.set("#w53_2",{color:"#ffffff"},105.02);
+tl.set("#w53_3",{color:"#2EE6A6"},105.02);
+tl.set("#w53_3",{color:"#ffffff"},105.92);
+tl.set("#w53_4",{color:"#2EE6A6"},105.92);
+tl.set("#w53_4",{color:"#ffffff"},106.48);
+tl.set("#w53_5",{color:"#2EE6A6"},106.48);
+tl.set("#w53_5",{color:"#ffffff"},106.58);
+tl.set("#w53_6",{color:"#2EE6A6"},106.58);
+tl.set("#w54_0",{color:"#2EE6A6"},107.15);
+tl.set("#w54_0",{color:"#ffffff"},107.48);
+tl.set("#w54_1",{color:"#2EE6A6"},107.48);
+tl.set("#w54_1",{color:"#ffffff"},107.74);
+tl.set("#w54_2",{color:"#2EE6A6"},107.74);
+tl.set("#w54_2",{color:"#ffffff"},107.98);
+tl.set("#w54_3",{color:"#2EE6A6"},107.98);
+tl.set("#w54_3",{color:"#ffffff"},108.18);
+tl.set("#w54_4",{color:"#2EE6A6"},108.18);
+tl.set("#w54_4",{color:"#ffffff"},108.74);
+tl.set("#w54_5",{color:"#2EE6A6"},108.74);
+tl.set("#w54_5",{color:"#ffffff"},109.16);
+tl.set("#w54_6",{color:"#2EE6A6"},109.16);
+tl.set("#w55_0",{color:"#2EE6A6"},109.52);
+tl.set("#w55_0",{color:"#ffffff"},109.66);
+tl.set("#w55_1",{color:"#2EE6A6"},109.66);
+tl.set("#w55_1",{color:"#ffffff"},109.94);
+tl.set("#w55_2",{color:"#2EE6A6"},109.94);
+tl.set("#w56_0",{color:"#2EE6A6"},110.56);
+tl.set("#w56_0",{color:"#ffffff"},110.86);
+tl.set("#w56_1",{color:"#2EE6A6"},110.86);
+tl.set("#w56_1",{color:"#ffffff"},111.24);
+tl.set("#w56_2",{color:"#2EE6A6"},111.24);
+tl.set("#w56_2",{color:"#ffffff"},111.48);
+tl.set("#w56_3",{color:"#2EE6A6"},111.48);
+tl.set("#w56_3",{color:"#ffffff"},111.60);
+tl.set("#w56_4",{color:"#2EE6A6"},111.60);
+tl.set("#w56_4",{color:"#ffffff"},111.88);
+tl.set("#w56_5",{color:"#2EE6A6"},111.88);
+tl.set("#w56_5",{color:"#ffffff"},112.30);
+tl.set("#w56_6",{color:"#2EE6A6"},112.30);
+tl.set("#w57_0",{color:"#2EE6A6"},112.94);
+tl.set("#w57_0",{color:"#ffffff"},113.18);
+tl.set("#w57_1",{color:"#2EE6A6"},113.18);
+tl.set("#w57_1",{color:"#ffffff"},113.56);
+tl.set("#w57_2",{color:"#2EE6A6"},113.56);
+tl.set("#w57_2",{color:"#ffffff"},113.70);
+tl.set("#w57_3",{color:"#2EE6A6"},113.70);
+tl.set("#w57_3",{color:"#ffffff"},114.02);
+tl.set("#w57_4",{color:"#2EE6A6"},114.02);
+window.__timelines["main"] = tl;
+</script></body></html>
