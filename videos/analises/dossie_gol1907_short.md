@@ -214,3 +214,8 @@ Leitura:
 
 - A Juliane saiu da faixa de 1–2 mil assim que a onda do TAM baixou. Isso confirma o diagnóstico de canibalização.
 - O longo do Gol continua parado: só cresce se for ligado como "Vídeo relacionado" no Short do TAM.
+
+**Longo-hub (05/10/2026).** "8 detalhes que derrubaram aviões" (12 min) junta TAM, Varig 254, Aeroperú, Linate, Chapecoense, Voepass, Juliane e Gol.
+- Objetivo: gerar horas qualificadas, que os Shorts não contam.
+- Cada Short de aviação aponta para ele em "Vídeo relacionado".
+- Medir na 1ª semana a % de views do longo vindas de "Shorts" (origem do tráfego no MCP).

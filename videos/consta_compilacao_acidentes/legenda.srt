@@ -1,0 +1,1535 @@
+1
+00:00:00,180 --> 00:00:02,380
+Uma manete que voltava sozinha.
+
+2
+00:00:02,320 --> 00:00:03,980
+Um zero fora do lugar.
+
+3
+00:00:03,900 --> 00:00:05,860
+Um pedaço de fita adesiva.
+
+4
+00:00:05,780 --> 00:00:08,280
+Um alarme desligado de propósito.
+
+5
+00:00:08,240 --> 00:00:10,979
+Em cada um destes oito acidentes, o
+
+6
+00:00:10,780 --> 00:00:13,080
+detalhe que derrubou o avião era pequeno
+
+7
+00:00:12,880 --> 00:00:14,719
+demais para alguém perceber a tempo.
+
+8
+00:00:14,680 --> 00:00:17,080
+E alguns deles mudaram para sempre a
+
+9
+00:00:16,880 --> 00:00:18,759
+forma como você voa hoje.
+
+10
+00:00:18,800 --> 00:00:20,740
+Este vídeo é em memória de todas
+
+11
+00:00:20,540 --> 00:00:22,960
+as pessoas que estavam nesses voos.
+
+12
+00:00:22,900 --> 00:00:24,880
+E a gente começa pelo mais rápido
+
+13
+00:00:24,680 --> 00:00:25,599
+de todos:
+
+14
+00:00:25,685 --> 00:00:27,419
+vinte e cinco segundos.
+
+15
+00:00:27,470 --> 00:00:28,040
+Manhã de
+
+16
+00:00:28,300 --> 00:00:31,040
+quinta-feira, aeroporto de Congonhas, em São Paulo.
+
+17
+00:00:30,940 --> 00:00:33,429
+O Fokker cem da TAM, voo quatrocentos
+
+18
+00:00:33,230 --> 00:00:35,000
+e dois, decola para o Rio de
+
+19
+00:00:34,800 --> 00:00:35,560
+Janeiro.
+
+20
+00:00:35,480 --> 00:00:37,160
+No instante em que as rodas saem
+
+21
+00:00:36,960 --> 00:00:39,240
+do chão, a manete do motor direito
+
+22
+00:00:39,040 --> 00:00:41,260
+volta sozinha para a marcha lenta.
+
+23
+00:00:41,180 --> 00:00:42,880
+Os pilotos acham que é uma pane
+
+24
+00:00:42,680 --> 00:00:44,660
+no controle automático de potência.
+
+25
+00:00:44,600 --> 00:00:46,220
+É uma explicação razoável.
+
+26
+00:00:46,140 --> 00:00:48,180
+E eles fazem o que qualquer piloto
+
+27
+00:00:47,980 --> 00:00:48,640
+faria:
+
+28
+00:00:48,780 --> 00:00:50,700
+empurram a manete de volta para a
+
+29
+00:00:50,500 --> 00:00:51,200
+frente.
+
+30
+00:00:51,180 --> 00:00:52,760
+Mas o problema era outro.
+
+31
+00:00:52,680 --> 00:00:54,960
+O reversor do motor direito, a peça
+
+32
+00:00:54,760 --> 00:00:56,560
+que desvia o ar para frear o
+
+33
+00:00:56,360 --> 00:00:58,840
+avião no pouso, tinha aberto em pleno
+
+34
+00:00:58,640 --> 00:00:59,160
+voo.
+
+35
+00:00:59,160 --> 00:01:01,700
+E o painel não mostrou nenhum aviso.
+
+36
+00:01:01,660 --> 00:01:04,300
+A manete recuava para proteger o avião.
+
+37
+00:01:04,239 --> 00:01:05,400
+Eles empurravam.
+
+38
+00:01:05,360 --> 00:01:06,480
+Ela voltava.
+
+39
+00:01:06,540 --> 00:01:09,200
+Uma, duas, três vezes.
+
+40
+00:01:09,140 --> 00:01:11,560
+Na terceira, uma ligação de segurança que
+
+41
+00:01:11,360 --> 00:01:13,580
+eles nem sabiam que existia…
+
+42
+00:01:13,380 --> 00:01:14,340
+se rompeu.
+
+43
+00:01:14,300 --> 00:01:16,340
+O motor foi para a potência máxima,
+
+44
+00:01:16,260 --> 00:01:17,780
+com o reversor aberto.
+
+45
+00:01:17,700 --> 00:01:20,060
+Um lado do avião acelerava, o outro
+
+46
+00:01:19,860 --> 00:01:20,740
+freava.
+
+47
+00:01:20,660 --> 00:01:23,080
+O Fokker gira mais de noventa graus,
+
+48
+00:01:23,180 --> 00:01:25,340
+passa sobre os prédios do Jabaquara e
+
+49
+00:01:25,140 --> 00:01:26,280
+cai sobre as casas.
+
+50
+00:01:26,480 --> 00:01:28,780
+Noventa e nove pessoas morreram.
+
+51
+00:01:28,805 --> 00:01:30,880
+Noventa e cinco a bordo e quatro
+
+52
+00:01:30,680 --> 00:01:31,600
+no chão.
+
+53
+00:01:31,520 --> 00:01:33,540
+A investigação mostrou que o alerta do
+
+54
+00:01:33,520 --> 00:01:36,360
+reversor dependia de circuitos que podiam falhar
+
+55
+00:01:36,160 --> 00:01:37,200
+sem aviso.
+
+56
+00:01:37,100 --> 00:01:39,200
+O sistema que deveria contar a verdade
+
+57
+00:01:39,080 --> 00:01:40,100
+aos pilotos…
+
+58
+00:01:40,160 --> 00:01:41,280
+ficou calado.
+
+59
+00:01:41,280 --> 00:01:42,660
+E se no caso da TAM o
+
+60
+00:01:42,460 --> 00:01:43,760
+avião não avisou…
+
+61
+00:01:43,780 --> 00:01:46,280
+no próximo, o aviso estava escrito no
+
+62
+00:01:46,080 --> 00:01:46,520
+papel.
+
+63
+00:01:46,720 --> 00:01:48,408
+Só que com um zero a mais.
+
+64
+00:01:51,768 --> 00:01:53,868
+Um zero fora do lugar fez um
+
+65
+00:01:53,668 --> 00:01:55,908
+Boeing da Varig voar três horas na
+
+66
+00:01:55,708 --> 00:01:57,008
+direção errada.
+
+67
+00:01:57,028 --> 00:01:59,328
+Fim de tarde de domingo, em Marabá,
+
+68
+00:01:59,188 --> 00:02:00,168
+no Pará.
+
+69
+00:02:00,108 --> 00:02:02,068
+O voo duzentos e cinquenta e quatro
+
+70
+00:02:01,868 --> 00:02:04,048
+decola para Belém, que fica ao norte,
+
+71
+00:02:03,968 --> 00:02:06,368
+com cinquenta e quatro pessoas a bordo.
+
+72
+00:02:06,328 --> 00:02:08,288
+No plano de voo, o rumo estava
+
+73
+00:02:08,088 --> 00:02:09,088
+escrito assim:
+
+74
+00:02:09,380 --> 00:02:11,548
+zero, dois, sete, zero.
+
+75
+00:02:11,348 --> 00:02:13,788
+Pelo formato novo da Varig, isso queria
+
+76
+00:02:13,588 --> 00:02:15,648
+dizer vinte e sete graus, com uma
+
+77
+00:02:15,448 --> 00:02:16,608
+casa decimal.
+
+78
+00:02:16,528 --> 00:02:19,128
+O comandante leu duzentos e setenta.
+
+79
+00:02:18,928 --> 00:02:19,748
+Oeste.
+
+80
+00:02:19,908 --> 00:02:21,888
+Direto para o meio da Amazônia.
+
+81
+00:02:21,808 --> 00:02:23,628
+E havia um sinal bem na frente
+
+82
+00:02:23,428 --> 00:02:24,048
+dele.
+
+83
+00:02:23,988 --> 00:02:25,448
+Quem voa para o norte no fim
+
+84
+00:02:25,248 --> 00:02:26,888
+da tarde tem o pôr do sol
+
+85
+00:02:26,688 --> 00:02:27,948
+do lado esquerdo.
+
+86
+00:02:27,928 --> 00:02:29,868
+Eles voavam com o sol bem na
+
+87
+00:02:29,668 --> 00:02:30,308
+frente.
+
+88
+00:02:30,348 --> 00:02:31,588
+Ninguém estranhou.
+
+89
+00:02:31,508 --> 00:02:33,968
+O copiloto copiou o rumo do comandante,
+
+90
+00:02:33,768 --> 00:02:35,328
+sem conferir no plano.
+
+91
+00:02:35,228 --> 00:02:37,968
+O tempo passa, e Belém não aparece.
+
+92
+00:02:37,928 --> 00:02:40,088
+Eles tentam se localizar pelo rádio, mas
+
+93
+00:02:39,888 --> 00:02:42,028
+já estão longe demais de tudo.
+
+94
+00:02:41,988 --> 00:02:44,768
+Três horas depois da decolagem, o combustível
+
+95
+00:02:44,568 --> 00:02:45,228
+acaba.
+
+96
+00:02:45,228 --> 00:02:46,288
+Primeiro um motor.
+
+97
+00:02:46,428 --> 00:02:47,468
+Depois o outro.
+
+98
+00:02:47,448 --> 00:02:49,708
+No escuro, o Boeing desce sobre a
+
+99
+00:02:49,508 --> 00:02:51,588
+copa das árvores, no norte do Mato
+
+100
+00:02:51,388 --> 00:02:52,128
+Grosso.
+
+101
+00:02:52,188 --> 00:02:53,848
+Doze pessoas morreram.
+
+102
+00:02:53,788 --> 00:02:56,588
+Quarenta e duas sobreviveram, e passaram dois
+
+103
+00:02:56,388 --> 00:02:58,548
+dias na selva até que quatro delas
+
+104
+00:02:58,348 --> 00:03:00,828
+chegassem a uma fazenda e pedissem socorro.
+
+105
+00:03:00,988 --> 00:03:03,148
+Depois, o mesmo plano de voo foi
+
+106
+00:03:02,948 --> 00:03:05,668
+mostrado a vinte e um pilotos experientes.
+
+107
+00:03:05,788 --> 00:03:07,848
+Quinze cometeram o mesmo erro.
+
+108
+00:03:07,768 --> 00:03:09,908
+O caso virou exemplo em treinamentos de
+
+109
+00:03:09,708 --> 00:03:11,268
+cabine no mundo todo:
+
+110
+00:03:11,268 --> 00:03:13,068
+um piloto confere o outro.
+
+111
+00:03:13,328 --> 00:03:13,988
+Sempre.
+
+112
+00:03:13,908 --> 00:03:16,208
+No Varig, o erro estava no papel.
+
+113
+00:03:16,188 --> 00:03:18,648
+No próximo voo, o erro estava colado
+
+114
+00:03:18,448 --> 00:03:19,768
+no próprio avião.
+
+115
+00:03:19,728 --> 00:03:21,428
+E era só um pedaço de fita.
+
+116
+00:03:24,933 --> 00:03:27,193
+Um pedaço de fita adesiva derrubou um
+
+117
+00:03:26,993 --> 00:03:29,173
+Boeing com setenta pessoas.
+
+118
+00:03:29,193 --> 00:03:31,193
+Madrugada em Lima, no Peru.
+
+119
+00:03:31,113 --> 00:03:33,333
+O voo seiscentos e três da Aeroperú
+
+120
+00:03:33,133 --> 00:03:35,513
+decola rumo a Santiago, no Chile.
+
+121
+00:03:35,473 --> 00:03:37,873
+Horas antes, o avião tinha sido lavado
+
+122
+00:03:37,673 --> 00:03:38,713
+e polido.
+
+123
+00:03:38,713 --> 00:03:40,613
+Para a água não entrar, alguém cobriu
+
+124
+00:03:40,413 --> 00:03:42,713
+com fita três pequenos furos na lateral
+
+125
+00:03:42,513 --> 00:03:43,753
+da fuselagem.
+
+126
+00:03:43,713 --> 00:03:45,333
+E esqueceu de tirar.
+
+127
+00:03:45,293 --> 00:03:47,533
+Esses furos são os sensores de pressão
+
+128
+00:03:47,333 --> 00:03:48,133
+estática.
+
+129
+00:03:48,053 --> 00:03:49,573
+É por eles que o avião sabe
+
+130
+00:03:49,373 --> 00:03:54,893
+a própria altitude e a velocidade.
+
+131
+00:03:51,713 --> 00:03:54,913
+Logo depois da decolagem, os instrumentos enlouquecem.
+
+132
+00:03:54,813 --> 00:03:56,593
+A altitude não faz sentido.
+
+133
+00:03:56,513 --> 00:03:58,293
+A velocidade também não.
+
+134
+00:03:58,233 --> 00:04:00,673
+E então tocam dois alarmes que nunca
+
+135
+00:04:00,473 --> 00:04:02,013
+deveriam tocar juntos:
+
+136
+00:04:01,933 --> 00:04:03,973
+o de velocidade alta demais…
+
+137
+00:04:03,773 --> 00:04:05,893
+e o de perda de sustentação, que
+
+138
+00:04:05,693 --> 00:04:08,333
+avisa que o avião está devagar demais.
+
+139
+00:04:08,293 --> 00:04:10,733
+É noite, sobre o oceano Pacífico.
+
+140
+00:04:10,673 --> 00:04:12,653
+Não existe uma única luz lá fora
+
+141
+00:04:12,453 --> 00:04:14,013
+para conferir nada.
+
+142
+00:04:13,953 --> 00:04:15,953
+Os pilotos pedem ajuda à torre.
+
+143
+00:04:15,933 --> 00:04:17,573
+Mas o radar da torre lê a
+
+144
+00:04:17,373 --> 00:04:19,513
+altitude que o próprio avião informa…
+
+145
+00:04:19,313 --> 00:04:21,673
+pelos mesmos sensores tapados.
+
+146
+00:04:21,593 --> 00:04:23,713
+O painel dizia que estavam perto de
+
+147
+00:04:23,603 --> 00:04:24,793
+três mil metros.
+
+148
+00:04:24,713 --> 00:04:27,273
+Na verdade, estavam rente ao mar.
+
+149
+00:04:27,193 --> 00:04:29,313
+A ponta da asa esquerda toca a
+
+150
+00:04:29,113 --> 00:04:29,693
+água.
+
+151
+00:04:29,673 --> 00:04:32,133
+Eles ainda conseguem subir por alguns segundos.
+
+152
+00:04:32,193 --> 00:04:34,193
+Mas o avião não se sustenta.
+
+153
+00:04:34,553 --> 00:04:35,833
+Setenta pessoas.
+
+154
+00:04:36,033 --> 00:04:37,553
+Nenhum sobrevivente.
+
+155
+00:04:37,593 --> 00:04:39,653
+A fita era de manutenção, e o
+
+156
+00:04:39,453 --> 00:04:41,193
+funcionário que a deixou ali não era
+
+157
+00:04:40,993 --> 00:04:41,873
+um vilão.
+
+158
+00:04:41,813 --> 00:04:43,893
+Foi um passo esquecido num trabalho de
+
+159
+00:04:43,693 --> 00:04:44,513
+rotina.
+
+160
+00:04:44,473 --> 00:04:47,353
+Por isso, hoje, esses sensores ganham capas
+
+161
+00:04:47,153 --> 00:04:50,033
+coloridas, que ninguém consegue deixar de ver.
+
+162
+00:04:50,033 --> 00:04:52,053
+Uma fita que ninguém viu.
+
+163
+00:04:52,073 --> 00:04:54,733
+Agora imagine um alarme que alguém desligou…
+
+164
+00:04:54,533 --> 00:04:55,553
+de propósito.
+
+165
+00:04:59,048 --> 00:05:01,453
+O alarme que podia salvar cento e
+
+166
+00:05:01,253 --> 00:05:04,008
+dezoito pessoas estava desligado de propósito.
+
+167
+00:05:04,008 --> 00:05:06,228
+Manhã de neblina em Milão, no aeroporto
+
+168
+00:05:06,028 --> 00:05:07,248
+de Linate.
+
+169
+00:05:07,048 --> 00:05:09,208
+Não se via cem metros à frente.
+
+170
+00:05:09,148 --> 00:05:11,468
+Um MD oitenta e sete da SAS,
+
+171
+00:05:11,268 --> 00:05:13,448
+com cento e dez pessoas, se prepara
+
+172
+00:05:13,248 --> 00:05:15,128
+para decolar para Copenhague.
+
+173
+00:05:15,048 --> 00:05:17,468
+Ao mesmo tempo, um jatinho recebe ordem
+
+174
+00:05:17,268 --> 00:05:20,228
+de taxiar pelo caminho chamado R cinco.
+
+175
+00:05:20,028 --> 00:05:22,608
+Na neblina, ele entra no R seis…
+
+176
+00:05:22,408 --> 00:05:24,808
+o caminho que cruza a pista principal.
+
+177
+00:05:24,788 --> 00:05:26,768
+Ele para numa marca pintada no chão
+
+178
+00:05:26,568 --> 00:05:27,748
+e avisa a torre:
+
+179
+00:05:27,768 --> 00:05:29,428
+estou na S quatro.
+
+180
+00:05:29,228 --> 00:05:31,108
+O controlador não reconhece.
+
+181
+00:05:31,048 --> 00:05:33,148
+Aquela marca nem aparecia no mapa que
+
+182
+00:05:32,948 --> 00:05:33,868
+ele tinha.
+
+183
+00:05:33,828 --> 00:05:35,688
+E o aeroporto estava cego.
+
+184
+00:05:35,608 --> 00:05:37,628
+O radar de solo não funcionava.
+
+185
+00:05:37,608 --> 00:05:39,528
+E os sensores que avisariam a invasão
+
+186
+00:05:39,328 --> 00:05:42,168
+da pista estavam desligados, porque disparavam à
+
+187
+00:05:41,968 --> 00:05:43,748
+toa, até com bicho.
+
+188
+00:05:43,648 --> 00:05:46,490
+O MD acelera a duzentos e setenta
+
+189
+00:05:46,290 --> 00:05:47,248
+quilômetros por hora.
+
+190
+00:05:47,048 --> 00:05:49,108
+Os pilotos só veem o jatinho quando
+
+191
+00:05:48,908 --> 00:05:49,968
+já é tarde.
+
+192
+00:05:49,908 --> 00:05:51,788
+A batida arranca um motor.
+
+193
+00:05:51,688 --> 00:05:53,368
+O avião ainda sai do chão…
+
+194
+00:05:53,488 --> 00:05:55,568
+mas volta e desliza até um galpão
+
+195
+00:05:55,368 --> 00:05:57,368
+de bagagens no fim da pista.
+
+196
+00:05:57,543 --> 00:05:59,748
+Cento e dezoito pessoas morreram.
+
+197
+00:05:59,728 --> 00:06:01,768
+Cento e dez no avião, quatro no
+
+198
+00:06:01,568 --> 00:06:03,668
+jatinho e quatro no galpão.
+
+199
+00:06:03,768 --> 00:06:05,948
+Até hoje, é o pior acidente aéreo
+
+200
+00:06:05,748 --> 00:06:07,348
+da história da Itália.
+
+201
+00:06:07,448 --> 00:06:10,068
+Depois disso, Linate ganhou radar de solo
+
+202
+00:06:09,868 --> 00:06:12,068
+novo, e a sinalização dos caminhos foi
+
+203
+00:06:11,868 --> 00:06:12,728
+refeita.
+
+204
+00:06:12,668 --> 00:06:14,628
+Em Linate faltou um alarme.
+
+205
+00:06:14,548 --> 00:06:16,948
+No próximo caso, não faltava nada no
+
+206
+00:06:16,748 --> 00:06:17,328
+avião.
+
+207
+00:06:17,348 --> 00:06:18,708
+Faltava combustível.
+
+208
+00:06:18,848 --> 00:06:20,964
+E alguém escolheu não parar.
+
+209
+00:06:24,284 --> 00:06:26,984
+O avião da Chapecoense caiu sem combustível
+
+210
+00:06:26,784 --> 00:06:29,304
+a menos de vinte quilômetros da pista.
+
+211
+00:06:29,284 --> 00:06:31,284
+E o piloto que decidiu não parar
+
+212
+00:06:31,084 --> 00:06:33,464
+para abastecer era também um dos donos
+
+213
+00:06:33,264 --> 00:06:34,624
+da companhia aérea.
+
+214
+00:06:34,584 --> 00:06:36,364
+O time de Chapecó ia para a
+
+215
+00:06:36,164 --> 00:06:38,424
+maior final da sua história, a Copa
+
+216
+00:06:38,674 --> 00:06:41,004
+Sul-Americana, em Medellín, na Colômbia.
+
+217
+00:06:40,964 --> 00:06:43,044
+O voo fretado saiu de Santa Cruz
+
+218
+00:06:42,844 --> 00:06:44,864
+de la Sierra, na Bolívia, num avião
+
+219
+00:06:44,664 --> 00:06:47,124
+que mal tinha alcance para aquela distância.
+
+220
+00:06:47,224 --> 00:06:49,624
+Sem reserva, sem margem nenhuma.
+
+221
+00:06:49,584 --> 00:06:51,944
+Havia aeroportos no caminho onde dava para
+
+222
+00:06:51,744 --> 00:06:52,864
+reabastecer.
+
+223
+00:06:52,764 --> 00:06:54,724
+O avião não parou em nenhum.
+
+224
+00:06:54,624 --> 00:06:56,964
+Perto de Medellín, o combustível chega ao
+
+225
+00:06:56,764 --> 00:06:57,364
+fim.
+
+226
+00:06:57,264 --> 00:06:59,744
+O piloto pede prioridade para pousar…
+
+227
+00:06:59,724 --> 00:07:01,624
+mas não declara emergência.
+
+228
+00:07:01,644 --> 00:07:04,004
+Outro avião, com um problema mecânico, recebe
+
+229
+00:07:03,804 --> 00:07:04,544
+a vez.
+
+230
+00:07:04,484 --> 00:07:06,704
+O da Chapecoense fica dando voltas no
+
+231
+00:07:06,504 --> 00:07:07,084
+escuro,
+
+232
+00:07:07,384 --> 00:07:08,304
+esperando.
+
+233
+00:07:08,264 --> 00:07:10,524
+Os motores param, um a um.
+
+234
+00:07:10,444 --> 00:07:12,944
+O avião bate numa montanha chamada Cerro
+
+235
+00:07:12,744 --> 00:07:13,444
+Gordo.
+
+236
+00:07:13,579 --> 00:07:15,624
+Setenta e uma pessoas morreram.
+
+237
+00:07:15,584 --> 00:07:19,524
+Jogadores, comissão técnica, jornalistas, tripulação.
+
+238
+00:07:19,684 --> 00:07:21,024
+Seis sobreviveram.
+
+239
+00:07:20,984 --> 00:07:23,244
+A investigação colombiana foi direta:
+
+240
+00:07:23,164 --> 00:07:25,724
+o voo foi planejado sem o combustível
+
+241
+00:07:25,524 --> 00:07:26,604
+mínimo exigido.
+
+242
+00:07:26,524 --> 00:07:28,924
+A empresa e a tripulação sabiam.
+
+243
+00:07:28,864 --> 00:07:31,644
+E o adversário, o Atlético Nacional, pediu
+
+244
+00:07:31,444 --> 00:07:33,704
+que o título fosse dado à Chapecoense.
+
+245
+00:07:33,664 --> 00:07:34,904
+Ela virou campeã…
+
+246
+00:07:35,024 --> 00:07:36,424
+sem entrar em campo.
+
+247
+00:07:36,364 --> 00:07:39,124
+Na Chapecoense, o perigo estava no tanque.
+
+248
+00:07:39,024 --> 00:07:41,564
+No próximo voo, o perigo estava grudado
+
+249
+00:07:41,364 --> 00:07:42,124
+na asa.
+
+250
+00:07:42,124 --> 00:07:44,544
+E o sistema que devia tirá-lo dali…
+
+251
+00:07:44,344 --> 00:07:44,964
+falhava.
+
+252
+00:07:48,490 --> 00:07:50,770
+Um avião com sessenta e duas pessoas
+
+253
+00:07:50,570 --> 00:07:51,650
+caiu girando…
+
+254
+00:07:51,850 --> 00:07:53,550
+quase sem sair do lugar.
+
+255
+00:07:53,530 --> 00:07:55,750
+E o alarme tinha avisado os pilotos
+
+256
+00:07:55,550 --> 00:07:57,350
+várias vezes antes disso.
+
+257
+00:07:57,330 --> 00:07:59,930
+Um ATR da Voepass voava de Cascavel,
+
+258
+00:07:59,730 --> 00:08:02,290
+no Paraná, para Guarulhos, em São Paulo.
+
+259
+00:08:02,250 --> 00:08:04,670
+Lá em cima, as nuvens estavam cheias
+
+260
+00:08:04,470 --> 00:08:05,590
+de água gelada.
+
+261
+00:08:05,610 --> 00:08:07,450
+E o gelo começou a grudar nas
+
+262
+00:08:07,250 --> 00:08:08,090
+asas.
+
+263
+00:08:08,030 --> 00:08:10,090
+O avião tem um sistema para quebrar
+
+264
+00:08:09,890 --> 00:08:10,690
+esse gelo:
+
+265
+00:08:10,710 --> 00:08:12,930
+borrachas no bico da asa que inflam
+
+266
+00:08:12,730 --> 00:08:13,970
+e racham a crosta.
+
+267
+00:08:14,350 --> 00:08:16,230
+Mas o sistema dava defeito.
+
+268
+00:08:16,150 --> 00:08:18,650
+Foi ligado e desligado várias vezes…
+
+269
+00:08:18,590 --> 00:08:19,950
+e o gelo ficou.
+
+270
+00:08:19,970 --> 00:08:22,390
+Asa com gelo perde sustentação.
+
+271
+00:08:22,270 --> 00:08:24,310
+O avião foi ficando lento, e o
+
+272
+00:08:24,110 --> 00:08:25,770
+alerta voltou a tocar.
+
+273
+00:08:25,770 --> 00:08:27,470
+Até que a asa parou de segurar
+
+274
+00:08:27,270 --> 00:08:28,110
+o avião.
+
+275
+00:08:28,090 --> 00:08:30,250
+E ele entrou num parafuso chato.
+
+276
+00:08:30,210 --> 00:08:32,070
+Em vez de mergulhar de bico, ele
+
+277
+00:08:31,870 --> 00:08:34,430
+girou deitado, como uma folha caindo.
+
+278
+00:08:34,570 --> 00:08:36,610
+Assim, o vento bate por baixo da
+
+279
+00:08:36,410 --> 00:08:38,870
+asa, e os comandos quase não respondem.
+
+280
+00:08:38,830 --> 00:08:41,250
+Foi cerca de um minuto girando, até
+
+281
+00:08:41,050 --> 00:08:43,250
+o quintal de um condomínio em Vinhedo.
+
+282
+00:08:43,230 --> 00:08:44,950
+Ninguém a bordo sobreviveu.
+
+283
+00:08:44,990 --> 00:08:47,530
+E, no chão, nenhum morador se feriu.
+
+284
+00:08:47,470 --> 00:08:50,330
+O relatório final do CENIPA apontou dezenove
+
+285
+00:08:50,130 --> 00:08:51,030
+fatores:
+
+286
+00:08:50,970 --> 00:08:53,770
+o gelo, o degelo com defeito, decisões
+
+287
+00:08:53,570 --> 00:08:56,290
+da tripulação, a cultura de segurança da
+
+288
+00:08:56,090 --> 00:08:57,910
+empresa e a fiscalização.
+
+289
+00:08:57,850 --> 00:09:00,570
+Em todos esses casos, o detalhe derrubou
+
+290
+00:09:00,370 --> 00:09:01,210
+o avião.
+
+291
+00:09:01,190 --> 00:09:02,390
+Mas no próximo…
+
+292
+00:09:02,250 --> 00:09:04,230
+o avião se desfez no ar, e
+
+293
+00:09:04,030 --> 00:09:06,670
+uma menina de dezessete anos sobreviveu.
+
+294
+00:09:06,590 --> 00:09:08,270
+Por causa de uma frase do pai.
+
+295
+00:09:11,824 --> 00:09:14,344
+Ela caiu de três mil metros, presa
+
+296
+00:09:14,144 --> 00:09:15,704
+à poltrona do avião…
+
+297
+00:09:15,504 --> 00:09:16,884
+e sobreviveu.
+
+298
+00:09:16,924 --> 00:09:19,684
+Mas o pior ainda nem tinha começado.
+
+299
+00:09:19,724 --> 00:09:21,784
+Véspera de Natal, no Peru.
+
+300
+00:09:21,804 --> 00:09:24,504
+Juliane, dezessete anos, voa com a mãe
+
+301
+00:09:24,304 --> 00:09:26,044
+para passar o Natal com o pai,
+
+302
+00:09:25,924 --> 00:09:27,884
+um biólogo que trabalhava no meio da
+
+303
+00:09:27,684 --> 00:09:29,124
+floresta amazônica.
+
+304
+00:09:29,024 --> 00:09:31,044
+O avião entra numa tempestade.
+
+305
+00:09:30,984 --> 00:09:32,744
+Um raio atinge a asa.
+
+306
+00:09:32,604 --> 00:09:34,644
+E o avião se desfaz no ar.
+
+307
+00:09:34,604 --> 00:09:37,024
+Ela acorda no chão da floresta, ainda
+
+308
+00:09:36,824 --> 00:09:38,564
+presa à fileira de poltronas.
+
+309
+00:09:38,604 --> 00:09:39,584
+Sozinha.
+
+310
+00:09:39,484 --> 00:09:41,964
+Com a clavícula quebrada e uma sandália
+
+311
+00:09:41,764 --> 00:09:42,384
+só.
+
+312
+00:09:42,284 --> 00:09:43,964
+A mãe não estava ali.
+
+313
+00:09:43,924 --> 00:09:45,964
+Das noventa e duas pessoas a bordo,
+
+314
+00:09:45,924 --> 00:09:47,984
+ela seria a única a sair viva.
+
+315
+00:09:48,044 --> 00:09:49,364
+Então ela lembra do que o pai
+
+316
+00:09:49,164 --> 00:09:49,904
+dizia:
+
+317
+00:09:49,904 --> 00:09:51,744
+se um dia se perder na mata,
+
+318
+00:09:51,764 --> 00:09:54,024
+ache a água e siga a correnteza.
+
+319
+00:09:53,984 --> 00:09:55,864
+A água leva às pessoas.
+
+320
+00:09:55,844 --> 00:09:58,044
+Por onze dias, ela anda dentro do
+
+321
+00:09:57,844 --> 00:09:58,564
+riacho.
+
+322
+00:09:58,564 --> 00:10:00,744
+Usa a sandália para tatear o caminho.
+
+323
+00:10:00,684 --> 00:10:02,324
+Os ferimentos infeccionam.
+
+324
+00:10:02,364 --> 00:10:04,024
+Até que encontra um barco e uma
+
+325
+00:10:03,824 --> 00:10:04,624
+cabana.
+
+326
+00:10:04,564 --> 00:10:07,064
+No dia seguinte, madeireiros a encontram e
+
+327
+00:10:06,864 --> 00:10:08,324
+a levam para a cidade.
+
+328
+00:10:08,304 --> 00:10:10,964
+Anos depois, Juliane virou bióloga como o
+
+329
+00:10:10,764 --> 00:10:11,444
+pai.
+
+330
+00:10:11,244 --> 00:10:13,484
+E voltou para aquela mesma floresta, onde
+
+331
+00:10:13,604 --> 00:10:15,584
+passou a vida protegendo a mata.
+
+332
+00:10:15,504 --> 00:10:18,164
+A história dela é de sobrevivência.
+
+333
+00:10:18,204 --> 00:10:20,404
+A última deste vídeo é a mais
+
+334
+00:10:20,204 --> 00:10:21,504
+difícil de acreditar:
+
+335
+00:10:21,524 --> 00:10:23,944
+dois aviões se tocaram a onze mil
+
+336
+00:10:23,744 --> 00:10:24,324
+metros…
+
+337
+00:10:24,304 --> 00:10:26,184
+e um deles pousou inteiro.
+
+338
+00:10:29,755 --> 00:10:31,955
+Um jatinho bateu num Boeing a onze
+
+339
+00:10:31,755 --> 00:10:33,435
+mil metros de altura…
+
+340
+00:10:33,235 --> 00:10:34,935
+e pousou inteiro.
+
+341
+00:10:34,895 --> 00:10:37,135
+E quem estava dentro dele só descobriu
+
+342
+00:10:36,935 --> 00:10:38,995
+horas depois no que tinha batido.
+
+343
+00:10:39,155 --> 00:10:41,175
+Céu limpo sobre o Mato Grosso.
+
+344
+00:10:41,155 --> 00:10:43,235
+O voo dezenove zero sete da Gol
+
+345
+00:10:43,035 --> 00:10:45,075
+levava cento e cinquenta e quatro pessoas
+
+346
+00:10:44,875 --> 00:10:46,495
+de Manaus para Brasília.
+
+347
+00:10:46,455 --> 00:10:49,735
+Um jatinho executivo, um Legacy novinho, voava
+
+348
+00:10:49,535 --> 00:10:51,075
+na mesma altitude…
+
+349
+00:10:50,975 --> 00:10:52,555
+em sentido contrário.
+
+350
+00:10:52,495 --> 00:10:54,455
+O céu tem um sistema para isso
+
+351
+00:10:54,255 --> 00:10:55,455
+nunca acontecer.
+
+352
+00:10:55,395 --> 00:10:57,695
+Os aviões conversam entre si e avisam
+
+353
+00:10:57,495 --> 00:10:59,175
+os pilotos para desviar.
+
+354
+00:10:59,195 --> 00:11:01,995
+Mas o transponder do Legacy estava desligado.
+
+355
+00:11:01,795 --> 00:11:04,035
+E o alarme dos dois aviões…
+
+356
+00:11:03,835 --> 00:11:04,915
+ficou mudo.
+
+357
+00:11:04,815 --> 00:11:06,935
+A ponta da asa do jatinho cortou
+
+358
+00:11:06,775 --> 00:11:08,955
+a asa do Boeing como uma faca.
+
+359
+00:11:08,855 --> 00:11:10,615
+O Boeing caiu na floresta.
+
+360
+00:11:10,775 --> 00:11:12,035
+Ninguém sobreviveu.
+
+361
+00:11:11,975 --> 00:11:14,415
+O Legacy, com a asa rasgada, achou
+
+362
+00:11:14,215 --> 00:11:16,535
+uma pista escondida no meio da selva:
+
+363
+00:11:16,535 --> 00:11:18,815
+uma base da Aeronáutica, a Serra do
+
+364
+00:11:18,615 --> 00:11:19,635
+Cachimbo.
+
+365
+00:11:19,515 --> 00:11:21,795
+O acidente expôs falhas no controle de
+
+366
+00:11:21,595 --> 00:11:23,955
+tráfego aéreo brasileiro e abriu uma das
+
+367
+00:11:23,755 --> 00:11:26,235
+maiores crises da aviação do país, o
+
+368
+00:11:26,035 --> 00:11:27,315
+apagão aéreo.
+
+369
+00:11:27,422 --> 00:11:29,935
+Cento e cinquenta e quatro vidas.
+
+370
+00:11:29,875 --> 00:11:31,315
+Oito acidentes.
+
+371
+00:11:31,195 --> 00:11:32,555
+Oito detalhes.
+
+372
+00:11:32,495 --> 00:11:35,575
+Uma manete, um zero, uma fita, um
+
+373
+00:11:35,375 --> 00:11:38,255
+alarme, um tanque, uma borracha na asa,
+
+374
+00:11:38,155 --> 00:11:40,175
+um raio, um transponder.
+
+375
+00:11:40,155 --> 00:11:42,655
+Cada um deles mudou alguma regra, algum
+
+376
+00:11:42,455 --> 00:11:44,595
+equipamento, algum treinamento.
+
+377
+00:11:44,515 --> 00:11:46,755
+É por causa dessas histórias que voar
+
+378
+00:11:46,555 --> 00:11:47,955
+hoje é tão seguro.
+
+379
+00:11:47,875 --> 00:11:49,135
+E é por isso que elas não
+
+380
+00:11:49,315 --> 00:11:50,755
+podem ser esquecidas.
+
+381
+00:11:50,735 --> 00:11:52,635
+Em memória de todos que estavam a
+
+382
+00:11:52,435 --> 00:11:53,155
+bordo.
+
+383
+00:11:53,175 --> 00:11:55,095
+Tudo começou com uma manete…
+
+384
+00:11:55,135 --> 00:11:56,515
+que voltava sozinha.

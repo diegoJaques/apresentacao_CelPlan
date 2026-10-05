@@ -24,7 +24,7 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
 Consta: Varig 967 (partes 1 e 2), Mamonas Assassinas, Harrison Okene, Andes (rádio), Violet Jessop, Yamaguchi, Operação Prato,
 homenagem **Lito Sousa "O Aviador"** (longo 16:9 + Short, `videos/homenagem_lito_sousa/`).
 Rebobina: piscina depois de comer (emocional), ET enterrado, vó do espelho; cartucho (roteiro em reserva).
-Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chapecoense, TAM 402 (Short publicado em out/2026, estourou), Linate (Short publicado 04/10/2026, rendeu menos: caso estrangeiro). Pauta: Dia das Crianças (12/10).
+Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chapecoense, TAM 402 (Short publicado em out/2026, estourou), Linate (Short publicado 04/10/2026, rendeu menos: caso estrangeiro). **Longo-hub "8 detalhes que derrubaram aviões"** (12 min, `videos/consta_compilacao_acidentes/`): ligar como "Vídeo relacionado" em todos os Shorts de aviação. Pauta: Dia das Crianças (12/10).
 
 ## Regras de roteiro (aprendidas com ele)
 - **Antes de qualquer roteiro, título ou capa, ler `REGRAS_DE_RETENCAO.md`** (dois ganchos, ano fora da fala, escada, final seco).
