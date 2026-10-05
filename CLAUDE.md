@@ -10,7 +10,7 @@ aprendizados em `videos/NOTAS_PRODUCAO.md`.
   títulos "Por que…?" (~50%). A queda principal é entre 4s e 8s: a 2ª frase deve abrir nova pergunta, contexto só depois de 10s.
   **Maiores sucessos: Short Gol 1907 (12,5 mil em 36h) e TAM 402 (5,5 mil em 2,5h, muito compartilhado). Fórmula em `videos/analises/dossie_gol1907_short.md`: ler antes de cada Short.**
   Afiliados (Mercado Livre/Amazon): produtos e regras em `videos/afiliados/PRODUTOS_CONSTA.md`. Link ativo: livro "Detetives da Aviação" https://meli.la/1JmoAyj (só vídeos históricos de aviação, nunca homenagens).
-  Monetização (04/10/2026): 295/1.000 inscritos; 7/4.000 h qualificadas (horas de Shorts não contam); 5,6 mil/10 mi views de Shorts em 90 dias. Horas só vêm de vídeo longo: Short leva ao longo via "Vídeo relacionado".
+  Monetização (05/10/2026): 554/1.000 inscritos (+219 líquidos em 7 dias); 7/4.000 h qualificadas (horas de Shorts não contam); 5,6 mil/10 mi views de Shorts em 90 dias. Horas só vêm de vídeo longo: Short leva ao longo via "Vídeo relacionado".
   Short com no máximo 60s (mirar 45–59s), virada a cada 4–5s. Terminar na frase que liga ao início (loop), sem respiro final.
 - **Rebobina** (YouTube): nostalgia anos 80/90. O que mais funciona: memórias de família e regras da casa
   (festas de aniversário 2.364 views, internet discada 1.893, domingo 1.514, telefone com cadeado 1.178, TV saía do ar 1.105).

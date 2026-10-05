@@ -197,3 +197,20 @@ Leitura:
 - **Regra:** no máximo 1 Short por dia, com 8h ou mais de distância. Quando um Short estiver em alta, segurar o próximo até a onda baixar (a curva de views do dia achata).
 - O longo do Gol 1907 tinha só 39 views: falta ligar os Shorts que estouraram (TAM e Gol) a um vídeo longo em "Vídeo relacionado".
 
+
+**Atualização 05/10/2026 (dia seguinte):**
+- Canal: 554 inscritos. Nos últimos 7 dias: +293 ganhos e −74 perdidos, 34,4 mil views, 65,9% assistido.
+
+| Short | Views | Curtidas | Comentários |
+|---|---|---|---|
+| TAM | 20.763 | 1.079 | 12 |
+| Fita adesiva / Aeroperú | 4.905 | 172 | 4 |
+| Juliane | 3.040 | 130 | 2 |
+| Chapecoense | 2.273 | 79 | 0 |
+| Rick (Short) | 1.843 | 83 | 1 |
+| Linate | 1.767 | 73 | 2 |
+| Varig 254 | 1.479 | 45 | 2 |
+| Longo Gol 1907 | 51 | 1 | 0 |
+
+- A Juliane saiu da faixa de 1–2 mil assim que a onda do TAM baixou. Isso confirma o diagnóstico de canibalização.
+- O longo do Gol continua parado: só cresce se for ligado como "Vídeo relacionado" no Short do TAM.
