@@ -18,14 +18,18 @@ O Short do voo 402 passou de 20 mil visualizações sem câmera e sem editor.
 shorts com ia, vídeo com ia, como fazer shorts com ia, voz clonada, elevenlabs, gemini veo, hyperframes, claude, criar vídeo sem editar, canal dark, automação de vídeo
 
 ===== COMENTÁRIO FIXADO =====
-O passo a passo completo, com cada prompt e cada ferramenta, está aqui 👉 [link do longo]
+O passo a passo completo está no link "Vídeo relacionado", logo acima do título 👆
 Qual etapa você quer ver primeiro: roteiro, voz ou cenas? 👇
+(link em comentário de Short não é clicável: o caminho é o "Vídeo relacionado")
 
 ===== DEPOIS DE PUBLICAR (é para isto que o Short existe) =====
 1. YouTube Studio → Conteúdo → este Short → Editar → "Vídeo relacionado" → escolha o longo
    "Como eu faço Shorts com IA que viralizam". O longo está com 0 views porque nada apontava para ele.
    No vídeo, a seta "▼ VÍDEO RELACIONADO ▼" aparece de 27 a 30 s, bem acima desse link.
-2. Fixe o comentário acima, com o link real do longo.
+2. Fixe o comentário acima.
+   O campo "Vídeo relacionado" só aparece se o canal tiver os RECURSOS AVANÇADOS liberados
+   (Studio → Configurações → Canal → Qualificação de recursos) e se você editar o Short no YouTube Studio:
+   publicação pelo Aplica AI/API não preenche esse campo.
 3. No longo, adicione este Short na tela final / cartão (vai e volta).
 4. Publique num dia sem outro Short no canal (1 publicação por dia).
 
