@@ -43,7 +43,7 @@ Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chape
   videos_recentes, top_videos, metricas_video, retencao_video. Tokens: rebobina=Rebobina, sotrechaco=Só Trechaço, bonus=Fase Bônus; consta=Consta nos Autos (conta diegojaques@aplicaiaapp.com). Ao iniciar, confirmar qual canal cada token abre.
 - **Aplica AI** (conector): publica no YouTube/Facebook/Instagram e edita título/descrição, mas para YouTube só traz totais.
   **Para métricas do YouTube use sempre as ferramentas `youtube-metricas`** (retenção, período, tráfego), não o Aplica AI.
-- **Fábrica de aulas** (`ferramentas/curso/`, ver README): navegador tira prints passo a passo e `montar.py` gera a aula com zoom, cursor, legenda e voz clonada. Precisa da sessão fora do modo Auto (regra em `.claude/settings.json`). Curso 1: `videos/curso_hyperframes/`.
+- **Fábrica de aulas** (`ferramentas/curso/`, ver README): navegador tira prints passo a passo e `montar.py` gera a aula com zoom, cursor, legenda e voz clonada. Precisa da sessão fora do modo Auto (regra em `.claude/settings.json`). Curso 1: `videos/curso_hyperframes/`. **Regra dos tutoriais: canal dark, SEM avatar** (economiza créditos do ElevenLabs); só prints + narração com a voz clonada.
 - **HyperFrames CLI 0.8.91** para montar vídeos (detalhes em `videos/NOTAS_PRODUCAO.md`).
 - **Rotina diária de pautas** (7h23 Brasília) roda na sessão original (trigger `trig_013RdsM1YYApRYvmjminAhJN`).
 
