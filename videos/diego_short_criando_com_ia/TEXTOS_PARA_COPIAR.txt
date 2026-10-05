@@ -1,0 +1,33 @@
+===== TÍTULO =====
+Esse Short teve 20 mil views e eu não gravei nada
+(o 1º quadro mostra o Short do TAM tocando, com o contador 20.763: bate com o título)
+
+Alternativas:
+- 20 mil pessoas assistiram um vídeo que ninguém gravou
+- Não liguei câmera nem abri editor: 20 mil views com IA
+
+===== DESCRIÇÃO =====
+▶ Passo a passo completo (roteiro, voz clonada, cenas e montagem): [link do longo "Como eu faço Shorts com IA que viralizam"]
+
+Roteiro: Claude · Voz clonada: ElevenLabs · Cenas: Gemini · Montagem: HyperFrames.
+O Short do voo 402 passou de 20 mil visualizações sem câmera e sem editor.
+
+#ShortsComIA #VideoComIA #ElevenLabs #Gemini #HyperFrames #Claude #CriacaoDeConteudo
+
+===== TAGS =====
+shorts com ia, vídeo com ia, como fazer shorts com ia, voz clonada, elevenlabs, gemini veo, hyperframes, claude, criar vídeo sem editar, canal dark, automação de vídeo
+
+===== COMENTÁRIO FIXADO =====
+O passo a passo completo, com cada prompt e cada ferramenta, está aqui 👉 [link do longo]
+Qual etapa você quer ver primeiro: roteiro, voz ou cenas? 👇
+
+===== DEPOIS DE PUBLICAR (é para isto que o Short existe) =====
+1. YouTube Studio → Conteúdo → este Short → Editar → "Vídeo relacionado" → escolha o longo
+   "Como eu faço Shorts com IA que viralizam". O longo está com 0 views porque nada apontava para ele.
+   No vídeo, a seta "▼ VÍDEO RELACIONADO ▼" aparece de 27 a 30 s, bem acima desse link.
+2. Fixe o comentário acima, com o link real do longo.
+3. No longo, adicione este Short na tela final / cartão (vai e volta).
+4. Publique num dia sem outro Short no canal (1 publicação por dia).
+
+===== LEGENDA =====
+As legendas já estão gravadas no vídeo (palavra por palavra). Não precisa enviar .srt.
