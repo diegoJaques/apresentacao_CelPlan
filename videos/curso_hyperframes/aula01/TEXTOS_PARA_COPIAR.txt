@@ -1,0 +1,57 @@
+===== TÍTULO =====
+HyperFrames do zero: crie vídeos com IA de graça (Aula 1)
+
+Alternativas:
+- Como usar o HyperFrames: o editor de vídeo feito para IA (Aula 1)
+- Faça vídeos com IA sem editor: primeiros passos no HyperFrames
+
+===== DESCRIÇÃO =====
+Aula 1 do curso de HyperFrames: a ferramenta gratuita e de código aberto em que a IA monta o vídeo escrevendo código.
+
+Nesta aula:
+- onde fica o guia oficial;
+- o comando para instalar;
+- os 3 passos para o primeiro vídeo;
+- o catálogo de efeitos prontos;
+- o Playground, que roda direto no navegador.
+
+Comandos da aula:
+npx skills add heygen-com/hyperframes   (escolha "Core Skills")
+npx hyperframes preview
+npx hyperframes render --output video.mp4
+
+Prompt de exemplo:
+Using /hyperframes, make a 10-second product intro for https://seusite.com
+
+Links:
+Site oficial: https://hyperframes.heygen.com
+Guia rápido: https://hyperframes.heygen.com/quickstart
+Catálogo: https://hyperframes.heygen.com/catalog
+Playground: https://hyperframes.dev
+
+Capítulos:
+0:00 Abertura
+0:11 O que é o HyperFrames
+0:19 Comando de instalação
+0:24 Abrindo o guia oficial
+0:35 Grátis e open source
+0:42 Atalho: o agente faz tudo
+0:52 Passo 1: instalar as skills
+1:05 Passo 2: pedir o vídeo
+1:17 Passo 3: ajustar e renderizar
+1:31 Catálogo de efeitos
+1:47 Playground no navegador
+1:56 Recapitulando
+
+O HyperFrames é gratuito e renderizar no seu computador não gasta créditos. O agente de IA e os serviços opcionais (voz, avatar, imagens) podem ter custo próprio.
+
+#HyperFrames #VideoComIA #ClaudeCode #InteligenciaArtificial #Tutorial
+
+===== TAGS =====
+hyperframes, hyperframes tutorial, heygen, vídeo com ia, criar vídeo com ia, claude code, editor de vídeo ia, curso hyperframes, npx hyperframes, tutorial ia, vídeo grátis com ia
+
+===== COMENTÁRIO FIXADO =====
+Qual vídeo você quer que a gente faça do zero na Aula 2: uma intro do seu site, um Short com legenda animada ou um vídeo com narração?
+
+===== LEGENDA =====
+aula01.srt (enviar no YouTube Studio em Legendas > Português)

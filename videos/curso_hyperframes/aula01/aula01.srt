@@ -1,0 +1,267 @@
+1
+00:00:00,140 --> 00:00:02,440
+Nesta aula você vai fazer o seu
+
+2
+00:00:02,240 --> 00:00:05,540
+primeiro vídeo com o HyperFrames, a ferramenta
+
+3
+00:00:05,340 --> 00:00:08,239
+gratuita que deixa a inteligência artificial montar
+
+4
+00:00:08,039 --> 00:00:09,959
+vídeos escrevendo código.
+
+5
+00:00:10,080 --> 00:00:11,639
+Esse é o site oficial.
+
+6
+00:00:11,600 --> 00:00:13,700
+A frase do site resume tudo:
+
+7
+00:00:13,820 --> 00:00:16,320
+o primeiro editor de vídeo feito para
+
+8
+00:00:16,120 --> 00:00:17,560
+agentes de IA.
+
+9
+00:00:17,640 --> 00:00:19,720
+Você pede, a IA monta.
+
+10
+00:00:19,660 --> 00:00:21,580
+Lá em cima já aparece o comando
+
+11
+00:00:21,380 --> 00:00:22,580
+de instalação.
+
+12
+00:00:22,640 --> 00:00:24,560
+Guarde ele, a gente usa daqui a
+
+13
+00:00:24,360 --> 00:00:24,939
+pouco.
+
+14
+00:00:24,900 --> 00:00:27,279
+Para começar do jeito certo, clique em
+
+15
+00:00:27,080 --> 00:00:29,180
+Quick start, o guia rápido.
+
+16
+00:00:29,200 --> 00:00:30,759
+Você cai direto no guia:
+
+17
+00:00:30,800 --> 00:00:32,640
+faça o seu primeiro vídeo.
+
+18
+00:00:32,700 --> 00:00:34,620
+Está em inglês, mas eu traduzo tudo
+
+19
+00:00:34,580 --> 00:00:35,220
+pra você.
+
+20
+00:00:35,220 --> 00:00:36,620
+E olha esse aviso:
+
+21
+00:00:36,560 --> 00:00:39,280
+o HyperFrames é gratuito e de código
+
+22
+00:00:39,080 --> 00:00:39,960
+aberto.
+
+23
+00:00:39,860 --> 00:00:42,680
+Renderizar no seu computador não gasta crédito
+
+24
+00:00:42,480 --> 00:00:43,120
+nenhum.
+
+25
+00:00:43,060 --> 00:00:45,400
+O caminho mais curto é entregar tudo
+
+26
+00:00:45,300 --> 00:00:47,200
+pro seu agente de IA, como o
+
+27
+00:00:47,230 --> 00:00:48,040
+Claude Code.
+
+28
+00:00:48,080 --> 00:00:50,500
+Você cola esse texto, e ele instala,
+
+29
+00:00:50,360 --> 00:00:52,200
+cria o vídeo e abre a prévia
+
+30
+00:00:52,000 --> 00:00:52,920
+sozinho.
+
+31
+00:00:52,860 --> 00:00:55,440
+Se preferir ir por partes, o passo 1
+
+32
+00:00:55,240 --> 00:00:56,980
+é instalar as skills.
+
+33
+00:00:56,880 --> 00:00:59,380
+No terminal do seu projeto, você roda
+
+34
+00:00:59,435 --> 00:01:04,660
+npx skills add, heygen-com/hyperframes, e escolhe Core
+
+35
+00:01:04,459 --> 00:01:05,280
+Skills.
+
+36
+00:01:05,220 --> 00:01:06,400
+Passo 2:
+
+37
+00:01:06,200 --> 00:01:07,360
+pedir o vídeo.
+
+38
+00:01:07,380 --> 00:01:11,400
+Você escreve, usando /hyperframes, faça uma intro
+
+39
+00:01:11,200 --> 00:01:13,580
+de 10 segundos para o meu site, e
+
+40
+00:01:13,460 --> 00:01:14,500
+cola o endereço.
+
+41
+00:01:14,400 --> 00:01:16,760
+O agente propõe uma direção e pergunta
+
+42
+00:01:16,560 --> 00:01:18,040
+o que estiver faltando.
+
+43
+00:01:17,960 --> 00:01:19,180
+Passo 3:
+
+44
+00:01:18,980 --> 00:01:20,000
+ajustar.
+
+45
+00:01:19,960 --> 00:01:22,320
+Você recebe uma pasta com o projeto.
+
+46
+00:01:22,320 --> 00:01:25,040
+Pode pedir mudanças pro agente, abrir o
+
+47
+00:01:25,180 --> 00:01:28,620
+Studio com npx hyperframes preview, ou gerar
+
+48
+00:01:28,420 --> 00:01:31,240
+o vídeo com npx hyperframes render.
+
+49
+00:01:31,600 --> 00:01:33,260
+Agora a parte divertida:
+
+50
+00:01:33,120 --> 00:01:34,420
+o catálogo.
+
+51
+00:01:34,380 --> 00:01:37,400
+São centenas de efeitos prontos para instalar.
+
+52
+00:01:37,440 --> 00:01:40,220
+Só de textos e legendas animadas, palavra
+
+53
+00:01:40,020 --> 00:01:42,560
+por palavra, são mais de setenta.
+
+54
+00:01:42,360 --> 00:01:44,540
+Quer um título de vidro se partindo?
+
+55
+00:01:44,520 --> 00:01:45,500
+Já existe.
+
+56
+00:01:45,500 --> 00:01:47,540
+Você só pede pro agente usar esse
+
+57
+00:01:47,340 --> 00:01:47,960
+bloco.
+
+58
+00:01:47,940 --> 00:01:50,300
+E se quiser testar sem instalar nada,
+
+59
+00:01:50,200 --> 00:01:51,540
+tem o Playground.
+
+60
+00:01:51,680 --> 00:01:53,720
+Você cola o endereço do seu site,
+
+61
+00:01:53,820 --> 00:01:55,800
+escolhe um modelo, e ele monta um
+
+62
+00:01:55,600 --> 00:01:56,800
+anúncio pra você.
+
+63
+00:01:56,760 --> 00:01:57,920
+Recapitulando:
+
+64
+00:01:57,980 --> 00:02:00,660
+instale as skills, peça o vídeo e
+
+65
+00:02:00,460 --> 00:02:02,580
+ajuste até ficar do seu jeito.
+
+66
+00:02:02,560 --> 00:02:04,440
+Na próxima aula, a gente faz um
+
+67
+00:02:04,240 --> 00:02:06,860
+vídeo do zero, juntos, passo a passo.

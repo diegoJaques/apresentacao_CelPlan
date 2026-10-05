@@ -1,0 +1,223 @@
+[
+ {
+  "acao": "abrir",
+  "url": "https://hyperframes.heygen.com",
+  "espera": 4000,
+  "fala": "Nesta aula você vai fazer o seu primeiro vídeo com o HyperFrames, a ferramenta gratuita que deixa a inteligência artificial montar vídeos escrevendo código. Esse é o site oficial.",
+  "img": "01.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "texto": "Let AI agents",
+  "espera": 1500,
+  "fala": "A promessa está aqui: agentes de IA compõem vídeos escrevendo código. Você pede, a IA monta.",
+  "seletor": "h1",
+  "img": "02.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": {
+   "x": 50,
+   "y": 658.515625,
+   "w": 818.65625,
+   "h": 281.484375
+  }
+ },
+ {
+  "acao": "destacar",
+  "papel": "button",
+  "texto": "npx skills add",
+  "espera": 1500,
+  "fala": "Aqui embaixo já aparece o comando de instalação. Guarde ele, a gente usa daqui a pouco.",
+  "img": "03.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": {
+   "x": 1511.734375,
+   "y": 20,
+   "w": 358.265625,
+   "h": 36
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Docs",
+  "espera": 1500,
+  "fala": "Para começar do jeito certo, clique em Docs, lá no canto de cima.",
+  "seletor": "a[href$=\"/quickstart\"]",
+  "img": "04.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": {
+   "x": 1334.453125,
+   "y": 20,
+   "w": 92.390625,
+   "h": 36
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "https://hyperframes.heygen.com/quickstart",
+  "espera": 4000,
+  "img": "05.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "texto": "Make your first video",
+  "espera": 3500,
+  "fala": "Você cai direto no guia: faça o seu primeiro vídeo. Está em inglês, mas eu traduzo tudo pra você.",
+  "seletor": "#page-title",
+  "img": "06.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 90,
+   "w": 328,
+   "h": 40
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "HyperFrames is free and open-source",
+  "espera": 1500,
+  "fala": "E olha esse aviso: o HyperFrames é gratuito e de código aberto. Renderizar no seu computador não gasta crédito nenhum.",
+  "seletor": "[role=note]",
+  "img": "07.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 492.5,
+   "w": 664,
+   "h": 94
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "The short way",
+  "espera": 1500,
+  "fala": "O caminho mais curto é entregar tudo pro seu agente de IA, como o Claude Code. Você cola esse texto, e ele instala, cria o vídeo e abre a prévia sozinho.",
+  "seletor": "span.cursor-pointer:has-text(\"The short way\")",
+  "img": "08.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 524.5,
+   "w": 372.125,
+   "h": 31.984375
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Install the plugin or skills",
+  "espera": 1500,
+  "fala": "Se preferir ir por partes, o passo um é instalar as skills. No terminal do seu projeto, você roda npx skills add, heygen-com barra hyperframes, e escolhe Core Skills.",
+  "seletor": "span.cursor-pointer:has-text(\"1. Install the plugin\")",
+  "img": "09.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 524.484375,
+   "w": 275.359375,
+   "h": 31.984375
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Ask for the video",
+  "espera": 1500,
+  "fala": "Passo dois: pedir o vídeo. Você escreve, usando barra hyperframes, faça uma intro de dez segundos para o meu site, e cola o endereço. O agente propõe uma direção e pergunta o que estiver faltando.",
+  "seletor": "span.cursor-pointer:has-text(\"2. Ask for the video\")",
+  "img": "10.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 524.46875,
+   "w": 198.609375,
+   "h": 31.984375
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Continue from the first version",
+  "espera": 1500,
+  "fala": "Passo três: ajustar. Você recebe uma pasta com o projeto. Pode pedir mudanças pro agente, abrir o Studio com npx hyperframes preview, ou gerar o MP4 com npx hyperframes render.",
+  "seletor": "span.cursor-pointer:has-text(\"3. Continue from\")",
+  "img": "11.png",
+  "url_atual": "https://hyperframes.heygen.com/quickstart",
+  "caixa": {
+   "x": 620,
+   "y": 524.453125,
+   "w": 342.796875,
+   "h": 31.984375
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "https://hyperframes.heygen.com/catalog",
+  "espera": 4000,
+  "fala": "Agora a parte divertida: o catálogo. São centenas de efeitos prontos para instalar.",
+  "img": "12.png",
+  "url_atual": "https://hyperframes.heygen.com/catalog",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "texto": "Text & captions",
+  "espera": 1500,
+  "fala": "Só de textos e legendas animadas, palavra por palavra, são mais de setenta.",
+  "img": "13.png",
+  "url_atual": "https://hyperframes.heygen.com/catalog",
+  "caixa": {
+   "x": 260,
+   "y": 219,
+   "w": 95.140625,
+   "h": 20
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Glass Shard Title",
+  "espera": 1500,
+  "fala": "Quer um título de vidro se partindo? Já existe. Você só pede pro agente usar esse bloco.",
+  "img": "14.png",
+  "url_atual": "https://hyperframes.heygen.com/catalog",
+  "caixa": {
+   "x": 978,
+   "y": 529.3125,
+   "w": 110.640625,
+   "h": 21
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "https://hyperframes.dev",
+  "espera": 15000,
+  "fala": "E se quiser testar sem instalar nada, tem o Playground. Você cola o endereço do seu site, escolhe um modelo, e ele monta um anúncio pra você.",
+  "img": "15.png",
+  "url_atual": "https://hyperframes.dev/",
+  "caixa": null
+ },
+ {
+  "acao": "abrir",
+  "url": "https://hyperframes.heygen.com",
+  "espera": 4000,
+  "img": "16.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "papel": "button",
+  "texto": "npx skills add",
+  "espera": 1500,
+  "fala": "Recapitulando: instale as skills, peça o vídeo e ajuste até ficar do seu jeito. Na próxima aula, a gente faz um vídeo do zero, juntos, passo a passo.",
+  "img": "17.png",
+  "url_atual": "https://hyperframes.heygen.com/",
+  "caixa": {
+   "x": 1511.734375,
+   "y": 20,
+   "w": 358.265625,
+   "h": 36
+  }
+ }
+]

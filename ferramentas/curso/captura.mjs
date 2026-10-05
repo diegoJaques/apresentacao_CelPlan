@@ -21,17 +21,36 @@ async function abrir() {
   return [b, p];
 }
 
-const alvo = (p, a) => a.seletor ? p.locator(a.seletor).first()
-  : a.papel ? p.getByRole(a.papel, { name: a.texto, exact: !!a.exato }).first()
-  : p.getByText(a.texto, { exact: !!a.exato }).first();
+// alvo: primeiro elemento VISÍVEL (sites costumam ter cópias escondidas, ex.: menu mobile).
+// Se a busca por papel não achar nada visível, tenta pelo texto.
+async function visivel(loc) {
+  const n = await loc.count();
+  for (let i = 0; i < n; i++) if (await loc.nth(i).isVisible()) return loc.nth(i);
+  return null;
+}
+async function alvo(p, a) {
+  if (a.seletor) return visivel(p.locator(a.seletor));
+  if (a.papel) { const l = await visivel(p.getByRole(a.papel, { name: a.texto, exact: !!a.exato })); if (l) return l; }
+  return visivel(p.getByText(a.texto, { exact: !!a.exato }));
+}
 
 async function caixa(loc) {
-  try { await loc.scrollIntoViewIfNeeded({ timeout: 4000 }); const r = await loc.boundingBox(); return r && { x: r.x, y: r.y, w: r.width, h: r.height }; }
+  if (!loc) return null;
+  try { await loc.evaluate(e => e.scrollIntoView({ block: 'center' })); await loc.page().waitForTimeout(800); const r = await loc.boundingBox(); return r && { x: r.x, y: r.y, w: r.width, h: r.height }; }
   catch { return null; }
 }
 
 const [, , a1, a2, a3] = process.argv;
-if (a1 === '--explorar') {
+if (a1 === '--sondar') {
+  // diagnóstico: node captura.mjs --sondar <url> <texto> → lista onde o texto aparece e se está visível
+  const [b, p] = await abrir();
+  await p.goto(a2, { waitUntil: 'domcontentloaded', timeout: 60000 }); await p.waitForTimeout(4000);
+  console.log(JSON.stringify(await p.$$eval('*', (els, t) => els.filter(e => (e.innerText || '').trim().startsWith(t) && (e.innerText || '').length < 200).slice(0, 15).map(e => {
+    const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
+    return { tag: e.tagName, role: e.getAttribute('role'), aria: e.getAttribute('aria-hidden'), box: [r.x, r.y, r.width, r.height].map(Math.round), vis: cs.visibility, op: cs.opacity, html: e.outerHTML.slice(0, 160) };
+  }), a3), null, 1));
+  await b.close();
+} else if (a1 === '--explorar') {
   mkdirSync(a3, { recursive: true });
   const [b, p] = await abrir();
   await p.goto(a2, { waitUntil: 'domcontentloaded', timeout: 60000 }); await p.waitForTimeout(3500);
@@ -46,17 +65,20 @@ if (a1 === '--explorar') {
   const rot = JSON.parse(readFileSync(a1, 'utf8')); mkdirSync(a2, { recursive: true });
   const [b, p] = await abrir(); const out = [];
   for (const [i, s] of rot.passos.entries()) {
-    let box = null;
+    let box = null, loc = null;
     if (s.acao === 'abrir') { await p.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 60000 }); }
     if (s.acao === 'rolar') { await p.mouse.wheel(0, s.pixels || 600); }
-    if (s.acao === 'destacar' || s.acao === 'clicar' || s.acao === 'digitar') box = await caixa(alvo(p, s));
-    // print ANTES do clique/digitação (mostra onde clicar); depois executa a ação
     await p.waitForTimeout(s.espera ?? 2500);
+    if (s.acao === 'destacar' || s.acao === 'clicar' || s.acao === 'digitar') {
+      loc = await alvo(p, s); box = await caixa(loc); await p.waitForTimeout(600);
+      if (!loc) console.log('alvo não encontrado', i + 1, s.texto || s.seletor);
+    }
+    // print ANTES do clique/digitação (mostra onde clicar); depois executa a ação
     const nome = `${String(i + 1).padStart(2, '0')}.png`;
     await p.screenshot({ path: `${a2}/${nome}` });
     out.push({ ...s, img: nome, url_atual: p.url(), caixa: box });
-    if (s.acao === 'clicar') { await alvo(p, s).click({ timeout: 8000 }).catch(e => console.log('clique falhou', i + 1, e.message)); }
-    if (s.acao === 'digitar') { await alvo(p, s).fill(s.valor || ''); }
+    if (s.acao === 'clicar' && loc) { await loc.click({ timeout: 8000 }).catch(e => console.log('clique falhou', i + 1, e.message)); }
+    if (s.acao === 'digitar' && loc) { await loc.fill(s.valor || ''); }
     console.log(i + 1, s.acao, box ? 'ok' : '-', p.url());
   }
   writeFileSync(`${a2}/passos.json`, JSON.stringify(out, null, 1));

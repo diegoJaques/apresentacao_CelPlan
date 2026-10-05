@@ -1,0 +1,173 @@
+{
+ "titulo": "Aula 1 — Começando no HyperFrames",
+ "passos": [
+  {
+   "acao": "abrir",
+   "url": "https://hyperframes.heygen.com",
+   "espera": 4000,
+   "fala": "Nesta aula você vai fazer o seu primeiro vídeo com o HyperFrames, a ferramenta gratuita que deixa a inteligência artificial montar vídeos escrevendo código. Esse é o site oficial.",
+   "rotulo": "Site oficial"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Let AI agents",
+   "espera": 1500,
+   "fala": "A frase do site resume tudo: o primeiro editor de vídeo feito para agentes de IA. Você pede, a IA monta.",
+   "seletor": "h1",
+   "rotulo": "O que é"
+  },
+  {
+   "acao": "destacar",
+   "papel": "button",
+   "texto": "npx skills add",
+   "espera": 1500,
+   "fala": "Lá em cima já aparece o comando de instalação. Guarde ele, a gente usa daqui a pouco.",
+   "rotulo": "Comando de instalação",
+   "codigo": "npx skills add heygen-com/hyperframes"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Docs",
+   "espera": 1500,
+   "fala": "Para começar do jeito certo, clique em Quick start, o guia rápido.",
+   "seletor": "a[href$=\"/quickstart\"]",
+   "rotulo": "Abrir o guia",
+   "clique": true
+  },
+  {
+   "acao": "abrir",
+   "url": "https://hyperframes.heygen.com/quickstart",
+   "espera": 4000
+  },
+  {
+   "acao": "destacar",
+   "texto": "Make your first video",
+   "espera": 3500,
+   "fala": "Você cai direto no guia: faça o seu primeiro vídeo. Está em inglês, mas eu traduzo tudo pra você.",
+   "seletor": "#page-title",
+   "rotulo": "Seu primeiro vídeo"
+  },
+  {
+   "acao": "destacar",
+   "texto": "HyperFrames is free and open-source",
+   "espera": 1500,
+   "fala": "E olha esse aviso: o HyperFrames é gratuito e de código aberto. Renderizar no seu computador não gasta crédito nenhum.",
+   "seletor": "[role=note]",
+   "rotulo": "Grátis e open source"
+  },
+  {
+   "acao": "destacar",
+   "texto": "The short way",
+   "espera": 1500,
+   "fala": "O caminho mais curto é entregar tudo pro seu agente de IA, como o Claude Code. Você cola esse texto, e ele instala, cria o vídeo e abre a prévia sozinho.",
+   "seletor": "span.cursor-pointer:has-text(\"The short way\")",
+   "rotulo": "Atalho: o agente faz tudo"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Install the plugin or skills",
+   "espera": 1500,
+   "fala": "Se preferir ir por partes, o passo um é instalar as skills. No terminal do seu projeto, você roda npx skills add, heygen-com barra hyperframes, e escolhe Core Skills.",
+   "seletor": "span.cursor-pointer:has-text(\"1. Install the plugin\")",
+   "rotulo": "Passo 1 · Instalar as skills",
+   "codigo": "npx skills add heygen-com/hyperframes\n→ escolha: Core Skills"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Ask for the video",
+   "espera": 1500,
+   "fala": "Passo dois: pedir o vídeo. Você escreve, usando barra hyperframes, faça uma intro de dez segundos para o meu site, e cola o endereço. O agente propõe uma direção e pergunta o que estiver faltando.",
+   "seletor": "span.cursor-pointer:has-text(\"2. Ask for the video\")",
+   "rotulo": "Passo 2 · Pedir o vídeo",
+   "codigo": "Using /hyperframes, make a 10-second\nproduct intro for https://seusite.com"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Continue from the first version",
+   "espera": 1500,
+   "fala": "Passo três: ajustar. Você recebe uma pasta com o projeto. Pode pedir mudanças pro agente, abrir o Studio com npx hyperframes preview, ou gerar o MP4 com npx hyperframes render.",
+   "seletor": "span.cursor-pointer:has-text(\"3. Continue from\")",
+   "rotulo": "Passo 3 · Ajustar e renderizar",
+   "codigo": "npx hyperframes preview\nnpx hyperframes render --output video.mp4"
+  },
+  {
+   "acao": "abrir",
+   "url": "https://hyperframes.heygen.com/catalog",
+   "espera": 4000,
+   "fala": "Agora a parte divertida: o catálogo. São centenas de efeitos prontos para instalar.",
+   "rotulo": "Catálogo"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Text & captions",
+   "espera": 1500,
+   "fala": "Só de textos e legendas animadas, palavra por palavra, são mais de setenta.",
+   "rotulo": "Textos e legendas"
+  },
+  {
+   "acao": "destacar",
+   "texto": "Glass Shard Title",
+   "espera": 1500,
+   "fala": "Quer um título de vidro se partindo? Já existe. Você só pede pro agente usar esse bloco.",
+   "rotulo": "Blocos prontos"
+  },
+  {
+   "acao": "abrir",
+   "url": "https://hyperframes.dev",
+   "espera": 15000,
+   "fala": "E se quiser testar sem instalar nada, tem o Playground. Você cola o endereço do seu site, escolhe um modelo, e ele monta um anúncio pra você.",
+   "rotulo": "Playground"
+  },
+  {
+   "acao": "abrir",
+   "url": "https://hyperframes.heygen.com",
+   "espera": 4000
+  },
+  {
+   "acao": "destacar",
+   "papel": "button",
+   "texto": "npx skills add",
+   "espera": 1500,
+   "fala": "Recapitulando: instale as skills, peça o vídeo e ajuste até ficar do seu jeito. Na próxima aula, a gente faz um vídeo do zero, juntos, passo a passo.",
+   "rotulo": "Recapitulando"
+  }
+ ],
+ "aula": 1,
+ "titulo_curto": "Começando no HyperFrames",
+ "curso": "CURSO HYPERFRAMES",
+ "proxima": "Próxima aula: seu primeiro vídeo do zero",
+ "legenda_troca": [
+  [
+   "ene pê xis",
+   "npx"
+  ],
+  [
+   "heygen barra hyperframes,",
+   "heygen-com/hyperframes,"
+  ],
+  [
+   "barra hyperframes,",
+   "/hyperframes,"
+  ],
+  [
+   "dez segundos",
+   "10 segundos"
+  ],
+  [
+   "passo um",
+   "passo 1"
+  ],
+  [
+   "Passo dois:",
+   "Passo 2:"
+  ],
+  [
+   "Passo três:",
+   "Passo 3:"
+  ],
+  [
+   "mais de setenta",
+   "mais de 70"
+  ]
+ ]
+}
