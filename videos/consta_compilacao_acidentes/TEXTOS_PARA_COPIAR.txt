@@ -1,3 +1,8 @@
+===== TÍTULO PRINCIPAL (o que vai no campo "Título" ao publicar) =====
+Uma manete, um zero, uma fita: 8 detalhes que derrubaram aviões
+Capa principal: capas/capa_A.jpg
+(o 1º quadro do vídeo é a manete: título, capa e abertura prometem a mesma coisa)
+
 ===== TESTE A/B/C (YouTube Studio → "Testar e comparar") =====
 Cada título vai com a sua capa. A capa complementa o título, não repete.
 
