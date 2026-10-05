@@ -1,0 +1,223 @@
+{
+ "titulo": "Preparando o Linux (Ubuntu)",
+ "aula": "1 · Linux",
+ "nome_arquivo": "preparando_linux",
+ "titulo_curto": "Preparando o Linux (Ubuntu)",
+ "curso": "VÍDEOS COM IA DO ZERO",
+ "proxima": "Próxima aula: login no Claude Code",
+ "passos": [
+  {
+   "acao": "ligar",
+   "espera": 9000
+  },
+  {
+   "acao": "abrir_terminal",
+   "espera": 1500
+  },
+  {
+   "acao": "gravar_inicio"
+  },
+  {
+   "acao": "esperar",
+   "espera": 2500,
+   "rotulo": "Terminal do Ubuntu",
+   "fala": "Nesta aula você prepara um computador com Linux do zero. Tudo o que aparece aqui é real: este é um Ubuntu de verdade, e eu vou digitar cada comando no terminal."
+  },
+  {
+   "acao": "digitar",
+   "valor": "sudo apt update",
+   "esperar_fim": true,
+   "timeout": 300,
+   "espera": 1500,
+   "rotulo": "1 · Atualizar o sistema",
+   "codigo": "sudo apt update",
+   "fala": "Primeiro, atualize a lista de programas. Digite sudo apt update e aperte Enter. O sudo pede permissão de administrador, então ele pode pedir a sua senha."
+  },
+  {
+   "acao": "digitar",
+   "valor": "sudo apt install -y ffmpeg",
+   "esperar_fim": true,
+   "timeout": 1500,
+   "espera": 1500,
+   "rotulo": "2 · Instalar o FFmpeg",
+   "codigo": "sudo apt install -y ffmpeg",
+   "fala": "Agora instale o FFmpeg, o programa que o HyperFrames usa para gerar o arquivo de vídeo. Ele baixa tudo sozinho, e eu acelerei essa parte."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "ffmpeg -version",
+   "esperar_fim": true,
+   "timeout": 30,
+   "espera": 1500,
+   "rotulo": "Conferindo",
+   "fala": "Para conferir, digite ffmpeg traço version. Se aparecer a versão, deu certo."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash",
+   "esperar_fim": true,
+   "timeout": 300,
+   "espera": 1500,
+   "rotulo": "3 · Instalar o nvm",
+   "codigo": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh \\\n  | bash",
+   "fala": "Agora o Node, o motor que roda o HyperFrames. No Linux, o jeito recomendado é pelo nvm. Copie este comando da página do nvm e cole no terminal."
+  },
+  {
+   "acao": "digitar",
+   "valor": "source ~/.bashrc",
+   "esperar_fim": true,
+   "timeout": 30,
+   "espera": 1500,
+   "rotulo": "Recarregar o terminal",
+   "codigo": "source ~/.bashrc",
+   "fala": "Depois, recarregue o terminal com source til barra ponto bashrc."
+  },
+  {
+   "acao": "digitar",
+   "valor": "nvm install 22",
+   "esperar_fim": true,
+   "timeout": 900,
+   "espera": 1500,
+   "rotulo": "4 · Instalar o Node.js 22",
+   "codigo": "nvm install 22",
+   "fala": "Agora instale o Node vinte e dois: nvm install 22. Ele baixa e configura tudo em poucos segundos."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "node -v && npm -v",
+   "esperar_fim": true,
+   "timeout": 30,
+   "espera": 1500,
+   "rotulo": "Conferindo",
+   "fala": "Confira com node traço v e npm traço v. O Node precisa começar com 22 ou mais."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "npx --yes hyperframes@latest --version",
+   "esperar_fim": true,
+   "timeout": 300,
+   "espera": 1500,
+   "rotulo": "5 · Testar o HyperFrames",
+   "codigo": "npx --yes hyperframes@latest --version",
+   "fala": "Hora de testar o HyperFrames. Digite npx, traço traço yes, hyperframes arroba latest, traço traço version. Apareceu um número? Então ele está funcionando."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "curl -fsSL https://claude.ai/install.sh | bash",
+   "esperar_fim": true,
+   "timeout": 900,
+   "espera": 1500,
+   "rotulo": "6 · Instalar o Claude Code",
+   "codigo": "curl -fsSL https://claude.ai/install.sh | bash",
+   "fala": "Por último, o Claude Code, a inteligência artificial que monta os vídeos com você. É um comando só, tirado do site oficial."
+  },
+  {
+   "acao": "digitar",
+   "valor": "echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc && source ~/.bashrc",
+   "esperar_fim": true,
+   "timeout": 30,
+   "espera": 1500,
+   "rotulo": "Ajuste do PATH",
+   "fala": "No final, o instalador avisa que falta um ajuste e já mostra o comando. É só copiar e rodar."
+  },
+  {
+   "acao": "digitar",
+   "valor": "clear",
+   "esperar_fim": true,
+   "timeout": 20,
+   "espera": 1500
+  },
+  {
+   "acao": "digitar",
+   "valor": "claude --version",
+   "esperar_fim": true,
+   "timeout": 60,
+   "espera": 1500,
+   "rotulo": "Conferindo",
+   "fala": "Confira com claude traço traço version. Pronto: o seu Linux tem tudo o que o curso precisa."
+  },
+  {
+   "acao": "esperar",
+   "espera": 1500,
+   "rotulo": "Recapitulando",
+   "codigo": "sudo apt install -y ffmpeg\nnvm install 22\ncurl -fsSL https://claude.ai/install.sh | bash",
+   "fala": "Recapitulando: o FFmpeg pelo apt, o Node pelo nvm, e o Claude Code pelo instalador oficial. Na próxima aula, a gente abre o Claude Code e faz o login."
+  },
+  {
+   "acao": "gravar_fim"
+  }
+ ],
+ "legenda_troca": [
+  [
+   "ffmpeg traço version.",
+   "ffmpeg -version."
+  ],
+  [
+   "node traço v",
+   "node -v"
+  ],
+  [
+   "npm traço v.",
+   "npm -v."
+  ],
+  [
+   "traço traço yes,",
+   "--yes"
+  ],
+  [
+   "hyperframes arroba latest,",
+   "hyperframes@latest"
+  ],
+  [
+   "traço traço version.",
+   "--version."
+  ],
+  [
+   "claude traço traço version.",
+   "claude --version."
+  ],
+  [
+   "source til barra ponto bashrc.",
+   "source ~/.bashrc."
+  ],
+  [
+   "Node vinte e dois:",
+   "Node 22:"
+  ]
+ ]
+}
