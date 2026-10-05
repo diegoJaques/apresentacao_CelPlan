@@ -1,0 +1,55 @@
+===== TÍTULO =====
+Seu primeiro vídeo com IA do zero no HyperFrames (Aula 2)
+
+Alternativas:
+- Do terminal ao MP4: crie um vídeo no HyperFrames em minutos (Aula 2)
+- HyperFrames na prática: projeto, Studio e render (Aula 2)
+
+===== DESCRIÇÃO =====
+Aula 2 do curso de HyperFrames: um vídeo feito do zero, com prints reais de cada passo.
+
+O passo a passo:
+- criar o projeto a partir de um modelo pronto;
+- abrir o Studio (prévia e linha do tempo);
+- trocar o texto do vídeo, direto no código ou pedindo para o agente;
+- gerar o MP4.
+
+Comandos da aula:
+npx hyperframes init meu-primeiro-video --example kinetic-type
+cd meu-primeiro-video
+npx hyperframes preview
+npx hyperframes render --output meu-video.mp4
+
+O texto da 1ª cena fica em compositions/main-graphics.html.
+
+Pedido de exemplo para o agente:
+Troque o título final para "Meu primeiro vídeo"
+
+Capítulos:
+0:00 Criar o projeto (init)
+0:25 Abrir o Studio (preview)
+0:34 Conhecendo o Studio
+0:46 Mudar o texto no Code
+1:11 Pedir mudanças para o agente
+1:20 Gerar o MP4 (render)
+1:33 O resultado
+1:42 Recapitulando
+
+Aula 1 (começando no HyperFrames): coloque aqui o link da Aula 1 depois de publicar.
+Site oficial: https://hyperframes.heygen.com
+Guia rápido: https://hyperframes.heygen.com/quickstart
+
+O HyperFrames é gratuito e renderizar no seu computador não gasta créditos. O tempo de render (cerca de 1 min aqui) varia com o computador.
+
+#HyperFrames #VideoComIA #ClaudeCode #Tutorial #InteligenciaArtificial
+
+===== TAGS =====
+hyperframes, hyperframes tutorial, criar vídeo com ia, vídeo com código, hyperframes studio, npx hyperframes, kinetic type, claude code, editor de vídeo ia, curso hyperframes, tutorial ia
+
+===== COMENTÁRIO FIXADO =====
+Que texto você colocaria no seu primeiro vídeo? Escreve aqui que eu uso um dos comentários na Aula 3.
+
+===== AO PUBLICAR =====
+- Legenda: aula02.srt (YouTube Studio > Legendas > Português).
+- Colocar na mesma playlist da Aula 1 ("Curso HyperFrames") e ligar uma à outra pelas telas finais.
+- O vídeo de fundo que aparece no resultado vem do modelo kinetic-type (exemplo oficial do HyperFrames).

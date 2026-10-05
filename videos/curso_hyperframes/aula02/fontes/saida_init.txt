@@ -1,0 +1,21 @@
+Created meu-primeiro-video/
+  AGENTS.md
+  CLAUDE.md
+  compositions
+  hyperframes.json
+  hyperframes.lock.json
+  index.html
+  meta.json
+  package.json
+
+Get started:
+
+  1. Use your HyperFrames plugin, or install standalone skills:
+     npx hyperframes skills update
+
+  2. Open this project with your AI coding agent:
+     cd meu-primeiro-video then start Claude Code, Cursor, or your preferred agent
+
+  3. Try a starter prompt:
+     "Using /hyperframes, create a 15-second intro about [your topic]"
+     More patterns: hyperframes.heygen.com/prompting/overview

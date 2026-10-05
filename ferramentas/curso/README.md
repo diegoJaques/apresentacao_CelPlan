@@ -8,18 +8,38 @@ Cada passo tem uma ação e, se for virar cena, uma `fala`:
 - `abrir` (`url`, `espera` em ms): abre a página.
 - `destacar`: marca um elemento. O alvo pode ser `seletor` (CSS, o mais confiável), `papel` + `texto`, ou só `texto`.
 - `clicar` e `digitar` (`valor`): o print sai ANTES da ação.
+- `clicarxy` (`x`, `y`): clica numa posição da tela, por exemplo a régua da timeline do Studio. O destaque fica no ponto clicado.
 - `rolar` (`pixels`).
-- Campos opcionais para a montagem:
+- Campos opcionais para a montagem (além dos abaixo):
+  - `caixa_fixa` ({x,y,w,h}, em pixels do print): destaque manual quando o elemento achado é grande demais;
+  - `video` (caminho dentro da pasta da aula) e `video_inicio` (s): a cena mostra esse vídeo tocando no lugar do print.
   - `rotulo`: selo no canto inferior esquerdo;
   - `codigo`: cartão de comando, com `\n` para quebrar linha;
   - `clique: true`: anima o clique.
 - Campos do topo do roteiro: `aula`, `titulo`, `titulo_curto`, `curso`, `proxima` e `legenda_troca` (pares que trocam o que foi falado pelo que aparece escrito, por exemplo "ene pê xis" → "npx").
 
-## 2. Captura
+## 2. Telas de terminal
+`python3 ferramentas/curso/terminal.py fontes/t1.html "~/pasta" "comando" saida_real.txt` gera um terminal em HTML com a saída REAL do comando.
+- Abra-o no roteiro com `"url": "file:///caminho/absoluto/t1.html"`.
+- Cada linha vira `[data-l="N"]` e cada comando `.cmd[data-c="N"]`, para destacar.
+
+## 2b. Studio do HyperFrames (prévia local)
+- Rodar `npx hyperframes@latest preview --port 3002 --background --no-open` no projeto de demonstração.
+- Se o projeto puxa GSAP do CDN, trocar por cópia local com caminho RELATIVO (`gsap.min.js`); com `/gsap.min.js` o Studio quebra.
+- O Studio só escuta em localhost. Para o navegador de captura carregar fontes e vídeos externos pelo proxy, crie uma ponte de porta (net.createServer de IP:3003 → 127.0.0.1:3002) e use `http://<IP>:3003/#project/<nome>` no roteiro.
+- O `captura.mjs` já deixa o IP da máquina fora do proxy e liga WebGL por software, que a prévia precisa.
+- Dicas:
+  - espere ~15 s depois de abrir;
+  - a régua da timeline fica em y≈803, com o segundo s em x ≈ 268 + 91,4·s;
+  - no código, clique em "Maximize panel" e, depois, no botão de restaurar (1876, 62).
+
+## 2c. Captura
 ```
 node ferramentas/curso/captura.mjs videos/curso_x/aula01/roteiro.json videos/curso_x/aula01/telas
 node ferramentas/curso/captura.mjs --explorar <url> <pasta>       # print + lista de links/botões
 node ferramentas/curso/captura.mjs --sondar <url> "<texto>"        # onde o texto aparece (para achar seletor)
+node ferramentas/curso/captura.mjs --sondar <url> @console          # erros do console / requisições que falharam
+node ferramentas/curso/captura.mjs roteiro.json telas 14-25         # só uma faixa de passos (o resto do passos.json é mantido)
 ```
 - Rodar sempre da raiz do repositório, exatamente nesse formato: é o que a regra de permissão libera.
 - A sessão NÃO pode estar no modo Auto, que bloqueia o navegador.

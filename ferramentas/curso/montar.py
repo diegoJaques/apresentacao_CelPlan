@@ -12,7 +12,7 @@ AULA, PROJ = sys.argv[1], sys.argv[2]
 AQUI = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(f'{AULA}/roteiro.json'))
 CAP = {p['img']: p for p in json.load(open(f'{AULA}/telas/passos.json'))}
-for i, p in enumerate(R['passos']): p['img'] = f'{i+1:02d}.png'; p['caixa'] = CAP[p['img']]['caixa']; p['url_atual'] = CAP[p['img']]['url_atual']
+for i, p in enumerate(R['passos']): p['img'] = f'{i+1:02d}.png'; p['caixa'] = p.get('caixa_fixa') or CAP[p['img']]['caixa']; p['url_atual'] = CAP[p['img']]['url_atual']
 NARR = sorted(glob.glob(f'{AULA}/narracao/aula*.mp3'))[0]
 DUR = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', NARR]))
 
@@ -57,7 +57,7 @@ for de, para in R.get('legenda_troca', []):
 # ---------- geometria ----------
 FX, FY, FW, CH = 160, 26, 1600, 42       # janela do navegador: x, y, largura, barra
 S0 = FW / 1920; FH = 1080 * S0            # print escalado (1600×900)
-J, H = [], []
+J, H, VIDS = [], [], []
 def A(s): J.append(s)
 
 def zoom_de(c):
@@ -73,8 +73,16 @@ cur = (FW * .55, FH * .6)
 A(f'tl.set("#cursor",{{x:{cur[0]:.0f},y:{cur[1]:.0f},autoAlpha:0}},0);tl.to("#cursor",{{autoAlpha:1,duration:.3}},4.0);')
 for i, c in enumerate(cenas):
     t, e = c['t'], c['e']; sid = f'c{i}'
-    Z, tx, ty, ring = zoom_de(c)
-    url = html.escape(c['url_atual'].replace('https://', '').rstrip('/'))
+    Z, tx, ty, ring = zoom_de(c) if not c.get('video') else (1.0, 0.0, 0.0, None)
+    if c.get('video'):   # cena com vídeo: <video> filho direto do root, sobre a área do navegador
+        nome = os.path.basename(c['video'])
+        VIDS.append(f'<video id="{sid}v" class="clip vid" src="assets/media/{nome}" data-start="{t:.2f}" data-duration="{e-t:.2f}" data-media-start="{c.get("video_inicio", 0):.2f}" data-track-index="{6 + i % 2}" data-volume="0" muted playsinline></video>')
+        A(f'tl.to("#cursor",{{autoAlpha:0,duration:.2}},{t:.2f});')
+    u = c.get('url_exibir') or c['url_atual']
+    if u.startswith('file:'): u = 'Terminal'
+    u = re.sub(r'^http://\d+\.\d+\.\d+\.\d+:3003', 'localhost:3002', u)   # Studio visto pela ponte de porta
+    u = re.sub(r'\?v=1&t=[^&]*&tab=design&rc=0$', '', u)
+    url = html.escape(u.replace('https://', '').replace('http://', '').rstrip('/'))
     cod = ''
     if c.get('codigo'):
         linhas = ''.join(f'<div>{"<i>$</i> " if l.startswith("npx") else ""}{html.escape(l)}</div>' for l in c['codigo'].split('\n'))
@@ -140,16 +148,18 @@ body{{margin:0;background:#0b1020}}
 .win{{position:absolute;left:{FX}px;top:{FY}px;width:{FW}px;height:{FH+CH:.0f}px;border-radius:16px;overflow:hidden;background:#1b2130;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}}
 .bar{{height:{CH}px;display:flex;align-items:center;gap:9px;padding:0 18px;background:#232a3b}}
 .bar b{{width:13px;height:13px;border-radius:50%;background:#ff5f57}}.bar b:nth-child(2){{background:#febc2e}}.bar b:nth-child(3){{background:#28c840}}
-.url{{margin-left:18px;flex:1;max-width:760px;background:#151a26;border-radius:8px;padding:5px 16px;font-family:"J";font-size:17px;color:#b8c1d6}}
+.url{{margin-left:18px;flex:1;max-width:760px;background:#151a26;border-radius:8px;padding:5px 16px;font-family:"J";font-size:17px;color:#b8c1d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 .chip{{margin-left:auto;font-family:"J";font-size:17px;color:#0b1020;background:#2EE6A6;padding:5px 14px;border-radius:20px}}
 .vp{{position:relative;width:{FW}px;height:{FH:.0f}px;overflow:hidden;background:#fff}}
 .zw{{position:absolute;left:0;top:0;width:{FW}px;height:{FH:.0f}px;transform-origin:0 0}}.zw img{{width:100%;height:100%;display:block}}
 .ring{{position:absolute;border:4px solid #2EE6A6;border-radius:12px;box-shadow:0 0 30px rgba(46,230,166,.6);z-index:4}}
+.vid{{position:absolute;left:{FX}px;top:{FY+CH}px;width:{FW}px;height:{FH:.0f}px;object-fit:cover;z-index:3}}
 .lbl{{position:absolute;left:26px;bottom:26px;z-index:5;font-family:"M";font-size:34px;background:rgba(11,16,32,.92);border-left:8px solid #2EE6A6;padding:14px 26px;border-radius:10px}}
 .code{{position:absolute;right:26px;bottom:26px;z-index:5;background:#0d1117;border:2px solid #2EE6A6;border-radius:14px;padding:20px 28px;font-family:"J";font-size:28px;line-height:1.55;color:#e6edf3;box-shadow:0 20px 60px rgba(0,0,0,.6)}}
 .code i{{color:#2EE6A6;font-style:normal}}
 #cursor{{position:absolute;left:{FX}px;top:{FY+CH}px;width:44px;height:44px;z-index:30;transform-origin:4px 4px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}}
 #ripple{{position:absolute;left:{FX-40}px;top:{FY+CH-40}px;width:80px;height:80px;border-radius:50%;border:5px solid #2EE6A6;z-index:29;opacity:0}}
+#abre,#fim{{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:40}}
 .abre{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:rgba(11,16,32,.86);display:flex;flex-direction:column;justify-content:center;padding-left:200px;box-sizing:border-box}}
 .k{{font-family:"J";font-size:30px;letter-spacing:6px;color:#2EE6A6}}
 .abre h1{{font-family:"M";font-size:120px;line-height:1.02;margin:20px 0 0}}.abre em,.fimc h2 em{{font-style:normal;color:#2EE6A6}}
@@ -166,6 +176,7 @@ page = f'''<!doctype html>
 <body><div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="{END:.2f}">
 <audio id="narr" src="assets/audio/narracao.mp3" data-start="0" data-duration="{DUR:.2f}" data-track-index="10" data-volume="1"></audio>
 {chr(10).join(H)}
+{chr(10).join(VIDS)}
 <div id="ripple"></div>{CURSOR}
 {''.join(cap)}
 </div>
@@ -177,7 +188,10 @@ window.__timelines["main"] = tl;
 </script></body></html>'''
 
 os.makedirs(f'{PROJ}/assets/telas', exist_ok=True); os.makedirs(f'{PROJ}/assets/audio', exist_ok=True)
-for c in cenas: shutil.copy(f'{AULA}/telas/{c["img"]}', f'{PROJ}/assets/telas/')
+os.makedirs(f'{PROJ}/assets/media', exist_ok=True)
+for c in cenas:
+    shutil.copy(f'{AULA}/telas/{c["img"]}', f'{PROJ}/assets/telas/')
+    if c.get('video'): shutil.copy(f'{AULA}/{c["video"]}', f'{PROJ}/assets/media/')
 shutil.copy(NARR, f'{PROJ}/assets/audio/narracao.mp3')
 open(f'{PROJ}/index.html', 'w').write(page)
 # legenda .srt para o YouTube

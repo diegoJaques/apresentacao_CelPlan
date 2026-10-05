@@ -1,0 +1,9 @@
+◆  Rendering meu-primeiro-video → ~/videos/meu-primeiro-video/meu-video.mp4
+   30fps · standard · auto workers (4 cores detected)
+   GPU: browser GPU (auto-detect)
+
+  Lint: 0 error(s), 2 warning(s) — run with --lint-verbose for full output.
+  Continuing render despite lint issues. Use --strict to block errors.
+
+◇  ~/videos/meu-primeiro-video/meu-video.mp4
+   11.4 MB · 15.0s video · rendered in 1m 3.1s

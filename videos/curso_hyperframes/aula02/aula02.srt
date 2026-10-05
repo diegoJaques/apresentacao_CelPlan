@@ -1,0 +1,231 @@
+1
+00:00:00,180 --> 00:00:03,280
+Na aula passada você conheceu o HyperFrames.
+
+2
+00:00:03,520 --> 00:00:05,340
+Hoje a gente faz um vídeo do
+
+3
+00:00:05,140 --> 00:00:05,920
+zero.
+
+4
+00:00:05,940 --> 00:00:08,899
+Abra o terminal numa pasta e digite:
+
+5
+00:00:08,950 --> 00:00:12,620
+npx hyperframes init, o nome do projeto,
+
+6
+00:00:12,520 --> 00:00:16,439
+e --example kinetic-type, que é um dos
+
+7
+00:00:16,239 --> 00:00:17,560
+modelos prontos.
+
+8
+00:00:17,560 --> 00:00:19,820
+Em segundos ele cria a pasta com
+
+9
+00:00:19,620 --> 00:00:20,300
+tudo:
+
+10
+00:00:20,240 --> 00:00:23,160
+o index.html, que é o vídeo, e
+
+11
+00:00:22,960 --> 00:00:25,580
+a pasta compositions, com as cenas.
+
+12
+00:00:25,920 --> 00:00:29,180
+Agora entre na pasta e rode npx
+
+13
+00:00:28,980 --> 00:00:30,599
+hyperframes preview.
+
+14
+00:00:30,740 --> 00:00:32,800
+Ele mostra o endereço do Studio.
+
+15
+00:00:32,600 --> 00:00:34,280
+É só abrir no navegador.
+
+16
+00:00:34,600 --> 00:00:36,160
+Esse é o Studio.
+
+17
+00:00:35,960 --> 00:00:38,000
+No meio fica a prévia do vídeo
+
+18
+00:00:37,800 --> 00:00:39,760
+e, embaixo, a linha do tempo.
+
+19
+00:00:39,860 --> 00:00:42,080
+Clique em qualquer ponto dela para ver
+
+20
+00:00:41,880 --> 00:00:42,920
+aquele momento.
+
+21
+00:00:43,020 --> 00:00:45,120
+E no play você assiste do começo
+
+22
+00:00:44,920 --> 00:00:45,960
+ao fim.
+
+23
+00:00:46,080 --> 00:00:47,720
+Agora vamos mudar o texto.
+
+24
+00:00:47,780 --> 00:00:49,340
+Abra a aba Code.
+
+25
+00:00:49,360 --> 00:00:52,000
+Dentro de compositions, abra o arquivo
+
+26
+00:00:52,700 --> 00:00:53,800
+main-graphics.
+
+27
+00:00:53,600 --> 00:00:55,720
+Olha aqui o texto da primeira cena:
+
+28
+00:00:55,780 --> 00:00:58,860
+What if, motion graphics, wrote themselves.
+
+29
+00:00:58,900 --> 00:01:00,960
+É só trocar pelas suas palavras.
+
+30
+00:01:00,960 --> 00:01:01,960
+Eu escrevi:
+
+31
+00:01:01,980 --> 00:01:03,700
+E se o seu vídeo se fizesse
+
+32
+00:01:03,500 --> 00:01:04,519
+sozinho?
+
+33
+00:01:04,660 --> 00:01:06,940
+Salvou, o Studio atualiza na hora.
+
+34
+00:01:07,040 --> 00:01:08,900
+E a prévia já mostra o texto
+
+35
+00:01:08,700 --> 00:01:09,440
+novo.
+
+36
+00:01:09,440 --> 00:01:11,640
+Troquei também o título do final.
+
+37
+00:01:11,640 --> 00:01:13,080
+Não quer mexer no código?
+
+38
+00:01:13,040 --> 00:01:14,640
+Peça pro agente.
+
+39
+00:01:14,440 --> 00:01:16,780
+Aqui no Studio ou no Claude Code,
+
+40
+00:01:16,580 --> 00:01:18,400
+você escreve o que quer mudar, em
+
+41
+00:01:18,200 --> 00:01:20,340
+português mesmo, e ele faz.
+
+42
+00:01:20,400 --> 00:01:22,700
+Quando estiver do seu jeito, clique em
+
+43
+00:01:22,500 --> 00:01:26,440
+Export, ou rode npx hyperframes render no
+
+44
+00:01:26,240 --> 00:01:27,200
+terminal.
+
+45
+00:01:27,140 --> 00:01:29,400
+Ele monta o vídeo quadro a quadro.
+
+46
+00:01:29,500 --> 00:01:31,460
+Aqui levou cerca de um minuto, e
+
+47
+00:01:31,260 --> 00:01:33,860
+o arquivo MP4 ficou pronto.
+
+48
+00:01:34,000 --> 00:01:35,380
+E esse é o resultado:
+
+49
+00:01:35,320 --> 00:01:38,060
+o seu primeiro vídeo, feito do zero.
+
+50
+00:01:38,060 --> 00:01:39,600
+O modelo já vem com um vídeo
+
+51
+00:01:39,400 --> 00:01:41,740
+de exemplo no fundo, e depois você
+
+52
+00:01:41,540 --> 00:01:42,840
+troca pelo seu.
+
+53
+00:01:42,860 --> 00:01:44,080
+Recapitulando:
+
+54
+00:01:44,200 --> 00:01:47,020
+init cria o projeto, preview abre o
+
+55
+00:01:47,150 --> 00:01:49,480
+Studio, você troca o texto, e render
+
+56
+00:01:49,520 --> 00:01:50,660
+gera o vídeo.
+
+57
+00:01:50,560 --> 00:01:53,140
+Na próxima aula, a gente coloca narração
+
+58
+00:01:52,940 --> 00:01:54,280
+e legenda no seu vídeo.

@@ -1,0 +1,413 @@
+[
+ {
+  "acao": "abrir",
+  "url": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t1_init.html",
+  "espera": 1200,
+  "img": "01.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t1_init.html",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "seletor": ".cmd[data-c=\"1\"]",
+  "espera": 500,
+  "rotulo": "1 · Criar o projeto",
+  "codigo": "npx hyperframes init meu-primeiro-video \\\n  --example kinetic-type",
+  "fala": "Na aula passada você conheceu o HyperFrames. Hoje a gente faz um vídeo do zero. Abra o terminal numa pasta e digite: npx hyperframes init, o nome do projeto, e traço traço example kinetic-type, que é um dos modelos prontos.",
+  "img": "02.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t1_init.html",
+  "caixa": {
+   "x": 40,
+   "y": 100,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "destacar",
+  "seletor": "[data-l=\"1\"]",
+  "espera": 500,
+  "rotulo": "Projeto criado",
+  "fala": "Em segundos ele cria a pasta com tudo: o index ponto html, que é o vídeo, e a pasta compositions, com as cenas.",
+  "img": "03.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t1_init.html",
+  "caixa": {
+   "x": 40,
+   "y": 149.5,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t2_preview.html",
+  "espera": 1200,
+  "img": "04.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t2_preview.html",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "seletor": ".cmd[data-c=\"1\"]",
+  "espera": 500,
+  "rotulo": "2 · Abrir o Studio",
+  "codigo": "cd meu-primeiro-video\nnpx hyperframes preview",
+  "fala": "Agora entre na pasta e rode npx hyperframes preview.",
+  "img": "05.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t2_preview.html",
+  "caixa": {
+   "x": 40,
+   "y": 100,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "destacar",
+  "seletor": "[data-l=\"6\"]",
+  "espera": 500,
+  "rotulo": "Endereço do Studio",
+  "fala": "Ele mostra o endereço do Studio. É só abrir no navegador.",
+  "img": "06.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t2_preview.html",
+  "caixa": {
+   "x": 40,
+   "y": 367,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "http://192.0.2.2:3003/#project/meu-primeiro-video",
+  "espera": 15000,
+  "img": "07.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": null
+ },
+ {
+  "acao": "clicarxy",
+  "x": 418,
+  "y": 803,
+  "espera": 5000,
+  "rotulo": "O Studio",
+  "fala": "Esse é o Studio. No meio fica a prévia do vídeo e, embaixo, a linha do tempo. Clique em qualquer ponto dela para ver aquele momento.",
+  "img": "08.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 400,
+   "y": 785,
+   "w": 36,
+   "h": 36
+  }
+ },
+ {
+  "acao": "destacar",
+  "papel": "button",
+  "texto": "Play",
+  "espera": 500,
+  "rotulo": "Assistir",
+  "fala": "E no play você assiste do começo ao fim.",
+  "img": "09.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 924,
+   "y": 667,
+   "w": 32,
+   "h": 32
+  }
+ },
+ {
+  "acao": "clicar",
+  "texto": "Code",
+  "exato": true,
+  "espera": 800,
+  "clique": true,
+  "rotulo": "3 · Mudar o texto",
+  "fala": "Agora vamos mudar o texto. Abra a aba Code.",
+  "img": "10.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 185.25,
+   "y": 55.625,
+   "w": 29.890625,
+   "h": 18.75
+  }
+ },
+ {
+  "acao": "clicar",
+  "texto": "compositions",
+  "exato": true,
+  "espera": 1000,
+  "img": "11.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 28,
+   "y": 183,
+   "w": 70.03125,
+   "h": 16
+  }
+ },
+ {
+  "acao": "clicar",
+  "texto": "main-graphics.html",
+  "espera": 3000,
+  "clique": true,
+  "rotulo": "Arquivo das cenas",
+  "fala": "Dentro de compositions, abra o arquivo main-graphics.",
+  "img": "12.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 60,
+   "y": 211,
+   "w": 75,
+   "h": 16
+  }
+ },
+ {
+  "acao": "clicar",
+  "papel": "button",
+  "texto": "Maximize panel",
+  "espera": 1500,
+  "img": "13.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 328,
+   "y": 50,
+   "w": 24,
+   "h": 24
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "What if",
+  "espera": 1500,
+  "rotulo": "Texto da 1ª cena",
+  "fala": "Olha aqui o texto da primeira cena: What if, motion graphics, wrote themselves. É só trocar pelas suas palavras.",
+  "img": "14.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 205.3125,
+   "y": 465.9375,
+   "w": 1710.6875,
+   "h": 18.1875
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "http://192.0.2.2:3003/#project/meu-primeiro-video",
+  "espera": 15000,
+  "img": "15.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": null
+ },
+ {
+  "acao": "clicar",
+  "texto": "Code",
+  "exato": true,
+  "espera": 800,
+  "img": "16.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": {
+   "x": 185.25,
+   "y": 55.625,
+   "w": 29.890625,
+   "h": 18.75
+  }
+ },
+ {
+  "acao": "clicar",
+  "texto": "compositions",
+  "exato": true,
+  "espera": 1000,
+  "img": "17.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": {
+   "x": 28,
+   "y": 183,
+   "w": 70.03125,
+   "h": 16
+  }
+ },
+ {
+  "acao": "clicar",
+  "texto": "main-graphics.html",
+  "espera": 3000,
+  "img": "18.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": {
+   "x": 60,
+   "y": 211,
+   "w": 75,
+   "h": 16
+  }
+ },
+ {
+  "acao": "clicar",
+  "papel": "button",
+  "texto": "Maximize panel",
+  "espera": 1500,
+  "img": "19.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": {
+   "x": 328,
+   "y": 50,
+   "w": 24,
+   "h": 24
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "E se",
+  "exato": true,
+  "espera": 1500,
+  "rotulo": "Texto novo",
+  "fala": "Eu escrevi: E se o seu vídeo se fizesse sozinho? Salvou, o Studio atualiza na hora.",
+  "caixa_fixa": {
+   "x": 266,
+   "y": 463,
+   "w": 640,
+   "h": 58
+  },
+  "img": "20.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": null
+ },
+ {
+  "acao": "clicarxy",
+  "x": 1876,
+  "y": 62,
+  "espera": 2500,
+  "img": "21.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=0&tab=design&rc=0",
+  "caixa": {
+   "x": 1858,
+   "y": 44,
+   "w": 36,
+   "h": 36
+  }
+ },
+ {
+  "acao": "clicarxy",
+  "x": 418,
+  "y": 803,
+  "espera": 5000,
+  "rotulo": "Prévia atualizada",
+  "fala": "E a prévia já mostra o texto novo.",
+  "img": "22.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=1.64&tab=design&rc=0",
+  "caixa": {
+   "x": 400,
+   "y": 785,
+   "w": 36,
+   "h": 36
+  }
+ },
+ {
+  "acao": "clicarxy",
+  "x": 1575,
+  "y": 803,
+  "espera": 5000,
+  "rotulo": "Final do vídeo",
+  "fala": "Troquei também o título do final.",
+  "img": "23.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=14.293&tab=design&rc=0",
+  "caixa": {
+   "x": 1557,
+   "y": 785,
+   "w": 36,
+   "h": 36
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Describe a change to the agent",
+  "espera": 500,
+  "rotulo": "Ou peça pro agente",
+  "codigo": "Troque o título final para\n\"Meu primeiro vídeo\"",
+  "fala": "Não quer mexer no código? Peça pro agente. Aqui no Studio ou no Claude Code, você escreve o que quer mudar, em português mesmo, e ele faz.",
+  "img": "24.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=14.293&tab=design&rc=0",
+  "caixa": {
+   "x": 1769,
+   "y": 477.25,
+   "w": 79.15625,
+   "h": 49.5
+  }
+ },
+ {
+  "acao": "destacar",
+  "texto": "Export",
+  "exato": true,
+  "espera": 500,
+  "rotulo": "4 · Gerar o MP4",
+  "fala": "Quando estiver do seu jeito, clique em Export, ou rode npx hyperframes render no terminal.",
+  "img": "25.png",
+  "url_atual": "http://192.0.2.2:3003/#project/meu-primeiro-video?v=1&t=14.293&tab=design&rc=0",
+  "caixa": {
+   "x": 1845.984375,
+   "y": 5.5,
+   "w": 62.015625,
+   "h": 28
+  }
+ },
+ {
+  "acao": "abrir",
+  "url": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t3_render.html",
+  "espera": 1200,
+  "img": "26.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t3_render.html",
+  "caixa": null
+ },
+ {
+  "acao": "destacar",
+  "seletor": ".cmd[data-c=\"1\"]",
+  "espera": 500,
+  "rotulo": "Render",
+  "codigo": "npx hyperframes render --output meu-video.mp4",
+  "fala": "Ele monta o vídeo quadro a quadro. Aqui levou cerca de um minuto, e o arquivo MP4 ficou pronto.",
+  "img": "27.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t3_render.html",
+  "caixa": {
+   "x": 40,
+   "y": 100,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "destacar",
+  "seletor": "[data-l=\"9\"]",
+  "espera": 500,
+  "video": "fontes/meu-video.mp4",
+  "video_inicio": 0,
+  "rotulo": "Resultado",
+  "fala": "E esse é o resultado: o seu primeiro vídeo, feito do zero. O modelo já vem com um vídeo de exemplo no fundo, e depois você troca pelo seu.",
+  "img": "28.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t3_render.html",
+  "caixa": {
+   "x": 40,
+   "y": 497.5,
+   "w": 1840,
+   "h": 43.5
+  }
+ },
+ {
+  "acao": "destacar",
+  "seletor": "[data-l=\"9\"]",
+  "espera": 300,
+  "video": "fontes/meu-video.mp4",
+  "video_inicio": 8,
+  "rotulo": "Recapitulando",
+  "codigo": "npx hyperframes init meu-primeiro-video\nnpx hyperframes preview\n# troque o texto no Code\nnpx hyperframes render",
+  "fala": "Recapitulando: init cria o projeto, preview abre o Studio, você troca o texto, e render gera o vídeo. Na próxima aula, a gente coloca narração e legenda no seu vídeo.",
+  "img": "29.png",
+  "url_atual": "file:///home/user/apresentacao_CelPlan/videos/curso_hyperframes/aula02/fontes/t3_render.html",
+  "caixa": {
+   "x": 40,
+   "y": 497.5,
+   "w": 1840,
+   "h": 43.5
+  }
+ }
+]
