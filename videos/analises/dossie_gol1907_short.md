@@ -180,3 +180,20 @@ Leitura:
 
 **Regra:** prioridade para casos brasileiros (ou muito conhecidos no Brasil). Estrangeiro só com data redonda no dia ou ligação forte com o Brasil.
 
+## 9. Quatro Shorts no mesmo dia (04/10/2026): o TAM puxou tudo
+Dados do MCP em 05/10 (~24–30h depois):
+
+| Short | Views | Curtidas | % curtidas |
+|---|---:|---:|---:|
+| TAM 402 | 18.838 | 1.062 | 5,6% |
+| Juliane (sobrevivência, estrangeiro) | 1.687 | 89 | **5,3%** |
+| Linate (estrangeiro) | 1.667 | 70 | 4,2% |
+| Varig 254 (brasileiro) | 1.304 | 40 | 3,1% |
+
+Leitura:
+- **Quatro Shorts publicados no mesmo dia.** Enquanto o TAM estava na onda, os outros três ficaram no teste inicial (1–2 mil). O feed testa cada vídeo com o mesmo público do canal, e o vídeo que está performando fica com a distribuição.
+- O Varig 254 é brasileiro e também ficou parado. Então ser brasileiro não basta: o horário e a concorrência interna pesam.
+- A Juliane tem a 2ª maior taxa de curtidas (5,3%). Quem viu gostou; o problema foi a distribuição, não o conteúdo.
+- **Regra:** no máximo 1 Short por dia, com 8h ou mais de distância. Quando um Short estiver em alta, segurar o próximo até a onda baixar (a curva de views do dia achata).
+- O longo do Gol 1907 tinha só 39 views: falta ligar os Shorts que estouraram (TAM e Gol) a um vídeo longo em "Vídeo relacionado".
+
