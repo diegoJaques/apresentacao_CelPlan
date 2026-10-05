@@ -44,6 +44,7 @@ Também produzidos: Gol 1907 (Short + longo), Aeroperú 603, Voepass 2283, Chape
 - **Aplica AI** (conector): publica no YouTube/Facebook/Instagram e edita título/descrição, mas para YouTube só traz totais.
   **Para métricas do YouTube use sempre as ferramentas `youtube-metricas`** (retenção, período, tráfego), não o Aplica AI.
 - **Fábrica de aulas** (`ferramentas/curso/`, ver README): navegador tira prints passo a passo e `montar.py` gera a aula com zoom, cursor, legenda e voz clonada. Precisa da sessão fora do modo Auto (regra em `.claude/settings.json`). Curso 1: `videos/curso_hyperframes/`. **Regra dos tutoriais: canal dark, SEM avatar** (economiza créditos do ElevenLabs); só prints + narração com a voz clonada.
+- **Google Drive (arquivos grandes)**: `python3 ferramentas/drive/subir.py "<pasta>" arquivos...` (upload direto, escopo drive.file, lê `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `GDRIVE_REFRESH_TOKEN`). Curso: pasta "Vídeos do curso (envio automático)", dentro de "Curso - Vídeos com IA do Zero". Docs pequenos vão pelo conector do Drive.
 - **HyperFrames CLI 0.8.91** para montar vídeos (detalhes em `videos/NOTAS_PRODUCAO.md`).
 - **Rotina diária de pautas** (7h23 Brasília) roda na sessão original (trigger `trig_013RdsM1YYApRYvmjminAhJN`).
 
