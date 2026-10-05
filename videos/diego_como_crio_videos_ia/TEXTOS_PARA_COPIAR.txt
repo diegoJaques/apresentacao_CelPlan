@@ -36,3 +36,8 @@ Enviar o arquivo como_crio_videos_ia.srt (Português).
 - Canal: Diego Jaques. Categoria: Ciência e tecnologia (ou Educação).
 - Conteúdo alterado ou sintético: SIM (avatar e voz gerados por IA).
 - Tela final: "Inscrever-se" + vídeo dos bastidores do HyperFrames.
+
+===== CAPAS PARA TESTE A/B/C =====
+- A: capa_A_rosto_11mil.jpg (rosto + "11 MIL VIEWS EM 8H")
+- B: capa_B_zero_editor.jpg (rosto + "ZERO EDITOR", linha do tempo riscada)
+- C: capa_C_sem_rosto.jpg (sem rosto: leque com 4 Shorts + "A IA FAZ MEUS SHORTS")
