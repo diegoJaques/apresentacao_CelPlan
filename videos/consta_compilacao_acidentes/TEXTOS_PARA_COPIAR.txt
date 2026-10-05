@@ -1,19 +1,25 @@
 ===== TÍTULO PRINCIPAL (o que vai no campo "Título" ao publicar) =====
-Uma manete, um zero, uma fita: 8 detalhes que derrubaram aviões
+8 detalhes MINÚSCULOS que derrubaram aviões gigantes
 Capa principal: capas/capa_A.jpg
-(o 1º quadro do vídeo é a manete: título, capa e abertura prometem a mesma coisa)
+
+Por que este (mix de 3 fontes):
+- Supercuts do Mentour Pilot (o maior canal do gênero): número + superlativo + 1 palavra em MAIÚSCULAS
+  ("10 DEADLIEST Pilot Mistakes In Aviation History!", "The DUMBEST Decisions in Aviation History!").
+- Nossos dados (retencao_consta.md): afirmação com paradoxo vence pergunta (~76% x ~50% assistido).
+  Aqui o paradoxo é "minúsculo x gigante".
+- Sem tom de deboche (nada de "erros bobos"): há vítimas, a regra é respeito.
 
 ===== TESTE A/B/C (YouTube Studio → "Testar e comparar") =====
 Cada título vai com a sua capa. A capa complementa o título, não repete.
 
-A) Uma manete, um zero, uma fita: 8 detalhes que derrubaram aviões
-   capas/capa_A.jpg: a mão na manete com círculo vermelho + "ELA VOLTOU SOZINHA" / "+ 7 DETALHES FATAIS"
-   (é a que bate com o 1º quadro do vídeo; se só der para testar capas, use este título com as 3 capas)
+A) 8 detalhes MINÚSCULOS que derrubaram aviões gigantes
+   capas/capa_A.jpg: a mão na manete + "ELA VOLTOU SOZINHA" / "+ 7 DETALHES FATAIS"
+   (bate com o 1º quadro do vídeo; se só der para testar capas, use este título com as 3 capas)
 
-B) Um pedaço de fita adesiva derrubou um Boeing, e não foi o único
-   capas/capa_B.jpg: a fita nos sensores com círculo vermelho + "SÓ ISSO." / "70 PESSOAS A BORDO"
+B) Uma fita adesiva derrubou um Boeing: os 8 detalhes MAIS FATAIS da aviação
+   capas/capa_B.jpg: a fita nos sensores + "SÓ ISSO." / "70 PESSOAS A BORDO"
 
-C) 8 acidentes aéreos que mudaram as regras do voo
+C) 8 acidentes aéreos que MUDARAM a aviação para sempre
    capas/capa_C.jpg: mosaico dos 8 casos + "8 VOOS" / "O DETALHE QUE NINGUÉM VIU"
 
 Deixe o teste rodar até o YouTube declarar vencedor (em geral 1–2 semanas). O critério é o tempo de exibição, que é o que conta para a monetização.
