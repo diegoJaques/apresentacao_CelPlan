@@ -20,7 +20,7 @@ shorts com ia, vídeo com ia, como fazer shorts com ia, voz clonada, elevenlabs,
 ===== COMENTÁRIO FIXADO =====
 O passo a passo completo está no link "Vídeo relacionado", logo acima do título 👆
 Qual etapa você quer ver primeiro: roteiro, voz ou cenas? 👇
-(link em comentário de Short não é clicável: o caminho é o "Vídeo relacionado")
+[não copiar esta linha: link em comentário de Short não é clicável, por isso o caminho é o "Vídeo relacionado"]
 
 ===== DEPOIS DE PUBLICAR (é para isto que o Short existe) =====
 1. YouTube Studio → Conteúdo → este Short → Editar → "Vídeo relacionado" → escolha o longo
