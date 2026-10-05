@@ -65,6 +65,7 @@
 - 1.2 Instalar o Node.js 22: Windows e Mac, uma aula cada. Testar com `node -v`.
 - 1.3 Instalar o FFmpeg: Windows e Mac, uma aula cada. Testar com `ffmpeg -version`.
 - 1.4 Criar uma pasta de projetos e navegar com `cd`.
+- 1.L Preparando o Linux (Ubuntu): FFmpeg, Node 22 e HyperFrames num Ubuntu real, gravado na mesa virtual (`modulo1_linux/`). **Gravada; falta narrar e montar.**
 
 **Módulo 2: A IA que monta o vídeo (Claude)**
 - 2.1 O que é o Claude e o que é o Claude Code, explicado como para um leigo.
