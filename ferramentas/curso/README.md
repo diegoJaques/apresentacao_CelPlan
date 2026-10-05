@@ -33,6 +33,28 @@ Cada passo tem uma ação e, se for virar cena, uma `fala`:
   - a régua da timeline fica em y≈803, com o segundo s em x ≈ 268 + 91,4·s;
   - no código, clique em "Maximize panel" e, depois, no botão de restaurar (1876, 62).
 
+## 2b-2. Mesa virtual: operar um Linux de verdade e gravar a tela (o "Cap" daqui)
+`ferramentas/curso/mesa/` liga um desktop Ubuntu (xfce) numa tela virtual. Lá eu digito e clico como uma pessoa, e o ffmpeg grava a tela em MP4 real.
+```
+bash ferramentas/curso/mesa/instalar.sh            # 1x por sessão: desktop, xdotool, usuário "aluno" (sudo sem senha)
+python3 ferramentas/curso/mesa/mesa.py roteiro.json telas
+```
+- Ações:
+  - `ligar`, `abrir_terminal`;
+  - `gravar_inicio` e `gravar_fim` (gera `telas/gravacao.mp4`);
+  - `digitar` (`valor`, `enter`, `esperar_fim`, `timeout`, `atraso`);
+  - `tecla`, `clicar` (x, y), `esperar`.
+- Cada passo tira `NN.png` e guarda `t_ini`/`t_fim` do trecho da gravação.
+  - O `montar.py` usa esse trecho como cena.
+  - Se a instalação demorar mais que a fala, o trecho é acelerado e aparece o selo "⏩ N× mais rápido".
+  - Use `sem_gravacao: true` para mostrar só o print.
+- `esperar_fim` sabe quando o comando acabou pelo marcador do prompt (`/tmp/mesa_fim`), mesmo em instalações longas.
+- O terminal do `aluno` é "de fábrica":
+  - PATH limpo, sem o Node/nvm/Java que este container traz;
+  - ele herda só o proxy e o certificado do ambiente (os mesmos do agente).
+- A mesa não tem navegador com internet. Páginas web continuam no `captura.mjs`.
+- Windows e Mac não rodam aqui: para eles, prints das páginas oficiais.
+
 ## 2c. Captura
 ```
 node ferramentas/curso/captura.mjs videos/curso_x/aula01/roteiro.json videos/curso_x/aula01/telas

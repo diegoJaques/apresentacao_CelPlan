@@ -12,7 +12,12 @@ AULA, PROJ = sys.argv[1], sys.argv[2]
 AQUI = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(f'{AULA}/roteiro.json'))
 CAP = {p['img']: p for p in json.load(open(f'{AULA}/telas/passos.json'))}
-for i, p in enumerate(R['passos']): p['img'] = f'{i+1:02d}.png'; p['caixa'] = p.get('caixa_fixa') or CAP[p['img']]['caixa']; p['url_atual'] = CAP[p['img']]['url_atual']
+for i, p in enumerate(R['passos']):
+    p['img'] = f'{i+1:02d}.png'; cp = CAP.get(p['img'], {})
+    p['caixa'] = p.get('caixa_fixa') or cp.get('caixa'); p['url_atual'] = cp.get('url_atual', '')
+    # passo gravado pela mesa virtual: a cena usa o trecho real da gravação de tela (t_ini → t_fim)
+    if cp.get('gravacao') and cp.get('t_fim') is not None and not p.get('sem_gravacao') and not p.get('video'):
+        p['video'], p['video_inicio'], p['video_ate'] = f"telas/{cp['gravacao']}", cp['t_ini'], cp['t_fim']
 NARR = sorted(glob.glob(f'{AULA}/narracao/aula*.mp3'))[0]
 DUR = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', NARR]))
 
@@ -76,7 +81,14 @@ for i, c in enumerate(cenas):
     Z, tx, ty, ring = zoom_de(c) if not c.get('video') else (1.0, 0.0, 0.0, None)
     if c.get('video'):   # cena com vídeo: <video> filho direto do root, sobre a área do navegador
         nome = os.path.basename(c['video'])
-        VIDS.append(f'<video id="{sid}v" class="clip vid" src="assets/media/{nome}" data-start="{t:.2f}" data-duration="{e-t:.2f}" data-media-start="{c.get("video_inicio", 0):.2f}" data-track-index="{6 + i % 2}" data-volume="0" muted playsinline></video>')
+        dur, vel = e - t, 1.0
+        if c.get('video_ate') is not None:          # trecho com fim: acelera se não couber; se sobrar tempo, fica o print final
+            L = max(0.1, c['video_ate'] - c.get('video_inicio', 0))
+            vel = min(16.0, max(1.0, L / (e - t))); dur = min(e - t, L / vel)
+        taxa = f' data-playback-rate="{vel:.2f}"' if vel > 1.05 else ''
+        VIDS.append(f'<video id="{sid}v" class="clip vid" src="assets/media/{nome}" data-start="{t:.2f}" data-duration="{dur:.2f}" data-media-start="{c.get("video_inicio", 0):.2f}"{taxa} data-track-index="{6 + i % 2}" data-volume="0" muted playsinline></video>')
+        if vel >= 1.5:
+            VIDS.append(f'<div id="{sid}vel" class="clip vel" data-start="{t:.2f}" data-duration="{dur:.2f}" data-track-index="12">⏩ {vel:.0f}× mais rápido</div>')
         A(f'tl.to("#cursor",{{autoAlpha:0,duration:.2}},{t:.2f});')
     u = c.get('url_exibir') or c['url_atual']
     if u.startswith('file:'): u = 'Terminal'
@@ -154,6 +166,7 @@ body{{margin:0;background:#0b1020}}
 .zw{{position:absolute;left:0;top:0;width:{FW}px;height:{FH:.0f}px;transform-origin:0 0}}.zw img{{width:100%;height:100%;display:block}}
 .ring{{position:absolute;border:4px solid #2EE6A6;border-radius:12px;box-shadow:0 0 30px rgba(46,230,166,.6);z-index:4}}
 .vid{{position:absolute;left:{FX}px;top:{FY+CH}px;width:{FW}px;height:{FH:.0f}px;object-fit:cover;z-index:3}}
+.vel{{position:absolute;right:{FX+26}px;top:{FY+CH+20}px;z-index:7;font-family:"J";font-size:26px;background:rgba(11,16,32,.85);color:#2EE6A6;padding:8px 16px;border-radius:10px}}
 .lbl{{position:absolute;left:26px;bottom:26px;z-index:5;font-family:"M";font-size:34px;background:rgba(11,16,32,.92);border-left:8px solid #2EE6A6;padding:14px 26px;border-radius:10px}}
 .code{{position:absolute;right:26px;bottom:26px;z-index:5;background:#0d1117;border:2px solid #2EE6A6;border-radius:14px;padding:20px 28px;font-family:"J";font-size:28px;line-height:1.55;color:#e6edf3;box-shadow:0 20px 60px rgba(0,0,0,.6)}}
 .code i{{color:#2EE6A6;font-style:normal}}
@@ -191,10 +204,10 @@ os.makedirs(f'{PROJ}/assets/telas', exist_ok=True); os.makedirs(f'{PROJ}/assets/
 os.makedirs(f'{PROJ}/assets/media', exist_ok=True)
 for c in cenas:
     shutil.copy(f'{AULA}/telas/{c["img"]}', f'{PROJ}/assets/telas/')
-    if c.get('video'): shutil.copy(f'{AULA}/{c["video"]}', f'{PROJ}/assets/media/')
+    if c.get('video') and not os.path.exists(f'{PROJ}/assets/media/{os.path.basename(c["video"])}'): shutil.copy(f'{AULA}/{c["video"]}', f'{PROJ}/assets/media/')
 shutil.copy(NARR, f'{PROJ}/assets/audio/narracao.mp3')
 open(f'{PROJ}/index.html', 'w').write(page)
 # legenda .srt para o YouTube
 def ts(x): return f'{int(x//3600):02d}:{int(x%3600//60):02d}:{int(x%60):02d},{int(x*1000%1000):03d}'
-open(f'{AULA}/aula{R["aula"]:02d}.srt', 'w').write('\n'.join(f'{k+1}\n{ts(gr[0][1])} --> {ts(gr[-1][2]+.2)}\n{" ".join(w[0] for w in gr)}\n' for k, gr in enumerate(groups)))
+open(f"{AULA}/{R.get('nome_arquivo') or 'aula%02d' % R['aula']}.srt", "w").write('\n'.join(f'{k+1}\n{ts(gr[0][1])} --> {ts(gr[-1][2]+.2)}\n{" ".join(w[0] for w in gr)}\n' for k, gr in enumerate(groups)))
 print('ok', N, 'cenas', round(END, 2), 's', [(c['img'], round(c['t'], 1)) for c in cenas])
