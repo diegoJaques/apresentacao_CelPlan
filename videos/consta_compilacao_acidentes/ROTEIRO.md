@@ -13,7 +13,7 @@ Os fatos vêm dos roteiros dos Shorts (`videos/consta_*/ROTEIRO.md`), já checad
 Voz: Carlos (`NFmEzNOony1UsEJGXLth`), eleven_v4, 1 take por bloco (8 blocos).
 
 ## Títulos (escolher 1)
-1. **Um zero, uma fita, um alarme desligado: 8 detalhes que derrubaram aviões** (escolhido)
+1. **Uma manete, um zero, uma fita: 8 detalhes que derrubaram aviões** (escolhido: o 1º quadro é a manete)
 2. 8 acidentes aéreos que mudaram as regras do voo, e o detalhe que causou cada um
 3. O detalhe que ninguém viu: 8 acidentes aéreos explicados
 
